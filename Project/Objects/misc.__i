@@ -1,0 +1,1 @@
+"..\Src\misc.c" OPTIMIZE (9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Lists\misc.lst) PREPRINT(.\Lists\misc.i) OBJECT(.\Objects\misc.obj)
