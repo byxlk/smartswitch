@@ -1028,6 +1028,11 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
  sbit  MotorRunningCtrl_R = P3^7;     
  sbit  MotorRunningCtrl_L = P3^6;     
  sbit  ExAutoCtrlSignal = P1^0;       
@@ -1048,25 +1053,7 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- void  delay_ms(unsigned char ms)
- {
- unsigned int i;
- do{
- i = 11059200L / 13000;
- while(--i)	;    
- }while(--ms);
- }
- 
-#line 44 "..\Src\delay.c" /1
+#line 26 "..\Src\delay.c" /1
  
  
  
@@ -1097,25 +1084,46 @@
  
  
  
+#line 56 "..\Src\delay.c" /0
  
  
-#line 76 "..\Src\delay.c" /0
+#line 58 "..\Src\delay.c" /1
  
- void delay_4000ms(void)		 
- {
- unsigned char i, j, k;
  
- _nop_();
- _nop_();
- i = 169;
- j = 24;
- k = 59;
- do
- {
- do
- {
- while (--k);
- } while (--j);
- } while (--i);
- }
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#error *** WARNING C316 IN LINE 95 OF ..\Src\delay.c: unterminated conditionals

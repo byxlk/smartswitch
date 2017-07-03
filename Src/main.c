@@ -19,6 +19,7 @@
 #include  "timer.h"
 #include  "misc.h"
 #include  "Exti.h"
+//#include  "ADC.h"
 
 
 /*************	功能说明	**************
@@ -50,7 +51,7 @@ bit firstSystemBoot = TRUE;
 
 
 /*************  串口1初始化函数 *****************/
-void	UART_config(void)
+void UART_config(void)
 {
 	COMx_InitDefine		COMx_InitStructure;					//结构定义
 	COMx_InitStructure.UART_Mode      = UART_8bit_BRTx;		//模式,       UART_ShiftRight,UART_8bit_BRTx,UART_9bit,UART_9bit_BRTx
@@ -84,7 +85,7 @@ void GPIO_Config(void)
 }
 
 /************************ 定时器配置 ****************************/
-void	Timer_Config(void)
+void Timer_Config(void)
 {
 	TIM_InitTypeDef		TIM_InitStructure;					//结构定义
 	TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;	//指定工作模式,   TIM_16BitAutoReload,TIM_16Bit,TIM_8BitAutoReload,TIM_16BitAutoReloadNoMask
@@ -97,7 +98,7 @@ void	Timer_Config(void)
 	Timer_Inilize(Timer0,&TIM_InitStructure);				//初始化Timer0	  Timer0,Timer1,Timer2
 }
 
-void	EXTI_config(void)
+void EXTI_config(void)
 {
 	EXTI_InitTypeDef	EXTI_InitStructure;					//结构定义
 
@@ -111,6 +112,22 @@ void	EXTI_config(void)
 	EXTI_InitStructure.EXTI_Interrupt = ENABLE;				//中断允许,     ENABLE?DISABLE
 	Ext_Inilize(EXT_INT1,&EXTI_InitStructure);				//初始化INT0	EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
 }
+#if 0
+void ADC_config(void)
+{
+	ADC_InitTypeDef		ADC_InitStructure;				//结构定义
+
+	ADC_InitStructure.ADC_Px        = ADC_P10;	        //设置要做ADC的IO,	ADC_P10 ~ ADC_P17(或操作),ADC_P1_All
+	ADC_InitStructure.ADC_Speed     = ADC_360T;			//ADC速度			ADC_90T,ADC_180T,ADC_360T,ADC_540T
+	ADC_InitStructure.ADC_Power     = ENABLE;			//ADC功率允许/关闭	ENABLE,DISABLE
+	ADC_InitStructure.ADC_AdjResult = ADC_RES_H8L2;		//ADC结果调整,	ADC_RES_H2L8,ADC_RES_H8L2
+	ADC_InitStructure.ADC_Polity    = PolityLow;		//优先级设置	PolityHigh,PolityLow
+	ADC_InitStructure.ADC_Interrupt = DISABLE;			//中断允许		ENABLE,DISABLE
+	ADC_Inilize(&ADC_InitStructure);					//初始化
+
+	ADC_PowerControl(ENABLE);							//单独的ADC电源操作函数, ENABLE或DISABLE
+}
+#endif
 
 static void delay_timer(unsigned char iTime)
 {
@@ -176,29 +193,30 @@ void print_signal_status_info(void)
 /**********************************************/
 void main(void)
 {
-	  //硬件初始化操作
-		EA = 0;
+	//硬件初始化操作
+	EA = 0;
     GPIO_Config();//GPIO init
-	  setSystemSleepFlag(FALSE);
+	setSystemSleepFlag(FALSE);
 	
     EXTI_config();
     UART_config(); //UART init
     Timer_Config();//Timer init
+    //ADC_config(); //ADC init
 		
-		//开总中断
+	//开总中断
     EA = 1;
 
-		//系统断电重启延时4秒启动
+	//系统断电重启延时4秒启动
     firstSystemBoot = POF_Boot_Delay();
 	 
-		if(firstSystemBoot)
-				PrintSystemInfoToSerial();
-	  //LOGD("=====================> Hardware Init Ok <=====================\r\n");
+	if(firstSystemBoot)
+        PrintSystemInfoToSerial();
+	//LOGD("=====================> Hardware Init Ok <=====================\r\n");
 
-	  //watch dog init
-	  init_Watch_Dog();
+	//watch dog init
+	init_Watch_Dog();
     LOGD("\r\n\r\n==================================================\r\n");
-	  LOGD("System Init Ok, Start Watch Dog OK ... \r\n");
+	LOGD("System Init Ok, Start Watch Dog OK ... \r\n");
     LOGD("==================================================\r\n");
     
     
@@ -212,9 +230,9 @@ void main(void)
         {
             //等50毫秒后再次确认信号状态
             //delay_ms(50);
-            delay_timer(TIMEOUT_VAL_1S) ;
-            if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_LOSS)
-                continue;  
+            //delay_timer(TIMEOUT_VAL_1S) ;
+            //if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_LOSS)
+            //    continue;  
             
             //（b） 外部控制信号丢失：  
             // 1、检测到脱扣到位信号， 
@@ -241,14 +259,15 @@ void main(void)
                 // 3、脱扣到位信号和合闸到位信号都未检测到，
                 //    自动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
                 //    手动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）                
-                
+#if ENABLE_OUT_OFF_HOOK_DELAY
                 delay_timer(TIMEOUT_VAL_1S5);//等1.5秒     
+#endif
                 if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)
                     MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//正传
     
                 //等待电机转动到位，超过5秒就认为是超时
                 wait_out_off_hook(TIMEOUT_VAL_5S);
-    
+
                 if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
                     MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转                
             }            
@@ -294,25 +313,27 @@ void main(void)
                     if(MotorRunningCtrl_Running != MONTOR_LEFT_RUNNING)//电机反转
                         MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
                 }
-              
+
                 //等待电机转动到位，超过5秒就认为是超时
                 wait_switch_on(TIMEOUT_VAL_5S);
-                
+                delay_timer(TIMEOUT_DELAY_VAL);
                 if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//电机停转  
                     MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
             }
         }
         else //异常情况
             Reboot_System(); 
-        
-        print_signal_status_info();
 
+#if ENABLE_CPU_SLEEP_SUPPORT
+        print_signal_status_info();
+#endif
         /*******************************************************
          * 执行完了让系统进入掉电模式，此时CPU寄存器值保持不变，
          * 收到外部中断INT0/INT1信号唤醒
          * 唤醒后从进入掉电模式的位置继续执行下一条指令
         ********************************************************/
         System_PowerDown();
+//#endif
     }	
 }
 

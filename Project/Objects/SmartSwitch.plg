@@ -1,0 +1,34 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+H:\SmartSwitch_Project\smartswitch\Project\SmartSwitch.uvproj
+Project File Date:  07/02/2017
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling delay.c...
+..\Src\delay.c(95): warning C316: unterminated conditionals
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling Exti.c...
+linking...
+Program Size: data=167.2 xdata=0 code=3442
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170703-233252
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170703-233252.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170703-233252.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/07/03  23:32            10,199 output_smartswitch_ad_485_20170703-233252.hex
+               1 个文件         10,199 字节
+               0 个目录 50,191,499,264 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 1 Warning(s).

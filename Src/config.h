@@ -28,7 +28,11 @@
 /*********************************************************/
 #include	"STC15Fxxxx.H"
 
-#define DEBUG
+//#define DEBUG
+
+#define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+#define ENABLE_OUT_OFF_HOOK_DELAY 0
+#define ENABLE_CPU_SLEEP_SUPPORT 1
 
 #define POWER_OK 1            //短路信号正常
 #define POWER_ERR 0           //短路信号异常
@@ -55,6 +59,7 @@
 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+#define TIMEOUT_DELAY_VAL 4
 
 #define TIMECOUNTER_START 0
 #define STOP_TIMERCOUNT 0xFF

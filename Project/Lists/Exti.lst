@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 1   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE EXTI
@@ -62,7 +62,7 @@ line level    source
    8      =3  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =3  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =3  /* If you want to use the program or the program referenced in the  */
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 2   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 2   
 
   11      =3  /* article, please specify in which data and procedures from STC    */
   12      =3  /*------------------------------------------------------------------*/
@@ -126,7 +126,7 @@ line level    source
   31      =3  sfr TMOD = 0x89;
   32      =3  sfr TL0  = 0x8A;
   33      =3  sfr TL1  = 0x8B;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 3   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 3   
 
   34      =3  sfr TH0  = 0x8C;
   35      =3  sfr TH1  = 0x8D;
@@ -190,7 +190,7 @@ line level    source
   93      =3  sfr WDT_CONTR = 0xC1;
   94      =3  sfr IAP_DATA  = 0xC2;
   95      =3  sfr IAP_ADDRH = 0xC3;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 4   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 4   
 
   96      =3  sfr IAP_ADDRL = 0xC4;
   97      =3  sfr IAP_CMD   = 0xC5;
@@ -254,7 +254,7 @@ line level    source
  155      =3  sfr CCAP0L = 0xEA;      //PCA模块0的捕捉/比较寄存器低8位。
  156      =3  sfr CCAP1L = 0xEB;      //PCA模块1的捕捉/比较寄存器低8位。
  157      =3  sfr CCAP2L = 0xEC;      //PCA模块2的捕捉/比较寄存器低8位。
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 5   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 5   
 
  158      =3  
  159      =3  sfr B      = 0xF0;
@@ -318,7 +318,7 @@ line level    source
  217      =3  sbit  SPI_MOSI  = P1^3;
  218      =3  sbit  SPI_MISO  = P1^4;
  219      =3  sbit  SPI_SCLK  = P1^5;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 6   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 6   
 
  220      =3  
  221      =3  /*  P2  */
@@ -382,7 +382,7 @@ line level    source
  279      =3  sbit TB8  = SCON^3;     //发送数据第8位
  280      =3  sbit RB8  = SCON^2;     //接收数据第8位
  281      =3  sbit TI   = SCON^1;     //发送中断标志位
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 7   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 7   
 
  282      =3  sbit RI   = SCON^0;     //接收中断标志位
  283      =3  
@@ -446,7 +446,7 @@ line level    source
  341      =3  sbit PX1        = IP^2; //外部中断1优先级设定位
  342      =3  sbit PT0        = IP^1; //定时中断0优先级设定位
  343      =3  sbit PX0        = IP^0; //外部中断0优先级设定位
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 8   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 8   
 
  344      =3  
  345      =3  //                                           7      6      5     4     3     2    1     0        Reset Val
@@ -510,7 +510,7 @@ line level    source
  402      =3  #define         S2TB8_SET()                     S2CON |=  8
  403      =3  #define         S2TB8_CLR()                     S2CON &= ~8
  404      =3  #define         S2_Int_en()                     IE2   |=  1             //串口2允许中断
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 9   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 9   
 
  405      =3  #define         S2_USE_P10P11()         P_SW2 &= ~1             //UART2 使用P1口        默认
  406      =3  #define         S2_USE_P46P47()         P_SW2 |=  1             //UART2 使用P4口
@@ -574,7 +574,7 @@ line level    source
              -以1T或12T。
  463      =3  #define         T0_pulseP34_disable()           AUXR2 &= ~1
  464      =3  #define         T1_pulseP35_enable()            AUXR2 |=  2             //允许 T1 溢出脉冲在T1(P3.4)脚输出，Fck1 = 1/2 T1 溢出率，T1可
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 10  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 10  
 
              -以1T或12T。
  465      =3  #define         T1_pulseP35_disable()           AUXR2 &= ~2
@@ -638,7 +638,7 @@ line level    source
  519      =3  #define         ISP_ERASE()             ISP_CMD = 3             //ISP擦除命令
  520      =3  
  521      =3  //sfr ISP_TRIG  = 0xC6;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 11  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 11  
 
  522      =3  #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP触发命令
  523      =3  
@@ -702,7 +702,7 @@ line level    source
  579      =3  #define SPI_SCLK_NormalH()      SPCTL |=  (1<<3)                //1: 空闲时SCLK为高电平
  580      =3  #define SPI_SCLK_NormalL()      SPCTL &= ~(1<<3)                //0: 空闲时SCLK为低电平
  581      =3  #define SPI_PhaseH()            SPCTL |=  (1<<2)                //1: 
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 12  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 12  
 
  582      =3  #define SPI_PhaseL()            SPCTL &= ~(1<<2)                //0: 
  583      =3  #define SPI_Speed(n)            SPCTL = (SPCTL & ~3) | (n)      //设置速度, 0 -- fosc/4, 1 -- fosc/16, 2 -- fosc/64, 3 --
@@ -766,7 +766,7 @@ line level    source
  634      =3  #define PCA_CLK_4T()            CMOD = (CMOD & ~0x0E) + 10      //PCA计数脉冲选择外部晶振/4。   Fosc/4
  635      =3  #define PCA_CLK_6T()            CMOD = (CMOD & ~0x0E) + 12      //PCA计数脉冲选择外部晶振/6。   Fosc/6
  636      =3  #define PCA_CLK_8T()            CMOD = (CMOD & ~0x0E) + 14      //PCA计数脉冲选择外部晶振/8。   Fosc/8
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 13  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 13  
 
  637      =3  #define PCA_INT_ENABLE()        CMOD |=  1                                      //PCA计数器溢出中断允许位，1---允许CF（CCON.7）产生中断。
  638      =3  #define PCA_INT_DISABLE()       CMOD &= ~1                                      //PCA计数器溢出中断禁止。
@@ -830,7 +830,7 @@ line level    source
  692      =3  #define         PCA1_capture_fall()             CCAPM1 = (0x10 + 1)
  693      =3  #define         PCA1_capture_edge()             CCAPM1 = (0x30 + 1)
  694      =3  #define         PCA1_16bit_Timer()              CCAPM1 = (0x48 + 1)
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 14  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 14  
 
  695      =3  #define         PCA1_High_Pulse()               CCAPM1 = (0x4C + 1)
  696      =3  
@@ -894,7 +894,7 @@ line level    source
  754      =3  #define NOP36() NOP35(),NOP1()
  755      =3  #define NOP37() NOP36(),NOP1()
  756      =3  #define NOP38() NOP37(),NOP1()
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 15  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 15  
 
  757      =3  #define NOP39() NOP38(),NOP1()
  758      =3  #define NOP40() NOP39(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  814      =3  #define         BUS_SPEED_2T()  BUS_SPEED = 1
  815      =3  #define         BUS_SPEED_4T()  BUS_SPEED = 2
  816      =3  #define         BUS_SPEED_8T()  BUS_SPEED = 3
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 16  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 16  
 
  817      =3  
  818      =3  /*   interrupt vector */
@@ -1015,50 +1015,55 @@ line level    source
  869      =3  
  870      =3  #endif
   30      =2  
-  31      =2  #define DEBUG
+  31      =2  //#define DEBUG
   32      =2  
-  33      =2  #define POWER_OK 1            //短路信号正常
-  34      =2  #define POWER_ERR 0           //短路信号异常
-  35      =2  #define AUTO_CTRL_MODE 1      //自动控制模式
-  36      =2  #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
-  37      =2  #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 17  
+  33      =2  #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+  34      =2  #define ENABLE_OUT_OFF_HOOK_DELAY 0
+  35      =2  #define ENABLE_CPU_SLEEP_SUPPORT 1
+  36      =2  
+  37      =2  #define POWER_OK 1            //短路信号正常
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 17  
 
-  38      =2  #define OUT_OF_HOOK 0         //脱扣到位
-  39      =2  #define SWITCH_ON_OK 0        //合闸到位
-  40      =2  
-  41      =2  #define MONTOR_RIGHT_RUNNING 0x01
-  42      =2  #define MONTOR_LEFT_RUNNING 0x10
-  43      =2  #define MONTOR_STOP_RUNNING 0xff
+  38      =2  #define POWER_ERR 0           //短路信号异常
+  39      =2  #define AUTO_CTRL_MODE 1      //自动控制模式
+  40      =2  #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
+  41      =2  #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
+  42      =2  #define OUT_OF_HOOK 0         //脱扣到位
+  43      =2  #define SWITCH_ON_OK 0        //合闸到位
   44      =2  
-  45      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  46      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  47      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  48      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  49      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  50      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  51      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-  52      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  53      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  54      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  55      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  56      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  57      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  58      =2  
-  59      =2  #define TIMECOUNTER_START 0
-  60      =2  #define STOP_TIMERCOUNT 0xFF
-  61      =2  
-  62      =2  #define EEPROM_ADDR 0x0200
+  45      =2  #define MONTOR_RIGHT_RUNNING 0x01
+  46      =2  #define MONTOR_LEFT_RUNNING 0x10
+  47      =2  #define MONTOR_STOP_RUNNING 0xff
+  48      =2  
+  49      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  50      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  51      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+  52      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  53      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  54      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  55      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  56      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  57      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  58      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  59      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  60      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  61      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  62      =2  #define TIMEOUT_DELAY_VAL 4
   63      =2  
-  64      =2  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
-  65      =2  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
-  66      =2  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
-  67      =2  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
-  68      =2  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
-  69      =2  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  70      =2  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
-  71      =2  
-  72      =2  #endif
+  64      =2  #define TIMECOUNTER_START 0
+  65      =2  #define STOP_TIMERCOUNT 0xFF
+  66      =2  
+  67      =2  #define EEPROM_ADDR 0x0200
+  68      =2  
+  69      =2  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
+  70      =2  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
+  71      =2  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
+  72      =2  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
+  73      =2  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
+  74      =2  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  75      =2  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
+  76      =2  
+  77      =2  #endif
    6      =1  
    7      =1  #define EXT_INT0                        0       //初始化外中断0
    8      =1  #define EXT_INT1                        1       //初始化外中断1
@@ -1081,13 +1086,13 @@ line level    source
   25      =1  #endif
   11          
   12          /********************* INT2中断函数 *************************/
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 18  
+
   13          void Ext_INT2 (void) interrupt INT2_VECTOR      //
   14          {
   15   1              _nop_();
   16   1      }
   17          
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 18  
-
   18          /********************* INT3中断函数 *************************/
   19          void Ext_INT3 (void) interrupt INT3_VECTOR
   20          {
@@ -1145,19 +1150,19 @@ line level    source
   72   2                      if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 5);  //允许中断      
   73   2                      else                                                            INT_CLKO &= ~(1 << 5);  //禁止中断
   74   2                      return  0;              //成功
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 19  
+
   75   2              }
   76   1      
   77   1              if(EXT == EXT_INT4)             //外中断4, 固定为下降沿低优先级中断
   78   1              {
   79   2                      if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 6);  //允许中断      
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 19  
-
   80   2                      else                                                            INT_CLKO &= ~(1 << 6);  //禁止中断
   81   2                      return  0;              //成功
   82   2              }
   83   1              return 2;       //失败
   84   1      }
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 20  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 20  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1221,7 +1226,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0018         ?C0008:
                                            ; SOURCE LINE # 45
 0018 900001            MOV     DPTR,#01H
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 21  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 21  
 
 001B 120000      E     LCALL   ?C?CLDOPTR
 001E B40104            CJNE    A,#01H,?C0009
@@ -1285,7 +1290,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0065         ?C0013:
                                            ; SOURCE LINE # 63
 0065 BF0211            CJNE    R7,#02H,?C0020
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 22  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 22  
 
                                            ; SOURCE LINE # 64
                                            ; SOURCE LINE # 65
@@ -1343,7 +1348,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00A3 22                RET     
              ; FUNCTION _Ext_Inilize (END)
 
-C51 COMPILER V9.52.0.0   EXTI                                                              07/02/2017 23:30:14 PAGE 23  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 23  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

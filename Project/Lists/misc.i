@@ -988,6 +988,11 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
  sbit  MotorRunningCtrl_R = P3^7;     
  sbit  MotorRunningCtrl_L = P3^6;     
  sbit  ExAutoCtrlSignal = P1^0;       
@@ -1069,20 +1074,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1172,20 +1182,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1288,7 +1303,6 @@
  
  void init_Watch_Dog(void)
  {
- 
  WDT_CONTR = 0x3A;   
  }
  
@@ -1317,7 +1331,11 @@
  if(PCON & 0x10)
  {
   PrintString1("Cold reset, delay 4s entery system ...\r\n");
- delay_4000ms()	;  
+ 
+#line 37 "..\Src\misc.c" /1
+ 
+ 
+#line 39 "..\Src\misc.c" /0
  PCON &= 0xEF;  
  
  return 1;
@@ -1345,7 +1363,7 @@
  MotorRunningCtrl_R = 1;
  MotorRunningCtrl_L = 0;
  MotorRunStatus = 0x01;
- delay_ms(1);
+ 
   PrintString1("[Motor status] ===> \r\n");
  }
  else if(0x10 == runStat)  
@@ -1353,7 +1371,7 @@
  MotorRunningCtrl_R = 0;
  MotorRunningCtrl_L = 1;
  MotorRunStatus = 0x10;
- delay_ms(1);
+ 
   PrintString1("[Motor status] <=== \r\n");
  }
  else  
@@ -1361,7 +1379,7 @@
  MotorRunningCtrl_R = 1;
  MotorRunningCtrl_L = 1;
  MotorRunStatus = 0xff;
- delay_ms(1);
+ 
   PrintString1("[Motor status] Stop.\r\n\r\n");
  }
  
@@ -1369,38 +1387,42 @@
  }
  
  
- void PrintSameString(u8 *puts, unsigned char nSize)
- {
- unsigned char i = 0;
- if(nSize > 0)
- { 
- for(i = 0; i < nSize; i++) 
-  PrintString1(puts);
-  PrintString1("\r\n");
- }
- }
+#line 90 "..\Src\misc.c" /1
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 101 "..\Src\misc.c" /0
  
  void PrintSystemInfoToSerial(void)
  {	
  
- PrintSameString("*", 62);	   
- PrintSameString(" ", 1);
-  PrintString1("        湖北盛佳电器设备有限公司 - 智能自动合闸控制系统\r\n");
- PrintSameString(" ", 1);
- PrintSameString(" ", 1);
- 
-  PrintString1("  Version No.   : Ver 1.0\r\n");
-  PrintString1("  Designed Time : 2016-03-21\r\n");
+#line 105 "..\Src\misc.c" /1
  
  
  
-  PrintString1("  Telephone     : 027 - 83520066 / 83567077\r\n");
- PrintSameString(" ", 1);
-  PrintString1("        All rights reserved (c)2016  http://www.sjdq.com/\r\n");
- PrintSameString(" ", 1);
- PrintSameString("*", 62);
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 122 "..\Src\misc.c" /0
  }
  
  

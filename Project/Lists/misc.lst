@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 1   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MISC
@@ -62,7 +62,7 @@ line level    source
    3      =3  
    4      =3  Intrinsic functions for C51.
    5      =3  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 2   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 2   
 
    6      =3  All rights reserved.
    7      =3  --------------------------------------------------------------------------*/
@@ -126,7 +126,7 @@ line level    source
   45      =2  
   46      =2  
   47      =2  sfr P1   = 0x90;
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 3   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 3   
 
   48      =2  sfr P1M1 = 0x91;        //P1M1.n,P1M0.n         =00--->Standard,        01--->push-pull         实际上1T的都一样
   49      =2  sfr P1M0 = 0x92;        //                                      =10--->pure input,      11--->open drain
@@ -190,7 +190,7 @@ line level    source
  107      =2  
  108      =2  sfr P5     = 0xC8;      //
  109      =2  sfr P5M1   = 0xC9;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 4   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 4   
 
  110      =2  sfr P5M0   = 0xCA;      //                                      =10--->pure input,      11--->open drain
  111      =2  sfr P6M1   = 0xCB;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
@@ -254,7 +254,7 @@ line level    source
  169      =2  
  170      =2  
  171      =2  /*  BIT Registers  */
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 5   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 5   
 
  172      =2  /*  PSW   */
  173      =2  sbit CY   = PSW^7;
@@ -318,7 +318,7 @@ line level    source
  231      =2  /*  P3  */
  232      =2  sbit  P30 = P3^0;
  233      =2  sbit  P31 = P3^1;
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 6   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 6   
 
  234      =2  sbit  P32 = P3^2;
  235      =2  sbit  P33 = P3^3;
@@ -382,7 +382,7 @@ line level    source
  293      =2  
  294      =2  
  295      =2  /*  IP   */ 
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 7   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 7   
 
  296      =2  /*
  297      =2  sbit PPCA = IP^7;       //PCA 中断 优先级设定位
@@ -446,7 +446,7 @@ line level    source
  354      =2  #define         PX1H    0x04
  355      =2  #define         PT0H    0x02
  356      =2  #define         PX0H    0x01
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 8   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 8   
 
  357      =2  
  358      =2  #define         PCA_InterruptFirst()    PPCA = 1
@@ -510,7 +510,7 @@ line level    source
  416      =2  #define         Timer0_16bitAutoReload()        TMOD &= ~0x03                                   //16位自动重装
  417      =2  #define         Timer0_16bit()                          TMOD  = (TMOD & ~0x03) | 0x01   //16位
  418      =2  #define         Timer0_8bitAutoReload()         TMOD  = (TMOD & ~0x03) | 0x02   //8位自动重装
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 9   
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 9   
 
  419      =2  #define         Timer0_16bitAutoRL_NoMask()     TMOD |=  0x03           //16位自动重装不可屏蔽中断
  420      =2  #define         Timer0_AsCounterP32()           TMOD |=  4              //时器0用做计数器
@@ -574,7 +574,7 @@ line level    source
              -2)/(n))/256,TL2=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit2,Timer2_Run()  //fx=fosc/(2*M)/n,  M=1 or M=12
  472      =2  
  473      =2  #define         Timer0_Load(n)          TH0 = (n) / 256,        TL0 = (n) % 256
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 10  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 10  
 
  474      =2  #define         Timer1_Load(n)          TH1 = (n) / 256,        TL1 = (n) % 256
  475      =2  #define         Timer2_Load(n)          TH2 = (n) / 256,        TL2 = (n) % 256
@@ -638,7 +638,7 @@ line level    source
  533      =2  #define ISP_WAIT_6MHZ   4
  534      =2  #define ISP_WAIT_12MHZ  3
  535      =2  #define ISP_WAIT_20MHZ  2
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 11  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 11  
 
  536      =2  #define ISP_WAIT_24MHZ  1
  537      =2  #define ISP_WAIT_30MHZ  0
@@ -702,7 +702,7 @@ line level    source
  592      =2  #define         SPI_USE_P12P13P14P15()  AUXR1 &= ~0x0c  //将SPI切换到P12(SS) P13(MOSI) P14(MISO) P15(SCLK)(上电默认
              -)。
  593      =2  #define         SPI_USE_P24P23P22P21()  AUXR1 = (AUXR1 & ~0x0c) | 0x04  //将SPI切换到P24(SS) P23(MOSI) P22(MISO) P2
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 12  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 12  
 
              -1(SCLK)。
  594      =2  #define         SPI_USE_P54P40P41P43()  AUXR1 = (AUXR1 & ~0x0c) | 0x08  //将SPI切换到P54(SS) P40(MOSI) P41(MISO) P4
@@ -766,7 +766,7 @@ line level    source
  645      =2  #define         PCA_USE_P24P25P26P27()  AUXR1 = (AUXR1 & ~0x30) | 0x20  //将PCA/PWM切换到P24(ECI) P25(CCP0) P26(CCP
              -1) P27(CCP2)。
  646      =2  
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 13  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 13  
 
  647      =2  #define         DPS_SEL1()              AUXR1 |=  1             //1：选择DPTR1。
  648      =2  #define         DPS_SEL0()              AUXR1 &= ~1             //0：选择DPTR0(上电默认)。
@@ -830,7 +830,7 @@ line level    source
  706      =2  #define         PCA2_High_Pulse()               CCAPM2 = (0x4C + 1)
  707      =2  
  708      =2  /* Above is STC additional SFR or change */
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 14  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 14  
 
  709      =2  
  710      =2  
@@ -894,7 +894,7 @@ line level    source
  768      =2  //sfr INT_CLKO = 0x8F;  //附加的 SFR WAKE_CLKO (地址：0x8F)
  769      =2  /*
  770      =2      7   6    5    4   3     2        1       0         Reset Value
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 15  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 15  
 
  771      =2      -  EX4  EX3  EX2  -   T2CLKO   T1CLKO  T0CLKO      0000,0000B
  772      =2  b6 -  EX4      : 外中断INT4允许
@@ -958,7 +958,7 @@ line level    source
  828      =2  #define         SPI_VECTOR              9
  829      =2  #define         INT2_VECTOR             10
  830      =2  #define         INT3_VECTOR             11
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 16  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 16  
 
  831      =2  #define         TIMER2_VECTOR   12
  832      =2  #define         INT4_VECTOR             16
@@ -1001,50 +1001,55 @@ line level    source
  869      =2  
  870      =2  #endif
   30      =1  
-  31      =1  #define DEBUG
+  31      =1  //#define DEBUG
   32      =1  
-  33      =1  #define POWER_OK 1            //短路信号正常
-  34      =1  #define POWER_ERR 0           //短路信号异常
-  35      =1  #define AUTO_CTRL_MODE 1      //自动控制模式
-  36      =1  #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
-  37      =1  #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
-  38      =1  #define OUT_OF_HOOK 0         //脱扣到位
-  39      =1  #define SWITCH_ON_OK 0        //合闸到位
-  40      =1  
-  41      =1  #define MONTOR_RIGHT_RUNNING 0x01
-  42      =1  #define MONTOR_LEFT_RUNNING 0x10
-  43      =1  #define MONTOR_STOP_RUNNING 0xff
+  33      =1  #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+  34      =1  #define ENABLE_OUT_OFF_HOOK_DELAY 0
+  35      =1  #define ENABLE_CPU_SLEEP_SUPPORT 1
+  36      =1  
+  37      =1  #define POWER_OK 1            //短路信号正常
+  38      =1  #define POWER_ERR 0           //短路信号异常
+  39      =1  #define AUTO_CTRL_MODE 1      //自动控制模式
+  40      =1  #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
+  41      =1  #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
+  42      =1  #define OUT_OF_HOOK 0         //脱扣到位
+  43      =1  #define SWITCH_ON_OK 0        //合闸到位
   44      =1  
-  45      =1  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  46      =1  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  47      =1  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  48      =1  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  49      =1  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  50      =1  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  51      =1  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 17  
+  45      =1  #define MONTOR_RIGHT_RUNNING 0x01
+  46      =1  #define MONTOR_LEFT_RUNNING 0x10
+  47      =1  #define MONTOR_STOP_RUNNING 0xff
+  48      =1  
+  49      =1  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  50      =1  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  51      =1  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 17  
 
-  52      =1  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  53      =1  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  54      =1  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  55      =1  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  56      =1  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  57      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  58      =1  
-  59      =1  #define TIMECOUNTER_START 0
-  60      =1  #define STOP_TIMERCOUNT 0xFF
-  61      =1  
-  62      =1  #define EEPROM_ADDR 0x0200
+  52      =1  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  53      =1  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  54      =1  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  55      =1  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  56      =1  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  57      =1  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  58      =1  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  59      =1  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  60      =1  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  61      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  62      =1  #define TIMEOUT_DELAY_VAL 4
   63      =1  
-  64      =1  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
-  65      =1  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
-  66      =1  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
-  67      =1  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
-  68      =1  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
-  69      =1  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  70      =1  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
-  71      =1  
-  72      =1  #endif
+  64      =1  #define TIMECOUNTER_START 0
+  65      =1  #define STOP_TIMERCOUNT 0xFF
+  66      =1  
+  67      =1  #define EEPROM_ADDR 0x0200
+  68      =1  
+  69      =1  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
+  70      =1  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
+  71      =1  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
+  72      =1  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
+  73      =1  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
+  74      =1  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  75      =1  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
+  76      =1  
+  77      =1  #endif
    2          #include "misc.h"
    1      =1  #ifndef __MISC_H
    2      =1  #define __MISC_H
@@ -1081,13 +1086,13 @@ line level    source
   18      =1  #include        "config.h"
    1      =2  
    2      =2  /*------------------------------------------------------------------*/
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 18  
+
    3      =2  /* --- STC MCU International Limited -------------------------------*/
    4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
    5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 18  
-
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
@@ -1111,7 +1116,11 @@ line level    source
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
@@ -1138,8 +1147,11 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 19  
+
            =2 #define STOP_TIMERCOUNT 0xFF
            =2 
            =2 #define EEPROM_ADDR 0x0200
@@ -1150,8 +1162,6 @@ line level    source
            =2 sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
            =2 sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
            =2 sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 19  
-
            =2 sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
            =2 
            =2 #endif
@@ -1204,18 +1214,22 @@ line level    source
            =2 //#define MAIN_Fosc              5529600L       //定义主时钟
            =2 //#define MAIN_Fosc             24000000L       //定义主时钟
            =2 
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 20  
+
            =2 
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
            =2 #define AUTO_CTRL_MODE 1      //自动控制模式
            =2 #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 20  
-
            =2 #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
            =2 #define OUT_OF_HOOK 0         //脱扣到位
            =2 #define SWITCH_ON_OK 0        //合闸到位
@@ -1237,6 +1251,7 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
@@ -1263,6 +1278,8 @@ line level    source
   27      =1  
   28      =1  #define UART_ShiftRight 0               //同步移位输出
   29      =1  #define UART_8bit_BRTx  (1<<6)  //8位数据,可变波特率
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 21  
+
   30      =1  #define UART_9bit               (2<<6)  //9位数据,固定波特率
   31      =1  #define UART_9bit_BRTx  (3<<6)  //9位数据,可变波特率
   32      =1  
@@ -1278,8 +1295,6 @@ line level    source
   42      =1  
   43      =1  #define BRT_Timer1      1
   44      =1  #define BRT_Timer2      2
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 21  
-
   45      =1  
   46      =1  typedef struct
   47      =1  { 
@@ -1323,127 +1338,128 @@ line level    source
    5          
    6          void init_Watch_Dog(void)
    7          {
-   8   1                      //
-   9   1                      WDT_CONTR = 0x3A;  //0011 1010
-  10   1      }
-  11          
-  12          void setSystemSleepFlag(bit sleep)
-  13          {
-  14   1                      SystemSleepStatus = (sleep)? FALSE : TRUE ;
-  15   1      }
-  16          
-  17          void System_PowerDown(void)
-  18          {
-  19   1          //PCON |= 2 //MCU 进入 睡眠 模式
-  20   1          LOGD("System entery Power Down mode ...\r\n\r\n");
-  21   1                      setSystemSleepFlag(TRUE);
-  22   1                _nop_();
-  23   1          _nop_();
-  24   1          _nop_();
-  25   1          MCU_POWER_DOWN();
-  26   1          _nop_();    // 唤醒后首先执行此语句，再进入中断服务子程序
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 22  
+   8   1              WDT_CONTR = 0x3A;  //0011 1010
+   9   1      }
+  10          
+  11          void setSystemSleepFlag(bit sleep)
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 22  
 
+  12          {
+  13   1              SystemSleepStatus = (sleep)? FALSE : TRUE ;
+  14   1      }
+  15          
+  16          void System_PowerDown(void)
+  17          {
+  18   1          //PCON |= 2 //MCU 进入 睡眠 模式
+  19   1          LOGD("System entery Power Down mode ...\r\n\r\n");
+  20   1              setSystemSleepFlag(TRUE);
+  21   1              _nop_();
+  22   1          _nop_();
+  23   1          _nop_();
+  24   1          MCU_POWER_DOWN();
+  25   1          _nop_();    // 唤醒后首先执行此语句，再进入中断服务子程序
+  26   1          _nop_();
   27   1          _nop_();
   28   1          _nop_();
-  29   1          _nop_();
-  30   1      }
-  31          
-  32          bit POF_Boot_Delay(void)
-  33          {
-  34   1          if(PCON & 0x10)
-  35   1          {
-  36   2                                      LOGD("Cold reset, delay 4s entery system ...\r\n");
-  37   2              delay_4000ms()  ; //boot delay 4s
-  38   2              PCON &= 0xEF; //清零POF寄存器 
-  39   2                                      
-  40   2                                      return TRUE;
-  41   2          }
-  42   1                      else
-  43   1                                      return FALSE;
-  44   1      }
-  45          
-  46          void Reboot_System(void)
-  47          {
-  48   1          //LOGD("Reboot System ...\n");
-  49   1              //if run to here, system must be reboot now from user space
-  50   1              if(IAP_CONTR & 0x40)
-  51   1                      IAP_CONTR &= 0x3F; // 0011 1111
-  52   1              if(!(IAP_CONTR & 0x20))
-  53   1                      IAP_CONTR |= 0x60; // 0010 0000
-  54   1      }
-  55          
-  56          unsigned char setMontorRunningStatus(unsigned char runStat)
-  57          {
-  58   1          unsigned char MotorRunStatus = MONTOR_STOP_RUNNING;
-  59   1          
-  60   1          if(MONTOR_RIGHT_RUNNING == runStat) //正转
-  61   1          {
-  62   2              MotorRunningCtrl_R = 1;
-  63   2              MotorRunningCtrl_L = 0;
-  64   2              MotorRunStatus = MONTOR_RIGHT_RUNNING;
-  65   2              delay_ms(1);
-  66   2              LOGD("[Motor status] ===> \r\n");
-  67   2          }
-  68   1          else if(MONTOR_LEFT_RUNNING == runStat) //反转
-  69   1          {
-  70   2              MotorRunningCtrl_R = 0;
-  71   2              MotorRunningCtrl_L = 1;
-  72   2              MotorRunStatus = MONTOR_LEFT_RUNNING;
-  73   2              delay_ms(1);
-  74   2              LOGD("[Motor status] <=== \r\n");
-  75   2          }
-  76   1          else //停转
-  77   1          {
-  78   2              MotorRunningCtrl_R = 1;
-  79   2              MotorRunningCtrl_L = 1;
-  80   2              MotorRunStatus = MONTOR_STOP_RUNNING;
-  81   2              delay_ms(1);
-  82   2              LOGD("[Motor status] Stop.\r\n\r\n");
-  83   2          }
-  84   1          
-  85   1          return MotorRunStatus;
-  86   1      }
-  87          
-  88          #ifdef DEBUG
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 23  
+  29   1      }
+  30          
+  31          bit POF_Boot_Delay(void)
+  32          {
+  33   1          if(PCON & 0x10)
+  34   1          {
+  35   2                      LOGD("Cold reset, delay 4s entery system ...\r\n");
+  36   2      #if ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET
+                      delay_4000ms()  ; //boot delay 4s
+              #endif
+  39   2              PCON &= 0xEF; //清零POF寄存器 
+  40   2                                      
+  41   2                      return TRUE;
+  42   2          }
+  43   1              else
+  44   1                      return FALSE;
+  45   1      }
+  46          
+  47          void Reboot_System(void)
+  48          {
+  49   1          //LOGD("Reboot System ...\n");
+  50   1              //if run to here, system must be reboot now from user space
+  51   1              if(IAP_CONTR & 0x40)
+  52   1                      IAP_CONTR &= 0x3F; // 0011 1111
+  53   1              if(!(IAP_CONTR & 0x20))
+  54   1                      IAP_CONTR |= 0x60; // 0010 0000
+  55   1      }
+  56          
+  57          unsigned char setMontorRunningStatus(unsigned char runStat)
+  58          {
+  59   1          unsigned char MotorRunStatus = MONTOR_STOP_RUNNING;
+  60   1          
+  61   1          if(MONTOR_RIGHT_RUNNING == runStat) //正转
+  62   1          {
+  63   2              MotorRunningCtrl_R = 1;
+  64   2              MotorRunningCtrl_L = 0;
+  65   2              MotorRunStatus = MONTOR_RIGHT_RUNNING;
+  66   2              //delay_ms(1);
+  67   2              LOGD("[Motor status] ===> \r\n");
+  68   2          }
+  69   1          else if(MONTOR_LEFT_RUNNING == runStat) //反转
+  70   1          {
+  71   2              MotorRunningCtrl_R = 0;
+  72   2              MotorRunningCtrl_L = 1;
+  73   2              MotorRunStatus = MONTOR_LEFT_RUNNING;
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 23  
 
-  89          void PrintSameString(u8 *puts, unsigned char nSize)
-  90          {
-  91   1              unsigned char i = 0;
-  92   1              if(nSize > 0)
-  93   1              { 
-  94   2                      for(i = 0; i < nSize; i++) 
-  95   2                              LOGD(puts);
-  96   2                      LOGD("\r\n");
-  97   2              }
-  98   1      }
-  99          #endif
- 100          
- 101          void PrintSystemInfoToSerial(void)
- 102          {       
- 103   1      #ifdef DEBUG
- 104   1              PrintSameString("*", 62);          
- 105   1              PrintSameString(" ", 1);
- 106   1              LOGD("        湖北盛佳电器设备有限公司 - 智能自动合闸控制系统\r\n");
- 107   1              PrintSameString(" ", 1);
- 108   1              PrintSameString(" ", 1);
- 109   1              //LOGD("  Project Name  : Smart Switch Control System\r\n");
- 110   1              LOGD("  Version No.   : Ver 1.0\r\n");
- 111   1              LOGD("  Designed Time : 2016-03-21\r\n");
- 112   1              //LOGD("  Auth Name     : Li Shuliang\r\n");
- 113   1              //LOGD("  Auth Email    : 313424410@qq.com\r\n");
- 114   1              //LOGD("  Project Owner : SJDQ\r\n");
- 115   1              LOGD("  Telephone     : 027 - 83520066 / 83567077\r\n");
- 116   1              PrintSameString(" ", 1);
- 117   1              LOGD("        All rights reserved (c)2016  http://www.sjdq.com/\r\n");
- 118   1              PrintSameString(" ", 1);
- 119   1          PrintSameString("*", 62);
- 120   1      #endif
- 121   1      }
- 122          
- 123          ////////////////////////////////////////////////////////////////////////
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 24  
+  74   2              //delay_ms(1);
+  75   2              LOGD("[Motor status] <=== \r\n");
+  76   2          }
+  77   1          else //停转
+  78   1          {
+  79   2              MotorRunningCtrl_R = 1;
+  80   2              MotorRunningCtrl_L = 1;
+  81   2              MotorRunStatus = MONTOR_STOP_RUNNING;
+  82   2              //delay_ms(1);
+  83   2              LOGD("[Motor status] Stop.\r\n\r\n");
+  84   2          }
+  85   1          
+  86   1          return MotorRunStatus;
+  87   1      }
+  88          
+  89          #ifdef DEBUG
+              void PrintSameString(u8 *puts, unsigned char nSize)
+              {
+                      unsigned char i = 0;
+                      if(nSize > 0)
+                      { 
+                              for(i = 0; i < nSize; i++) 
+                                      LOGD(puts);
+                              LOGD("\r\n");
+                      }
+              }
+              #endif
+ 101          
+ 102          void PrintSystemInfoToSerial(void)
+ 103          {       
+ 104   1      #ifdef DEBUG
+                      PrintSameString("*", 62);          
+                      PrintSameString(" ", 1);
+                      LOGD("        湖北盛佳电器设备有限公司 - 智能自动合闸控制系统\r\n");
+                      PrintSameString(" ", 1);
+                      PrintSameString(" ", 1);
+                      //LOGD("  Project Name  : Smart Switch Control System\r\n");
+                      LOGD("  Version No.   : Ver 1.0\r\n");
+                      LOGD("  Designed Time : 2016-03-21\r\n");
+                      //LOGD("  Auth Name     : Li Shuliang\r\n");
+                      //LOGD("  Auth Email    : 313424410@qq.com\r\n");
+                      //LOGD("  Project Owner : SJDQ\r\n");
+                      LOGD("  Telephone     : 027 - 83520066 / 83567077\r\n");
+                      PrintSameString(" ", 1);
+                      LOGD("        All rights reserved (c)2016  http://www.sjdq.com/\r\n");
+                      PrintSameString(" ", 1);
+                  PrintSameString("*", 62);
+              #endif
+ 122   1      }
+ 123          
+ 124          ////////////////////////////////////////////////////////////////////////
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 24  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1451,16 +1467,16 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION init_Watch_Dog (BEGIN)
                                            ; SOURCE LINE # 6
                                            ; SOURCE LINE # 7
-                                           ; SOURCE LINE # 9
+                                           ; SOURCE LINE # 8
 0000 75C13A            MOV     WDT_CONTR,#03AH
-                                           ; SOURCE LINE # 10
+                                           ; SOURCE LINE # 9
 0003 22                RET     
              ; FUNCTION init_Watch_Dog (END)
 
              ; FUNCTION setSystemSleepFlag (BEGIN)
+                                           ; SOURCE LINE # 11
                                            ; SOURCE LINE # 12
                                            ; SOURCE LINE # 13
-                                           ; SOURCE LINE # 14
 0000 300003      R     JNB     sleep,?C0002
 0003 C3                CLR     C
 0004 8001              SJMP    ?C0003
@@ -1468,281 +1484,161 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0006 D3                SETB    C
 0007         ?C0003:
 0007 9294              MOV     SystemSleepStatus,C
-                                           ; SOURCE LINE # 15
+                                           ; SOURCE LINE # 14
 0009 22                RET     
              ; FUNCTION setSystemSleepFlag (END)
 
              ; FUNCTION System_PowerDown (BEGIN)
+                                           ; SOURCE LINE # 16
                                            ; SOURCE LINE # 17
-                                           ; SOURCE LINE # 18
-                                           ; SOURCE LINE # 20
+                                           ; SOURCE LINE # 19
 0000 7BFF              MOV     R3,#0FFH
 0002 7A00        R     MOV     R2,#HIGH ?SC_0
 0004 7900        R     MOV     R1,#LOW ?SC_0
 0006 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 21
+                                           ; SOURCE LINE # 20
 0009 D200        R     SETB    ?setSystemSleepFlag?BIT
 000B 120000      R     LCALL   setSystemSleepFlag
-                                           ; SOURCE LINE # 22
+                                           ; SOURCE LINE # 21
 000E 00                NOP     
-                                           ; SOURCE LINE # 23
+                                           ; SOURCE LINE # 22
 000F 00                NOP     
-                                           ; SOURCE LINE # 24
+                                           ; SOURCE LINE # 23
 0010 00                NOP     
-                                           ; SOURCE LINE # 25
+                                           ; SOURCE LINE # 24
 0011 438702            ORL     PCON,#02H
-                                           ; SOURCE LINE # 26
+                                           ; SOURCE LINE # 25
 0014 00                NOP     
-                                           ; SOURCE LINE # 27
+                                           ; SOURCE LINE # 26
 0015 00                NOP     
-                                           ; SOURCE LINE # 28
+                                           ; SOURCE LINE # 27
 0016 00                NOP     
-                                           ; SOURCE LINE # 29
+                                           ; SOURCE LINE # 28
 0017 00                NOP     
-                                           ; SOURCE LINE # 30
+                                           ; SOURCE LINE # 29
 0018 22                RET     
              ; FUNCTION System_PowerDown (END)
 
              ; FUNCTION POF_Boot_Delay (BEGIN)
+                                           ; SOURCE LINE # 31
                                            ; SOURCE LINE # 32
                                            ; SOURCE LINE # 33
-                                           ; SOURCE LINE # 34
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 25  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 25  
 
 0000 E587              MOV     A,PCON
-0002 30E411            JNB     ACC.4,?C0006
+0002 30E40E            JNB     ACC.4,?C0006
+                                           ; SOURCE LINE # 34
                                            ; SOURCE LINE # 35
-                                           ; SOURCE LINE # 36
 0005 7BFF              MOV     R3,#0FFH
 0007 7A00        R     MOV     R2,#HIGH ?SC_38
 0009 7900        R     MOV     R1,#LOW ?SC_38
 000B 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 37
-000E 120000      E     LCALL   delay_4000ms
-                                           ; SOURCE LINE # 38
-0011 5387EF            ANL     PCON,#0EFH
-                                           ; SOURCE LINE # 40
-0014 D3                SETB    C
-0015 22                RET     
+                                           ; SOURCE LINE # 39
+000E 5387EF            ANL     PCON,#0EFH
                                            ; SOURCE LINE # 41
-0016         ?C0006:
-                                           ; SOURCE LINE # 43
-0016 C3                CLR     C
+0011 D3                SETB    C
+0012 22                RET     
+                                           ; SOURCE LINE # 42
+0013         ?C0006:
                                            ; SOURCE LINE # 44
-0017         ?C0007:
-0017 22                RET     
+0013 C3                CLR     C
+                                           ; SOURCE LINE # 45
+0014         ?C0007:
+0014 22                RET     
              ; FUNCTION POF_Boot_Delay (END)
 
              ; FUNCTION Reboot_System (BEGIN)
-                                           ; SOURCE LINE # 46
                                            ; SOURCE LINE # 47
-                                           ; SOURCE LINE # 50
+                                           ; SOURCE LINE # 48
+                                           ; SOURCE LINE # 51
 0000 E5C7              MOV     A,IAP_CONTR
 0002 30E603            JNB     ACC.6,?C0009
-                                           ; SOURCE LINE # 51
+                                           ; SOURCE LINE # 52
 0005 53C73F            ANL     IAP_CONTR,#03FH
 0008         ?C0009:
-                                           ; SOURCE LINE # 52
+                                           ; SOURCE LINE # 53
 0008 E5C7              MOV     A,IAP_CONTR
 000A 20E503            JB      ACC.5,?C0011
-                                           ; SOURCE LINE # 53
-000D 43C760            ORL     IAP_CONTR,#060H
                                            ; SOURCE LINE # 54
+000D 43C760            ORL     IAP_CONTR,#060H
+                                           ; SOURCE LINE # 55
 0010         ?C0011:
 0010 22                RET     
              ; FUNCTION Reboot_System (END)
 
              ; FUNCTION _setMontorRunningStatus (BEGIN)
-                                           ; SOURCE LINE # 56
-0000 8F00        R     MOV     runStat,R7
                                            ; SOURCE LINE # 57
+0000 8F00        R     MOV     runStat,R7
                                            ; SOURCE LINE # 58
+                                           ; SOURCE LINE # 59
 0002 7500FF      R     MOV     MotorRunStatus,#0FFH
-                                           ; SOURCE LINE # 60
-0005 E500        R     MOV     A,runStat
-0007 B40110            CJNE    A,#01H,?C0012
                                            ; SOURCE LINE # 61
+0005 E500        R     MOV     A,runStat
+0007 B4010F            CJNE    A,#01H,?C0012
                                            ; SOURCE LINE # 62
-000A D2B7              SETB    MotorRunningCtrl_R
                                            ; SOURCE LINE # 63
-000C C2B6              CLR     MotorRunningCtrl_L
+000A D2B7              SETB    MotorRunningCtrl_R
                                            ; SOURCE LINE # 64
-000E 750001      R     MOV     MotorRunStatus,#01H
+000C C2B6              CLR     MotorRunningCtrl_L
                                            ; SOURCE LINE # 65
-                                           ; SOURCE LINE # 66
-0011 120000      R     LCALL   L?0027
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 26  
-
-0014 7A00        R     MOV     R2,#HIGH ?SC_79
-0016 7900        R     MOV     R1,#LOW ?SC_79
+000E 750001      R     MOV     MotorRunStatus,#01H
                                            ; SOURCE LINE # 67
-0018 8027              SJMP    ?C0024
-001A         ?C0012:
+0011 7BFF              MOV     R3,#0FFH
+0013 7A00        R     MOV     R2,#HIGH ?SC_79
+0015 7900        R     MOV     R1,#LOW ?SC_79
                                            ; SOURCE LINE # 68
-001A E500        R     MOV     A,runStat
-001C B41010            CJNE    A,#010H,?C0014
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 26  
+
+0017 8021              SJMP    ?C0019
+0019         ?C0012:
                                            ; SOURCE LINE # 69
+0019 E500        R     MOV     A,runStat
+001B B4100F            CJNE    A,#010H,?C0014
                                            ; SOURCE LINE # 70
-001F C2B7              CLR     MotorRunningCtrl_R
                                            ; SOURCE LINE # 71
-0021 D2B6              SETB    MotorRunningCtrl_L
+001E C2B7              CLR     MotorRunningCtrl_R
                                            ; SOURCE LINE # 72
-0023 750010      R     MOV     MotorRunStatus,#010H
+0020 D2B6              SETB    MotorRunningCtrl_L
                                            ; SOURCE LINE # 73
-                                           ; SOURCE LINE # 74
-0026 120000      R     LCALL   L?0027
-0029 7A00        R     MOV     R2,#HIGH ?SC_102
-002B 7900        R     MOV     R1,#LOW ?SC_102
-002D         ?C0023:
+0022 750010      R     MOV     MotorRunStatus,#010H
                                            ; SOURCE LINE # 75
-002D 8012              SJMP    ?C0024
-002F         ?C0014:
-                                           ; SOURCE LINE # 77
+0025 7BFF              MOV     R3,#0FFH
+0027 7A00        R     MOV     R2,#HIGH ?SC_102
+0029 7900        R     MOV     R1,#LOW ?SC_102
+002B         ?C0018:
+                                           ; SOURCE LINE # 76
+002B 800D              SJMP    ?C0019
+002D         ?C0014:
                                            ; SOURCE LINE # 78
-002F D2B7              SETB    MotorRunningCtrl_R
                                            ; SOURCE LINE # 79
-0031 D2B6              SETB    MotorRunningCtrl_L
+002D D2B7              SETB    MotorRunningCtrl_R
                                            ; SOURCE LINE # 80
-0033 7500FF      R     MOV     MotorRunStatus,#0FFH
+002F D2B6              SETB    MotorRunningCtrl_L
                                            ; SOURCE LINE # 81
-0036 7F01              MOV     R7,#01H
-0038 120000      E     LCALL   _delay_ms
-                                           ; SOURCE LINE # 82
-003B 7BFF              MOV     R3,#0FFH
-003D 7A00        R     MOV     R2,#HIGH ?SC_125
-003F 7900        R     MOV     R1,#LOW ?SC_125
-0041         ?C0024:
-0041 120000      E     LCALL   _PrintString1
+0031 7500FF      R     MOV     MotorRunStatus,#0FFH
                                            ; SOURCE LINE # 83
-0044         ?C0013:
-                                           ; SOURCE LINE # 85
-0044 AF00        R     MOV     R7,MotorRunStatus
+0034 7BFF              MOV     R3,#0FFH
+0036 7A00        R     MOV     R2,#HIGH ?SC_125
+0038 7900        R     MOV     R1,#LOW ?SC_125
+003A         ?C0019:
+003A 120000      E     LCALL   _PrintString1
+                                           ; SOURCE LINE # 84
+003D         ?C0013:
                                            ; SOURCE LINE # 86
-0046         ?C0016:
-0046 22                RET     
-0047         L?0027:
-0047 7F01              MOV     R7,#01H
-0049 120000      E     LCALL   _delay_ms
-004C 7BFF              MOV     R3,#0FFH
-004E 22                RET     
+003D AF00        R     MOV     R7,MotorRunStatus
+                                           ; SOURCE LINE # 87
+003F         ?C0016:
+003F 22                RET     
              ; FUNCTION _setMontorRunningStatus (END)
 
-             ; FUNCTION _PrintSameString (BEGIN)
-                                           ; SOURCE LINE # 89
-0000 8B00        R     MOV     puts,R3
-0002 8A00        R     MOV     puts+01H,R2
-0004 8900        R     MOV     puts+02H,R1
-0006 8D00        R     MOV     nSize,R5
-                                           ; SOURCE LINE # 90
-                                           ; SOURCE LINE # 91
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 27  
-
-0008 E4                CLR     A
-0009 F500        R     MOV     i,A
-                                           ; SOURCE LINE # 92
-000B E500        R     MOV     A,nSize
-000D D3                SETB    C
-000E 9400              SUBB    A,#00H
-0010 4020              JC      ?C0021
-                                           ; SOURCE LINE # 93
-                                           ; SOURCE LINE # 94
-0012 E4                CLR     A
-0013 F500        R     MOV     i,A
-0015         ?C0018:
-0015 E500        R     MOV     A,i
-0017 C3                CLR     C
-0018 9500        R     SUBB    A,nSize
-001A 500D              JNC     ?C0019
-                                           ; SOURCE LINE # 95
-001C AB00        R     MOV     R3,puts
-001E AA00        R     MOV     R2,puts+01H
-0020 A900        R     MOV     R1,puts+02H
-0022 120000      E     LCALL   _PrintString1
-0025 0500        R     INC     i
-0027 80EC              SJMP    ?C0018
-0029         ?C0019:
-                                           ; SOURCE LINE # 96
-0029 7BFF              MOV     R3,#0FFH
-002B 7A00        R     MOV     R2,#HIGH ?SC_150
-002D 7900        R     MOV     R1,#LOW ?SC_150
-002F 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 97
-                                           ; SOURCE LINE # 98
-0032         ?C0021:
-0032 22                RET     
-             ; FUNCTION _PrintSameString (END)
-
              ; FUNCTION PrintSystemInfoToSerial (BEGIN)
-                                           ; SOURCE LINE # 101
                                            ; SOURCE LINE # 102
-                                           ; SOURCE LINE # 104
-0000 7BFF              MOV     R3,#0FFH
-0002 7A00        R     MOV     R2,#HIGH ?SC_153
-0004 7900        R     MOV     R1,#LOW ?SC_153
-0006 7D3E              MOV     R5,#03EH
-0008 120000      R     LCALL   _PrintSameString
-                                           ; SOURCE LINE # 105
-000B 120000      R     LCALL   L?0026
-                                           ; SOURCE LINE # 106
-000E 7A00        R     MOV     R2,#HIGH ?SC_157
-0010 7900        R     MOV     R1,#LOW ?SC_157
-                                           ; SOURCE LINE # 107
-                                           ; SOURCE LINE # 108
-0012 120000      R     LCALL   L?0025
-0015 7A00        R     MOV     R2,#HIGH ?SC_155
-0017 7900        R     MOV     R1,#LOW ?SC_155
-0019 7D01              MOV     R5,#01H
-001B 120000      R     LCALL   _PrintSameString
-                                           ; SOURCE LINE # 110
-001E 7BFF              MOV     R3,#0FFH
-0020 7A00        R     MOV     R2,#HIGH ?SC_215
-0022 7900        R     MOV     R1,#LOW ?SC_215
-0024 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 111
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 28  
-
-0027 7BFF              MOV     R3,#0FFH
-0029 7A00        R     MOV     R2,#HIGH ?SC_243
-002B 7900        R     MOV     R1,#LOW ?SC_243
-002D 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 115
-0030 7A00        R     MOV     R2,#HIGH ?SC_274
-0032 7900        R     MOV     R1,#LOW ?SC_274
-                                           ; SOURCE LINE # 116
-                                           ; SOURCE LINE # 117
-0034 120000      R     LCALL   L?0025
-0037 7A00        R     MOV     R2,#HIGH ?SC_320
-0039 7900        R     MOV     R1,#LOW ?SC_320
-003B 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 118
-003E 120000      R     LCALL   L?0026
-                                           ; SOURCE LINE # 119
-0041 7BFF              MOV     R3,#0FFH
-0043 7A00        R     MOV     R2,#HIGH ?SC_153
-0045 7900        R     MOV     R1,#LOW ?SC_153
-0047 7D3E              MOV     R5,#03EH
-0049 020000      R     LJMP    _PrintSameString
-                                           ; SOURCE LINE # 121
-004C         L?0025:
-004C 7BFF              MOV     R3,#0FFH
-004E 120000      E     LCALL   _PrintString1
-0051 7BFF              MOV     R3,#0FFH
-0053 7A00        R     MOV     R2,#HIGH ?SC_155
-0055 7900        R     MOV     R1,#LOW ?SC_155
-0057 7D01              MOV     R5,#01H
-0059 120000      R     LCALL   _PrintSameString
-005C 7BFF              MOV     R3,#0FFH
-005E 22                RET     
-005F         L?0026:
-005F 7BFF              MOV     R3,#0FFH
-0061 7A00        R     MOV     R2,#HIGH ?SC_155
-0063 7900        R     MOV     R1,#LOW ?SC_155
-0065 7D01              MOV     R5,#01H
-0067 120000      R     LCALL   _PrintSameString
-006A 22                RET     
+                                           ; SOURCE LINE # 103
+                                           ; SOURCE LINE # 122
+0000 22                RET     
              ; FUNCTION PrintSystemInfoToSerial (END)
 
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 29  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 27  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -1765,12 +1661,7 @@ COMx_Define. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
 init_Watch_Dog . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
 SystemSleepStatus. . . . . . . . . . .  ABSBIT   -----  BIT      0094H  1
-_PrintSameString . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  puts . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
-  nSize. . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0003H  1
-  i. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0004H  1
 System_PowerDown . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-delay_4000ms . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
 COMx_InitDefine. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  13
   UART_Mode. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
@@ -1801,26 +1692,21 @@ ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
 setSystemSleepFlag . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   sleep. . . . . . . . . . . . . . . .  AUTO     DATA   BIT      0000H  1
 PrintSystemInfoToSerial. . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-_delay_ms. . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 Reboot_System. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 WDT_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C1H  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
-C51 COMPILER V9.52.0.0   MISC                                                              07/02/2017 23:30:14 PAGE 30  
-
-NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
-====                                    =====   ======  ====    ======  ====
-
-
 u16. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    317    ----
-   CONSTANT SIZE    =    380    ----
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =    150    ----
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 28  
+
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----       7
+   DATA SIZE        =   ----       2
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----       1
 END OF MODULE INFORMATION.

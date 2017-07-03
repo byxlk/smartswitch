@@ -22,7 +22,7 @@
 #include	"delay.h"
 
 
-
+#if (MAIN_Fosc == 12000000L)
 //========================================================================
 // 函数: void  delay_ms(unsigned char ms)
 // 描述: 延时函数。
@@ -32,7 +32,7 @@
 // 日期: 2013-4-1
 // 备注: 
 //========================================================================
-void  delay_ms(unsigned char ms)
+void  delay_ms(unsigned char ms) //@11.0592MHz
 {
      unsigned int i;
 	 do{
@@ -40,40 +40,22 @@ void  delay_ms(unsigned char ms)
 		  while(--i)	;   //14T per loop
      }while(--ms);
 }
-#if 0
-void delay_sec(unsigned char sec)
+#elif (MAIN_Fosc == 24000000L)
+void  delay_ms(unsigned char ms) //@24.0000MHz
 {
-     unsigned int i;
-     unsigned int sec_count;
-    
-     sec_count = sec * 200;
-	 do{
-	      i = MAIN_Fosc / 13000;
-		  while(--i)	;   //14T per loop
-          i = MAIN_Fosc / 13000;
-		  while(--i)	;   //14T per loop
-          i = MAIN_Fosc / 13000;
-		  while(--i)	;   //14T per loop
-          i = MAIN_Fosc / 13000;
-		  while(--i)	;   //14T per loop
-          i = MAIN_Fosc / 13000;
-		  while(--i)	;   //14T per loop
-     }while(--sec_count);
-}
+    unsigned char i, j;
 
-void delay_sec(unsigned char sec)
-{
-     unsigned char i;
-     for(i = 0; i < sec; i++)
-	 {
-	      delay_ms(250);
-          delay_ms(250);
-          delay_ms(250);
-          delay_ms(250);
-     }
+	i = 24;
+	j = 85;
+	do
+	{
+		while (--j);
+	} while (--i);
 }
 #endif
 
+#if ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET
+#if (MAIN_Fosc == 12000000L)
 void delay_4000ms(void)		//@11.0592MHz
 {
 	unsigned char i, j, k;
@@ -91,4 +73,23 @@ void delay_4000ms(void)		//@11.0592MHz
 		} while (--j);
 	} while (--i);
 }
+#elif (MAIN_Fosc == 24000000L)
+void delay_4000ms(void)		//@24.0000MHz
+{
+    unsigned char i, j, k;
+
+	_nop_();
+	_nop_();
+	i = 109;
+	j = 200;
+	k = 199;
+	do
+	{
+		do
+		{
+			while (--k);
+		} while (--j);
+	} while (--i);
+}
+#endif
 

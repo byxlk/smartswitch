@@ -1002,6 +1002,11 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
  sbit  MotorRunningCtrl_R = P3^7;     
  sbit  MotorRunningCtrl_L = P3^6;     
  sbit  ExAutoCtrlSignal = P1^0;       
@@ -1065,20 +1070,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1230,20 +1240,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1333,20 +1348,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1462,20 +1482,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1596,20 +1621,25 @@
  
   
  
-  
  
-  
-  
-  
-  
-  
-  
-  
  
   
   
   
  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+ 
+  
   
   
   
@@ -1665,6 +1695,7 @@
  
  
  
+ 
 
 
 
@@ -1694,7 +1725,7 @@
  
  
  
- void	UART_config(void)
+ void UART_config(void)
  {
  COMx_InitDefine		COMx_InitStructure;					 
  COMx_InitStructure.UART_Mode      = (1<<6);		 
@@ -1728,7 +1759,7 @@
  }
  
  
- void	Timer_Config(void)
+ void Timer_Config(void)
  {
  TIM_InitTypeDef		TIM_InitStructure;					 
  TIM_InitStructure.TIM_Mode      = 0;	 
@@ -1741,7 +1772,7 @@
  Timer_Inilize(0,&TIM_InitStructure);				 
  }
  
- void	EXTI_config(void)
+ void EXTI_config(void)
  {
  EXTI_InitTypeDef	EXTI_InitStructure;					 
  
@@ -1755,6 +1786,24 @@
  EXTI_InitStructure.EXTI_Interrupt = 1;				 
  Ext_Inilize(1,&EXTI_InitStructure);				 
  }
+ 
+#line 116 "..\Src\main.c" /1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 131 "..\Src\main.c" /0
  
  static void delay_timer(unsigned char iTime)
  {
@@ -1830,6 +1879,7 @@
  Timer_Config(); 
  
  
+ 
  EA = 1;
  
  
@@ -1856,9 +1906,9 @@
  {
  
  
- delay_timer(20) ;
- if(ExAutoCtrlSignal != 1)
- continue;  
+ 
+ 
+ 
  
  
  
@@ -1886,7 +1936,10 @@
  
  
  
- delay_timer(30); 
+#line 263 "..\Src\main.c" /1
+ 
+ 
+#line 265 "..\Src\main.c" /0
  if(MotorRunningCtrl_Running != 0x01)
  MotorRunningCtrl_Running = setMontorRunningStatus(0x01); 
  
@@ -1941,13 +1994,14 @@
  
  
  wait_switch_on(100);
- 
+ delay_timer(4);
  if(MotorRunningCtrl_Running != 0xff) 
  MotorRunningCtrl_Running = setMontorRunningStatus(0xff);
  }
  }
  else  
  Reboot_System(); 
+ 
  
  print_signal_status_info();
  
@@ -1957,6 +2011,7 @@
 
  
  System_PowerDown();
+ 
  }	
  }
  

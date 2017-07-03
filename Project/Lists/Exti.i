@@ -1003,6 +1003,11 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
  sbit  MotorRunningCtrl_R = P3^7;     
  sbit  MotorRunningCtrl_L = P3^6;     
  sbit  ExAutoCtrlSignal = P1^0;       

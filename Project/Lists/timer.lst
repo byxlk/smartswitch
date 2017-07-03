@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 1   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE TIMER
@@ -62,7 +62,7 @@ line level    source
   19      =2  /*********************************************************/
   20      =2  
   21      =2  //#define MAIN_Fosc             22118400L       //¶¨ÒåÖ÷Ê±ÖÓ
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 2   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 2   
 
   22      =2  //#define MAIN_Fosc             12000000L       //¶¨ÒåÖ÷Ê±ÖÓ
   23      =2  #define MAIN_Fosc               11059200L       //¶¨ÒåÖ÷Ê±ÖÓ
@@ -126,7 +126,7 @@ line level    source
   33      =4  extern void          _pop_     (unsigned char _sfr);
   34      =4  #endif
   35      =4  
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 3   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 3   
 
   36      =4  #pragma RESTORE
   37      =4  
@@ -190,7 +190,7 @@ line level    source
   75      =3  
   76      =3  sfr P3    = 0xB0;
   77      =3  sfr P3M1  = 0xB1;       //P3M1.n,P3M0.n         =00--->Standard,        01--->push-pull
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 4   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 4   
 
   78      =3  sfr P3M0  = 0xB2;       //                                      =10--->pure input,      11--->open drain
   79      =3  sfr P4M1  = 0xB3;       //P4M1.n,P4M0.n         =00--->Standard,        01--->push-pull
@@ -254,7 +254,7 @@ line level    source
  137      =3  sfr     RL_T2H  = 0xD6;
  138      =3  sfr     RL_T2L  = 0xD7;
  139      =3  
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 5   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 5   
 
  140      =3  sfr CCON = 0xD8;        //
  141      =3  sfr CMOD = 0xD9;        //
@@ -318,7 +318,7 @@ line level    source
  199      =3  sbit  P06 = P0^6;
  200      =3  sbit  P07 = P0^7;
  201      =3  
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 6   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 6   
 
  202      =3  /*  P1  */
  203      =3  sbit  P10 = P1^0;
@@ -382,7 +382,7 @@ line level    source
  261      =3  sbit  P46 = P4^6;
  262      =3  sbit  P47 = P4^7;
  263      =3  
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 7   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 7   
 
  264      =3  /*  P5  */
  265      =3  sbit  P50 = P5^0;
@@ -446,7 +446,7 @@ line level    source
  323      =3  sbit B7 = B^7;
  324      =3  
  325      =3  
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 8   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 8   
 
  326      =3  //                                                      7     6     5    4    3    2    1     0    Reset Value
  327      =3  //sfr IE2       = 0xAF;         -     -     -    -    -    -   ESPI  ES2   0000,0000B   //Auxiliary Interrupt   
@@ -510,7 +510,7 @@ line level    source
  384      =3  #define         S1_BRT_UseTimer1()      AUXR &= ~1
  385      =3  
  386      =3  //                                                7      6      5      4      3      2     1     0        Reset Value
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 9   
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 9   
 
  387      =3  //sfr S2CON = 0x9A;             S2SM0    -    S2SM2  S2REN  S2TB8  S2RB8  S2TI  S2RI      00000000B              //S2 Control
  388      =3  
@@ -574,7 +574,7 @@ line level    source
  445      =3  #define         Timer0_12T()                            AUXR &= ~(1<<7) //Timer0 clodk = fo/12  12·ÖÆµ, default
  446      =3  #define         Timer1_1T()                                     AUXR |=  (1<<6) //Timer1 clodk = fo
  447      =3  #define         Timer1_12T()                            AUXR &= ~(1<<6) //Timer1 clodk = fo/12  12·ÖÆµ, default
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 10  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 10  
 
  448      =3  #define         S1_M0x6()                                       AUXR |=  (1<<5) //UART Mode0 Speed is 6x Standard
  449      =3  #define         S1_M0x1()                                       AUXR &= ~(1<<5) //default,      UART Mode0 Speed is Standard
@@ -638,7 +638,7 @@ line level    source
  501      =3  //                                                7     6      5    4     3      2    1     0     Reset Value
  502      =3  //sfr PCON   = 0x87;    SMOD  SMOD0  LVDF  POF   GF1    GF0   PD   IDL    0001,0000      //Power Control 
  503      =3  //SMOD          //´®¿ÚË«±¶ËÙ
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 11  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 11  
 
  504      =3  //SMOD0
  505      =3  #define         LVDF            (1<<5)  //P4.6µÍÑ¹¼ì²â±êÖ¾
@@ -702,7 +702,7 @@ line level    source
  562      =3  //sfr ADC_RES  = 0xBD;          ADCV.9 ADCV.8 ADCV.7 ADCV.6 ADCV.5 ADCV.4 ADCV.3 ADCV.2   0000,0000     //A/D ×ª»»½á¹û
              -¸ß8Î» 
  563      =3  //sfr ADC_RESL = 0xBE;                                                                                            ADCV.1 ADCV.0   0000,0000     //A/D ×ª»»½á¹ûµÍ2Î»
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 12  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 12  
 
  564      =3  //sfr ADC_CONTR  = 0xBC;        //Ö±½ÓÓÃMOV²Ù×÷£¬²»ÒªÓÃÓë»ò
  565      =3  
@@ -766,7 +766,7 @@ line level    source
  619      =3  sbit CCF0  = CCON^0;    //PCA Ä£¿é0ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
  620      =3  sbit CCF1  = CCON^1;    //PCA Ä£¿é1ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
  621      =3  sbit CCF2  = CCON^2;    //PCA Ä£¿é2ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 13  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 13  
 
  622      =3  sbit CR    = CCON^6;    //1: ÔÊÐíPCA¼ÆÊýÆ÷¼ÆÊý£¬±ØÐëÓÉÈí¼þÇå0¡£
  623      =3  sbit CF    = CCON^7;    //PCA¼ÆÊýÆ÷Òç³ö£¨CH£¬CLÓÉFFFFH±äÎª0000H£©±êÖ¾¡£PCA¼ÆÊýÆ÷Òç³öºóÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇ
@@ -830,7 +830,7 @@ line level    source
  674      =3  ;*******************************************************************/
  675      =3  #define         PCA0_none()                             CCAPM0 = 0
  676      =3  #define         PCA0_PWM(nbit)                  CCAPM0 = 0x42,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 14  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 14  
 
  677      =3  #define         PCA0_PWM_rise_int(nbit) CCAPM0 = 0x63,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
  678      =3  #define         PCA0_PWM_fall_int(nbit) CCAPM0 = 0x53,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
@@ -894,7 +894,7 @@ line level    source
  736      =3  #define NOP18() NOP17(),NOP1()
  737      =3  #define NOP19() NOP18(),NOP1()
  738      =3  #define NOP20() NOP19(),NOP1()
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 15  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 15  
 
  739      =3  #define NOP21() NOP20(),NOP1()
  740      =3  #define NOP22() NOP21(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  796      =3  #define         SYSTEM_CLK_8T()         CLK_DIV = (CLK_DIV & ~0x07) | 3
  797      =3  #define         SYSTEM_CLK_16T()        CLK_DIV = (CLK_DIV & ~0x07) | 4
  798      =3  #define         SYSTEM_CLK_32T()        CLK_DIV = (CLK_DIV & ~0x07) | 5
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 16  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 16  
 
  799      =3  #define         SYSTEM_CLK_64T()        CLK_DIV = (CLK_DIV & ~0x07) | 6
  800      =3  #define         SYSTEM_CLK_128T()       CLK_DIV =  CLK_DIV          | 7
@@ -1022,7 +1022,7 @@ line level    source
  858      =3  #define         DISABLE         0
  859      =3  
  860      =3  #define         STC15F_L2K08S2  8
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 17  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 17  
 
  861      =3  #define         STC15F_L2K16S2  16
  862      =3  #define         STC15F_L2K24S2  24
@@ -1035,59 +1035,64 @@ line level    source
  869      =3  
  870      =3  #endif
   30      =2  
-  31      =2  #define DEBUG
+  31      =2  //#define DEBUG
   32      =2  
-  33      =2  #define POWER_OK 1            //¶ÌÂ·ÐÅºÅÕý³£
-  34      =2  #define POWER_ERR 0           //¶ÌÂ·ÐÅºÅÒì³£
-  35      =2  #define AUTO_CTRL_MODE 1      //×Ô¶¯¿ØÖÆÄ£Ê½
-  36      =2  #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
-  37      =2  #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
-  38      =2  #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
-  39      =2  #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
-  40      =2  
-  41      =2  #define MONTOR_RIGHT_RUNNING 0x01
-  42      =2  #define MONTOR_LEFT_RUNNING 0x10
-  43      =2  #define MONTOR_STOP_RUNNING 0xff
+  33      =2  #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+  34      =2  #define ENABLE_OUT_OFF_HOOK_DELAY 0
+  35      =2  #define ENABLE_CPU_SLEEP_SUPPORT 1
+  36      =2  
+  37      =2  #define POWER_OK 1            //¶ÌÂ·ÐÅºÅÕý³£
+  38      =2  #define POWER_ERR 0           //¶ÌÂ·ÐÅºÅÒì³£
+  39      =2  #define AUTO_CTRL_MODE 1      //×Ô¶¯¿ØÖÆÄ£Ê½
+  40      =2  #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
+  41      =2  #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
+  42      =2  #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
+  43      =2  #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
   44      =2  
-  45      =2  #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
-  46      =2  #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
-  47      =2  #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
-  48      =2  #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
-  49      =2  #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
-  50      =2  #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
-  51      =2  #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
-  52      =2  #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
-  53      =2  #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
-  54      =2  #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
-  55      =2  #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
-  56      =2  #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
-  57      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
-  58      =2  
-  59      =2  #define TIMECOUNTER_START 0
-  60      =2  #define STOP_TIMERCOUNT 0xFF
-  61      =2  
-  62      =2  #define EEPROM_ADDR 0x0200
+  45      =2  #define MONTOR_RIGHT_RUNNING 0x01
+  46      =2  #define MONTOR_LEFT_RUNNING 0x10
+  47      =2  #define MONTOR_STOP_RUNNING 0xff
+  48      =2  
+  49      =2  #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
+  50      =2  #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
+  51      =2  #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
+  52      =2  #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
+  53      =2  #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
+  54      =2  #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
+  55      =2  #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
+  56      =2  #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
+  57      =2  #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
+  58      =2  #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
+  59      =2  #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
+  60      =2  #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
+  61      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
+  62      =2  #define TIMEOUT_DELAY_VAL 4
   63      =2  
-  64      =2  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- µç»úÕý´«
-  65      =2  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- µç»ú·´×ª
-  66      =2  sbit  ExAutoCtrlSignal = P1^0;      //Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
-  67      =2  sbit  SystemWorkMode = P1^1;        //1£º×Ô¶¯  0£ºÊÖ¶¯
-  68      =2  sbit  SwitchOnStatus = P1^2;        //0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
-  69      =2  sbit  OutOffHookCheck = P1^3;        //ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
-  70      =2  sbit  SystemSleepStatus = P1^4;      //Ë¯ÃßÖ¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
-  71      =2  
-  72      =2  #endif
+  64      =2  #define TIMECOUNTER_START 0
+  65      =2  #define STOP_TIMERCOUNT 0xFF
+  66      =2  
+  67      =2  #define EEPROM_ADDR 0x0200
+  68      =2  
+  69      =2  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- µç»úÕý´«
+  70      =2  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- µç»ú·´×ª
+  71      =2  sbit  ExAutoCtrlSignal = P1^0;      //Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
+  72      =2  sbit  SystemWorkMode = P1^1;        //1£º×Ô¶¯  0£ºÊÖ¶¯
+  73      =2  sbit  SwitchOnStatus = P1^2;        //0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
+  74      =2  sbit  OutOffHookCheck = P1^3;        //ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
+  75      =2  sbit  SystemSleepStatus = P1^4;      //Ë¯ÃßÖ¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
+  76      =2  
+  77      =2  #endif
   16      =1  
   17      =1  #define Timer0                                          0
   18      =1  #define Timer1                                          1
   19      =1  #define Timer2                                          2
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 18  
+
   20      =1  #define Timer3                                          3
   21      =1  #define Timer4                                          4
   22      =1  
   23      =1  #define TIM_16BitAutoReload                     0
   24      =1  #define TIM_16Bit                                       1
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 18  
-
   25      =1  #define TIM_8BitAutoReload                      2
   26      =1  #define TIM_16BitAutoReloadNoMask       3
   27      =1  
@@ -1145,13 +1150,13 @@ line level    source
   52   2                      TMOD = (TMOD & ~0x03) | TIMx->TIM_Mode; //¹¤×÷Ä£Ê½,0: 16Î»×Ô¶¯ÖØ×°, 1: 16Î»¶¨Ê±/¼ÆÊý, 2: 8Î»×Ô¶¯ÖØ×°, 3:
              - 16Î»×Ô¶¯ÖØ×°, ²»¿ÉÆÁ±ÎÖÐ¶Ï
   53   2                      if(TIMx->TIM_ClkSource == TIM_CLOCK_12T)        AUXR &= ~0x80;  //12T
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 19  
+
   54   2                      if(TIMx->TIM_ClkSource == TIM_CLOCK_1T)         AUXR |=  0x80;  //1T
   55   2                      if(TIMx->TIM_ClkSource == TIM_CLOCK_Ext)        TMOD |=  0x04;  //¶ÔÍâ¼ÆÊý»ò·ÖÆµ
   56   2                      else                                                                            TMOD &= ~0x04;  //¶¨Ê±
   57   2                      if(TIMx->TIM_ClkOut == ENABLE)  INT_CLKO |=  0x01;      //Êä³öÊ±ÖÓ
   58   2                      else                                                    INT_CLKO &= ~0x01;      //²»Êä³öÊ±ÖÓ
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 19  
-
   59   2                      
   60   2                      TH0 = (u8)(TIMx->TIM_Value >> 8);
   61   2                      TL0 = (u8)TIMx->TIM_Value;
@@ -1201,7 +1206,7 @@ line level    source
  105   2              }
  106   1              return 2;       //´íÎó
  107   1      }
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 20  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 20  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1265,7 +1270,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000E C28C              CLR     TR0
                                            ; SOURCE LINE # 47
 0010 120000      R     LCALL   L?0047
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 21  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 21  
 
 0013 B40104            CJNE    A,#01H,?C0006
 0016 D2A9              SETB    ET0
@@ -1329,7 +1334,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0065 120000      R     LCALL   L?0045
 0068 E5F0              MOV     A,B
 006A F58C              MOV     TH0,A
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 22  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 22  
 
                                            ; SOURCE LINE # 61
 006C 120000      R     LCALL   L?0045
@@ -1393,7 +1398,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00B9 7003              JNZ     ?C0025
 00BB 438E40            ORL     AUXR,#040H
 00BE         ?C0025:
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 23  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 23  
 
                                            ; SOURCE LINE # 77
 00BE EF                MOV     A,R7
@@ -1457,7 +1462,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0111         ?C0034:
                                            ; SOURCE LINE # 94
 0111 EE                MOV     A,R6
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 24  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 24  
 
 0112 B40103            CJNE    A,#01H,?C0035
 0115 538EFB            ANL     AUXR,#0FBH
@@ -1510,7 +1515,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0155 22                RET     
              ; FUNCTION _Timer_Inilize (END)
 
-C51 COMPILER V9.52.0.0   TIMER                                                             07/02/2017 23:30:14 PAGE 25  
+C51 COMPILER V9.52.0.0   TIMER                                                             07/03/2017 23:32:51 PAGE 25  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

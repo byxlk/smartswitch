@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 1   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 2   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 2   
 
   11      =2  /* article, please specify in which data and procedures from STC    */
   12      =2  /*------------------------------------------------------------------*/
@@ -126,7 +126,7 @@ line level    source
   31      =2  sfr TMOD = 0x89;
   32      =2  sfr TL0  = 0x8A;
   33      =2  sfr TL1  = 0x8B;
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 3   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 3   
 
   34      =2  sfr TH0  = 0x8C;
   35      =2  sfr TH1  = 0x8D;
@@ -190,7 +190,7 @@ line level    source
   93      =2  sfr WDT_CONTR = 0xC1;
   94      =2  sfr IAP_DATA  = 0xC2;
   95      =2  sfr IAP_ADDRH = 0xC3;
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 4   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 4   
 
   96      =2  sfr IAP_ADDRL = 0xC4;
   97      =2  sfr IAP_CMD   = 0xC5;
@@ -254,7 +254,7 @@ line level    source
  155      =2  sfr CCAP0L = 0xEA;      //PCA模块0的捕捉/比较寄存器低8位。
  156      =2  sfr CCAP1L = 0xEB;      //PCA模块1的捕捉/比较寄存器低8位。
  157      =2  sfr CCAP2L = 0xEC;      //PCA模块2的捕捉/比较寄存器低8位。
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 5   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 5   
 
  158      =2  
  159      =2  sfr B      = 0xF0;
@@ -318,7 +318,7 @@ line level    source
  217      =2  sbit  SPI_MOSI  = P1^3;
  218      =2  sbit  SPI_MISO  = P1^4;
  219      =2  sbit  SPI_SCLK  = P1^5;
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 6   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 6   
 
  220      =2  
  221      =2  /*  P2  */
@@ -382,7 +382,7 @@ line level    source
  279      =2  sbit TB8  = SCON^3;     //发送数据第8位
  280      =2  sbit RB8  = SCON^2;     //接收数据第8位
  281      =2  sbit TI   = SCON^1;     //发送中断标志位
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 7   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 7   
 
  282      =2  sbit RI   = SCON^0;     //接收中断标志位
  283      =2  
@@ -446,7 +446,7 @@ line level    source
  341      =2  sbit PX1        = IP^2; //外部中断1优先级设定位
  342      =2  sbit PT0        = IP^1; //定时中断0优先级设定位
  343      =2  sbit PX0        = IP^0; //外部中断0优先级设定位
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 8   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 8   
 
  344      =2  
  345      =2  //                                           7      6      5     4     3     2    1     0        Reset Val
@@ -510,7 +510,7 @@ line level    source
  402      =2  #define         S2TB8_SET()                     S2CON |=  8
  403      =2  #define         S2TB8_CLR()                     S2CON &= ~8
  404      =2  #define         S2_Int_en()                     IE2   |=  1             //串口2允许中断
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 9   
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 9   
 
  405      =2  #define         S2_USE_P10P11()         P_SW2 &= ~1             //UART2 使用P1口        默认
  406      =2  #define         S2_USE_P46P47()         P_SW2 |=  1             //UART2 使用P4口
@@ -574,7 +574,7 @@ line level    source
              -以1T或12T。
  463      =2  #define         T0_pulseP34_disable()           AUXR2 &= ~1
  464      =2  #define         T1_pulseP35_enable()            AUXR2 |=  2             //允许 T1 溢出脉冲在T1(P3.4)脚输出，Fck1 = 1/2 T1 溢出率，T1可
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 10  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 10  
 
              -以1T或12T。
  465      =2  #define         T1_pulseP35_disable()           AUXR2 &= ~2
@@ -638,7 +638,7 @@ line level    source
  519      =2  #define         ISP_ERASE()             ISP_CMD = 3             //ISP擦除命令
  520      =2  
  521      =2  //sfr ISP_TRIG  = 0xC6;
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 11  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 11  
 
  522      =2  #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP触发命令
  523      =2  
@@ -702,7 +702,7 @@ line level    source
  579      =2  #define SPI_SCLK_NormalH()      SPCTL |=  (1<<3)                //1: 空闲时SCLK为高电平
  580      =2  #define SPI_SCLK_NormalL()      SPCTL &= ~(1<<3)                //0: 空闲时SCLK为低电平
  581      =2  #define SPI_PhaseH()            SPCTL |=  (1<<2)                //1: 
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 12  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 12  
 
  582      =2  #define SPI_PhaseL()            SPCTL &= ~(1<<2)                //0: 
  583      =2  #define SPI_Speed(n)            SPCTL = (SPCTL & ~3) | (n)      //设置速度, 0 -- fosc/4, 1 -- fosc/16, 2 -- fosc/64, 3 --
@@ -766,7 +766,7 @@ line level    source
  634      =2  #define PCA_CLK_4T()            CMOD = (CMOD & ~0x0E) + 10      //PCA计数脉冲选择外部晶振/4。   Fosc/4
  635      =2  #define PCA_CLK_6T()            CMOD = (CMOD & ~0x0E) + 12      //PCA计数脉冲选择外部晶振/6。   Fosc/6
  636      =2  #define PCA_CLK_8T()            CMOD = (CMOD & ~0x0E) + 14      //PCA计数脉冲选择外部晶振/8。   Fosc/8
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 13  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 13  
 
  637      =2  #define PCA_INT_ENABLE()        CMOD |=  1                                      //PCA计数器溢出中断允许位，1---允许CF（CCON.7）产生中断。
  638      =2  #define PCA_INT_DISABLE()       CMOD &= ~1                                      //PCA计数器溢出中断禁止。
@@ -830,7 +830,7 @@ line level    source
  692      =2  #define         PCA1_capture_fall()             CCAPM1 = (0x10 + 1)
  693      =2  #define         PCA1_capture_edge()             CCAPM1 = (0x30 + 1)
  694      =2  #define         PCA1_16bit_Timer()              CCAPM1 = (0x48 + 1)
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 14  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 14  
 
  695      =2  #define         PCA1_High_Pulse()               CCAPM1 = (0x4C + 1)
  696      =2  
@@ -894,7 +894,7 @@ line level    source
  754      =2  #define NOP36() NOP35(),NOP1()
  755      =2  #define NOP37() NOP36(),NOP1()
  756      =2  #define NOP38() NOP37(),NOP1()
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 15  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 15  
 
  757      =2  #define NOP39() NOP38(),NOP1()
  758      =2  #define NOP40() NOP39(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  814      =2  #define         BUS_SPEED_2T()  BUS_SPEED = 1
  815      =2  #define         BUS_SPEED_4T()  BUS_SPEED = 2
  816      =2  #define         BUS_SPEED_8T()  BUS_SPEED = 3
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 16  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 16  
 
  817      =2  
  818      =2  /*   interrupt vector */
@@ -1015,50 +1015,55 @@ line level    source
  869      =2  
  870      =2  #endif
   30      =1  
-  31      =1  #define DEBUG
+  31      =1  //#define DEBUG
   32      =1  
-  33      =1  #define POWER_OK 1            //短路信号正常
-  34      =1  #define POWER_ERR 0           //短路信号异常
-  35      =1  #define AUTO_CTRL_MODE 1      //自动控制模式
-  36      =1  #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
-  37      =1  #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 17  
+  33      =1  #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+  34      =1  #define ENABLE_OUT_OFF_HOOK_DELAY 0
+  35      =1  #define ENABLE_CPU_SLEEP_SUPPORT 1
+  36      =1  
+  37      =1  #define POWER_OK 1            //短路信号正常
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 17  
 
-  38      =1  #define OUT_OF_HOOK 0         //脱扣到位
-  39      =1  #define SWITCH_ON_OK 0        //合闸到位
-  40      =1  
-  41      =1  #define MONTOR_RIGHT_RUNNING 0x01
-  42      =1  #define MONTOR_LEFT_RUNNING 0x10
-  43      =1  #define MONTOR_STOP_RUNNING 0xff
+  38      =1  #define POWER_ERR 0           //短路信号异常
+  39      =1  #define AUTO_CTRL_MODE 1      //自动控制模式
+  40      =1  #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
+  41      =1  #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
+  42      =1  #define OUT_OF_HOOK 0         //脱扣到位
+  43      =1  #define SWITCH_ON_OK 0        //合闸到位
   44      =1  
-  45      =1  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  46      =1  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  47      =1  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  48      =1  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  49      =1  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  50      =1  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  51      =1  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-  52      =1  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  53      =1  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  54      =1  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  55      =1  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  56      =1  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  57      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  58      =1  
-  59      =1  #define TIMECOUNTER_START 0
-  60      =1  #define STOP_TIMERCOUNT 0xFF
-  61      =1  
-  62      =1  #define EEPROM_ADDR 0x0200
+  45      =1  #define MONTOR_RIGHT_RUNNING 0x01
+  46      =1  #define MONTOR_LEFT_RUNNING 0x10
+  47      =1  #define MONTOR_STOP_RUNNING 0xff
+  48      =1  
+  49      =1  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  50      =1  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  51      =1  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+  52      =1  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  53      =1  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  54      =1  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  55      =1  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  56      =1  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  57      =1  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  58      =1  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  59      =1  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  60      =1  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  61      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  62      =1  #define TIMEOUT_DELAY_VAL 4
   63      =1  
-  64      =1  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
-  65      =1  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
-  66      =1  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
-  67      =1  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
-  68      =1  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
-  69      =1  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  70      =1  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
-  71      =1  
-  72      =1  #endif
+  64      =1  #define TIMECOUNTER_START 0
+  65      =1  #define STOP_TIMERCOUNT 0xFF
+  66      =1  
+  67      =1  #define EEPROM_ADDR 0x0200
+  68      =1  
+  69      =1  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
+  70      =1  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
+  71      =1  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
+  72      =1  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
+  73      =1  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
+  74      =1  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  75      =1  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
+  76      =1  
+  77      =1  #endif
   16          #include  "USART1.h"
    1      =1  
    2      =1  /*------------------------------------------------------------------*/
@@ -1081,13 +1086,13 @@ line level    source
    1      =2  
    2      =2  /*------------------------------------------------------------------*/
    3      =2  /* --- STC MCU International Limited -------------------------------*/
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 18  
+
    4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
    5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 18  
-
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
   11      =2  /* article, please specify in which data and procedures from STC    */
@@ -1110,7 +1115,11 @@ line level    source
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
@@ -1137,9 +1146,12 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 19  
+
            =2 
            =2 #define EEPROM_ADDR 0x0200
            =2 
@@ -1150,8 +1162,6 @@ line level    source
            =2 sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
            =2 sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
            =2 sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 19  
-
            =2 
            =2 #endif
   19      =1  
@@ -1204,6 +1214,8 @@ line level    source
   66      =1          u8      BaudRateDouble;         //波特率加倍, ENABLE,DISABLE
   67      =1          u8      UART_Interrupt;         //中断控制,   ENABLE,DISABLE
   68      =1          u8      UART_Polity;            //优先级,     PolityLow,PolityHigh
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 20  
+
   69      =1          u8      UART_P_SW;                      //切换端口,   UART1_SW_P30_P31,UART1_SW_P36_P37,UART1_SW_P16_P17(必须使用内部时钟)
   70      =1          u8      UART_RXD_TXD_Short;     //内部短路RXD与TXD, 做中继, ENABLE,DISABLE
   71      =1  
@@ -1214,8 +1226,6 @@ line level    source
   76      =1  extern  u8 idata        RX1_Buffer[COM_RX1_Lenth];      //接收缓冲
   77      =1  
   78      =1  u8      USART_Configuration(u8 UARTx, COMx_InitDefine *COMx);
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 20  
-
   79      =1  void TX1_write2buff(u8 dat);    //写入发送缓冲，指针+1
   80      =1  void TX2_write2buff(u8 dat);    //写入发送缓冲，指针+1
   81      =1  void PrintString1(u8 *puts);
@@ -1268,18 +1278,22 @@ line level    source
            =2 //#define MAIN_Fosc             24000000L       //定义主时钟
            =2 
            =2 
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 21  
+
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
            =2 #define AUTO_CTRL_MODE 1      //自动控制模式
            =2 #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
            =2 #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 21  
-
            =2 #define OUT_OF_HOOK 0         //脱扣到位
            =2 #define SWITCH_ON_OK 0        //合闸到位
            =2 
@@ -1300,6 +1314,7 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
@@ -1327,6 +1342,8 @@ line level    source
    5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
    6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 22  
+
    8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =1  /* If you want to use the program or the program referenced in the  */
@@ -1342,8 +1359,6 @@ line level    source
    2      =2  /*------------------------------------------------------------------*/
    3      =2  /* --- STC MCU International Limited -------------------------------*/
    4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 22  
-
    5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
@@ -1370,7 +1385,11 @@ line level    source
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
@@ -1387,6 +1406,8 @@ line level    source
            =2 #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
            =2 #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 23  
+
            =2 #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
@@ -1397,6 +1418,7 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
@@ -1406,8 +1428,6 @@ line level    source
            =2 sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
            =2 sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
            =2 sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 23  
-
            =2 sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
            =2 sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
            =2 sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
@@ -1450,6 +1470,8 @@ line level    source
   19          #include  "timer.h"
    1      =1  /*---------------------------------------------------------------------*/
    2      =1  /* --- STC MCU International Limited ----------------------------------*/
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 24  
+
    3      =1  /* --- STC 1T Series MCU Demo Programme -------------------------------*/
    4      =1  /* --- Mobile: (86)13922805190 ----------------------------------------*/
    5      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ------------------------*/
@@ -1470,8 +1492,6 @@ line level    source
    5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 24  
-
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
@@ -1495,7 +1515,11 @@ line level    source
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
@@ -1510,6 +1534,8 @@ line level    source
            =2 #define MONTOR_STOP_RUNNING 0xff
            =2 
            =2 #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 25  
+
            =2 #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
@@ -1522,6 +1548,7 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
@@ -1534,8 +1561,6 @@ line level    source
            =2 sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
            =2 sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
            =2 sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 25  
-
            =2 sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
            =2 
            =2 #endif
@@ -1573,6 +1598,8 @@ line level    source
    1      =1  #ifndef __MISC_H
    2      =1  #define __MISC_H
    3      =1  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 26  
+
    4      =1  #define LOGD PrintString1
    5      =1  
    6      =1  void init_Watch_Dog(void);
@@ -1598,8 +1625,6 @@ line level    source
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 26  
-
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
   11      =2  /* article, please specify in which data and procedures from STC    */
@@ -1622,7 +1647,11 @@ line level    source
            =2 /*********************************************************/
            =2 #include        "STC15Fxxxx.H"
            =2 
-           =2 #define DEBUG
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
            =2 
            =2 #define POWER_OK 1            //短路信号正常
            =2 #define POWER_ERR 0           //短路信号异常
@@ -1633,6 +1662,8 @@ line level    source
            =2 #define SWITCH_ON_OK 0        //合闸到位
            =2 
            =2 #define MONTOR_RIGHT_RUNNING 0x01
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 27  
+
            =2 #define MONTOR_LEFT_RUNNING 0x10
            =2 #define MONTOR_STOP_RUNNING 0xff
            =2 
@@ -1649,6 +1680,7 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
@@ -1662,8 +1694,6 @@ line level    source
            =2 sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
            =2 sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
            =2 sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 27  
-
            =2 
            =2 #endif
    6      =1  
@@ -1686,358 +1716,382 @@ line level    source
   23      =1  u8      Ext_Inilize(u8 EXT, EXTI_InitTypeDef *INTx);
   24      =1  
   25      =1  #endif
-  22          
+  22          //#include  "ADC.h"
   23          
-  24          /*************  功能说明        **************
-  25          
-  26          双串口全双工中断方式收发通讯程序。
-  27          
-  28          通过PC向MCU发送数据, MCU收到后通过串口把收到的数据原样返回.
-  29          
-  30          ******************************************/
-  31          
-  32          /*************  本地常量声明    **************/
-  33          
-  34          /*************  本地变量声明    **************/
-  35          //电机控制相关
-  36          static unsigned char MotorRunningCtrl_Running = MONTOR_STOP_RUNNING;//电机控制 -- 不转
-  37          
-  38          //定时计数相关
-  39          unsigned char TimeoutCount = STOP_TIMERCOUNT;
-  40          unsigned char sysClock = STOP_TIMERCOUNT;
-  41          
-  42          //系统工作模式
-  43          //bit lastSystemWorkMode = AUTO_CTRL_MODE;
-  44          bit firstSystemBoot = TRUE;
-  45          
+  24          
+  25          /*************  功能说明        **************
+  26          
+  27          双串口全双工中断方式收发通讯程序。
+  28          
+  29          通过PC向MCU发送数据, MCU收到后通过串口把收到的数据原样返回.
+  30          
+  31          ******************************************/
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 28  
+
+  32          
+  33          /*************  本地常量声明    **************/
+  34          
+  35          /*************  本地变量声明    **************/
+  36          //电机控制相关
+  37          static unsigned char MotorRunningCtrl_Running = MONTOR_STOP_RUNNING;//电机控制 -- 不转
+  38          
+  39          //定时计数相关
+  40          unsigned char TimeoutCount = STOP_TIMERCOUNT;
+  41          unsigned char sysClock = STOP_TIMERCOUNT;
+  42          
+  43          //系统工作模式
+  44          //bit lastSystemWorkMode = AUTO_CTRL_MODE;
+  45          bit firstSystemBoot = TRUE;
   46          
-  47          /*************  本地函数声明    **************/
-  48          
-  49          /*************  外部函数和变量声明 *****************/
-  50          
+  47          
+  48          /*************  本地函数声明    **************/
+  49          
+  50          /*************  外部函数和变量声明 *****************/
   51          
-  52          /*************  串口1初始化函数 *****************/
-  53          void    UART_config(void)
-  54          {
-  55   1              COMx_InitDefine         COMx_InitStructure;                                     //结构定义
-  56   1              COMx_InitStructure.UART_Mode      = UART_8bit_BRTx;             //模式,       UART_ShiftRight,UART_8bit_BRTx,UART_9b
+  52          
+  53          /*************  串口1初始化函数 *****************/
+  54          void UART_config(void)
+  55          {
+  56   1              COMx_InitDefine         COMx_InitStructure;                                     //结构定义
+  57   1              COMx_InitStructure.UART_Mode      = UART_8bit_BRTx;             //模式,       UART_ShiftRight,UART_8bit_BRTx,UART_9b
              -it,UART_9bit_BRTx
-  57   1              COMx_InitStructure.UART_BRT_Use   = BRT_Timer2;                 //使用波特率,   BRT_Timer1, BRT_Timer2 (注意: 串口2固定
+  58   1              COMx_InitStructure.UART_BRT_Use   = BRT_Timer2;                 //使用波特率,   BRT_Timer1, BRT_Timer2 (注意: 串口2固定
              -使用BRT_Timer2)
-  58   1              COMx_InitStructure.UART_BaudRate  = 38400ul;                    //波特率, 一般 110 ~ 115200
-  59   1              COMx_InitStructure.UART_RxEnable  = ENABLE;                             //接收允许,   ENABLE或DISABLE
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 28  
-
-  60   1              COMx_InitStructure.BaudRateDouble = DISABLE;                    //波特率加倍, ENABLE或DISABLE
-  61   1              COMx_InitStructure.UART_Interrupt = ENABLE;                             //中断允许,   ENABLE或DISABLE
-  62   1              COMx_InitStructure.UART_Polity    = PolityLow;                  //中断优先级, PolityLow,PolityHigh
-  63   1              COMx_InitStructure.UART_P_SW      = UART1_SW_P30_P31;   //切换端口,   UART1_SW_P30_P31,UART1_SW_P36_P37,UAR
+  59   1              COMx_InitStructure.UART_BaudRate  = 38400ul;                    //波特率, 一般 110 ~ 115200
+  60   1              COMx_InitStructure.UART_RxEnable  = ENABLE;                             //接收允许,   ENABLE或DISABLE
+  61   1              COMx_InitStructure.BaudRateDouble = DISABLE;                    //波特率加倍, ENABLE或DISABLE
+  62   1              COMx_InitStructure.UART_Interrupt = ENABLE;                             //中断允许,   ENABLE或DISABLE
+  63   1              COMx_InitStructure.UART_Polity    = PolityLow;                  //中断优先级, PolityLow,PolityHigh
+  64   1              COMx_InitStructure.UART_P_SW      = UART1_SW_P30_P31;   //切换端口,   UART1_SW_P30_P31,UART1_SW_P36_P37,UAR
              -T1_SW_P16_P17(必须使用内部时钟)
-  64   1              COMx_InitStructure.UART_RXD_TXD_Short = DISABLE;                //内部短路RXD与TXD, 做中继, ENABLE,DISABLE
-  65   1              USART_Configuration(USART1, &COMx_InitStructure);               //初始化串口1 USART1,USART2
-  66   1      }
-  67          
-  68          /******************** IO配置函数 **************************/
-  69          void GPIO_Config(void)
-  70          {
-  71   1              GPIO_InitTypeDef        GPIO_InitStructure;                         //结构定义
-  72   1      
-  73   1              GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;       //指定要初始化的IO, GPIO_
+  65   1              COMx_InitStructure.UART_RXD_TXD_Short = DISABLE;                //内部短路RXD与TXD, 做中继, ENABLE,DISABLE
+  66   1              USART_Configuration(USART1, &COMx_InitStructure);               //初始化串口1 USART1,USART2
+  67   1      }
+  68          
+  69          /******************** IO配置函数 **************************/
+  70          void GPIO_Config(void)
+  71          {
+  72   1              GPIO_InitTypeDef        GPIO_InitStructure;                         //结构定义
+  73   1      
+  74   1              GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;       //指定要初始化的IO, GPIO_
              -Pin_0 ~ GPIO_Pin_7, 或操作
-  74   1              GPIO_InitStructure.Mode = GPIO_HighZ;                      //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_OU
+  75   1              GPIO_InitStructure.Mode = GPIO_HighZ;                      //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_OU
              -T_OD,GPIO_OUT_PP
-  75   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //初始化
-  76   1              
-  77   1              GPIO_InitStructure.Pin  = GPIO_Pin_4 ;     //指定要初始化的IO, GPIO_Pin_0 ~ GPIO_Pin_7, 或操作
-  78   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_O
+  76   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //初始化
+  77   1              
+  78   1              GPIO_InitStructure.Pin  = GPIO_Pin_4 ;     //指定要初始化的IO, GPIO_Pin_0 ~ GPIO_Pin_7, 或操作
+  79   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_O
              -UT_OD,GPIO_OUT_PP
-  79   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //初始化
-  80   1              
-  81   1              GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;      //指定要初始化的IO, GPIO_Pin_0 ~ GPIO_Pin_7, 或操作
-  82   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_O
+  80   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //初始化
+  81   1              
+  82   1              GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;      //指定要初始化的IO, GPIO_Pin_0 ~ GPIO_Pin_7, 或操作
+  83   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_O
              -UT_OD,GPIO_OUT_PP
-  83   1              GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);      
-  84   1      }
-  85          
-  86          /************************ 定时器配置 ****************************/
-  87          void    Timer_Config(void)
-  88          {
-  89   1              TIM_InitTypeDef         TIM_InitStructure;                                      //结构定义
-  90   1              TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;  //指定工作模式,   TIM_16BitAutoReload,TIM_16Bit,TI
-             -M_8BitAutoReload,TIM_16BitAutoReloadNoMask
-  91   1              TIM_InitStructure.TIM_Polity    = PolityHigh;                   //指定中断优先级, PolityHigh,PolityLow
-  92   1              TIM_InitStructure.TIM_Interrupt = ENABLE;                               //中断是否允许,   ENABLE或DISABLE
-  93   1              TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;                        //指定时钟源,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK
-             -_Ext
-  94   1              TIM_InitStructure.TIM_ClkOut    = DISABLE;                              //是否输出高速脉冲, ENABLE或DISABLE
-  95   1              TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 20));      //初值, 节拍为20HZ(50ms)
-  96   1              TIM_InitStructure.TIM_Run       = ENABLE;                               //是否初始化后启动定时器, ENABLE或DISABLE
-  97   1              Timer_Inilize(Timer0,&TIM_InitStructure);                               //初始化Timer0    Timer0,Timer1,Timer2
-  98   1      }
-  99          
- 100          void    EXTI_config(void)
- 101          {
- 102   1              EXTI_InitTypeDef        EXTI_InitStructure;                                     //结构定义
- 103   1      
- 104   1              EXTI_InitStructure.EXTI_Mode      = EXT_MODE_RiseFall;  //中断模式,     EXT_MODE_RiseFall, EXT_MODE_Fall
- 105   1              EXTI_InitStructure.EXTI_Polity    = PolityHigh;                 //中断优先级,   PolityLow,PolityHigh
- 106   1              EXTI_InitStructure.EXTI_Interrupt = ENABLE;                             //中断允许,     ENABLE?DISABLE
- 107   1              Ext_Inilize(EXT_INT0,&EXTI_InitStructure);                              //初始化INT0    EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
- 108   1              
- 109   1              EXTI_InitStructure.EXTI_Mode      = EXT_MODE_RiseFall;  //中断模式,     EXT_MODE_RiseFall, EXT_MODE_Fall
- 110   1              EXTI_InitStructure.EXTI_Polity    = PolityHigh;                 //中断优先级,   PolityLow,PolityHigh
- 111   1              EXTI_InitStructure.EXTI_Interrupt = ENABLE;                             //中断允许,     ENABLE?DISABLE
- 112   1              Ext_Inilize(EXT_INT1,&EXTI_InitStructure);                              //初始化INT0    EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
- 113   1      }
- 114          
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 29  
+  84   1              GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);      
+  85   1      }
+  86          
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 29  
 
- 115          static void delay_timer(unsigned char iTime)
- 116          {
- 117   1          TimeoutCount = TIMECOUNTER_START;//开始计时
- 118   1          while(TimeoutCount <= iTime) ;//等1秒
- 119   1          TimeoutCount = STOP_TIMERCOUNT;//停止计时  
- 120   1      }
- 121          
- 122          static void wait_switch_on(unsigned char time_out)
- 123          {
- 124   1          //等待电机转动到位，超过5秒就认为是超时
- 125   1          TimeoutCount = TIMECOUNTER_START;//开始计时
- 126   1          while(SwitchOnStatus != SWITCH_ON_OK)
- 127   1          {        
- 128   2              if(TimeoutCount > time_out)
- 129   2              {
- 130   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
- 131   3                  break;                        
- 132   3              }
- 133   2              //if(SwitchOnStatus == SWITCH_ON_OK)
- 134   2              //    delay_ms(50);
- 135   2          }             
- 136   1          TimeoutCount = STOP_TIMERCOUNT;//停止计时
+  87          /************************ 定时器配置 ****************************/
+  88          void Timer_Config(void)
+  89          {
+  90   1              TIM_InitTypeDef         TIM_InitStructure;                                      //结构定义
+  91   1              TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;  //指定工作模式,   TIM_16BitAutoReload,TIM_16Bit,TI
+             -M_8BitAutoReload,TIM_16BitAutoReloadNoMask
+  92   1              TIM_InitStructure.TIM_Polity    = PolityHigh;                   //指定中断优先级, PolityHigh,PolityLow
+  93   1              TIM_InitStructure.TIM_Interrupt = ENABLE;                               //中断是否允许,   ENABLE或DISABLE
+  94   1              TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;                        //指定时钟源,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK
+             -_Ext
+  95   1              TIM_InitStructure.TIM_ClkOut    = DISABLE;                              //是否输出高速脉冲, ENABLE或DISABLE
+  96   1              TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 20));      //初值, 节拍为20HZ(50ms)
+  97   1              TIM_InitStructure.TIM_Run       = ENABLE;                               //是否初始化后启动定时器, ENABLE或DISABLE
+  98   1              Timer_Inilize(Timer0,&TIM_InitStructure);                               //初始化Timer0    Timer0,Timer1,Timer2
+  99   1      }
+ 100          
+ 101          void EXTI_config(void)
+ 102          {
+ 103   1              EXTI_InitTypeDef        EXTI_InitStructure;                                     //结构定义
+ 104   1      
+ 105   1              EXTI_InitStructure.EXTI_Mode      = EXT_MODE_RiseFall;  //中断模式,     EXT_MODE_RiseFall, EXT_MODE_Fall
+ 106   1              EXTI_InitStructure.EXTI_Polity    = PolityHigh;                 //中断优先级,   PolityLow,PolityHigh
+ 107   1              EXTI_InitStructure.EXTI_Interrupt = ENABLE;                             //中断允许,     ENABLE?DISABLE
+ 108   1              Ext_Inilize(EXT_INT0,&EXTI_InitStructure);                              //初始化INT0    EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
+ 109   1              
+ 110   1              EXTI_InitStructure.EXTI_Mode      = EXT_MODE_RiseFall;  //中断模式,     EXT_MODE_RiseFall, EXT_MODE_Fall
+ 111   1              EXTI_InitStructure.EXTI_Polity    = PolityHigh;                 //中断优先级,   PolityLow,PolityHigh
+ 112   1              EXTI_InitStructure.EXTI_Interrupt = ENABLE;                             //中断允许,     ENABLE?DISABLE
+ 113   1              Ext_Inilize(EXT_INT1,&EXTI_InitStructure);                              //初始化INT0    EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
+ 114   1      }
+ 115          #if 0
+              void ADC_config(void)
+              {
+                      ADC_InitTypeDef         ADC_InitStructure;                              //结构定义
+              
+                      ADC_InitStructure.ADC_Px        = ADC_P10;              //设置要做ADC的IO,      ADC_P10 ~ ADC_P17(或操作),ADC_P1_Al
+             -l
+                      ADC_InitStructure.ADC_Speed     = ADC_360T;                     //ADC速度                       ADC_90T,ADC_180T,ADC_360T,ADC_540T
+                      ADC_InitStructure.ADC_Power     = ENABLE;                       //ADC功率允许/关闭      ENABLE,DISABLE
+                      ADC_InitStructure.ADC_AdjResult = ADC_RES_H8L2;         //ADC结果调整,  ADC_RES_H2L8,ADC_RES_H8L2
+                      ADC_InitStructure.ADC_Polity    = PolityLow;            //优先级设置    PolityHigh,PolityLow
+                      ADC_InitStructure.ADC_Interrupt = DISABLE;                      //中断允许              ENABLE,DISABLE
+                      ADC_Inilize(&ADC_InitStructure);                                        //初始化
+              
+                      ADC_PowerControl(ENABLE);                                                       //单独的ADC电源操作函数, ENABLE或DISABLE
+              }
+              #endif
+ 131          
+ 132          static void delay_timer(unsigned char iTime)
+ 133          {
+ 134   1          TimeoutCount = TIMECOUNTER_START;//开始计时
+ 135   1          while(TimeoutCount <= iTime) ;//等1秒
+ 136   1          TimeoutCount = STOP_TIMERCOUNT;//停止计时  
  137   1      }
  138          
- 139          static void wait_out_off_hook(unsigned char time_out)
+ 139          static void wait_switch_on(unsigned char time_out)
  140          {
  141   1          //等待电机转动到位，超过5秒就认为是超时
  142   1          TimeoutCount = TIMECOUNTER_START;//开始计时
- 143   1          while(OutOffHookCheck != OUT_OF_HOOK)
- 144   1          {
+ 143   1          while(SwitchOnStatus != SWITCH_ON_OK)
+ 144   1          {        
  145   2              if(TimeoutCount > time_out)
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 30  
+
  146   2              {
  147   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
  148   3                  break;                        
  149   3              }
- 150   2              //if(OutOffHookCheck != OUT_OF_HOOK)
+ 150   2              //if(SwitchOnStatus == SWITCH_ON_OK)
  151   2              //    delay_ms(50);
- 152   2          }                 
+ 152   2          }             
  153   1          TimeoutCount = STOP_TIMERCOUNT;//停止计时
  154   1      }
- 155          void print_signal_status_info(void)
- 156          {
- 157   1           //LOGD("[SignalStatus]");
- 158   1           if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_LOSS)
- 159   1               LOGD("[ Ext Ctrl Signal] LOSS.\r\n");
- 160   1           else
- 161   1               LOGD("[ Ext Ctrl Signal] OK.\r\n");
- 162   1           if(SystemWorkMode == AUTO_CTRL_MODE)
- 163   1               LOGD("[System Work Mode] AUTO Mode.\r\n");
- 164   1           else 
- 165   1               LOGD("[System Work Mode] MANUAL Mode.\r\n");
- 166   1           if(OutOffHookCheck == OUT_OF_HOOK)
- 167   1               LOGD("[    Out Off Hook] YES.\r\n");
- 168   1           else
- 169   1               LOGD("[    Out Off Hook] NO. \r\n");
- 170   1           if(SwitchOnStatus == SWITCH_ON_OK)
- 171   1               LOGD("[   Switch Status] ON. \r\n");
- 172   1           else
- 173   1               LOGD("[   Switch Status] OFF. \r\n");
- 174   1      }
- 175          
- 176          /**********************************************/
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 30  
+ 155          
+ 156          static void wait_out_off_hook(unsigned char time_out)
+ 157          {
+ 158   1          //等待电机转动到位，超过5秒就认为是超时
+ 159   1          TimeoutCount = TIMECOUNTER_START;//开始计时
+ 160   1          while(OutOffHookCheck != OUT_OF_HOOK)
+ 161   1          {
+ 162   2              if(TimeoutCount > time_out)
+ 163   2              {
+ 164   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
+ 165   3                  break;                        
+ 166   3              }
+ 167   2              //if(OutOffHookCheck != OUT_OF_HOOK)
+ 168   2              //    delay_ms(50);
+ 169   2          }                 
+ 170   1          TimeoutCount = STOP_TIMERCOUNT;//停止计时
+ 171   1      }
+ 172          void print_signal_status_info(void)
+ 173          {
+ 174   1           //LOGD("[SignalStatus]");
+ 175   1           if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_LOSS)
+ 176   1               LOGD("[ Ext Ctrl Signal] LOSS.\r\n");
+ 177   1           else
+ 178   1               LOGD("[ Ext Ctrl Signal] OK.\r\n");
+ 179   1           if(SystemWorkMode == AUTO_CTRL_MODE)
+ 180   1               LOGD("[System Work Mode] AUTO Mode.\r\n");
+ 181   1           else 
+ 182   1               LOGD("[System Work Mode] MANUAL Mode.\r\n");
+ 183   1           if(OutOffHookCheck == OUT_OF_HOOK)
+ 184   1               LOGD("[    Out Off Hook] YES.\r\n");
+ 185   1           else
+ 186   1               LOGD("[    Out Off Hook] NO. \r\n");
+ 187   1           if(SwitchOnStatus == SWITCH_ON_OK)
+ 188   1               LOGD("[   Switch Status] ON. \r\n");
+ 189   1           else
+ 190   1               LOGD("[   Switch Status] OFF. \r\n");
+ 191   1      }
+ 192          
+ 193          /**********************************************/
+ 194          void main(void)
+ 195          {
+ 196   1              //硬件初始化操作
+ 197   1              EA = 0;
+ 198   1          GPIO_Config();//GPIO init
+ 199   1              setSystemSleepFlag(FALSE);
+ 200   1              
+ 201   1          EXTI_config();
+ 202   1          UART_config(); //UART init
+ 203   1          Timer_Config();//Timer init
+ 204   1          //ADC_config(); //ADC init
+ 205   1                      
+ 206   1              //开总中断
+ 207   1          EA = 1;
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 31  
 
- 177          void main(void)
- 178          {
- 179   1                //硬件初始化操作
- 180   1                      EA = 0;
- 181   1          GPIO_Config();//GPIO init
- 182   1                setSystemSleepFlag(FALSE);
- 183   1              
- 184   1          EXTI_config();
- 185   1          UART_config(); //UART init
- 186   1          Timer_Config();//Timer init
- 187   1                      
- 188   1                      //开总中断
- 189   1          EA = 1;
- 190   1      
- 191   1                      //系统断电重启延时4秒启动
- 192   1          firstSystemBoot = POF_Boot_Delay();
- 193   1               
- 194   1                      if(firstSystemBoot)
- 195   1                                      PrintSystemInfoToSerial();
- 196   1                //LOGD("=====================> Hardware Init Ok <=====================\r\n");
- 197   1      
- 198   1                //watch dog init
- 199   1                init_Watch_Dog();
- 200   1          LOGD("\r\n\r\n==================================================\r\n");
- 201   1                LOGD("System Init Ok, Start Watch Dog OK ... \r\n");
- 202   1          LOGD("==================================================\r\n");
- 203   1          
- 204   1          
- 205   1          
- 206   1              //=======================> Start Main Process <==========================//  
- 207   1              while (1)
- 208   1              {
- 209   2              //-------------------------------------------------------------------------------------
- 210   2              //检查外部控制信号 ---- 丢失
- 211   2              if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_LOSS)
- 212   2              {
- 213   3                  //等50毫秒后再次确认信号状态
- 214   3                  //delay_ms(50);
- 215   3                  delay_timer(TIMEOUT_VAL_1S) ;
- 216   3                  if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_LOSS)
- 217   3                      continue;  
- 218   3                  
- 219   3                  //（b） 外部控制信号丢失：  
- 220   3                  // 1、检测到脱扣到位信号， 
- 221   3                  //    自动：电机不做任何动作
- 222   3                  //    手动：电机不做任何动作          
- 223   3                  if(OutOffHookCheck == OUT_OF_HOOK)
- 224   3                  {
- 225   4                      //delay_ms(50);
- 226   4                      //if(OutOffHookCheck != OUT_OF_HOOK)
- 227   4                      //    continue;
- 228   4                      
- 229   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
- 230   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转
- 231   4                  }            
- 232   3                  else //只要不在脱扣到位状态就延时2秒后正转电机到脱扣到位状态
- 233   3                  { 
- 234   4                      //delay_ms(50);
- 235   4                      //if(OutOffHookCheck == OUT_OF_HOOK)
- 236   4                      //    continue;
- 237   4                      
- 238   4                      // 2、检测到合闸到位信号， 
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 31  
+ 208   1      
+ 209   1              //系统断电重启延时4秒启动
+ 210   1          firstSystemBoot = POF_Boot_Delay();
+ 211   1               
+ 212   1              if(firstSystemBoot)
+ 213   1              PrintSystemInfoToSerial();
+ 214   1              //LOGD("=====================> Hardware Init Ok <=====================\r\n");
+ 215   1      
+ 216   1              //watch dog init
+ 217   1              init_Watch_Dog();
+ 218   1          LOGD("\r\n\r\n==================================================\r\n");
+ 219   1              LOGD("System Init Ok, Start Watch Dog OK ... \r\n");
+ 220   1          LOGD("==================================================\r\n");
+ 221   1          
+ 222   1          
+ 223   1          
+ 224   1              //=======================> Start Main Process <==========================//  
+ 225   1              while (1)
+ 226   1              {
+ 227   2              //-------------------------------------------------------------------------------------
+ 228   2              //检查外部控制信号 ---- 丢失
+ 229   2              if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_LOSS)
+ 230   2              {
+ 231   3                  //等50毫秒后再次确认信号状态
+ 232   3                  //delay_ms(50);
+ 233   3                  //delay_timer(TIMEOUT_VAL_1S) ;
+ 234   3                  //if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_LOSS)
+ 235   3                  //    continue;  
+ 236   3                  
+ 237   3                  //（b） 外部控制信号丢失：  
+ 238   3                  // 1、检测到脱扣到位信号， 
+ 239   3                  //    自动：电机不做任何动作
+ 240   3                  //    手动：电机不做任何动作          
+ 241   3                  if(OutOffHookCheck == OUT_OF_HOOK)
+ 242   3                  {
+ 243   4                      //delay_ms(50);
+ 244   4                      //if(OutOffHookCheck != OUT_OF_HOOK)
+ 245   4                      //    continue;
+ 246   4                      
+ 247   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
+ 248   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转
+ 249   4                  }            
+ 250   3                  else //只要不在脱扣到位状态就延时2秒后正转电机到脱扣到位状态
+ 251   3                  { 
+ 252   4                      //delay_ms(50);
+ 253   4                      //if(OutOffHookCheck == OUT_OF_HOOK)
+ 254   4                      //    continue;
+ 255   4                      
+ 256   4                      // 2、检测到合闸到位信号， 
+ 257   4                      //    自动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
+ 258   4                      //    手动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
+ 259   4                      // 3、脱扣到位信号和合闸到位信号都未检测到，
+ 260   4                      //    自动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
+ 261   4                      //    手动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）                
+ 262   4      #if ENABLE_OUT_OFF_HOOK_DELAY
+                              delay_timer(TIMEOUT_VAL_1S5);//等1.5秒     
+              #endif
+ 265   4                      if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)
+ 266   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//正传
+ 267   4          
+ 268   4                      //等待电机转动到位，超过5秒就认为是超时
+ 269   4                      wait_out_off_hook(TIMEOUT_VAL_5S);
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 32  
 
- 239   4                      //    自动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
- 240   4                      //    手动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
- 241   4                      // 3、脱扣到位信号和合闸到位信号都未检测到，
- 242   4                      //    自动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
- 243   4                      //    手动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）                
- 244   4                      
- 245   4                      delay_timer(TIMEOUT_VAL_1S5);//等1.5秒     
- 246   4                      if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)
- 247   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//正传
- 248   4          
- 249   4                      //等待电机转动到位，超过5秒就认为是超时
- 250   4                      wait_out_off_hook(TIMEOUT_VAL_5S);
- 251   4          
- 252   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
- 253   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转     
+ 270   4      
+ 271   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
+ 272   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转     
              -           
- 254   4                  }            
- 255   3              }
- 256   2              else if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_OK)
- 257   2              {
- 258   3                  //等50毫秒后再次确认信号状态
- 259   3                  //delay_ms(50);       
- 260   3                  //if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_OK)
- 261   3                  //    continue;
- 262   3                  
- 263   3                  //-------------------------------------------------------------------------------------
- 264   3                  //（a） 外部控制信号存在： 
- 265   3                  // 2、检测到合闸到位信号， 
- 266   3                  //    自动：电机不做任何动作
- 267   3                  //    手动：电机不做任何动作
- 268   3                  if(SwitchOnStatus == SWITCH_ON_OK) // 处于合闸到位状态
- 269   3                  {
- 270   4                      //delay_ms(50);
- 271   4                      //if(SwitchOnStatus != SWITCH_ON_OK)
- 272   4                      //    continue;
- 273   4                      
- 274   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//电机停转 
- 275   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
- 276   4                  } 
- 277   3                  else //没有检测到合闸到位信号  
- 278   3                  {         
- 279   4                      //delay_ms(50);
- 280   4                      //if(SwitchOnStatus == SWITCH_ON_OK)
- 281   4                      //    continue;
- 282   4                      
- 283   4                      // 1、检测到脱扣到位信号， 
- 284   4                      //    自动：电机（正转）到（合闸到位）状态就（停止）
- 285   4                      //    手动：电机（反转）到（合闸到位）状态就（停止）
- 286   4                      // 3、脱扣到位信号和合闸到位信号都未检测到，
- 287   4                      //    自动：电机（正转）到（合闸到位）状态就（停止）
- 288   4                      //    手动：电机（反转）到（合闸到位）状态就（停止）
- 289   4                        
- 290   4                      if(SystemWorkMode == AUTO_CTRL_MODE){
- 291   5                          if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)//电机正转
- 292   5                              MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
- 293   5                      } else {
- 294   5                          if(MotorRunningCtrl_Running != MONTOR_LEFT_RUNNING)//电机反转
- 295   5                              MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
- 296   5                      }
- 297   4                    
- 298   4                      //等待电机转动到位，超过5秒就认为是超时
- 299   4                      wait_switch_on(TIMEOUT_VAL_5S);
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 32  
+ 273   4                  }            
+ 274   3              }
+ 275   2              else if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_OK)
+ 276   2              {
+ 277   3                  //等50毫秒后再次确认信号状态
+ 278   3                  //delay_ms(50);       
+ 279   3                  //if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_OK)
+ 280   3                  //    continue;
+ 281   3                  
+ 282   3                  //-------------------------------------------------------------------------------------
+ 283   3                  //（a） 外部控制信号存在： 
+ 284   3                  // 2、检测到合闸到位信号， 
+ 285   3                  //    自动：电机不做任何动作
+ 286   3                  //    手动：电机不做任何动作
+ 287   3                  if(SwitchOnStatus == SWITCH_ON_OK) // 处于合闸到位状态
+ 288   3                  {
+ 289   4                      //delay_ms(50);
+ 290   4                      //if(SwitchOnStatus != SWITCH_ON_OK)
+ 291   4                      //    continue;
+ 292   4                      
+ 293   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//电机停转 
+ 294   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
+ 295   4                  } 
+ 296   3                  else //没有检测到合闸到位信号  
+ 297   3                  {         
+ 298   4                      //delay_ms(50);
+ 299   4                      //if(SwitchOnStatus == SWITCH_ON_OK)
+ 300   4                      //    continue;
+ 301   4                      
+ 302   4                      // 1、检测到脱扣到位信号， 
+ 303   4                      //    自动：电机（正转）到（合闸到位）状态就（停止）
+ 304   4                      //    手动：电机（反转）到（合闸到位）状态就（停止）
+ 305   4                      // 3、脱扣到位信号和合闸到位信号都未检测到，
+ 306   4                      //    自动：电机（正转）到（合闸到位）状态就（停止）
+ 307   4                      //    手动：电机（反转）到（合闸到位）状态就（停止）
+ 308   4                        
+ 309   4                      if(SystemWorkMode == AUTO_CTRL_MODE){
+ 310   5                          if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)//电机正转
+ 311   5                              MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
+ 312   5                      } else {
+ 313   5                          if(MotorRunningCtrl_Running != MONTOR_LEFT_RUNNING)//电机反转
+ 314   5                              MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
+ 315   5                      }
+ 316   4      
+ 317   4                      //等待电机转动到位，超过5秒就认为是超时
+ 318   4                      wait_switch_on(TIMEOUT_VAL_5S);
+ 319   4                      delay_timer(TIMEOUT_DELAY_VAL);
+ 320   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//电机停转  
+ 321   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
+ 322   4                  }
+ 323   3              }
+ 324   2              else //异常情况
+ 325   2                  Reboot_System(); 
+ 326   2      
+ 327   2      #if ENABLE_CPU_SLEEP_SUPPORT
+ 328   2              print_signal_status_info();
+ 329   2      #endif
+ 330   2              /*******************************************************
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 33  
 
- 300   4                      
- 301   4                      if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//电机停转  
- 302   4                          MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
- 303   4                  }
- 304   3              }
- 305   2              else //异常情况
- 306   2                  Reboot_System(); 
- 307   2              
- 308   2              print_signal_status_info();
- 309   2      
- 310   2              /*******************************************************
- 311   2               * 执行完了让系统进入掉电模式，此时CPU寄存器值保持不变，
- 312   2               * 收到外部中断INT0/INT1信号唤醒
- 313   2               * 唤醒后从进入掉电模式的位置继续执行下一条指令
- 314   2              ********************************************************/
- 315   2              System_PowerDown();
- 316   2          }   
- 317   1      }
- 318          
- 319          /********************* INT0中断函数 *************************/
- 320          void Ext_INT0 (void) interrupt INT0_VECTOR              //进中断时已经清除标志
- 321          {
- 322   1          _nop_();
- 323   1          Reboot_System();
- 324   1          _nop_();
- 325   1      }
- 326          
- 327          /********************* INT1中断函数 *************************/
- 328          void Ext_INT1 (void) interrupt INT1_VECTOR              //进中断时已经清除标志
- 329          {
- 330   1               _nop_();
- 331   1         Reboot_System();
- 332   1         _nop_();
- 333   1      }
- 334          
- 335          /********************* Timer0中断函数************************/
- 336          void timer0_int (void) interrupt TIMER0_VECTOR
- 337          {
- 338   1              // process watch dog signal
- 339   1              WDT_CONTR &= 0x7F;
- 340   1          WDT_CONTR |= 0x10;
- 341   1      
- 342   1              //timer out counter
- 343   1              if(TimeoutCount <= TIMEOUT_VAL_MAX)
- 344   1                      TimeoutCount++;     
- 345   1      }
- 346          
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 33  
+ 331   2               * 执行完了让系统进入掉电模式，此时CPU寄存器值保持不变，
+ 332   2               * 收到外部中断INT0/INT1信号唤醒
+ 333   2               * 唤醒后从进入掉电模式的位置继续执行下一条指令
+ 334   2              ********************************************************/
+ 335   2              System_PowerDown();
+ 336   2      //#endif
+ 337   2          }   
+ 338   1      }
+ 339          
+ 340          /********************* INT0中断函数 *************************/
+ 341          void Ext_INT0 (void) interrupt INT0_VECTOR              //进中断时已经清除标志
+ 342          {
+ 343   1          _nop_();
+ 344   1          Reboot_System();
+ 345   1          _nop_();
+ 346   1      }
+ 347          
+ 348          /********************* INT1中断函数 *************************/
+ 349          void Ext_INT1 (void) interrupt INT1_VECTOR              //进中断时已经清除标志
+ 350          {
+ 351   1               _nop_();
+ 352   1         Reboot_System();
+ 353   1         _nop_();
+ 354   1      }
+ 355          
+ 356          /********************* Timer0中断函数************************/
+ 357          void timer0_int (void) interrupt TIMER0_VECTOR
+ 358          {
+ 359   1              // process watch dog signal
+ 360   1              WDT_CONTR &= 0x7F;
+ 361   1          WDT_CONTR |= 0x10;
+ 362   1      
+ 363   1              //timer out counter
+ 364   1              if(TimeoutCount <= TIMEOUT_VAL_MAX)
+ 365   1                      TimeoutCount++;     
+ 366   1      }
+ 367          
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 34  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
-             ; FUNCTION Com003B (BEGIN)
-0000         L?0060:
+             ; FUNCTION Com003A (BEGIN)
+0000         L?0059:
 0000 E4                CLR     A
 0001 F500        R     MOV     EXTI_InitStructure,A
 0003 750001      R     MOV     EXTI_InitStructure+01H,#01H
@@ -2046,34 +2100,34 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000A 7A00        R     MOV     R2,#HIGH EXTI_InitStructure
 000C 7900        R     MOV     R1,#LOW EXTI_InitStructure
 000E 22                RET     
-             ; FUNCTION Com003B (END)
+             ; FUNCTION Com003A (END)
 
              ; FUNCTION UART_config (BEGIN)
-                                           ; SOURCE LINE # 53
                                            ; SOURCE LINE # 54
-                                           ; SOURCE LINE # 56
-0000 750040      R     MOV     COMx_InitStructure,#040H
+                                           ; SOURCE LINE # 55
                                            ; SOURCE LINE # 57
-0003 750002      R     MOV     COMx_InitStructure+01H,#02H
+0000 750040      R     MOV     COMx_InitStructure,#040H
                                            ; SOURCE LINE # 58
+0003 750002      R     MOV     COMx_InitStructure+01H,#02H
+                                           ; SOURCE LINE # 59
 0006 E4                CLR     A
 0007 F500        R     MOV     COMx_InitStructure+05H,A
 0009 750096      R     MOV     COMx_InitStructure+04H,#096H
 000C F500        R     MOV     COMx_InitStructure+03H,A
 000E F500        R     MOV     COMx_InitStructure+02H,A
-                                           ; SOURCE LINE # 59
-0010 750001      R     MOV     COMx_InitStructure+07H,#01H
                                            ; SOURCE LINE # 60
-0013 F500        R     MOV     COMx_InitStructure+08H,A
+0010 750001      R     MOV     COMx_InitStructure+07H,#01H
                                            ; SOURCE LINE # 61
-0015 750001      R     MOV     COMx_InitStructure+09H,#01H
+0013 F500        R     MOV     COMx_InitStructure+08H,A
                                            ; SOURCE LINE # 62
-0018 F500        R     MOV     COMx_InitStructure+0AH,A
+0015 750001      R     MOV     COMx_InitStructure+09H,#01H
                                            ; SOURCE LINE # 63
-001A F500        R     MOV     COMx_InitStructure+0BH,A
+0018 F500        R     MOV     COMx_InitStructure+0AH,A
                                            ; SOURCE LINE # 64
-001C F500        R     MOV     COMx_InitStructure+0CH,A
+001A F500        R     MOV     COMx_InitStructure+0BH,A
                                            ; SOURCE LINE # 65
+001C F500        R     MOV     COMx_InitStructure+0CH,A
+                                           ; SOURCE LINE # 66
 001E FB                MOV     R3,A
 001F 7A00        R     MOV     R2,#HIGH COMx_InitStructure
 0021 7900        R     MOV     R1,#LOW COMx_InitStructure
@@ -2082,38 +2136,38 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION UART_config (END)
 
              ; FUNCTION GPIO_Config (BEGIN)
-                                           ; SOURCE LINE # 69
                                            ; SOURCE LINE # 70
-                                           ; SOURCE LINE # 73
-0000 75000F      R     MOV     GPIO_InitStructure+01H,#0FH
+                                           ; SOURCE LINE # 71
                                            ; SOURCE LINE # 74
-0003 750001      R     MOV     GPIO_InitStructure,#01H
+0000 75000F      R     MOV     GPIO_InitStructure+01H,#0FH
                                            ; SOURCE LINE # 75
+0003 750001      R     MOV     GPIO_InitStructure,#01H
+                                           ; SOURCE LINE # 76
 0006 7B00              MOV     R3,#00H
-0008 120000      R     LCALL   L?0061
-                                           ; SOURCE LINE # 77
-000B 750010      R     MOV     GPIO_InitStructure+01H,#010H
+0008 120000      R     LCALL   L?0060
                                            ; SOURCE LINE # 78
+000B 750010      R     MOV     GPIO_InitStructure+01H,#010H
+                                           ; SOURCE LINE # 79
 000E E4                CLR     A
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 34  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 35  
 
 000F F500        R     MOV     GPIO_InitStructure,A
-                                           ; SOURCE LINE # 79
+                                           ; SOURCE LINE # 80
 0011 FB                MOV     R3,A
-0012 120000      R     LCALL   L?0061
-                                           ; SOURCE LINE # 81
-0015 7500C0      R     MOV     GPIO_InitStructure+01H,#0C0H
+0012 120000      R     LCALL   L?0060
                                            ; SOURCE LINE # 82
+0015 7500C0      R     MOV     GPIO_InitStructure+01H,#0C0H
+                                           ; SOURCE LINE # 83
 0018 E4                CLR     A
 0019 F500        R     MOV     GPIO_InitStructure,A
-                                           ; SOURCE LINE # 83
+                                           ; SOURCE LINE # 84
 001B FB                MOV     R3,A
 001C 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
 001E 7900        R     MOV     R1,#LOW GPIO_InitStructure
 0020 7F03              MOV     R7,#03H
 0022 020000      E     LJMP    _GPIO_Inilize
-                                           ; SOURCE LINE # 84
-0025         L?0061:
+                                           ; SOURCE LINE # 85
+0025         L?0060:
 0025 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
 0027 7900        R     MOV     R1,#LOW GPIO_InitStructure
 0029 7F01              MOV     R7,#01H
@@ -2122,25 +2176,25 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION GPIO_Config (END)
 
              ; FUNCTION Timer_Config (BEGIN)
-                                           ; SOURCE LINE # 87
                                            ; SOURCE LINE # 88
-                                           ; SOURCE LINE # 90
+                                           ; SOURCE LINE # 89
+                                           ; SOURCE LINE # 91
 0000 E4                CLR     A
 0001 F500        R     MOV     TIM_InitStructure,A
-                                           ; SOURCE LINE # 91
-0003 750001      R     MOV     TIM_InitStructure+01H,#01H
                                            ; SOURCE LINE # 92
-0006 750001      R     MOV     TIM_InitStructure+02H,#01H
+0003 750001      R     MOV     TIM_InitStructure+01H,#01H
                                            ; SOURCE LINE # 93
-0009 750001      R     MOV     TIM_InitStructure+03H,#01H
+0006 750001      R     MOV     TIM_InitStructure+02H,#01H
                                            ; SOURCE LINE # 94
-000C F500        R     MOV     TIM_InitStructure+04H,A
+0009 750001      R     MOV     TIM_InitStructure+03H,#01H
                                            ; SOURCE LINE # 95
+000C F500        R     MOV     TIM_InitStructure+04H,A
+                                           ; SOURCE LINE # 96
 000E 75004C      R     MOV     TIM_InitStructure+05H,#04CH
 0011 F500        R     MOV     TIM_InitStructure+06H,A
-                                           ; SOURCE LINE # 96
-0013 750001      R     MOV     TIM_InitStructure+07H,#01H
                                            ; SOURCE LINE # 97
+0013 750001      R     MOV     TIM_InitStructure+07H,#01H
+                                           ; SOURCE LINE # 98
 0016 FB                MOV     R3,A
 0017 7A00        R     MOV     R2,#HIGH TIM_InitStructure
 0019 7900        R     MOV     R1,#LOW TIM_InitStructure
@@ -2149,96 +2203,62 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION Timer_Config (END)
 
              ; FUNCTION EXTI_config (BEGIN)
-                                           ; SOURCE LINE # 100
                                            ; SOURCE LINE # 101
-                                           ; SOURCE LINE # 104
+                                           ; SOURCE LINE # 102
                                            ; SOURCE LINE # 105
                                            ; SOURCE LINE # 106
                                            ; SOURCE LINE # 107
-0000 120000      R     LCALL   L?0060
+                                           ; SOURCE LINE # 108
+0000 120000      R     LCALL   L?0059
 0003 FF                MOV     R7,A
 0004 120000      E     LCALL   _Ext_Inilize
-                                           ; SOURCE LINE # 109
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 35  
-
                                            ; SOURCE LINE # 110
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 36  
+
                                            ; SOURCE LINE # 111
                                            ; SOURCE LINE # 112
-0007 120000      R     LCALL   L?0060
+                                           ; SOURCE LINE # 113
+0007 120000      R     LCALL   L?0059
 000A 7F01              MOV     R7,#01H
 000C 020000      E     LJMP    _Ext_Inilize
              ; FUNCTION EXTI_config (END)
 
              ; FUNCTION _delay_timer (BEGIN)
-                                           ; SOURCE LINE # 115
+                                           ; SOURCE LINE # 132
 ;---- Variable 'iTime' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 116
-                                           ; SOURCE LINE # 117
+                                           ; SOURCE LINE # 133
+                                           ; SOURCE LINE # 134
 0000 E4                CLR     A
 0001 F500        R     MOV     TimeoutCount,A
 0003         ?C0005:
-                                           ; SOURCE LINE # 118
+                                           ; SOURCE LINE # 135
 0003 E500        R     MOV     A,TimeoutCount
 0005 D3                SETB    C
 0006 9F                SUBB    A,R7
 0007 40FA              JC      ?C0005
 0009         ?C0006:
-                                           ; SOURCE LINE # 119
+                                           ; SOURCE LINE # 136
 0009 7500FF      R     MOV     TimeoutCount,#0FFH
-                                           ; SOURCE LINE # 120
+                                           ; SOURCE LINE # 137
 000C 22                RET     
              ; FUNCTION _delay_timer (END)
 
              ; FUNCTION _wait_switch_on (BEGIN)
-                                           ; SOURCE LINE # 122
-;---- Variable 'time_out' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 123
-                                           ; SOURCE LINE # 125
-0000 E4                CLR     A
-0001 F500        R     MOV     TimeoutCount,A
-0003         ?C0008:
-                                           ; SOURCE LINE # 126
-0003 30920F            JNB     SwitchOnStatus,?C0009
-                                           ; SOURCE LINE # 127
-                                           ; SOURCE LINE # 128
-0006 E500        R     MOV     A,TimeoutCount
-0008 D3                SETB    C
-0009 9F                SUBB    A,R7
-000A 40F7              JC      ?C0008
-                                           ; SOURCE LINE # 129
-                                           ; SOURCE LINE # 130
-000C 7BFF              MOV     R3,#0FFH
-000E 7A00        R     MOV     R2,#HIGH ?SC_0
-0010 7900        R     MOV     R1,#LOW ?SC_0
-0012 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 131
-                                           ; SOURCE LINE # 132
-                                           ; SOURCE LINE # 135
-0015         ?C0009:
-                                           ; SOURCE LINE # 136
-0015 7500FF      R     MOV     TimeoutCount,#0FFH
-                                           ; SOURCE LINE # 137
-0018 22                RET     
-             ; FUNCTION _wait_switch_on (END)
-
-             ; FUNCTION _wait_out_off_hook (BEGIN)
                                            ; SOURCE LINE # 139
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 36  
-
 ;---- Variable 'time_out' assigned to Register 'R7' ----
                                            ; SOURCE LINE # 140
                                            ; SOURCE LINE # 142
 0000 E4                CLR     A
 0001 F500        R     MOV     TimeoutCount,A
-0003         ?C0012:
+0003         ?C0008:
                                            ; SOURCE LINE # 143
-0003 30930F            JNB     OutOffHookCheck,?C0013
+0003 30920F            JNB     SwitchOnStatus,?C0009
                                            ; SOURCE LINE # 144
                                            ; SOURCE LINE # 145
 0006 E500        R     MOV     A,TimeoutCount
 0008 D3                SETB    C
 0009 9F                SUBB    A,R7
-000A 40F7              JC      ?C0012
+000A 40F7              JC      ?C0008
                                            ; SOURCE LINE # 146
                                            ; SOURCE LINE # 147
 000C 7BFF              MOV     R3,#0FFH
@@ -2248,246 +2268,273 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 148
                                            ; SOURCE LINE # 149
                                            ; SOURCE LINE # 152
-0015         ?C0013:
+0015         ?C0009:
                                            ; SOURCE LINE # 153
 0015 7500FF      R     MOV     TimeoutCount,#0FFH
                                            ; SOURCE LINE # 154
 0018 22                RET     
+             ; FUNCTION _wait_switch_on (END)
+
+             ; FUNCTION _wait_out_off_hook (BEGIN)
+                                           ; SOURCE LINE # 156
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 37  
+
+;---- Variable 'time_out' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 157
+                                           ; SOURCE LINE # 159
+0000 E4                CLR     A
+0001 F500        R     MOV     TimeoutCount,A
+0003         ?C0012:
+                                           ; SOURCE LINE # 160
+0003 30930F            JNB     OutOffHookCheck,?C0013
+                                           ; SOURCE LINE # 161
+                                           ; SOURCE LINE # 162
+0006 E500        R     MOV     A,TimeoutCount
+0008 D3                SETB    C
+0009 9F                SUBB    A,R7
+000A 40F7              JC      ?C0012
+                                           ; SOURCE LINE # 163
+                                           ; SOURCE LINE # 164
+000C 7BFF              MOV     R3,#0FFH
+000E 7A00        R     MOV     R2,#HIGH ?SC_0
+0010 7900        R     MOV     R1,#LOW ?SC_0
+0012 120000      E     LCALL   _PrintString1
+                                           ; SOURCE LINE # 165
+                                           ; SOURCE LINE # 166
+                                           ; SOURCE LINE # 169
+0015         ?C0013:
+                                           ; SOURCE LINE # 170
+0015 7500FF      R     MOV     TimeoutCount,#0FFH
+                                           ; SOURCE LINE # 171
+0018 22                RET     
              ; FUNCTION _wait_out_off_hook (END)
 
              ; FUNCTION print_signal_status_info (BEGIN)
-                                           ; SOURCE LINE # 155
-                                           ; SOURCE LINE # 156
-                                           ; SOURCE LINE # 158
+                                           ; SOURCE LINE # 172
+                                           ; SOURCE LINE # 173
+                                           ; SOURCE LINE # 175
 0000 7BFF              MOV     R3,#0FFH
 0002 309006            JNB     ExAutoCtrlSignal,?C0016
-                                           ; SOURCE LINE # 159
+                                           ; SOURCE LINE # 176
 0005 7A00        R     MOV     R2,#HIGH ?SC_42
 0007 7900        R     MOV     R1,#LOW ?SC_42
-0009 8004              SJMP    ?C0051
+0009 8004              SJMP    ?C0050
 000B         ?C0016:
-                                           ; SOURCE LINE # 161
+                                           ; SOURCE LINE # 178
 000B 7A00        R     MOV     R2,#HIGH ?SC_69
 000D 7900        R     MOV     R1,#LOW ?SC_69
-000F         ?C0051:
+000F         ?C0050:
 000F 120000      E     LCALL   _PrintString1
 0012         ?C0017:
-                                           ; SOURCE LINE # 162
+                                           ; SOURCE LINE # 179
 0012 7BFF              MOV     R3,#0FFH
 0014 309106            JNB     SystemWorkMode,?C0018
-                                           ; SOURCE LINE # 163
+                                           ; SOURCE LINE # 180
 0017 7A00        R     MOV     R2,#HIGH ?SC_94
 0019 7900        R     MOV     R1,#LOW ?SC_94
-001B 8004              SJMP    ?C0052
+001B 8004              SJMP    ?C0051
 001D         ?C0018:
-                                           ; SOURCE LINE # 165
+                                           ; SOURCE LINE # 182
 001D 7A00        R     MOV     R2,#HIGH ?SC_126
 001F 7900        R     MOV     R1,#LOW ?SC_126
-0021         ?C0052:
+0021         ?C0051:
 0021 120000      E     LCALL   _PrintString1
 0024         ?C0019:
-                                           ; SOURCE LINE # 166
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 37  
+                                           ; SOURCE LINE # 183
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 38  
 
 0024 7BFF              MOV     R3,#0FFH
 0026 209306            JB      OutOffHookCheck,?C0020
-                                           ; SOURCE LINE # 167
+                                           ; SOURCE LINE # 184
 0029 7A00        R     MOV     R2,#HIGH ?SC_160
 002B 7900        R     MOV     R1,#LOW ?SC_160
-002D 8004              SJMP    ?C0053
+002D 8004              SJMP    ?C0052
 002F         ?C0020:
-                                           ; SOURCE LINE # 169
+                                           ; SOURCE LINE # 186
 002F 7A00        R     MOV     R2,#HIGH ?SC_186
 0031 7900        R     MOV     R1,#LOW ?SC_186
-0033         ?C0053:
+0033         ?C0052:
 0033 120000      E     LCALL   _PrintString1
 0036         ?C0021:
-                                           ; SOURCE LINE # 170
+                                           ; SOURCE LINE # 187
 0036 7BFF              MOV     R3,#0FFH
 0038 209206            JB      SwitchOnStatus,?C0022
-                                           ; SOURCE LINE # 171
+                                           ; SOURCE LINE # 188
 003B 7A00        R     MOV     R2,#HIGH ?SC_212
 003D 7900        R     MOV     R1,#LOW ?SC_212
-003F 8004              SJMP    ?C0054
+003F 8004              SJMP    ?C0053
 0041         ?C0022:
-                                           ; SOURCE LINE # 173
+                                           ; SOURCE LINE # 190
 0041 7A00        R     MOV     R2,#HIGH ?SC_238
 0043 7900        R     MOV     R1,#LOW ?SC_238
-0045         ?C0054:
+0045         ?C0053:
 0045 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 174
+                                           ; SOURCE LINE # 191
 0048         ?C0024:
 0048 22                RET     
              ; FUNCTION print_signal_status_info (END)
 
              ; FUNCTION main (BEGIN)
-                                           ; SOURCE LINE # 177
-                                           ; SOURCE LINE # 178
-                                           ; SOURCE LINE # 180
+                                           ; SOURCE LINE # 194
+                                           ; SOURCE LINE # 195
+                                           ; SOURCE LINE # 197
 0000 C2AF              CLR     EA
-                                           ; SOURCE LINE # 181
+                                           ; SOURCE LINE # 198
 0002 120000      R     LCALL   GPIO_Config
-                                           ; SOURCE LINE # 182
+                                           ; SOURCE LINE # 199
 0005 C200        E     CLR     ?setSystemSleepFlag?BIT
 0007 120000      E     LCALL   setSystemSleepFlag
-                                           ; SOURCE LINE # 184
+                                           ; SOURCE LINE # 201
 000A 120000      R     LCALL   EXTI_config
-                                           ; SOURCE LINE # 185
+                                           ; SOURCE LINE # 202
 000D 120000      R     LCALL   UART_config
-                                           ; SOURCE LINE # 186
+                                           ; SOURCE LINE # 203
 0010 120000      R     LCALL   Timer_Config
-                                           ; SOURCE LINE # 189
+                                           ; SOURCE LINE # 207
 0013 D2AF              SETB    EA
-                                           ; SOURCE LINE # 192
+                                           ; SOURCE LINE # 210
 0015 120000      E     LCALL   POF_Boot_Delay
 0018 9200        R     MOV     firstSystemBoot,C
-                                           ; SOURCE LINE # 194
+                                           ; SOURCE LINE # 212
 001A 300003      R     JNB     firstSystemBoot,?C0025
-                                           ; SOURCE LINE # 195
+                                           ; SOURCE LINE # 213
 001D 120000      E     LCALL   PrintSystemInfoToSerial
 0020         ?C0025:
-                                           ; SOURCE LINE # 199
+                                           ; SOURCE LINE # 217
 0020 120000      E     LCALL   init_Watch_Dog
-                                           ; SOURCE LINE # 200
+                                           ; SOURCE LINE # 218
 0023 7BFF              MOV     R3,#0FFH
 0025 7A00        R     MOV     R2,#HIGH ?SC_265
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 38  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 39  
 
 0027 7900        R     MOV     R1,#LOW ?SC_265
 0029 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 201
+                                           ; SOURCE LINE # 219
 002C 7BFF              MOV     R3,#0FFH
 002E 7A00        R     MOV     R2,#HIGH ?SC_322
 0030 7900        R     MOV     R1,#LOW ?SC_322
 0032 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 202
+                                           ; SOURCE LINE # 220
 0035 7BFF              MOV     R3,#0FFH
 0037 7A00        R     MOV     R2,#HIGH ?SC_364
 0039 7900        R     MOV     R1,#LOW ?SC_364
 003B 120000      E     LCALL   _PrintString1
 003E         ?C0026:
-                                           ; SOURCE LINE # 207
-                                           ; SOURCE LINE # 208
-                                           ; SOURCE LINE # 211
-003E 309030            JNB     ExAutoCtrlSignal,?C0028
-                                           ; SOURCE LINE # 212
-                                           ; SOURCE LINE # 215
-0041 7F14              MOV     R7,#014H
-0043 120000      R     LCALL   _delay_timer
-                                           ; SOURCE LINE # 216
-0046 3090F5            JNB     ExAutoCtrlSignal,?C0026
-                                           ; SOURCE LINE # 217
-0049         ?C0029:
-                                           ; SOURCE LINE # 223
-0049 209307            JB      OutOffHookCheck,?C0030
-                                           ; SOURCE LINE # 224
+                                           ; SOURCE LINE # 225
+                                           ; SOURCE LINE # 226
                                            ; SOURCE LINE # 229
-004C E500        R     MOV     A,MotorRunningCtrl_Running
-004E F4                CPL     A
-004F 605D              JZ      ?C0035
+003E 309023            JNB     ExAutoCtrlSignal,?C0028
                                            ; SOURCE LINE # 230
-                                           ; SOURCE LINE # 231
-0051 804F              SJMP    ?C0057
-0053         ?C0030:
-                                           ; SOURCE LINE # 233
-                                           ; SOURCE LINE # 245
-0053 7F1E              MOV     R7,#01EH
-0055 120000      R     LCALL   _delay_timer
-                                           ; SOURCE LINE # 246
-0058 E500        R     MOV     A,MotorRunningCtrl_Running
-005A 6401              XRL     A,#01H
-005C 6007              JZ      ?C0033
+                                           ; SOURCE LINE # 241
+0041 209307            JB      OutOffHookCheck,?C0029
+                                           ; SOURCE LINE # 242
                                            ; SOURCE LINE # 247
-005E 7F01              MOV     R7,#01H
-0060 120000      E     LCALL   _setMontorRunningStatus
-0063 8F00        R     MOV     MotorRunningCtrl_Running,R7
-0065         ?C0033:
-                                           ; SOURCE LINE # 250
-0065 7F64              MOV     R7,#064H
-0067 120000      R     LCALL   _wait_out_off_hook
-                                           ; SOURCE LINE # 252
+0044 E500        R     MOV     A,MotorRunningCtrl_Running
+0046 F4                CPL     A
+0047 605D              JZ      ?C0034
+                                           ; SOURCE LINE # 248
+                                           ; SOURCE LINE # 249
+0049 804F              SJMP    ?C0056
+004B         ?C0029:
+                                           ; SOURCE LINE # 251
+                                           ; SOURCE LINE # 265
+004B E500        R     MOV     A,MotorRunningCtrl_Running
+004D 6401              XRL     A,#01H
+004F 6007              JZ      ?C0032
+                                           ; SOURCE LINE # 266
+0051 7F01              MOV     R7,#01H
+0053 120000      E     LCALL   _setMontorRunningStatus
+0056 8F00        R     MOV     MotorRunningCtrl_Running,R7
+0058         ?C0032:
+                                           ; SOURCE LINE # 269
+0058 7F64              MOV     R7,#064H
+005A 120000      R     LCALL   _wait_out_off_hook
+                                           ; SOURCE LINE # 271
+005D E500        R     MOV     A,MotorRunningCtrl_Running
+005F F4                CPL     A
+0060 6044              JZ      ?C0034
+                                           ; SOURCE LINE # 272
+0062         ?C0054:
+                                           ; SOURCE LINE # 273
+                                           ; SOURCE LINE # 274
+0062 8036              SJMP    ?C0056
+0064         ?C0028:
+                                           ; SOURCE LINE # 275
+0064 20903C            JB      ExAutoCtrlSignal,?C0035
+                                           ; SOURCE LINE # 276
+                                           ; SOURCE LINE # 287
+0067 209207            JB      SwitchOnStatus,?C0036
+                                           ; SOURCE LINE # 288
+                                           ; SOURCE LINE # 293
 006A E500        R     MOV     A,MotorRunningCtrl_Running
 006C F4                CPL     A
-006D 603F              JZ      ?C0035
-                                           ; SOURCE LINE # 253
-006F         ?C0055:
-                                           ; SOURCE LINE # 254
-                                           ; SOURCE LINE # 255
-006F 8031              SJMP    ?C0057
-0071         ?C0028:
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 39  
+006D 6037              JZ      ?C0034
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 40  
 
-                                           ; SOURCE LINE # 256
-0071 209037            JB      ExAutoCtrlSignal,?C0036
-                                           ; SOURCE LINE # 257
-                                           ; SOURCE LINE # 268
-0074 209207            JB      SwitchOnStatus,?C0037
-                                           ; SOURCE LINE # 269
-                                           ; SOURCE LINE # 274
-0077 E500        R     MOV     A,MotorRunningCtrl_Running
-0079 F4                CPL     A
-007A 6032              JZ      ?C0035
-                                           ; SOURCE LINE # 275
-007C         ?C0056:
-                                           ; SOURCE LINE # 276
-007C 8024              SJMP    ?C0057
-007E         ?C0037:
-                                           ; SOURCE LINE # 278
-                                           ; SOURCE LINE # 290
-007E 30910A            JNB     SystemWorkMode,?C0040
-                                           ; SOURCE LINE # 291
-0081 E500        R     MOV     A,MotorRunningCtrl_Running
-0083 6401              XRL     A,#01H
-0085 6011              JZ      ?C0042
-                                           ; SOURCE LINE # 292
-0087 7F01              MOV     R7,#01H
-                                           ; SOURCE LINE # 293
-0089 8008              SJMP    ?C0058
-008B         ?C0040:
                                            ; SOURCE LINE # 294
-008B E500        R     MOV     A,MotorRunningCtrl_Running
-008D 6410              XRL     A,#010H
-008F 6007              JZ      ?C0042
+006F         ?C0055:
                                            ; SOURCE LINE # 295
-0091 7F10              MOV     R7,#010H
-0093         ?C0058:
-0093 120000      E     LCALL   _setMontorRunningStatus
-0096 8F00        R     MOV     MotorRunningCtrl_Running,R7
-                                           ; SOURCE LINE # 296
-0098         ?C0042:
-                                           ; SOURCE LINE # 299
-0098 7F64              MOV     R7,#064H
-009A 120000      R     LCALL   _wait_switch_on
-                                           ; SOURCE LINE # 301
-009D E500        R     MOV     A,MotorRunningCtrl_Running
-009F F4                CPL     A
-00A0 600C              JZ      ?C0035
-                                           ; SOURCE LINE # 302
-00A2         ?C0057:
-00A2 7FFF              MOV     R7,#0FFH
-00A4 120000      E     LCALL   _setMontorRunningStatus
-00A7 8F00        R     MOV     MotorRunningCtrl_Running,R7
-                                           ; SOURCE LINE # 303
-                                           ; SOURCE LINE # 304
-00A9 8003              SJMP    ?C0035
-00AB         ?C0036:
-                                           ; SOURCE LINE # 306
-00AB 120000      E     LCALL   Reboot_System
-00AE         ?C0035:
-                                           ; SOURCE LINE # 308
-00AE 120000      R     LCALL   print_signal_status_info
+006F 8029              SJMP    ?C0056
+0071         ?C0036:
+                                           ; SOURCE LINE # 297
+                                           ; SOURCE LINE # 309
+0071 30910A            JNB     SystemWorkMode,?C0039
+                                           ; SOURCE LINE # 310
+0074 E500        R     MOV     A,MotorRunningCtrl_Running
+0076 6401              XRL     A,#01H
+0078 6011              JZ      ?C0041
+                                           ; SOURCE LINE # 311
+007A 7F01              MOV     R7,#01H
+                                           ; SOURCE LINE # 312
+007C 8008              SJMP    ?C0057
+007E         ?C0039:
+                                           ; SOURCE LINE # 313
+007E E500        R     MOV     A,MotorRunningCtrl_Running
+0080 6410              XRL     A,#010H
+0082 6007              JZ      ?C0041
+                                           ; SOURCE LINE # 314
+0084 7F10              MOV     R7,#010H
+0086         ?C0057:
+0086 120000      E     LCALL   _setMontorRunningStatus
+0089 8F00        R     MOV     MotorRunningCtrl_Running,R7
                                            ; SOURCE LINE # 315
-00B1 120000      E     LCALL   System_PowerDown
-                                           ; SOURCE LINE # 316
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 40  
-
-00B4 8088              SJMP    ?C0026
+008B         ?C0041:
+                                           ; SOURCE LINE # 318
+008B 7F64              MOV     R7,#064H
+008D 120000      R     LCALL   _wait_switch_on
+                                           ; SOURCE LINE # 319
+0090 7F04              MOV     R7,#04H
+0092 120000      R     LCALL   _delay_timer
+                                           ; SOURCE LINE # 320
+0095 E500        R     MOV     A,MotorRunningCtrl_Running
+0097 F4                CPL     A
+0098 600C              JZ      ?C0034
+                                           ; SOURCE LINE # 321
+009A         ?C0056:
+009A 7FFF              MOV     R7,#0FFH
+009C 120000      E     LCALL   _setMontorRunningStatus
+009F 8F00        R     MOV     MotorRunningCtrl_Running,R7
+                                           ; SOURCE LINE # 322
+                                           ; SOURCE LINE # 323
+00A1 8003              SJMP    ?C0034
+00A3         ?C0035:
+                                           ; SOURCE LINE # 325
+00A3 120000      E     LCALL   Reboot_System
+00A6         ?C0034:
+                                           ; SOURCE LINE # 328
+00A6 120000      R     LCALL   print_signal_status_info
+                                           ; SOURCE LINE # 335
+00A9 120000      E     LCALL   System_PowerDown
+                                           ; SOURCE LINE # 337
+00AC 8090              SJMP    ?C0026
              ; FUNCTION main (END)
 
              ; FUNCTION Ext_INT0 (BEGIN)
 0000 C0E0              PUSH    ACC
 0002 C0F0              PUSH    B
 0004 C083              PUSH    DPH
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 41  
+
 0006 C082              PUSH    DPL
 0008 C0D0              PUSH    PSW
 000A 75D000            MOV     PSW,#00H
@@ -2499,14 +2546,14 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0017 C005              PUSH    AR5
 0019 C006              PUSH    AR6
 001B C007              PUSH    AR7
-                                           ; SOURCE LINE # 320
-                                           ; SOURCE LINE # 322
+                                           ; SOURCE LINE # 341
+                                           ; SOURCE LINE # 343
 001D 00                NOP     
-                                           ; SOURCE LINE # 323
+                                           ; SOURCE LINE # 344
 001E 120000      E     LCALL   Reboot_System
-                                           ; SOURCE LINE # 324
+                                           ; SOURCE LINE # 345
 0021 00                NOP     
-                                           ; SOURCE LINE # 325
+                                           ; SOURCE LINE # 346
 0022 D007              POP     AR7
 0024 D006              POP     AR6
 0026 D005              POP     AR5
@@ -2538,20 +2585,20 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0017 C005              PUSH    AR5
 0019 C006              PUSH    AR6
 001B C007              PUSH    AR7
-                                           ; SOURCE LINE # 328
-                                           ; SOURCE LINE # 330
+                                           ; SOURCE LINE # 349
+                                           ; SOURCE LINE # 351
 001D 00                NOP     
-                                           ; SOURCE LINE # 331
+                                           ; SOURCE LINE # 352
 001E 120000      E     LCALL   Reboot_System
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 41  
-
-                                           ; SOURCE LINE # 332
+                                           ; SOURCE LINE # 353
 0021 00                NOP     
-                                           ; SOURCE LINE # 333
+                                           ; SOURCE LINE # 354
 0022 D007              POP     AR7
 0024 D006              POP     AR6
 0026 D005              POP     AR5
 0028 D004              POP     AR4
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 42  
+
 002A D003              POP     AR3
 002C D002              POP     AR2
 002E D001              POP     AR1
@@ -2567,26 +2614,26 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION timer0_int (BEGIN)
 0000 C0E0              PUSH    ACC
 0002 C0D0              PUSH    PSW
-                                           ; SOURCE LINE # 336
-                                           ; SOURCE LINE # 339
+                                           ; SOURCE LINE # 357
+                                           ; SOURCE LINE # 360
 0004 53C17F            ANL     WDT_CONTR,#07FH
-                                           ; SOURCE LINE # 340
+                                           ; SOURCE LINE # 361
 0007 43C110            ORL     WDT_CONTR,#010H
-                                           ; SOURCE LINE # 343
+                                           ; SOURCE LINE # 364
 000A E500        R     MOV     A,TimeoutCount
 000C D3                SETB    C
 000D 94C8              SUBB    A,#0C8H
-000F 5002              JNC     ?C0050
-                                           ; SOURCE LINE # 344
+000F 5002              JNC     ?C0049
+                                           ; SOURCE LINE # 365
 0011 0500        R     INC     TimeoutCount
-                                           ; SOURCE LINE # 345
-0013         ?C0050:
+                                           ; SOURCE LINE # 366
+0013         ?C0049:
 0013 D0D0              POP     PSW
 0015 D0E0              POP     ACC
 0017 32                RETI    
              ; FUNCTION timer0_int (END)
 
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 42  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 43  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -2649,7 +2696,7 @@ Ext_INT1 . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
 SystemWorkMode . . . . . . . . . . . .  ABSBIT   -----  BIT      0091H  1
-C51 COMPILER V9.52.0.0   MAIN                                                              07/02/2017 23:30:13 PAGE 43  
+C51 COMPILER V9.52.0.0   MAIN                                                              07/03/2017 23:32:51 PAGE 44  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -2693,7 +2740,7 @@ PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    612    ----
+   CODE SIZE        =    604    ----
    CONSTANT SIZE    =    417    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

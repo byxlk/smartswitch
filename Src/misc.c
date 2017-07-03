@@ -5,21 +5,20 @@
 
 void init_Watch_Dog(void)
 {
-		//
-		WDT_CONTR = 0x3A;  //0011 1010
+	WDT_CONTR = 0x3A;  //0011 1010
 }
 
 void setSystemSleepFlag(bit sleep)
 {
-		SystemSleepStatus = (sleep)? FALSE : TRUE ;
+	SystemSleepStatus = (sleep)? FALSE : TRUE ;
 }
 
 void System_PowerDown(void)
 {
     //PCON |= 2	//MCU 进入 睡眠 模式
     LOGD("System entery Power Down mode ...\r\n\r\n");
-		setSystemSleepFlag(TRUE);
-	  _nop_();
+	setSystemSleepFlag(TRUE);
+	_nop_();
     _nop_();
     _nop_();
     MCU_POWER_DOWN();
@@ -33,14 +32,16 @@ bit POF_Boot_Delay(void)
 {
     if(PCON & 0x10)
     {
-				LOGD("Cold reset, delay 4s entery system ...\r\n");
+		LOGD("Cold reset, delay 4s entery system ...\r\n");
+#if ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET
         delay_4000ms()	; //boot delay 4s
+#endif
         PCON &= 0xEF; //清零POF寄存器 
 				
-				return TRUE;
+		return TRUE;
     }
-		else
-				return FALSE;
+	else
+		return FALSE;
 }
 
 void Reboot_System(void)
@@ -62,7 +63,7 @@ unsigned char setMontorRunningStatus(unsigned char runStat)
         MotorRunningCtrl_R = 1;
         MotorRunningCtrl_L = 0;
         MotorRunStatus = MONTOR_RIGHT_RUNNING;
-        delay_ms(1);
+        //delay_ms(1);
         LOGD("[Motor status] ===> \r\n");
     }
     else if(MONTOR_LEFT_RUNNING == runStat) //反转
@@ -70,7 +71,7 @@ unsigned char setMontorRunningStatus(unsigned char runStat)
         MotorRunningCtrl_R = 0;
         MotorRunningCtrl_L = 1;
         MotorRunStatus = MONTOR_LEFT_RUNNING;
-        delay_ms(1);
+        //delay_ms(1);
         LOGD("[Motor status] <=== \r\n");
     }
     else //停转
@@ -78,7 +79,7 @@ unsigned char setMontorRunningStatus(unsigned char runStat)
         MotorRunningCtrl_R = 1;
         MotorRunningCtrl_L = 1;
         MotorRunStatus = MONTOR_STOP_RUNNING;
-        delay_ms(1);
+        //delay_ms(1);
         LOGD("[Motor status] Stop.\r\n\r\n");
     }
     
