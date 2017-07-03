@@ -1,0 +1,1715 @@
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MISC
+OBJECT MODULE PLACED IN .\Objects\misc.obj
+COMPILER INVOKED BY: C:\Keil_c51\C51\BIN\C51.EXE ..\Src\misc.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCL
+                    -UDE SYMBOLS PRINT(.\Lists\misc.lst) PREPRINT(.\Lists\misc.i) OBJECT(.\Objects\misc.obj)
+
+line level    source
+
+   1          #include "config.h"
+   1      =1  
+   2      =1  /*------------------------------------------------------------------*/
+   3      =1  /* --- STC MCU International Limited -------------------------------*/
+   4      =1  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
+  10      =1  /* If you want to use the program or the program referenced in the  */
+  11      =1  /* article, please specify in which data and procedures from STC    */
+  12      =1  /*------------------------------------------------------------------*/
+  13      =1  
+  14      =1  
+  15      =1  #ifndef         __CONFIG_H
+  16      =1  #define         __CONFIG_H
+  17      =1  
+  18      =1  
+  19      =1  /*********************************************************/
+  20      =1  
+  21      =1  //#define MAIN_Fosc             22118400L       //¶¨ÒåÖ÷Ê±ÖÓ
+  22      =1  //#define MAIN_Fosc             12000000L       //¶¨ÒåÖ÷Ê±ÖÓ
+  23      =1  #define MAIN_Fosc               11059200L       //¶¨ÒåÖ÷Ê±ÖÓ
+  24      =1  //#define MAIN_Fosc              5529600L       //¶¨ÒåÖ÷Ê±ÖÓ
+  25      =1  //#define MAIN_Fosc             24000000L       //¶¨ÒåÖ÷Ê±ÖÓ
+  26      =1  
+  27      =1  
+  28      =1  /*********************************************************/
+  29      =1  #include        "STC15Fxxxx.H"
+   1      =2  
+   2      =2  /*------------------------------------------------------------------*/
+   3      =2  /* --- STC MCU International Limited -------------------------------*/
+   4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
+  10      =2  /* If you want to use the program or the program referenced in the  */
+  11      =2  /* article, please specify in which data and procedures from STC    */
+  12      =2  /*------------------------------------------------------------------*/
+  13      =2  
+  14      =2  
+  15      =2  
+  16      =2  #ifndef _STC15Fxxxx_H
+  17      =2  #define _STC15Fxxxx_H
+  18      =2  
+  19      =2  #include <intrins.h>
+   1      =3  /*--------------------------------------------------------------------------
+   2      =3  INTRINS.H
+   3      =3  
+   4      =3  Intrinsic functions for C51.
+   5      =3  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 2   
+
+   6      =3  All rights reserved.
+   7      =3  --------------------------------------------------------------------------*/
+   8      =3  
+   9      =3  #ifndef __INTRINS_H__
+  10      =3  #define __INTRINS_H__
+  11      =3  
+  12      =3  #pragma SAVE
+  13      =3  
+  14      =3  #if defined (__CX2__)
+           =3 #pragma FUNCTIONS(STATIC)
+           =3 /* intrinsic functions are reentrant, but need static attribute */
+           =3 #endif
+  18      =3  
+  19      =3  extern void          _nop_     (void);
+  20      =3  extern bit           _testbit_ (bit);
+  21      =3  extern unsigned char _cror_    (unsigned char, unsigned char);
+  22      =3  extern unsigned int  _iror_    (unsigned int,  unsigned char);
+  23      =3  extern unsigned long _lror_    (unsigned long, unsigned char);
+  24      =3  extern unsigned char _crol_    (unsigned char, unsigned char);
+  25      =3  extern unsigned int  _irol_    (unsigned int,  unsigned char);
+  26      =3  extern unsigned long _lrol_    (unsigned long, unsigned char);
+  27      =3  extern unsigned char _chkfloat_(float);
+  28      =3  #if defined (__CX2__)
+           =3 extern int           abs       (int);
+           =3 #endif
+  31      =3  #if !defined (__CX2__)
+  32      =3  extern void          _push_    (unsigned char _sfr);
+  33      =3  extern void          _pop_     (unsigned char _sfr);
+  34      =3  #endif
+  35      =3  
+  36      =3  #pragma RESTORE
+  37      =3  
+  38      =3  #endif
+  39      =3  
+  20      =2  
+  21      =2  /*  BYTE Registers  */
+  22      =2  sfr P0   = 0x80;
+  23      =2  sfr SP   = 0x81;
+  24      =2  sfr DPL  = 0x82;
+  25      =2  sfr DPH  = 0x83;
+  26      =2  sfr     S4CON = 0x84;
+  27      =2  sfr     S4BUF = 0x85;
+  28      =2  sfr PCON = 0x87;
+  29      =2  
+  30      =2  sfr TCON = 0x88;
+  31      =2  sfr TMOD = 0x89;
+  32      =2  sfr TL0  = 0x8A;
+  33      =2  sfr TL1  = 0x8B;
+  34      =2  sfr TH0  = 0x8C;
+  35      =2  sfr TH1  = 0x8D;
+  36      =2  sfr     AUXR = 0x8E;
+  37      =2  sfr WAKE_CLKO = 0x8F;
+  38      =2  sfr INT_CLKO = 0x8F;
+  39      =2  sfr     AUXR2    = 0x8F;
+  40      =2  
+  41      =2  sfr RL_TL0  = 0x8A;
+  42      =2  sfr RL_TL1  = 0x8B;
+  43      =2  sfr RL_TH0  = 0x8C;
+  44      =2  sfr RL_TH1  = 0x8D;
+  45      =2  
+  46      =2  
+  47      =2  sfr P1   = 0x90;
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 3   
+
+  48      =2  sfr P1M1 = 0x91;        //P1M1.n,P1M0.n         =00--->Standard,        01--->push-pull         Êµ¼ÊÉÏ1TµÄ¶¼Ò»Ñù
+  49      =2  sfr P1M0 = 0x92;        //                                      =10--->pure input,      11--->open drain
+  50      =2  sfr P0M1 = 0x93;        //P0M1.n,P0M0.n         =00--->Standard,        01--->push-pull
+  51      =2  sfr P0M0 = 0x94;        //                                      =10--->pure input,      11--->open drain
+  52      =2  sfr P2M1 = 0x95;        //P2M1.n,P2M0.n         =00--->Standard,        01--->push-pull
+  53      =2  sfr P2M0 = 0x96;        //                                      =10--->pure input,      11--->open drain
+  54      =2  sfr CLK_DIV = 0x97;
+  55      =2  sfr PCON2   = 0x97;
+  56      =2  
+  57      =2  sfr SCON  = 0x98;
+  58      =2  sfr SBUF  = 0x99;
+  59      =2  sfr S2CON = 0x9A;       //
+  60      =2  sfr S2BUF = 0x9B;       //
+  61      =2  sfr P1ASF = 0x9D;       //Ö»Ð´£¬Ä£ÄâÊäÈë(AD»òLVD)Ñ¡Ôñ
+  62      =2  
+  63      =2  sfr P2    = 0xA0;
+  64      =2  sfr BUS_SPEED = 0xA1;
+  65      =2  sfr AUXR1 = 0xA2;
+  66      =2  sfr P_SW1 = 0xA2;
+  67      =2  
+  68      =2  sfr IE    = 0xA8;
+  69      =2  sfr SADDR = 0xA9;
+  70      =2  sfr WKTCL = 0xAA;       //»½ÐÑ¶¨Ê±Æ÷µÍ×Ö½Ú
+  71      =2  sfr WKTCH = 0xAB;       //»½ÐÑ¶¨Ê±Æ÷¸ß×Ö½Ú
+  72      =2  sfr     S3CON = 0xAC;
+  73      =2  sfr S3BUF = 0xAD;
+  74      =2  sfr IE2   = 0xAF;       //STC12C5A60S2ÏµÁÐ
+  75      =2  
+  76      =2  sfr P3    = 0xB0;
+  77      =2  sfr P3M1  = 0xB1;       //P3M1.n,P3M0.n         =00--->Standard,        01--->push-pull
+  78      =2  sfr P3M0  = 0xB2;       //                                      =10--->pure input,      11--->open drain
+  79      =2  sfr P4M1  = 0xB3;       //P4M1.n,P4M0.n         =00--->Standard,        01--->push-pull
+  80      =2  sfr P4M0  = 0xB4;       //                                      =10--->pure input,      11--->open drain
+  81      =2  sfr IP2   = 0xB5;       //STC12C5A60S2ÏµÁÐ
+  82      =2  sfr IPH2  = 0xB6;       //STC12C5A60S2ÏµÁÐ
+  83      =2  sfr IPH   = 0xB7;
+  84      =2  
+  85      =2  sfr IP        = 0xB8;
+  86      =2  sfr SADEN     = 0xB9;
+  87      =2  sfr     P_SW2     = 0xBA;
+  88      =2  sfr ADC_CONTR = 0xBC;   //´øADÏµÁÐ
+  89      =2  sfr ADC_RES   = 0xBD;   //´øADÏµÁÐ
+  90      =2  sfr ADC_RESL  = 0xBE;   //´øADÏµÁÐ
+  91      =2  
+  92      =2  sfr P4        = 0xC0;
+  93      =2  sfr WDT_CONTR = 0xC1;
+  94      =2  sfr IAP_DATA  = 0xC2;
+  95      =2  sfr IAP_ADDRH = 0xC3;
+  96      =2  sfr IAP_ADDRL = 0xC4;
+  97      =2  sfr IAP_CMD   = 0xC5;
+  98      =2  sfr IAP_TRIG  = 0xC6;
+  99      =2  sfr IAP_CONTR = 0xC7;
+ 100      =2  
+ 101      =2  sfr ISP_DATA  = 0xC2;
+ 102      =2  sfr ISP_ADDRH = 0xC3;
+ 103      =2  sfr ISP_ADDRL = 0xC4;
+ 104      =2  sfr ISP_CMD   = 0xC5;
+ 105      =2  sfr ISP_TRIG  = 0xC6;
+ 106      =2  sfr ISP_CONTR = 0xC7;
+ 107      =2  
+ 108      =2  sfr P5     = 0xC8;      //
+ 109      =2  sfr P5M1   = 0xC9;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 4   
+
+ 110      =2  sfr P5M0   = 0xCA;      //                                      =10--->pure input,      11--->open drain
+ 111      =2  sfr P6M1   = 0xCB;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
+ 112      =2  sfr P6M0   = 0xCC;      //                                      =10--->pure input,      11--->open drain
+ 113      =2  sfr SPSTAT = 0xCD;      //
+ 114      =2  sfr SPCTL  = 0xCE;      //
+ 115      =2  sfr SPDAT  = 0xCF;      //
+ 116      =2  
+ 117      =2  sfr PSW  = 0xD0;
+ 118      =2  sfr     T4T3M = 0xD1;
+ 119      =2  sfr     T4H  = 0xD2;
+ 120      =2  sfr     T4L  = 0xD3;
+ 121      =2  sfr     T3H  = 0xD4;
+ 122      =2  sfr     T3L  = 0xD5;
+ 123      =2  sfr     T2H  = 0xD6;
+ 124      =2  sfr     T2L  = 0xD7;
+ 125      =2  
+ 126      =2  sfr     TH4  = 0xD2;
+ 127      =2  sfr     TL4  = 0xD3;
+ 128      =2  sfr     TH3  = 0xD4;
+ 129      =2  sfr     TL3  = 0xD5;
+ 130      =2  sfr     TH2  = 0xD6;
+ 131      =2  sfr     TL2  = 0xD7;
+ 132      =2  
+ 133      =2  sfr     RL_T4H  = 0xD2;
+ 134      =2  sfr     RL_T4L  = 0xD3;
+ 135      =2  sfr     RL_T3H  = 0xD4;
+ 136      =2  sfr     RL_T3L  = 0xD5;
+ 137      =2  sfr     RL_T2H  = 0xD6;
+ 138      =2  sfr     RL_T2L  = 0xD7;
+ 139      =2  
+ 140      =2  sfr CCON = 0xD8;        //
+ 141      =2  sfr CMOD = 0xD9;        //
+ 142      =2  sfr CCAPM0 = 0xDA;      //PCAÄ£¿é0µÄ¹¤×÷Ä£Ê½¼Ä´æÆ÷¡£
+ 143      =2  sfr CCAPM1 = 0xDB;      //PCAÄ£¿é1µÄ¹¤×÷Ä£Ê½¼Ä´æÆ÷¡£
+ 144      =2  sfr CCAPM2 = 0xDC;      //PCAÄ£¿é2µÄ¹¤×÷Ä£Ê½¼Ä´æÆ÷¡£
+ 145      =2  
+ 146      =2  sfr ACC    = 0xE0;
+ 147      =2  sfr     P7M1   = 0xE1;
+ 148      =2  sfr     P7M0   = 0xE2;
+ 149      =2  sfr     CMPCR1 = 0xE6;
+ 150      =2  sfr     CMPCR2 = 0xE7;
+ 151      =2  
+ 152      =2  
+ 153      =2  sfr     P6     = 0xE8;
+ 154      =2  sfr CL     = 0xE9;      //
+ 155      =2  sfr CCAP0L = 0xEA;      //PCAÄ£¿é0µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
+ 156      =2  sfr CCAP1L = 0xEB;      //PCAÄ£¿é1µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
+ 157      =2  sfr CCAP2L = 0xEC;      //PCAÄ£¿é2µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
+ 158      =2  
+ 159      =2  sfr B      = 0xF0;
+ 160      =2  sfr PCA_PWM0 = 0xF2;    //PCAÄ£¿é0 PWM¼Ä´æÆ÷¡£
+ 161      =2  sfr PCA_PWM1 = 0xF3;    //PCAÄ£¿é1 PWM¼Ä´æÆ÷¡£
+ 162      =2  sfr PCA_PWM2 = 0xF4;    //PCAÄ£¿é2 PWM¼Ä´æÆ÷¡£
+ 163      =2  
+ 164      =2  sfr     P7     = 0xF8;
+ 165      =2  sfr CH     = 0xF9;
+ 166      =2  sfr CCAP0H = 0xFA;              //PCAÄ£¿é0µÄ²¶×½/±È½Ï¼Ä´æÆ÷¸ß8Î»¡£
+ 167      =2  sfr CCAP1H = 0xFB;              //PCAÄ£¿é1µÄ²¶×½/±È½Ï¼Ä´æÆ÷¸ß8Î»¡£
+ 168      =2  sfr CCAP2H = 0xFC;              //PCAÄ£¿é2µÄ²¶×½/±È½Ï¼Ä´æÆ÷¸ß8Î»¡£
+ 169      =2  
+ 170      =2  
+ 171      =2  /*  BIT Registers  */
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 5   
+
+ 172      =2  /*  PSW   */
+ 173      =2  sbit CY   = PSW^7;
+ 174      =2  sbit AC   = PSW^6;
+ 175      =2  sbit F0   = PSW^5;
+ 176      =2  sbit RS1  = PSW^4;
+ 177      =2  sbit RS0  = PSW^3;
+ 178      =2  sbit OV   = PSW^2;
+ 179      =2  sbit F1   = PSW^1;
+ 180      =2  sbit P    = PSW^0;
+ 181      =2  
+ 182      =2  /*  TCON  */
+ 183      =2  sbit TF1  = TCON^7;     //¶¨Ê±Æ÷1Òç³öÖÐ¶Ï±êÖ¾Î»
+ 184      =2  sbit TR1  = TCON^6;     //¶¨Ê±Æ÷1ÔËÐÐ¿ØÖÆÎ»
+ 185      =2  sbit TF0  = TCON^5;     //¶¨Ê±Æ÷0Òç³öÖÐ¶Ï±êÖ¾Î»
+ 186      =2  sbit TR0  = TCON^4;     //¶¨Ê±Æ÷0ÔËÐÐ¿ØÖÆÎ»
+ 187      =2  sbit IE1  = TCON^3;     //ÍâÖÐ¶Ï1±êÖ¾Î»
+ 188      =2  sbit IT1  = TCON^2;     //ÍâÖÐ¶Ï1ÐÅºÅ·½Ê½¿ØÖÆÎ»£¬1£ºÏÂ½µÑØÖÐ¶Ï£¬0£ºÉÏÉýÏÂ½µ¾ùÖÐ¶Ï¡£
+ 189      =2  sbit IE0  = TCON^1;     //ÍâÖÐ¶Ï0±êÖ¾Î»
+ 190      =2  sbit IT0  = TCON^0;     //ÍâÖÐ¶Ï0ÐÅºÅ·½Ê½¿ØÖÆÎ»£¬1£ºÏÂ½µÑØÖÐ¶Ï£¬0£ºÉÏÉýÏÂ½µ¾ùÖÐ¶Ï¡£
+ 191      =2  
+ 192      =2  /*  P0  */
+ 193      =2  sbit  P00 = P0^0;
+ 194      =2  sbit  P01 = P0^1;
+ 195      =2  sbit  P02 = P0^2;
+ 196      =2  sbit  P03 = P0^3;
+ 197      =2  sbit  P04 = P0^4;
+ 198      =2  sbit  P05 = P0^5;
+ 199      =2  sbit  P06 = P0^6;
+ 200      =2  sbit  P07 = P0^7;
+ 201      =2  
+ 202      =2  /*  P1  */
+ 203      =2  sbit  P10 = P1^0;
+ 204      =2  sbit  P11 = P1^1;
+ 205      =2  sbit  P12 = P1^2;
+ 206      =2  sbit  P13 = P1^3;
+ 207      =2  sbit  P14 = P1^4;
+ 208      =2  sbit  P15 = P1^5;
+ 209      =2  sbit  P16 = P1^6;
+ 210      =2  sbit  P17 = P1^7;
+ 211      =2  
+ 212      =2  sbit  RXD2      = P1^0;
+ 213      =2  sbit  TXD2      = P1^1;
+ 214      =2  sbit  CCP1      = P1^0;
+ 215      =2  sbit  CCP0      = P1^1;
+ 216      =2  sbit  SPI_SS    = P1^2;
+ 217      =2  sbit  SPI_MOSI  = P1^3;
+ 218      =2  sbit  SPI_MISO  = P1^4;
+ 219      =2  sbit  SPI_SCLK  = P1^5;
+ 220      =2  
+ 221      =2  /*  P2  */
+ 222      =2  sbit  P20 = P2^0;
+ 223      =2  sbit  P21 = P2^1;
+ 224      =2  sbit  P22 = P2^2;
+ 225      =2  sbit  P23 = P2^3;
+ 226      =2  sbit  P24 = P2^4;
+ 227      =2  sbit  P25 = P2^5;
+ 228      =2  sbit  P26 = P2^6;
+ 229      =2  sbit  P27 = P2^7;
+ 230      =2  
+ 231      =2  /*  P3  */
+ 232      =2  sbit  P30 = P3^0;
+ 233      =2  sbit  P31 = P3^1;
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 6   
+
+ 234      =2  sbit  P32 = P3^2;
+ 235      =2  sbit  P33 = P3^3;
+ 236      =2  sbit  P34 = P3^4;
+ 237      =2  sbit  P35 = P3^5;
+ 238      =2  sbit  P36 = P3^6;
+ 239      =2  sbit  P37 = P3^7;
+ 240      =2  
+ 241      =2  sbit RXD  = P3^0;
+ 242      =2  sbit TXD  = P3^1;
+ 243      =2  sbit INT0 = P3^2;
+ 244      =2  sbit INT1 = P3^3;
+ 245      =2  sbit T0   = P3^4;
+ 246      =2  sbit T1   = P3^5;
+ 247      =2  sbit WR   = P3^6;
+ 248      =2  sbit RD   = P3^7;
+ 249      =2  sbit CCP2  = P3^7;
+ 250      =2  
+ 251      =2  sbit CLKOUT0   = P3^5;
+ 252      =2  sbit CLKOUT1   = P3^4;
+ 253      =2  
+ 254      =2  /*  P4  */
+ 255      =2  sbit  P40 = P4^0;
+ 256      =2  sbit  P41 = P4^1;
+ 257      =2  sbit  P42 = P4^2;
+ 258      =2  sbit  P43 = P4^3;
+ 259      =2  sbit  P44 = P4^4;
+ 260      =2  sbit  P45 = P4^5;
+ 261      =2  sbit  P46 = P4^6;
+ 262      =2  sbit  P47 = P4^7;
+ 263      =2  
+ 264      =2  /*  P5  */
+ 265      =2  sbit  P50 = P5^0;
+ 266      =2  sbit  P51 = P5^1;
+ 267      =2  sbit  P52 = P5^2;
+ 268      =2  sbit  P53 = P5^3;
+ 269      =2  sbit  P54 = P5^4;
+ 270      =2  sbit  P55 = P5^5;
+ 271      =2  sbit  P56 = P5^6;
+ 272      =2  sbit  P57 = P5^7;
+ 273      =2  
+ 274      =2  /*  SCON  */
+ 275      =2  sbit SM0  = SCON^7;     //SM0/FE                SM0 SM1 = 00 ~ 11: ·½Ê½0~3
+ 276      =2  sbit SM1  = SCON^6;     //
+ 277      =2  sbit SM2  = SCON^5;     //¶à»úÍ¨Ñ¶
+ 278      =2  sbit REN  = SCON^4;     //½ÓÊÕÔÊÐí
+ 279      =2  sbit TB8  = SCON^3;     //·¢ËÍÊý¾ÝµÚ8Î»
+ 280      =2  sbit RB8  = SCON^2;     //½ÓÊÕÊý¾ÝµÚ8Î»
+ 281      =2  sbit TI   = SCON^1;     //·¢ËÍÖÐ¶Ï±êÖ¾Î»
+ 282      =2  sbit RI   = SCON^0;     //½ÓÊÕÖÐ¶Ï±êÖ¾Î»
+ 283      =2  
+ 284      =2  /*  IE   */
+ 285      =2  sbit EA   = IE^7;       //ÖÐ¶ÏÔÊÐí×Ü¿ØÖÆÎ»
+ 286      =2  sbit ELVD = IE^6;       //µÍÑ¹¼à²âÖÐ¶ÏÔÊÐíÎ»
+ 287      =2  sbit EADC = IE^5;       //ADC ÖÐ¶Ï ÔÊÐíÎ»
+ 288      =2  sbit ES   = IE^4;       //´®ÐÐÖÐ¶Ï ÔÊÐí¿ØÖÆÎ»
+ 289      =2  sbit ET1  = IE^3;       //¶¨Ê±ÖÐ¶Ï1ÔÊÐí¿ØÖÆÎ»
+ 290      =2  sbit EX1  = IE^2;       //Íâ²¿ÖÐ¶Ï1ÔÊÐí¿ØÖÆÎ»
+ 291      =2  sbit ET0  = IE^1;       //¶¨Ê±ÖÐ¶Ï0ÔÊÐí¿ØÖÆÎ»
+ 292      =2  sbit EX0  = IE^0;       //Íâ²¿ÖÐ¶Ï0ÔÊÐí¿ØÖÆÎ»
+ 293      =2  
+ 294      =2  
+ 295      =2  /*  IP   */ 
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 7   
+
+ 296      =2  /*
+ 297      =2  sbit PPCA = IP^7;       //PCA ÖÐ¶Ï ÓÅÏÈ¼¶Éè¶¨Î»
+ 298      =2  sbit PLVD = IP^6;       //µÍÑ¹ÖÐ¶Ï ÓÅÏÈ¼¶Éè¶¨Î»
+ 299      =2  sbit PADC = IP^5;       //ADC ÖÐ¶Ï ÓÅÏÈ¼¶Éè¶¨Î»
+ 300      =2  sbit PS   = IP^4;       //´®ÐÐÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
+ 301      =2  sbit PT1  = IP^3;       //¶¨Ê±ÖÐ¶Ï1ÓÅÏÈ¼¶Éè¶¨Î»
+ 302      =2  sbit PX1  = IP^2;       //Íâ²¿ÖÐ¶Ï1ÓÅÏÈ¼¶Éè¶¨Î»
+ 303      =2  sbit PT0  = IP^1;       //¶¨Ê±ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
+ 304      =2  sbit PX0  = IP^0;       //Íâ²¿ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
+ 305      =2  */
+ 306      =2  
+ 307      =2  sbit ACC0 = ACC^0;
+ 308      =2  sbit ACC1 = ACC^1;
+ 309      =2  sbit ACC2 = ACC^2;
+ 310      =2  sbit ACC3 = ACC^3;
+ 311      =2  sbit ACC4 = ACC^4;
+ 312      =2  sbit ACC5 = ACC^5;
+ 313      =2  sbit ACC6 = ACC^6;
+ 314      =2  sbit ACC7 = ACC^7;
+ 315      =2  
+ 316      =2  sbit B0 = B^0;
+ 317      =2  sbit B1 = B^1;
+ 318      =2  sbit B2 = B^2;
+ 319      =2  sbit B3 = B^3;
+ 320      =2  sbit B4 = B^4;
+ 321      =2  sbit B5 = B^5;
+ 322      =2  sbit B6 = B^6;
+ 323      =2  sbit B7 = B^7;
+ 324      =2  
+ 325      =2  
+ 326      =2  //                                                      7     6     5    4    3    2    1     0    Reset Value
+ 327      =2  //sfr IE2       = 0xAF;         -     -     -    -    -    -   ESPI  ES2   0000,0000B   //Auxiliary Interrupt   
+ 328      =2  #define         SPI_INT_ENABLE()                IE2 |=  2       //ÔÊÐíSPIÖÐ¶Ï
+ 329      =2  #define         SPI_INT_DISABLE()               IE2 &= ~2       //ÔÊÐíSPIÖÐ¶Ï
+ 330      =2  #define         UART2_INT_ENABLE()              IE2 |=  1       //ÔÊÐí´®¿Ú2ÖÐ¶Ï
+ 331      =2  #define         UART2_INT_DISABLE()             IE2 &= ~1       //ÔÊÐí´®¿Ú2ÖÐ¶Ï
+ 332      =2  
+ 333      =2  //                                          7     6     5    4    3    2    1    0    Reset Value
+ 334      =2  //sfr IP      = 0xB8; //ÖÐ¶ÏÓÅÏÈ¼¶µÍÎ»      PPCA  PLVD  PADC  PS   PT1  PX1  PT0  PX0   0000,0000
+ 335      =2  //--------
+ 336      =2  sbit PPCA       = IP^7; //PCA Ä£¿éÖÐ¶ÏÓÅÏÈ¼¶
+ 337      =2  sbit PLVD       = IP^6; //µÍÑ¹¼à²âÖÐ¶ÏÓÅÏÈ¼¶
+ 338      =2  sbit PADC       = IP^5; //ADC ÖÐ¶ÏÓÅÏÈ¼¶
+ 339      =2  sbit PS         = IP^4; //´®ÐÐÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
+ 340      =2  sbit PT1        = IP^3; //¶¨Ê±ÖÐ¶Ï1ÓÅÏÈ¼¶Éè¶¨Î»
+ 341      =2  sbit PX1        = IP^2; //Íâ²¿ÖÐ¶Ï1ÓÅÏÈ¼¶Éè¶¨Î»
+ 342      =2  sbit PT0        = IP^1; //¶¨Ê±ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
+ 343      =2  sbit PX0        = IP^0; //Íâ²¿ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
+ 344      =2  
+ 345      =2  //                                           7      6      5     4     3     2    1     0        Reset Val
+             -ue
+ 346      =2  //sfr IPH   = 0xB7; //ÖÐ¶ÏÓÅÏÈ¼¶¸ßÎ»       PPCAH  PLVDH  PADCH  PSH  PT1H  PX1H  PT0H  PX0H   0000,0000
+ 347      =2  //sfr IP2   = 0xB5; //                       -      -      -     -     -     -   PSPI   PS2   xxxx,xx00
+ 348      =2  //sfr IPH2  = 0xB6; //                       -      -      -     -     -     -   PSPIH  PS2H  xxxx,xx00
+ 349      =2  #define         PPCAH   0x80
+ 350      =2  #define         PLVDH   0x40
+ 351      =2  #define         PADCH   0x20
+ 352      =2  #define         PSH             0x10
+ 353      =2  #define         PT1H    0x08
+ 354      =2  #define         PX1H    0x04
+ 355      =2  #define         PT0H    0x02
+ 356      =2  #define         PX0H    0x01
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 8   
+
+ 357      =2  
+ 358      =2  #define         PCA_InterruptFirst()    PPCA = 1
+ 359      =2  #define         LVD_InterruptFirst()    PLVD = 1
+ 360      =2  #define         ADC_InterruptFirst()    PADC = 1
+ 361      =2  #define         UART1_InterruptFirst()  PS   = 1
+ 362      =2  #define         Timer1_InterruptFirst() PT1  = 1
+ 363      =2  #define         INT1_InterruptFirst()   PX1  = 1
+ 364      =2  #define         Timer0_InterruptFirst() PT0  = 1
+ 365      =2  #define         INT0_InterruptFirst()   PX0  = 1
+ 366      =2  
+ 367      =2  
+ 368      =2  /*************************************************************************************************/
+ 369      =2  
+ 370      =2  
+ 371      =2  
+ 372      =2  /*************************************************************************************************/
+ 373      =2  #define         S1_DoubleRate()         PCON |= 0x80
+ 374      =2  #define         S1_SHIFT()                      SCON &= 0x3f
+ 375      =2  #define         S1_8bit()                       SCON  = (SCON & 0x3f) | 0x40
+ 376      =2  #define         S1_9bit()                       SCON  = (SCON & 0x3f) | 0xc0
+ 377      =2  #define         S1_RX_Enable()          SCON |= 0x10
+ 378      =2  #define         S1_USE_P30P31()         P_SW1 &= ~0xc0                                  //UART1 Ê¹ÓÃP30 P31¿Ú   Ä¬ÈÏ
+ 379      =2  #define         S1_USE_P36P37()         P_SW1 = (P_SW1 & ~0xc0) | 0x40  //UART1 Ê¹ÓÃP36 P37¿Ú
+ 380      =2  #define         S1_USE_P16P17()         P_SW1 = (P_SW1 & ~0xc0) | 0x80  //UART1 Ê¹ÓÃP16 P17¿Ú
+ 381      =2  #define         S1_TXD_RXD_SHORT()      PCON2 |=  (1<<4)        //½«TXDÓëRXDÁ¬½ÓÖÐ¼ÌÊä³ö
+ 382      =2  #define         S1_TXD_RXD_OPEN()       PCON2 &= ~(1<<4)        //½«TXDÓëRXDÁ¬½ÓÖÐ¼Ì¶Ï¿ª        Ä¬ÈÏ
+ 383      =2  #define         S1_BRT_UseTimer2()      AUXR |=  1
+ 384      =2  #define         S1_BRT_UseTimer1()      AUXR &= ~1
+ 385      =2  
+ 386      =2  //                                                7      6      5      4      3      2     1     0        Reset Value
+ 387      =2  //sfr S2CON = 0x9A;             S2SM0    -    S2SM2  S2REN  S2TB8  S2RB8  S2TI  S2RI      00000000B              //S2 Control
+ 388      =2  
+ 389      =2  #define         S2_8bit()                       S2CON &= ~(1<<7)                //´®¿Ú2Ä£Ê½0£¬8Î»UART£¬²¨ÌØÂÊ = ¶¨Ê±Æ÷2µÄÒç³öÂÊ / 4
+ 390      =2  #define         S2_9bit()                       S2CON |=  (1<<7)                //´®¿Ú2Ä£Ê½1£¬9Î»UART£¬²¨ÌØÂÊ = ¶¨Ê±Æ÷2µÄÒç³öÂÊ / 4
+ 391      =2  #define         S2_RX_Enable()          S2CON |=  (1<<4)                //ÔÊÐí´®2½ÓÊÕ
+ 392      =2  
+ 393      =2  #define         S2_MODE0()                      S2CON &= ~(1<<7)                //´®¿Ú2Ä£Ê½0£¬8Î»UART£¬²¨ÌØÂÊ = ¶¨Ê±Æ÷2µÄÒç³öÂÊ / 4
+ 394      =2  #define         S2_MODE1()                      S2CON |=  (1<<7)                //´®¿Ú2Ä£Ê½1£¬9Î»UART£¬²¨ÌØÂÊ = ¶¨Ê±Æ÷2µÄÒç³öÂÊ / 4
+ 395      =2  #define         S2_RX_EN()                      S2CON |=  (1<<4)                                                        //ÔÊÐí´®2½ÓÊÕ
+ 396      =2  #define         S2_RX_Disable()         S2CON &= ~(1<<4)                                                        //½ûÖ¹´®2½ÓÊÕ
+ 397      =2  #define         TI2                                     (S2CON & 2) != 0
+ 398      =2  #define         RI2                                     (S2CON & 1) != 0
+ 399      =2  #define         SET_TI2()                       S2CON |=  2
+ 400      =2  #define         CLR_TI2()                       S2CON &= ~2
+ 401      =2  #define         CLR_RI2()                       S2CON &= ~1
+ 402      =2  #define         S2TB8_SET()                     S2CON |=  8
+ 403      =2  #define         S2TB8_CLR()                     S2CON &= ~8
+ 404      =2  #define         S2_Int_en()                     IE2   |=  1             //´®¿Ú2ÔÊÐíÖÐ¶Ï
+ 405      =2  #define         S2_USE_P10P11()         P_SW2 &= ~1             //UART2 Ê¹ÓÃP1¿Ú        Ä¬ÈÏ
+ 406      =2  #define         S2_USE_P46P47()         P_SW2 |=  1             //UART2 Ê¹ÓÃP4¿Ú
+ 407      =2  
+ 408      =2  #define         S3_USE_P00P01()         P_SW2 &= ~2             //UART3 Ê¹ÓÃP0¿Ú        Ä¬ÈÏ
+ 409      =2  #define         S3_USE_P50P51()         P_SW2 |=  2             //UART3 Ê¹ÓÃP5¿Ú
+ 410      =2  #define         S4_USE_P02P03()         P_SW2 &= ~4             //UART4 Ê¹ÓÃP0¿Ú        Ä¬ÈÏ
+ 411      =2  #define         S4_USE_P52P53()         P_SW2 |=  4             //UART4 Ê¹ÓÃP5¿Ú
+ 412      =2  
+ 413      =2  
+ 414      =2  /**********************************************************/
+ 415      =2  
+ 416      =2  #define         Timer0_16bitAutoReload()        TMOD &= ~0x03                                   //16Î»×Ô¶¯ÖØ×°
+ 417      =2  #define         Timer0_16bit()                          TMOD  = (TMOD & ~0x03) | 0x01   //16Î»
+ 418      =2  #define         Timer0_8bitAutoReload()         TMOD  = (TMOD & ~0x03) | 0x02   //8Î»×Ô¶¯ÖØ×°
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 9   
+
+ 419      =2  #define         Timer0_16bitAutoRL_NoMask()     TMOD |=  0x03           //16Î»×Ô¶¯ÖØ×°²»¿ÉÆÁ±ÎÖÐ¶Ï
+ 420      =2  #define         Timer0_AsCounterP32()           TMOD |=  4              //Ê±Æ÷0ÓÃ×ö¼ÆÊýÆ÷
+ 421      =2  #define         Timer0_AsTimer()                        TMOD &= ~4              //Ê±Æ÷0ÓÃ×ö¶¨Ê±Æ÷
+ 422      =2  #define         Timer0_ExtControlP34()          TMOD |=  4              //Ê±Æ÷0ÓÉÍâ²¿INT0¸ßµçÆ½ÔÊÐí¶¨Ê±¼ÆÊý
+ 423      =2  #define         Timer0_Run()                            TR0 = 1                         //ÔÊÐí¶¨Ê±Æ÷0¼ÆÊý
+ 424      =2  #define         Timer0_Stop()                           TR0 = 0                         //½ûÖ¹¶¨Ê±Æ÷0¼ÆÊý
+ 425      =2  #define         Timer0_InterruptEnable()        ET0 = 1                         //ÔÊÐíTimer1ÖÐ¶Ï.
+ 426      =2  #define         Timer0_InterruptDisable()       ET0 = 0                         //½ûÖ¹Timer1ÖÐ¶Ï.
+ 427      =2  
+ 428      =2  #define         Timer1_16bitAutoReload()        TMOD &= ~0x30                                   //16Î»×Ô¶¯ÖØ×°
+ 429      =2  #define         Timer1_16bit()                          TMOD  = (TMOD & ~0x30) | 0x10   //16Î»
+ 430      =2  #define         Timer1_8bitAutoReload()         TMOD  = (TMOD & ~0x30) | 0x20   //8Î»×Ô¶¯ÖØ×°
+ 431      =2  #define         Timer1_16bitAutoRL_NoMask()     TMOD |=  0x30           //16Î»×Ô¶¯ÖØ×°²»¿ÉÆÁ±ÎÖÐ¶Ï
+ 432      =2  #define         Timer1_AsCounterP33()           TMOD |=  (1<<6)         //Ê±Æ÷1ÓÃ×ö¼ÆÊýÆ÷
+ 433      =2  #define         Timer1_AsTimer()                        TMOD &= ~(1<<6)         //Ê±Æ÷1ÓÃ×ö¶¨Ê±Æ÷
+ 434      =2  #define         Timer1_ExtControlP35()          TMOD |=  (1<<7)         //Ê±Æ÷1ÓÉÍâ²¿INT1¸ßµçÆ½ÔÊÐí¶¨Ê±¼ÆÊý
+ 435      =2  #define         Timer1_Run()                            TR1 = 1                         //ÔÊÐí¶¨Ê±Æ÷1¼ÆÊý
+ 436      =2  #define         Timer1_Stop()                           TR1 = 0                         //½ûÖ¹¶¨Ê±Æ÷1¼ÆÊý
+ 437      =2  #define         Timer1_InterruptEnable()        ET1 = 1                         //ÔÊÐíTimer1ÖÐ¶Ï.
+ 438      =2  #define         Timer1_InterruptDisable()       ET1 = 0                         //½ûÖ¹Timer1ÖÐ¶Ï.
+ 439      =2  
+ 440      =2  
+ 441      =2  //                                                 7     6       5      4     3      2      1      0    Reset Value
+ 442      =2  //sfr AUXR  = 0x8E;             T0x12 T1x12 UART_M0x6  T2R  T2_C/T T2x12 EXTRAM  S1ST2  0000,0000       //Auxiliary Registe
+             -r 
+ 443      =2  
+ 444      =2  #define         Timer0_1T()                                     AUXR |=  (1<<7) //Timer0 clodk = fo
+ 445      =2  #define         Timer0_12T()                            AUXR &= ~(1<<7) //Timer0 clodk = fo/12  12·ÖÆµ, default
+ 446      =2  #define         Timer1_1T()                                     AUXR |=  (1<<6) //Timer1 clodk = fo
+ 447      =2  #define         Timer1_12T()                            AUXR &= ~(1<<6) //Timer1 clodk = fo/12  12·ÖÆµ, default
+ 448      =2  #define         S1_M0x6()                                       AUXR |=  (1<<5) //UART Mode0 Speed is 6x Standard
+ 449      =2  #define         S1_M0x1()                                       AUXR &= ~(1<<5) //default,      UART Mode0 Speed is Standard
+ 450      =2  #define         Timer2_Run()                            AUXR |=  (1<<4) //ÔÊÐí¶¨Ê±Æ÷2¼ÆÊý
+ 451      =2  #define         Timer2_Stop()                           AUXR &= ~(1<<4) //½ûÖ¹¶¨Ê±Æ÷2¼ÆÊý
+ 452      =2  #define         Timer2_AsCounterP31()           AUXR |=  (1<<3) //Ê±Æ÷2ÓÃ×ö¼ÆÊýÆ÷
+ 453      =2  #define         Timer2_AsTimer()                        AUXR &= ~(1<<3) //Ê±Æ÷2ÓÃ×ö¶¨Ê±Æ÷
+ 454      =2  #define         Timer2_1T()                                     AUXR |=  (1<<2) //Timer0 clodk = fo
+ 455      =2  #define         Timer2_12T()                            AUXR &= ~(1<<2) //Timer0 clodk = fo/12  12·ÖÆµ, default
+ 456      =2  #define         Timer2_InterruptEnable()        IE2  |=  (1<<2) //ÔÊÐíTimer2ÖÐ¶Ï.
+ 457      =2  #define         Timer2_InterruptDisable()       IE2  &= ~(1<<2) //½ûÖ¹Timer2ÖÐ¶Ï.
+ 458      =2  
+ 459      =2  #define         ExternalRAM_enable()            AUXR |=  2              //ÔÊÐíÍâ²¿XRAM£¬½ûÖ¹Ê¹ÓÃÄÚ²¿1024RAM
+ 460      =2  #define         InternalRAM_enable()            AUXR &= ~2              //½ûÖ¹Íâ²¿XRAM£¬ÔÊÐíÊ¹ÓÃÄÚ²¿1024RAM
+ 461      =2  
+ 462      =2  #define         T0_pulseP34_enable()            AUXR2 |=  1             //ÔÊÐí T0 Òç³öÂö³åÔÚT0(P3.5)½ÅÊä³ö£¬Fck0 = 1/2 T0 Òç³öÂÊ£¬T0¿É
+             -ÒÔ1T»ò12T¡£
+ 463      =2  #define         T0_pulseP34_disable()           AUXR2 &= ~1
+ 464      =2  #define         T1_pulseP35_enable()            AUXR2 |=  2             //ÔÊÐí T1 Òç³öÂö³åÔÚT1(P3.4)½ÅÊä³ö£¬Fck1 = 1/2 T1 Òç³öÂÊ£¬T1¿É
+             -ÒÔ1T»ò12T¡£
+ 465      =2  #define         T1_pulseP35_disable()           AUXR2 &= ~2
+ 466      =2  #define         T2_pulseP30_enable()            AUXR2 |=  4             //ÔÊÐí T2 Òç³öÂö³åÔÚT1(P3.0)½ÅÊä³ö£¬Fck2 = 1/2 T2 Òç³öÂÊ£¬T2¿É
+             -ÒÔ1T»ò12T¡£
+ 467      =2  #define         T2_pulseP30_disable()           AUXR2 &= ~4
+ 468      =2  
+ 469      =2  #define         T0_pulseP35(n)          ET0=0,Timer0_AsTimer(),Timer0_1T(),Timer0_16bitAutoReload(),TH0=(65536-(n/2+MAIN_
+             -Fosc/2)/(n))/256,TL0=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit0,TR0=1            //fx=fosc/(2*M)/n,  M=1 or M=12
+ 470      =2  #define         T1_pulseP34(n)          ET1=0,Timer1_AsTimer(),Timer1_1T(),Timer1_16bitAutoReload(),TH1=(65536-(n/2+MAIN_
+             -Fosc/2)/(n))/256,TL1=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit1,TR1=1            //fx=fosc/(2*M)/n,  M=1 or M=12
+ 471      =2  #define         T2_pulseP30(n)          Timer2_InterruptDisable(),Timer2_AsTimer(),Timer2_1T(),TH2=(65536-(n/2+MAIN_Fosc/
+             -2)/(n))/256,TL2=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit2,Timer2_Run()  //fx=fosc/(2*M)/n,  M=1 or M=12
+ 472      =2  
+ 473      =2  #define         Timer0_Load(n)          TH0 = (n) / 256,        TL0 = (n) % 256
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 10  
+
+ 474      =2  #define         Timer1_Load(n)          TH1 = (n) / 256,        TL1 = (n) % 256
+ 475      =2  #define         Timer2_Load(n)          TH2 = (n) / 256,        TL2 = (n) % 256
+ 476      =2  
+ 477      =2  #define         Timer0_Load_us(n)       TH0=(65536-MainFosc_KHZ*(n)/1000)/256,TL0=(65536-MainFosc_KHZ*(n)/1000)%256
+ 478      =2  #define         Timer1_Load_us(n)       TH1=(65536-MainFosc_KHZ*(n)/1000)/256,TL1=(65536-MainFosc_KHZ*(n)/1000)%256
+ 479      =2  #define         Timer2_Load_us(n)       TH2=(65536-MainFosc_KHZ*(n)/1000)/256,TL2=(65536-MainFosc_KHZ*(n)/1000)%256
+ 480      =2  
+ 481      =2  
+ 482      =2  //sfr WDT_CONTR = 0xC1; //Watch-Dog-Timer Control register
+ 483      =2  //                                      7     6     5      4       3      2   1   0     Reset Value
+ 484      =2  //                                  WDT_FLAG  -  EN_WDT CLR_WDT IDLE_WDT PS2 PS1 PS0    xx00,0000
+ 485      =2  #define D_WDT_FLAG                      (1<<7)
+ 486      =2  #define D_EN_WDT                        (1<<5)
+ 487      =2  #define D_CLR_WDT                       (1<<4)  //auto clear
+ 488      =2  #define D_IDLE_WDT                      (1<<3)  //WDT counter when Idle
+ 489      =2  #define D_WDT_SCALE_2           0
+ 490      =2  #define D_WDT_SCALE_4           1
+ 491      =2  #define D_WDT_SCALE_8           2               //T=393216*N/fo
+ 492      =2  #define D_WDT_SCALE_16          3
+ 493      =2  #define D_WDT_SCALE_32          4
+ 494      =2  #define D_WDT_SCALE_64          5
+ 495      =2  #define D_WDT_SCALE_128         6
+ 496      =2  #define D_WDT_SCALE_256         7
+ 497      =2  
+ 498      =2  #define WDT_reset(n)    WDT_CONTR = D_EN_WDT + D_CLR_WDT + D_IDLE_WDT + (n)             //³õÊ¼»¯WDT£¬Î¹¹·
+ 499      =2  
+ 500      =2  
+ 501      =2  //                                                7     6      5    4     3      2    1     0     Reset Value
+ 502      =2  //sfr PCON   = 0x87;    SMOD  SMOD0  LVDF  POF   GF1    GF0   PD   IDL    0001,0000      //Power Control 
+ 503      =2  //SMOD          //´®¿ÚË«±¶ËÙ
+ 504      =2  //SMOD0
+ 505      =2  #define         LVDF            (1<<5)  //P4.6µÍÑ¹¼ì²â±êÖ¾
+ 506      =2  //POF
+ 507      =2  //GF1
+ 508      =2  //GF0
+ 509      =2  //#define       D_PD            2               //set 1, power down mode
+ 510      =2  //#define       D_IDLE          1               //set 1, idle mode
+ 511      =2  #define         MCU_IDLE()                      PCON |= 1       //MCU ½øÈë IDLE Ä£Ê½
+ 512      =2  #define         MCU_POWER_DOWN()        PCON |= 2       //MCU ½øÈë Ë¯Ãß Ä£Ê½
+ 513      =2  
+ 514      =2  
+ 515      =2  //sfr ISP_CMD   = 0xC5;
+ 516      =2  #define         ISP_STANDBY()   ISP_CMD = 0             //ISP¿ÕÏÐÃüÁî£¨½ûÖ¹£©
+ 517      =2  #define         ISP_READ()              ISP_CMD = 1             //ISP¶Á³öÃüÁî
+ 518      =2  #define         ISP_WRITE()             ISP_CMD = 2             //ISPÐ´ÈëÃüÁî
+ 519      =2  #define         ISP_ERASE()             ISP_CMD = 3             //ISP²Á³ýÃüÁî
+ 520      =2  
+ 521      =2  //sfr ISP_TRIG  = 0xC6;
+ 522      =2  #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP´¥·¢ÃüÁî
+ 523      =2  
+ 524      =2  //                                                        7    6    5      4    3    2    1     0    Reset Value
+ 525      =2  //sfr IAP_CONTR = 0xC7;         IAPEN SWBS SWRST CFAIL  -   WT2  WT1   WT0   0000,x000  //IAP Control Register
+ 526      =2  #define ISP_EN                  (1<<7)
+ 527      =2  #define ISP_SWBS                (1<<6)
+ 528      =2  #define ISP_SWRST               (1<<5)
+ 529      =2  #define ISP_CMD_FAIL    (1<<4)
+ 530      =2  #define ISP_WAIT_1MHZ   7
+ 531      =2  #define ISP_WAIT_2MHZ   6
+ 532      =2  #define ISP_WAIT_3MHZ   5
+ 533      =2  #define ISP_WAIT_6MHZ   4
+ 534      =2  #define ISP_WAIT_12MHZ  3
+ 535      =2  #define ISP_WAIT_20MHZ  2
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 11  
+
+ 536      =2  #define ISP_WAIT_24MHZ  1
+ 537      =2  #define ISP_WAIT_30MHZ  0
+ 538      =2  
+ 539      =2  #if (MAIN_Fosc >= 24000000L)
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_30MHZ
+           =2 #elif (MAIN_Fosc >= 20000000L)
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_24MHZ
+           =2 #elif (MAIN_Fosc >= 12000000L)
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_20MHZ
+           =2 #elif (MAIN_Fosc >= 6000000L)
+ 546      =2          #define         ISP_WAIT_FREQUENCY      ISP_WAIT_12MHZ
+ 547      =2  #elif (MAIN_Fosc >= 3000000L)
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_6MHZ
+           =2 #elif (MAIN_Fosc >= 2000000L)
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_3MHZ
+           =2 #elif (MAIN_Fosc >= 1000000L)
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_2MHZ
+           =2 #else
+           =2         #define         ISP_WAIT_FREQUENCY      ISP_WAIT_1MHZ
+           =2 #endif
+ 556      =2  
+ 557      =2  
+ 558      =2  
+ 559      =2  /* ADC Register */
+ 560      =2  //                                                              7       6      5       4         3      2    1    0   Reset Value
+ 561      =2  //sfr ADC_CONTR = 0xBC;         ADC_POWER SPEED1 SPEED0 ADC_FLAG ADC_START CHS2 CHS1 CHS0 0000,0000     //AD ×ª»»¿ØÖÆ
+             -¼Ä´æÆ÷ 
+ 562      =2  //sfr ADC_RES  = 0xBD;          ADCV.9 ADCV.8 ADCV.7 ADCV.6 ADCV.5 ADCV.4 ADCV.3 ADCV.2   0000,0000     //A/D ×ª»»½á¹û
+             -¸ß8Î» 
+ 563      =2  //sfr ADC_RESL = 0xBE;                                                                                            ADCV.1 ADCV.0   0000,0000     //A/D ×ª»»½á¹ûµÍ2Î»
+ 564      =2  //sfr ADC_CONTR  = 0xBC;        //Ö±½ÓÓÃMOV²Ù×÷£¬²»ÒªÓÃÓë»ò
+ 565      =2  
+ 566      =2  
+ 567      =2  //sfr SPCTL  = 0xCE;    SPI¿ØÖÆ¼Ä´æÆ÷
+ 568      =2  //   7       6       5       4       3       2       1       0          Reset Value
+ 569      =2  //      SSIG    SPEN    DORD    MSTR    CPOL    CPHA    SPR1    SPR0            0x00
+ 570      =2  
+ 571      =2  #define SPI_SSIG_None()         SPCTL |=  (1<<7)                //1: ºöÂÔSS½Å
+ 572      =2  #define SPI_SSIG_Enable()       SPCTL &= ~(1<<7)                //0: SS½ÅÓÃÓÚ¾ö¶¨Ö÷´Ó»ú
+ 573      =2  #define SPI_Enable()            SPCTL |=  (1<<6)                //1: ÔÊÐíSPI
+ 574      =2  #define SPI_Disable()           SPCTL &= ~(1<<6)                //0: ½ûÖ¹SPI
+ 575      =2  #define SPI_LSB_First()         SPCTL |=  (1<<5)                //1: LSBÏÈ·¢
+ 576      =2  #define SPI_MSB_First()         SPCTL &= ~(1<<5)                //0: MSBÏÈ·¢
+ 577      =2  #define SPI_Master()            SPCTL |=  (1<<4)                //1: ÉèÎªÖ÷»ú
+ 578      =2  #define SPI_Slave()                     SPCTL &= ~(1<<4)                //0: ÉèÎª´Ó»ú
+ 579      =2  #define SPI_SCLK_NormalH()      SPCTL |=  (1<<3)                //1: ¿ÕÏÐÊ±SCLKÎª¸ßµçÆ½
+ 580      =2  #define SPI_SCLK_NormalL()      SPCTL &= ~(1<<3)                //0: ¿ÕÏÐÊ±SCLKÎªµÍµçÆ½
+ 581      =2  #define SPI_PhaseH()            SPCTL |=  (1<<2)                //1: 
+ 582      =2  #define SPI_PhaseL()            SPCTL &= ~(1<<2)                //0: 
+ 583      =2  #define SPI_Speed(n)            SPCTL = (SPCTL & ~3) | (n)      //ÉèÖÃËÙ¶È, 0 -- fosc/4, 1 -- fosc/16, 2 -- fosc/64, 3 --
+             - fosc/128
+ 584      =2  
+ 585      =2  //sfr SPDAT  = 0xCF; //SPI Data Register                                                     0000,0000
+ 586      =2  //sfr SPSTAT  = 0xCD;   //SPI×´Ì¬¼Ä´æÆ÷
+ 587      =2  //   7       6      5   4   3   2   1   0       Reset Value
+ 588      =2  //      SPIF    WCOL    -       -       -       -       -       -
+ 589      =2  #define SPIF    0x80            //SPI´«ÊäÍê³É±êÖ¾¡£Ð´Èë1Çå0¡£
+ 590      =2  #define WCOL    0x40            //SPIÐ´³åÍ»±êÖ¾¡£Ð´Èë1Çå0¡£
+ 591      =2  
+ 592      =2  #define         SPI_USE_P12P13P14P15()  AUXR1 &= ~0x0c  //½«SPIÇÐ»»µ½P12(SS) P13(MOSI) P14(MISO) P15(SCLK)(ÉÏµçÄ¬ÈÏ
+             -)¡£
+ 593      =2  #define         SPI_USE_P24P23P22P21()  AUXR1 = (AUXR1 & ~0x0c) | 0x04  //½«SPIÇÐ»»µ½P24(SS) P23(MOSI) P22(MISO) P2
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 12  
+
+             -1(SCLK)¡£
+ 594      =2  #define         SPI_USE_P54P40P41P43()  AUXR1 = (AUXR1 & ~0x0c) | 0x08  //½«SPIÇÐ»»µ½P54(SS) P40(MOSI) P41(MISO) P4
+             -3(SCLK)¡£
+ 595      =2  
+ 596      =2  
+ 597      =2  /*
+ 598      =2  ;PCA_PWMn:    7       6     5   4   3   2     1       0
+ 599      =2  ;                       EBSn_1  EBSn_0  -       -       -       -       EPCnH   EPCnL
+ 600      =2  ;B5-B2:         ±£Áô
+ 601      =2  ;B1(EPCnH):     ÔÚPWMÄ£Ê½ÏÂ£¬ÓëCCAPnH×é³É9Î»Êý¡£
+ 602      =2  ;B0(EPCnL):     ÔÚPWMÄ£Ê½ÏÂ£¬ÓëCCAPnL×é³É9Î»Êý¡£
+ 603      =2  */
+ 604      =2  #define         PWM0_NORMAL()   PCA_PWM0 &= ~3                          //PWM0Õý³£Êä³ö(Ä¬ÈÏ)
+ 605      =2  #define         PWM0_OUT_0()    PCA_PWM0 |=  3                          //PWM0Ò»Ö±Êä³ö0
+ 606      =2  #define         PWM0_OUT_1()    PCA_PWM0 &= ~3, CCAP0H = 0      //PWM0Ò»Ö±Êä³ö1
+ 607      =2  
+ 608      =2  #define         PWM1_NORMAL()   PCA_PWM1 &= ~3                          //PWM0Õý³£Êä³ö(Ä¬ÈÏ)
+ 609      =2  #define         PWM1_OUT_0()    PCA_PWM1 |=  3                          //PWM0Ò»Ö±Êä³ö0
+ 610      =2  #define         PWM1_OUT_1()    PCA_PWM1 &= ~3, CCAP1H = 0      //PWM1Ò»Ö±Êä³ö1
+ 611      =2  
+ 612      =2  #define         PWM2_NORMAL()   PCA_PWM2 &= ~3                          //PWM1Õý³£Êä³ö(Ä¬ÈÏ)
+ 613      =2  #define         PWM2_OUT_0()    PCA_PWM2 |=  3                          //PWM2Ò»Ö±Êä³ö0
+ 614      =2  #define         PWM2_OUT_1()    PCA_PWM2 &= ~3, CCAP2H = 0      //PWM2Ò»Ö±Êä³ö1
+ 615      =2  
+ 616      =2  
+ 617      =2  //                                              7     6     5     4     3     2     1     0     Reset Value
+ 618      =2  //sfr CCON   = 0xD8;    CF    CR    -     -     -    CCF2  CCF1  CCF0   00xx,xx00       //PCA ¿ØÖÆ¼Ä´æÆ÷¡£
+ 619      =2  sbit CCF0  = CCON^0;    //PCA Ä£¿é0ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
+ 620      =2  sbit CCF1  = CCON^1;    //PCA Ä£¿é1ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
+ 621      =2  sbit CCF2  = CCON^2;    //PCA Ä£¿é2ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
+ 622      =2  sbit CR    = CCON^6;    //1: ÔÊÐíPCA¼ÆÊýÆ÷¼ÆÊý£¬±ØÐëÓÉÈí¼þÇå0¡£
+ 623      =2  sbit CF    = CCON^7;    //PCA¼ÆÊýÆ÷Òç³ö£¨CH£¬CLÓÉFFFFH±äÎª0000H£©±êÖ¾¡£PCA¼ÆÊýÆ÷Òç³öºóÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇ
+             -å0¡£
+ 624      =2  
+ 625      =2  //                                       7     6     5     4     3     2     1     0    Reset Value
+ 626      =2  //sfr CMOD  = 0xD9;     CIDL   -     -     -   CPS2   CPS1  CPS0  ECF   0xxx,0000       //PCA ¹¤×÷Ä£Ê½¼Ä´æÆ÷¡£
+ 627      =2  #define PCA_IDLE_OFF()          CMOD |=  (1<<7)                         //IDLE×´Ì¬PCAÍ£Ö¹¼ÆÊý¡£
+ 628      =2  #define PCA_IDLE_ON()           CMOD &= ~(1<<7)                         //IDLE×´Ì¬PCA¼ÌÐø¼ÆÊý¡£
+ 629      =2  #define PCA_CLK_12T()           CMOD &= ~0x0E                           //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/12¡£  fosc/12
+ 630      =2  #define PCA_CLK_2T()            CMOD = (CMOD & ~0x0E) + 2       //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/2¡£   fosc/2
+ 631      =2  #define PCA_CLK_T0()            CMOD = (CMOD & ~0x0E) + 4       //PCA¼ÆÊýÂö³åÑ¡ÔñTimer0ÖÐ¶Ï£¬Timer0¿ÉÍ¨¹ýAUXR¼Ä´æÆ÷ÉèÖÃ³É¹
+             -¤×÷ÔÚ12T»ò1TÄ£Ê½¡£
+ 632      =2  #define PCA_CLK_ECI()           CMOD = (CMOD & ~0x0E) + 6       //PCA¼ÆÊýÂö³åÑ¡Ôñ´ÓECI/P3.4½ÅÊäÈëµÄÍâ²¿Ê±ÖÓ£¬×î´ó fosc/2¡
+             -£
+ 633      =2  #define PCA_CLK_1T()            CMOD = (CMOD & ~0x0E) + 8       //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ¡£             Fosc/1
+ 634      =2  #define PCA_CLK_4T()            CMOD = (CMOD & ~0x0E) + 10      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/4¡£   Fosc/4
+ 635      =2  #define PCA_CLK_6T()            CMOD = (CMOD & ~0x0E) + 12      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/6¡£   Fosc/6
+ 636      =2  #define PCA_CLK_8T()            CMOD = (CMOD & ~0x0E) + 14      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/8¡£   Fosc/8
+ 637      =2  #define PCA_INT_ENABLE()        CMOD |=  1                                      //PCA¼ÆÊýÆ÷Òç³öÖÐ¶ÏÔÊÐíÎ»£¬1---ÔÊÐíCF£¨CCON.7£©²úÉúÖÐ¶Ï¡£
+ 638      =2  #define PCA_INT_DISABLE()       CMOD &= ~1                                      //PCA¼ÆÊýÆ÷Òç³öÖÐ¶Ï½ûÖ¹¡£
+ 639      =2  
+ 640      =2  //                                          7      6       5        4       3       2       1      0    Reset Value
+ 641      =2  //sfr AUXR1 = 0xA2;       S1_S1  S1_S0  CCP_S1   CCP_S0  SPI_S1   SPI_S0    -     DPS   0100,0000       //Auxiliary 
+             -Register 1
+ 642      =2  
+ 643      =2  #define         PCA_USE_P12P11P10P37()  AUXR1 &= ~0x30          //½«PCA/PWMÇÐ»»µ½P12(ECI) P11(CCP0) P10(CCP1) P37(CCP2)(ÉÏ
+             -µçÄ¬ÈÏ)¡£
+ 644      =2  #define         PCA_USE_P34P35P36P37()  AUXR1 = (AUXR1 & ~0x30) | 0x10  //½«PCA/PWMÇÐ»»µ½P34(ECI) P35(CCP0) P36(CCP
+             -1) P37(CCP2)¡£
+ 645      =2  #define         PCA_USE_P24P25P26P27()  AUXR1 = (AUXR1 & ~0x30) | 0x20  //½«PCA/PWMÇÐ»»µ½P24(ECI) P25(CCP0) P26(CCP
+             -1) P27(CCP2)¡£
+ 646      =2  
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 13  
+
+ 647      =2  #define         DPS_SEL1()              AUXR1 |=  1             //1£ºÑ¡ÔñDPTR1¡£
+ 648      =2  #define         DPS_SEL0()              AUXR1 &= ~1             //0£ºÑ¡ÔñDPTR0(ÉÏµçÄ¬ÈÏ)¡£
+ 649      =2  
+ 650      =2  
+ 651      =2  /*                                                                      7     6      5      4     3     2     1     0     Reset Value
+ 652      =2  //sfr CCAPM0 = 0xDA;    PWM ¼Ä´æÆ÷  -   ECOM0  CAPP0  CAPN0  MAT0  TOG0  PWM0  ECCF0   x000,0000        //PCA Ä£¿é0 
+ 653      =2  //sfr CCAPM1 = 0xDB;    PWM ¼Ä´æÆ÷  -   ECOM1  CAPP1  CAPN1  MAT1  TOG1  PWM1  ECCF1   x000,0000        //PCA Ä£¿é1
+ 654      =2  //sfr CCAPM2 = 0xDC;    PWM ¼Ä´æÆ÷  -   ECOM2  CAPP2  CAPN2  MAT2  TOG2  PWM2  ECCF2   x000,0000        //PCA Ä£¿é2
+ 655      =2  ;ECOMn = 1:     ÔÊÐí±È½Ï¹¦ÄÜ¡£
+ 656      =2  ;CAPPn = 1:     ÔÊÐíÉÏÉýÑØ´¥·¢²¶×½¹¦ÄÜ¡£
+ 657      =2  ;CAPNn = 1:     ÔÊÐíÏÂ½µÑØ´¥·¢²¶×½¹¦ÄÜ¡£
+ 658      =2  ;MATn  = 1:     µ±Æ¥ÅäÇé¿ö·¢ÉúÊ±£¬ÔÊÐíCCONÖÐµÄCCFnÖÃÎ»¡£
+ 659      =2  ;TOGn  = 1:     µ±Æ¥ÅäÇé¿ö·¢ÉúÊ±£¬CEXn½«·­×ª¡£(CEX0/PCA0/PWM0/P3.7,CEX1/PCA1/PWM1/P3.5)
+ 660      =2  ;PWMn  = 1:     ½«CEXnÉèÖÃÎªPWMÊä³ö¡£
+ 661      =2  ;ECCFn = 1:     ÔÊÐíCCONÖÐµÄCCFn´¥·¢ÖÐ¶Ï¡£
+ 662      =2  ;ECOMn CAPPn CAPNn MATn TOGn PWMn ECCFn
+ 663      =2  ;  0     0     0    0    0    0     0           00H     Î´ÆôÓÃÈÎºÎ¹¦ÄÜ¡£
+ 664      =2  ;  x     1     0    0    0    0     x           20H     16Î»CEXnÉÏÉýÑØ´¥·¢²¶×½¹¦ÄÜ¡£
+ 665      =2  ;  x     0     1    0    0    0     x           10H     16Î»CEXnÏÂ½µÑØ´¥·¢²¶×½¹¦ÄÜ¡£
+ 666      =2  ;  x     1     1    0    0    0     x           30H     16Î»CEXn/PCAn±ßÑØ£¨ÉÏ¡¢ÏÂÑØ£©´¥·¢²¶×½¹¦ÄÜ¡£
+ 667      =2  ;  1     0     0    1    0    0     x           48H     16Î»Èí¼þ¶¨Ê±Æ÷¡£
+ 668      =2  ;  1     0     0    1    1    0     x           4CH     16Î»¸ßËÙÂö³åÊä³ö¡£
+ 669      =2  ;  1     0     0    0    0    1     0           42H     8Î»PWM¡£ÎÞÖÐ¶Ï
+ 670      =2  ;  1     1     0    0    0    1     1           63H     8Î»PWM¡£µÍ±ä¸ß¿É²úÉúÖÐ¶Ï
+ 671      =2  ;  1     0     1    0    0    1     1           53H     8Î»PWM¡£¸ß±äµÍ¿É²úÉúÖÐ¶Ï
+ 672      =2  ;  1     1     1    0    0    1     1           73H     8Î»PWM¡£µÍ±ä¸ß»ò¸ß±äµÍ¾ù¿É²úÉúÖÐ¶Ï
+ 673      =2  ;*******************************************************************
+ 674      =2  ;*******************************************************************/
+ 675      =2  #define         PCA0_none()                             CCAPM0 = 0
+ 676      =2  #define         PCA0_PWM(nbit)                  CCAPM0 = 0x42,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
+ 677      =2  #define         PCA0_PWM_rise_int(nbit) CCAPM0 = 0x63,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
+ 678      =2  #define         PCA0_PWM_fall_int(nbit) CCAPM0 = 0x53,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
+ 679      =2  #define         PCA0_PWM_edge_int(nbit) CCAPM0 = 0x73,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
+ 680      =2  #define         PCA0_capture_rise()             CCAPM0 = (0x20 + 1)
+ 681      =2  #define         PCA0_capture_fall()             CCAPM0 = (0x10 + 1)
+ 682      =2  #define         PCA0_capture_edge()             CCAPM0 = (0x30 + 1)
+ 683      =2  #define         PCA0_16bit_Timer()              CCAPM0 = (0x48 + 1)
+ 684      =2  #define         PCA0_High_Pulse()               CCAPM0 = (0x4C + 1)
+ 685      =2  
+ 686      =2  #define         PCA1_none()                             CCAPM1 = 0
+ 687      =2  #define         PCA1_PWM(nbit)                  CCAPM1 = 0x42,PCA_PWM1 = (PCA_PWM1 & 0x0c) | ((8-nbit)<<6)
+ 688      =2  #define         PCA1_PWM_rise_int(nbit) CCAPM1 = 0x63,PCA_PWM1 = (PCA_PWM1 & 0x0c) | ((8-nbit)<<6)
+ 689      =2  #define         PCA1_PWM_fall_int(nbit) CCAPM1 = 0x53,PCA_PWM1 = (PCA_PWM1 & 0x0c) | ((8-nbit)<<6)
+ 690      =2  #define         PCA1_PWM_edge_int(nbit) CCAPM1 = 0x73,PCA_PWM1 = (PCA_PWM1 & 0x0c) | ((8-nbit)<<6)
+ 691      =2  #define         PCA1_capture_rise()             CCAPM1 = (0x20 + 1)
+ 692      =2  #define         PCA1_capture_fall()             CCAPM1 = (0x10 + 1)
+ 693      =2  #define         PCA1_capture_edge()             CCAPM1 = (0x30 + 1)
+ 694      =2  #define         PCA1_16bit_Timer()              CCAPM1 = (0x48 + 1)
+ 695      =2  #define         PCA1_High_Pulse()               CCAPM1 = (0x4C + 1)
+ 696      =2  
+ 697      =2  #define         PCA2_none()                             CCAPM2 = 0
+ 698      =2  #define         PCA2_PWM(nbit)                  CCAPM2 = 0x42,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
+ 699      =2  #define         PCA2_PWM_rise_int(nbit) CCAPM2 = 0x63,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
+ 700      =2  #define         PCA2_PWM_fall_int(nbit) CCAPM2 = 0x53,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
+ 701      =2  #define         PCA2_PWM_edge_int(nbit) CCAPM2 = 0x73,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
+ 702      =2  #define         PCA2_capture_rise()             CCAPM2 = (0x20 + 1)
+ 703      =2  #define         PCA2_capture_fall()             CCAPM2 = (0x10 + 1)
+ 704      =2  #define         PCA2_capture_edge()             CCAPM2 = (0x30 + 1)
+ 705      =2  #define         PCA2_16bit_Timer()              CCAPM2 = (0x48 + 1)
+ 706      =2  #define         PCA2_High_Pulse()               CCAPM2 = (0x4C + 1)
+ 707      =2  
+ 708      =2  /* Above is STC additional SFR or change */
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 14  
+
+ 709      =2  
+ 710      =2  
+ 711      =2  
+ 712      =2  
+ 713      =2  /**********************************************************/
+ 714      =2  typedef         unsigned char   u8;
+ 715      =2  typedef         unsigned int    u16;
+ 716      =2  typedef         unsigned long   u32;
+ 717      =2  
+ 718      =2  /**********************************************************/
+ 719      =2  #define NOP1()  _nop_()
+ 720      =2  #define NOP2()  NOP1(),NOP1()
+ 721      =2  #define NOP3()  NOP2(),NOP1()
+ 722      =2  #define NOP4()  NOP3(),NOP1()
+ 723      =2  #define NOP5()  NOP4(),NOP1()
+ 724      =2  #define NOP6()  NOP5(),NOP1()
+ 725      =2  #define NOP7()  NOP6(),NOP1()
+ 726      =2  #define NOP8()  NOP7(),NOP1()
+ 727      =2  #define NOP9()  NOP8(),NOP1()
+ 728      =2  #define NOP10() NOP9(),NOP1()
+ 729      =2  #define NOP11() NOP10(),NOP1()
+ 730      =2  #define NOP12() NOP11(),NOP1()
+ 731      =2  #define NOP13() NOP12(),NOP1()
+ 732      =2  #define NOP14() NOP13(),NOP1()
+ 733      =2  #define NOP15() NOP14(),NOP1()
+ 734      =2  #define NOP16() NOP15(),NOP1()
+ 735      =2  #define NOP17() NOP16(),NOP1()
+ 736      =2  #define NOP18() NOP17(),NOP1()
+ 737      =2  #define NOP19() NOP18(),NOP1()
+ 738      =2  #define NOP20() NOP19(),NOP1()
+ 739      =2  #define NOP21() NOP20(),NOP1()
+ 740      =2  #define NOP22() NOP21(),NOP1()
+ 741      =2  #define NOP23() NOP22(),NOP1()
+ 742      =2  #define NOP24() NOP23(),NOP1()
+ 743      =2  #define NOP25() NOP24(),NOP1()
+ 744      =2  #define NOP26() NOP25(),NOP1()
+ 745      =2  #define NOP27() NOP26(),NOP1()
+ 746      =2  #define NOP28() NOP27(),NOP1()
+ 747      =2  #define NOP29() NOP28(),NOP1()
+ 748      =2  #define NOP30() NOP29(),NOP1()
+ 749      =2  #define NOP31() NOP30(),NOP1()
+ 750      =2  #define NOP32() NOP31(),NOP1()
+ 751      =2  #define NOP33() NOP32(),NOP1()
+ 752      =2  #define NOP34() NOP33(),NOP1()
+ 753      =2  #define NOP35() NOP34(),NOP1()
+ 754      =2  #define NOP36() NOP35(),NOP1()
+ 755      =2  #define NOP37() NOP36(),NOP1()
+ 756      =2  #define NOP38() NOP37(),NOP1()
+ 757      =2  #define NOP39() NOP38(),NOP1()
+ 758      =2  #define NOP40() NOP39(),NOP1()
+ 759      =2  #define NOP(N)  NOP##N()
+ 760      =2  
+ 761      =2  
+ 762      =2  /**********************************************/
+ 763      =2  
+ 764      =2  
+ 765      =2  /****************************************************************/
+ 766      =2  
+ 767      =2  
+ 768      =2  //sfr INT_CLKO = 0x8F;  //¸½¼ÓµÄ SFR WAKE_CLKO (µØÖ·£º0x8F)
+ 769      =2  /*
+ 770      =2      7   6    5    4   3     2        1       0         Reset Value
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 15  
+
+ 771      =2      -  EX4  EX3  EX2  -   T2CLKO   T1CLKO  T0CLKO      0000,0000B
+ 772      =2  b6 -  EX4      : ÍâÖÐ¶ÏINT4ÔÊÐí
+ 773      =2  b5 -  EX3      : ÍâÖÐ¶ÏINT3ÔÊÐí
+ 774      =2  b4 -  EX2      : ÍâÖÐ¶ÏINT2ÔÊÐí
+ 775      =2  b2 - T1CLKO    : ÔÊÐí T2 Òç³öÂö³åÔÚP3.0½ÅÊä³ö£¬Fck1 = 1/2 T1 Òç³öÂÊ
+ 776      =2  b1 - T1CLKO    : ÔÊÐí T1 Òç³öÂö³åÔÚP3.4½ÅÊä³ö£¬Fck1 = 1/2 T1 Òç³öÂÊ
+ 777      =2  b0 - T0CLKO    : ÔÊÐí T0 Òç³öÂö³åÔÚP3.5½ÅÊä³ö£¬Fck0 = 1/2 T0 Òç³öÂÊ
+ 778      =2  */
+ 779      =2  
+ 780      =2  #define         LVD_InterruptEnable()           ELVD = 1
+ 781      =2  #define         LVD_InterruptDisable()          ELVD = 0
+ 782      =2  
+ 783      =2  
+ 784      =2  //sfr WKTCL = 0xAA;     //STC11F\10ºÍSTC15ÏµÁÐ »½ÐÑ¶¨Ê±Æ÷µÍ×Ö½Ú
+ 785      =2  //sfr WKTCH = 0xAB;     //STC11F\10ºÍSTC15ÏµÁÐ »½ÐÑ¶¨Ê±Æ÷¸ß×Ö½Ú
+ 786      =2  //      B7              B6      B5      B4      B3      B2      B1      B0              B7      B6      B5      B4      B3      B2      B1      B0
+ 787      =2  //      WKTEN                           S11     S10     S9      S8              S7      S6      S5      S4      S3      S2      S1      S0      n * 560us
+ 788      =2  #define         WakeTimerDisable()              WKTCH &= 0x7f   //WKTEN = 0             ½ûÖ¹Ë¯Ãß»½ÐÑ¶¨Ê±Æ÷
+ 789      =2  #define         WakeTimerSet(scale)             WKTCL = (scale) % 256,WKTCH = (scale) / 256 | 0x80      //WKTEN = 1     ÔÊÐíË¯Ãß»½ÐÑ¶
+             -¨Ê±Æ÷
+ 790      =2  
+ 791      =2  
+ 792      =2  //sfr CLK_DIV = 0x97; //Clock Divder ÏµÍ³Ê±ÖÓ·ÖÆµ  -     -      -       -     -  CLKS2 CLKS1 CLKS0 xxxx,x0
+             -00
+ 793      =2  #define         SYSTEM_CLK_1T()         CLK_DIV &= ~0x07        //default
+ 794      =2  #define         SYSTEM_CLK_2T()         CLK_DIV = (CLK_DIV & ~0x07) | 1
+ 795      =2  #define         SYSTEM_CLK_4T()         CLK_DIV = (CLK_DIV & ~0x07) | 2
+ 796      =2  #define         SYSTEM_CLK_8T()         CLK_DIV = (CLK_DIV & ~0x07) | 3
+ 797      =2  #define         SYSTEM_CLK_16T()        CLK_DIV = (CLK_DIV & ~0x07) | 4
+ 798      =2  #define         SYSTEM_CLK_32T()        CLK_DIV = (CLK_DIV & ~0x07) | 5
+ 799      =2  #define         SYSTEM_CLK_64T()        CLK_DIV = (CLK_DIV & ~0x07) | 6
+ 800      =2  #define         SYSTEM_CLK_128T()       CLK_DIV =  CLK_DIV          | 7
+ 801      =2  
+ 802      =2  #define         MCLKO_P54_None()        CLK_DIV &= ~0xc0                                        //Ö÷Ê±ÖÓ²»Êä³ö
+ 803      =2  #define         MCLKO_P54_DIV1()        CLK_DIV  = (CLK_DIV & ~0xc0) | 0x40     //Ö÷Ê±ÖÓ²»·ÖÆµÊä³ö
+ 804      =2  #define         MCLKO_P54_DIV2()        CLK_DIV  = (CLK_DIV & ~0xc0) | 0x80     //Ö÷Ê±ÖÓ2·ÖÆµÊä³ö
+ 805      =2  #define         MCLKO_P54_DIV4()        CLK_DIV  =  CLK_DIV | 0xc0                      //Ö÷Ê±ÖÓ4·ÖÆµÊä³ö
+ 806      =2  
+ 807      =2  #define         MCLKO_P34_None()        CLK_DIV &= ~0xc0                                        //Ö÷Ê±ÖÓ²»Êä³ö
+ 808      =2  #define         MCLKO_P34_DIV1()        CLK_DIV  = (CLK_DIV & ~0xc0) | 0x40     //Ö÷Ê±ÖÓ²»·ÖÆµÊä³ö
+ 809      =2  #define         MCLKO_P34_DIV2()        CLK_DIV  = (CLK_DIV & ~0xc0) | 0x80     //Ö÷Ê±ÖÓ2·ÖÆµÊä³ö
+ 810      =2  #define         MCLKO_P34_DIV4()        CLK_DIV  =  CLK_DIV | 0xc0                      //Ö÷Ê±ÖÓ4·ÖÆµÊä³ö
+ 811      =2  
+ 812      =2  //sfr BUS_SPEED = 0xA1; //Stretch register      -   -  -  -   -   -  EXRTS1  EXRTSS0 xxxx,xx10
+ 813      =2  #define         BUS_SPEED_1T()  BUS_SPEED = 0
+ 814      =2  #define         BUS_SPEED_2T()  BUS_SPEED = 1
+ 815      =2  #define         BUS_SPEED_4T()  BUS_SPEED = 2
+ 816      =2  #define         BUS_SPEED_8T()  BUS_SPEED = 3
+ 817      =2  
+ 818      =2  /*   interrupt vector */
+ 819      =2  #define         INT0_VECTOR             0
+ 820      =2  #define         TIMER0_VECTOR   1
+ 821      =2  #define         INT1_VECTOR             2
+ 822      =2  #define         TIMER1_VECTOR   3
+ 823      =2  #define         UART1_VECTOR    4
+ 824      =2  #define         ADC_VECTOR              5
+ 825      =2  #define         LVD_VECTOR              6
+ 826      =2  #define         PCA_VECTOR              7
+ 827      =2  #define         UART2_VECTOR    8
+ 828      =2  #define         SPI_VECTOR              9
+ 829      =2  #define         INT2_VECTOR             10
+ 830      =2  #define         INT3_VECTOR             11
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 16  
+
+ 831      =2  #define         TIMER2_VECTOR   12
+ 832      =2  #define         INT4_VECTOR             16
+ 833      =2  #define         UART3_VECTOR    17
+ 834      =2  #define         UART4_VECTOR    18
+ 835      =2  #define         TIMER3_VECTOR   19
+ 836      =2  #define         TIMER4_VECTOR   20
+ 837      =2  #define         CMP_VECTOR              21
+ 838      =2  
+ 839      =2  
+ 840      =2  #define TRUE    1
+ 841      =2  #define FALSE   0
+ 842      =2  
+ 843      =2  //=============================================================
+ 844      =2  
+ 845      =2  //========================================
+ 846      =2  
+ 847      =2  #define PolityLow                       0       //µÍÓÅÏÈ¼¶ÖÐ¶Ï
+ 848      =2  #define PolityHigh                      1       //¸ßÓÅÏÈ¼¶ÖÐ¶Ï
+ 849      =2  
+ 850      =2  //========================================
+ 851      =2  
+ 852      =2  #define         MCLKO_None      0
+ 853      =2  #define         MCLKO_DIV1      1
+ 854      =2  #define         MCLKO_DIV2      2
+ 855      =2  #define         MCLKO_DIV4      3
+ 856      =2  
+ 857      =2  #define         ENABLE          1
+ 858      =2  #define         DISABLE         0
+ 859      =2  
+ 860      =2  #define         STC15F_L2K08S2  8
+ 861      =2  #define         STC15F_L2K16S2  16
+ 862      =2  #define         STC15F_L2K24S2  24
+ 863      =2  #define         STC15F_L2K32S2  32
+ 864      =2  #define         STC15F_L2K40S2  40
+ 865      =2  #define         STC15F_L2K48S2  48
+ 866      =2  #define         STC15F_L2K56S2  56
+ 867      =2  #define         STC15F_L2K60S2  60
+ 868      =2  #define         IAP15F_L2K61S2  61
+ 869      =2  
+ 870      =2  #endif
+  30      =1  
+  31      =1  //#define DEBUG
+  32      =1  
+  33      =1  #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+  34      =1  #define ENABLE_OUT_OFF_HOOK_DELAY 0
+  35      =1  #define ENABLE_CPU_SLEEP_SUPPORT 1
+  36      =1  
+  37      =1  #define POWER_OK 1            //¶ÌÂ·ÐÅºÅÕý³£
+  38      =1  #define POWER_ERR 0           //¶ÌÂ·ÐÅºÅÒì³£
+  39      =1  #define AUTO_CTRL_MODE 1      //×Ô¶¯¿ØÖÆÄ£Ê½
+  40      =1  #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
+  41      =1  #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
+  42      =1  #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
+  43      =1  #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
+  44      =1  
+  45      =1  #define MONTOR_RIGHT_RUNNING 0x01
+  46      =1  #define MONTOR_LEFT_RUNNING 0x10
+  47      =1  #define MONTOR_STOP_RUNNING 0xff
+  48      =1  
+  49      =1  #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
+  50      =1  #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
+  51      =1  #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 17  
+
+  52      =1  #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
+  53      =1  #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
+  54      =1  #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
+  55      =1  #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
+  56      =1  #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
+  57      =1  #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
+  58      =1  #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
+  59      =1  #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
+  60      =1  #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
+  61      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
+  62      =1  #define TIMEOUT_DELAY_VAL 4
+  63      =1  
+  64      =1  #define TIMECOUNTER_START 0
+  65      =1  #define STOP_TIMERCOUNT 0xFF
+  66      =1  
+  67      =1  #define EEPROM_ADDR 0x0200
+  68      =1  
+  69      =1  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- µç»úÕý´«
+  70      =1  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- µç»ú·´×ª
+  71      =1  sbit  ExAutoCtrlSignal = P1^0;      //Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
+  72      =1  sbit  SystemWorkMode = P1^1;        //1£º×Ô¶¯  0£ºÊÖ¶¯
+  73      =1  sbit  SwitchOnStatus = P1^2;        //0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
+  74      =1  sbit  OutOffHookCheck = P1^3;        //ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
+  75      =1  sbit  SystemSleepStatus = P1^4;      //Ë¯ÃßÖ¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
+  76      =1  
+  77      =1  #endif
+   2          #include "misc.h"
+   1      =1  #ifndef __MISC_H
+   2      =1  #define __MISC_H
+   3      =1  
+   4      =1  #define LOGD PrintString1
+   5      =1  
+   6      =1  void init_Watch_Dog(void);
+   7      =1  void System_PowerDown();
+   8      =1  bit POF_Boot_Delay(void);
+   9      =1  void setSystemSleepFlag(bit sleep);
+  10      =1  void Reboot_System(void);
+  11      =1  unsigned char setMontorRunningStatus(unsigned char runStat);
+  12      =1  void PrintSystemInfoToSerial(void);
+  13      =1  
+  14      =1  #endif
+   3          #include "delay.h"
+   1      =1  
+   2      =1  /*------------------------------------------------------------------*/
+   3      =1  /* --- STC MCU International Limited -------------------------------*/
+   4      =1  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
+  10      =1  /* If you want to use the program or the program referenced in the  */
+  11      =1  /* article, please specify in which data and procedures from STC    */
+  12      =1  /*------------------------------------------------------------------*/
+  13      =1  
+  14      =1  
+  15      =1  #ifndef __DELAY_H
+  16      =1  #define __DELAY_H
+  17      =1  
+  18      =1  #include        "config.h"
+   1      =2  
+   2      =2  /*------------------------------------------------------------------*/
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 18  
+
+   3      =2  /* --- STC MCU International Limited -------------------------------*/
+   4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
+  10      =2  /* If you want to use the program or the program referenced in the  */
+  11      =2  /* article, please specify in which data and procedures from STC    */
+  12      =2  /*------------------------------------------------------------------*/
+  13      =2  
+  14      =2  
+  15      =2  #ifndef         __CONFIG_H
+           =2 #define         __CONFIG_H
+           =2 
+           =2 
+           =2 /*********************************************************/
+           =2 
+           =2 //#define MAIN_Fosc             22118400L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 //#define MAIN_Fosc             12000000L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 #define MAIN_Fosc               11059200L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 //#define MAIN_Fosc              5529600L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 //#define MAIN_Fosc             24000000L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 
+           =2 
+           =2 /*********************************************************/
+           =2 #include        "STC15Fxxxx.H"
+           =2 
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
+           =2 
+           =2 #define POWER_OK 1            //¶ÌÂ·ÐÅºÅÕý³£
+           =2 #define POWER_ERR 0           //¶ÌÂ·ÐÅºÅÒì³£
+           =2 #define AUTO_CTRL_MODE 1      //×Ô¶¯¿ØÖÆÄ£Ê½
+           =2 #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
+           =2 #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
+           =2 #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
+           =2 #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
+           =2 
+           =2 #define MONTOR_RIGHT_RUNNING 0x01
+           =2 #define MONTOR_LEFT_RUNNING 0x10
+           =2 #define MONTOR_STOP_RUNNING 0xff
+           =2 
+           =2 #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
+           =2 
+           =2 #define TIMECOUNTER_START 0
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 19  
+
+           =2 #define STOP_TIMERCOUNT 0xFF
+           =2 
+           =2 #define EEPROM_ADDR 0x0200
+           =2 
+           =2 sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- µç»úÕý´«
+           =2 sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- µç»ú·´×ª
+           =2 sbit  ExAutoCtrlSignal = P1^0;      //Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
+           =2 sbit  SystemWorkMode = P1^1;        //1£º×Ô¶¯  0£ºÊÖ¶¯
+           =2 sbit  SwitchOnStatus = P1^2;        //0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
+           =2 sbit  OutOffHookCheck = P1^3;        //ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
+           =2 sbit  SystemSleepStatus = P1^4;      //Ë¯ÃßÖ¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
+           =2 
+           =2 #endif
+  19      =1  
+  20      =1  void  delay_ms(unsigned char ms);
+  21      =1  void delay_4000ms(void);
+  22      =1  #endif
+   4          #include "USART1.h"
+   1      =1  
+   2      =1  /*------------------------------------------------------------------*/
+   3      =1  /* --- STC MCU International Limited -------------------------------*/
+   4      =1  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
+  10      =1  /* If you want to use the program or the program referenced in the  */
+  11      =1  /* article, please specify in which data and procedures from STC    */
+  12      =1  /*------------------------------------------------------------------*/
+  13      =1  
+  14      =1  
+  15      =1  #ifndef __USART_H
+  16      =1  #define __USART_H        
+  17      =1  
+  18      =1  #include        "config.h"
+   1      =2  
+   2      =2  /*------------------------------------------------------------------*/
+   3      =2  /* --- STC MCU International Limited -------------------------------*/
+   4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
+   5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
+   6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
+   7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
+   8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
+   9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
+  10      =2  /* If you want to use the program or the program referenced in the  */
+  11      =2  /* article, please specify in which data and procedures from STC    */
+  12      =2  /*------------------------------------------------------------------*/
+  13      =2  
+  14      =2  
+  15      =2  #ifndef         __CONFIG_H
+           =2 #define         __CONFIG_H
+           =2 
+           =2 
+           =2 /*********************************************************/
+           =2 
+           =2 //#define MAIN_Fosc             22118400L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 //#define MAIN_Fosc             12000000L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 #define MAIN_Fosc               11059200L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 //#define MAIN_Fosc              5529600L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 //#define MAIN_Fosc             24000000L       //¶¨ÒåÖ÷Ê±ÖÓ
+           =2 
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 20  
+
+           =2 
+           =2 /*********************************************************/
+           =2 #include        "STC15Fxxxx.H"
+           =2 
+           =2 //#define DEBUG
+           =2 
+           =2 #define ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET 0
+           =2 #define ENABLE_OUT_OFF_HOOK_DELAY 0
+           =2 #define ENABLE_CPU_SLEEP_SUPPORT 1
+           =2 
+           =2 #define POWER_OK 1            //¶ÌÂ·ÐÅºÅÕý³£
+           =2 #define POWER_ERR 0           //¶ÌÂ·ÐÅºÅÒì³£
+           =2 #define AUTO_CTRL_MODE 1      //×Ô¶¯¿ØÖÆÄ£Ê½
+           =2 #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
+           =2 #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
+           =2 #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
+           =2 #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
+           =2 
+           =2 #define MONTOR_RIGHT_RUNNING 0x01
+           =2 #define MONTOR_LEFT_RUNNING 0x10
+           =2 #define MONTOR_STOP_RUNNING 0xff
+           =2 
+           =2 #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
+           =2 #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
+           =2 #define TIMEOUT_DELAY_VAL 4
+           =2 
+           =2 #define TIMECOUNTER_START 0
+           =2 #define STOP_TIMERCOUNT 0xFF
+           =2 
+           =2 #define EEPROM_ADDR 0x0200
+           =2 
+           =2 sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- µç»úÕý´«
+           =2 sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- µç»ú·´×ª
+           =2 sbit  ExAutoCtrlSignal = P1^0;      //Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
+           =2 sbit  SystemWorkMode = P1^1;        //1£º×Ô¶¯  0£ºÊÖ¶¯
+           =2 sbit  SwitchOnStatus = P1^2;        //0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
+           =2 sbit  OutOffHookCheck = P1^3;        //ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
+           =2 sbit  SystemSleepStatus = P1^4;      //Ë¯ÃßÖ¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
+           =2 
+           =2 #endif
+  19      =1  
+  20      =1  #define COM_TX1_Lenth   64
+  21      =1  #define COM_RX1_Lenth   64
+  22      =1  #define COM_TX2_Lenth   128
+  23      =1  #define COM_RX2_Lenth   128
+  24      =1  
+  25      =1  #define USART1  1
+  26      =1  #define USART2  2
+  27      =1  
+  28      =1  #define UART_ShiftRight 0               //Í¬²½ÒÆÎ»Êä³ö
+  29      =1  #define UART_8bit_BRTx  (1<<6)  //8Î»Êý¾Ý,¿É±ä²¨ÌØÂÊ
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 21  
+
+  30      =1  #define UART_9bit               (2<<6)  //9Î»Êý¾Ý,¹Ì¶¨²¨ÌØÂÊ
+  31      =1  #define UART_9bit_BRTx  (3<<6)  //9Î»Êý¾Ý,¿É±ä²¨ÌØÂÊ
+  32      =1  
+  33      =1  #define UART1_SW_P30_P31        0
+  34      =1  #define UART1_SW_P36_P37        (1<<6)
+  35      =1  #define UART1_SW_P16_P17        (2<<6)  //±ØÐëÊ¹ÓÃÄÚ²¿Ê±ÖÓ
+  36      =1  #define UART2_SW_P10_P11        0
+  37      =1  #define UART2_SW_P46_P47        1
+  38      =1  
+  39      =1  
+  40      =1  #define TimeOutSet1             5
+  41      =1  #define TimeOutSet2             5
+  42      =1  
+  43      =1  #define BRT_Timer1      1
+  44      =1  #define BRT_Timer2      2
+  45      =1  
+  46      =1  typedef struct
+  47      =1  { 
+  48      =1          u8      id;                             //´®¿ÚºÅ
+  49      =1  
+  50      =1          u8      TX_read;                //·¢ËÍ¶ÁÖ¸Õë
+  51      =1          u8      TX_write;               //·¢ËÍÐ´Ö¸Õë
+  52      =1          u8      B_TX_busy;              //Ã¦±êÖ¾
+  53      =1  
+  54      =1          u8      RX_Cnt;                 //½ÓÊÕ×Ö½Ú¼ÆÊý
+  55      =1          u8      RX_TimeOut;             //½ÓÊÕ³¬Ê±
+  56      =1          u8      B_RX_OK;                //½ÓÊÕ¿éÍê³É
+  57      =1  } COMx_Define; 
+  58      =1  
+  59      =1  typedef struct
+  60      =1  { 
+  61      =1          u8      UART_Mode;                      //Ä£Ê½,         UART_ShiftRight,UART_8bit_BRTx,UART_9bit,UART_9bit_BRTx
+  62      =1          u8      UART_BRT_Use;           //Ê¹ÓÃ²¨ÌØÂÊ,   BRT_Timer1,BRT_Timer2
+  63      =1          u32     UART_BaudRate;          //²¨ÌØÂÊ,       ENABLE,DISABLE
+  64      =1          u8      Morecommunicate;        //¶à»úÍ¨Ñ¶ÔÊÐí, ENABLE,DISABLE
+  65      =1          u8      UART_RxEnable;          //ÔÊÐí½ÓÊÕ,   ENABLE,DISABLE
+  66      =1          u8      BaudRateDouble;         //²¨ÌØÂÊ¼Ó±¶, ENABLE,DISABLE
+  67      =1          u8      UART_Interrupt;         //ÖÐ¶Ï¿ØÖÆ,   ENABLE,DISABLE
+  68      =1          u8      UART_Polity;            //ÓÅÏÈ¼¶,     PolityLow,PolityHigh
+  69      =1          u8      UART_P_SW;                      //ÇÐ»»¶Ë¿Ú,   UART1_SW_P30_P31,UART1_SW_P36_P37,UART1_SW_P16_P17(±ØÐëÊ¹ÓÃÄÚ²¿Ê±ÖÓ)
+  70      =1          u8      UART_RXD_TXD_Short;     //ÄÚ²¿¶ÌÂ·RXDÓëTXD, ×öÖÐ¼Ì, ENABLE,DISABLE
+  71      =1  
+  72      =1  } COMx_InitDefine; 
+  73      =1  
+  74      =1  extern  COMx_Define     COM1,COM2;
+  75      =1  extern  u8 idata        TX1_Buffer[COM_TX1_Lenth];      //·¢ËÍ»º³å
+  76      =1  extern  u8 idata        RX1_Buffer[COM_RX1_Lenth];      //½ÓÊÕ»º³å
+  77      =1  
+  78      =1  u8      USART_Configuration(u8 UARTx, COMx_InitDefine *COMx);
+  79      =1  void TX1_write2buff(u8 dat);    //Ð´Èë·¢ËÍ»º³å£¬Ö¸Õë+1
+  80      =1  void TX2_write2buff(u8 dat);    //Ð´Èë·¢ËÍ»º³å£¬Ö¸Õë+1
+  81      =1  void PrintString1(u8 *puts);
+  82      =1  
+  83      =1  #endif
+  84      =1  
+   5          
+   6          void init_Watch_Dog(void)
+   7          {
+   8   1              WDT_CONTR = 0x3A;  //0011 1010
+   9   1      }
+  10          
+  11          void setSystemSleepFlag(bit sleep)
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 22  
+
+  12          {
+  13   1              SystemSleepStatus = (sleep)? FALSE : TRUE ;
+  14   1      }
+  15          
+  16          void System_PowerDown(void)
+  17          {
+  18   1          //PCON |= 2 //MCU ½øÈë Ë¯Ãß Ä£Ê½
+  19   1          LOGD("System entery Power Down mode ...\r\n\r\n");
+  20   1              setSystemSleepFlag(TRUE);
+  21   1              _nop_();
+  22   1          _nop_();
+  23   1          _nop_();
+  24   1          MCU_POWER_DOWN();
+  25   1          _nop_();    // »½ÐÑºóÊ×ÏÈÖ´ÐÐ´ËÓï¾ä£¬ÔÙ½øÈëÖÐ¶Ï·þÎñ×Ó³ÌÐò
+  26   1          _nop_();
+  27   1          _nop_();
+  28   1          _nop_();
+  29   1      }
+  30          
+  31          bit POF_Boot_Delay(void)
+  32          {
+  33   1          if(PCON & 0x10)
+  34   1          {
+  35   2                      LOGD("Cold reset, delay 4s entery system ...\r\n");
+  36   2      #if ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET
+                      delay_4000ms()  ; //boot delay 4s
+              #endif
+  39   2              PCON &= 0xEF; //ÇåÁãPOF¼Ä´æÆ÷ 
+  40   2                                      
+  41   2                      return TRUE;
+  42   2          }
+  43   1              else
+  44   1                      return FALSE;
+  45   1      }
+  46          
+  47          void Reboot_System(void)
+  48          {
+  49   1          //LOGD("Reboot System ...\n");
+  50   1              //if run to here, system must be reboot now from user space
+  51   1              if(IAP_CONTR & 0x40)
+  52   1                      IAP_CONTR &= 0x3F; // 0011 1111
+  53   1              if(!(IAP_CONTR & 0x20))
+  54   1                      IAP_CONTR |= 0x60; // 0010 0000
+  55   1      }
+  56          
+  57          unsigned char setMontorRunningStatus(unsigned char runStat)
+  58          {
+  59   1          unsigned char MotorRunStatus = MONTOR_STOP_RUNNING;
+  60   1          
+  61   1          if(MONTOR_RIGHT_RUNNING == runStat) //Õý×ª
+  62   1          {
+  63   2              MotorRunningCtrl_R = 1;
+  64   2              MotorRunningCtrl_L = 0;
+  65   2              MotorRunStatus = MONTOR_RIGHT_RUNNING;
+  66   2              //delay_ms(1);
+  67   2              LOGD("[Motor status] ===> \r\n");
+  68   2          }
+  69   1          else if(MONTOR_LEFT_RUNNING == runStat) //·´×ª
+  70   1          {
+  71   2              MotorRunningCtrl_R = 0;
+  72   2              MotorRunningCtrl_L = 1;
+  73   2              MotorRunStatus = MONTOR_LEFT_RUNNING;
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 23  
+
+  74   2              //delay_ms(1);
+  75   2              LOGD("[Motor status] <=== \r\n");
+  76   2          }
+  77   1          else //Í£×ª
+  78   1          {
+  79   2              MotorRunningCtrl_R = 1;
+  80   2              MotorRunningCtrl_L = 1;
+  81   2              MotorRunStatus = MONTOR_STOP_RUNNING;
+  82   2              //delay_ms(1);
+  83   2              LOGD("[Motor status] Stop.\r\n\r\n");
+  84   2          }
+  85   1          
+  86   1          return MotorRunStatus;
+  87   1      }
+  88          
+  89          #ifdef DEBUG
+              void PrintSameString(u8 *puts, unsigned char nSize)
+              {
+                      unsigned char i = 0;
+                      if(nSize > 0)
+                      { 
+                              for(i = 0; i < nSize; i++) 
+                                      LOGD(puts);
+                              LOGD("\r\n");
+                      }
+              }
+              #endif
+ 101          
+ 102          void PrintSystemInfoToSerial(void)
+ 103          {       
+ 104   1      #ifdef DEBUG
+                      PrintSameString("*", 62);          
+                      PrintSameString(" ", 1);
+                      LOGD("        ºþ±±Ê¢¼ÑµçÆ÷Éè±¸ÓÐÏÞ¹«Ë¾ - ÖÇÄÜ×Ô¶¯ºÏÕ¢¿ØÖÆÏµÍ³\r\n");
+                      PrintSameString(" ", 1);
+                      PrintSameString(" ", 1);
+                      //LOGD("  Project Name  : Smart Switch Control System\r\n");
+                      LOGD("  Version No.   : Ver 1.0\r\n");
+                      LOGD("  Designed Time : 2016-03-21\r\n");
+                      //LOGD("  Auth Name     : Li Shuliang\r\n");
+                      //LOGD("  Auth Email    : 313424410@qq.com\r\n");
+                      //LOGD("  Project Owner : SJDQ\r\n");
+                      LOGD("  Telephone     : 027 - 83520066 / 83567077\r\n");
+                      PrintSameString(" ", 1);
+                      LOGD("        All rights reserved (c)2016  http://www.sjdq.com/\r\n");
+                      PrintSameString(" ", 1);
+                  PrintSameString("*", 62);
+              #endif
+ 122   1      }
+ 123          
+ 124          ////////////////////////////////////////////////////////////////////////
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 24  
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION init_Watch_Dog (BEGIN)
+                                           ; SOURCE LINE # 6
+                                           ; SOURCE LINE # 7
+                                           ; SOURCE LINE # 8
+0000 75C13A            MOV     WDT_CONTR,#03AH
+                                           ; SOURCE LINE # 9
+0003 22                RET     
+             ; FUNCTION init_Watch_Dog (END)
+
+             ; FUNCTION setSystemSleepFlag (BEGIN)
+                                           ; SOURCE LINE # 11
+                                           ; SOURCE LINE # 12
+                                           ; SOURCE LINE # 13
+0000 300003      R     JNB     sleep,?C0002
+0003 C3                CLR     C
+0004 8001              SJMP    ?C0003
+0006         ?C0002:
+0006 D3                SETB    C
+0007         ?C0003:
+0007 9294              MOV     SystemSleepStatus,C
+                                           ; SOURCE LINE # 14
+0009 22                RET     
+             ; FUNCTION setSystemSleepFlag (END)
+
+             ; FUNCTION System_PowerDown (BEGIN)
+                                           ; SOURCE LINE # 16
+                                           ; SOURCE LINE # 17
+                                           ; SOURCE LINE # 19
+0000 7BFF              MOV     R3,#0FFH
+0002 7A00        R     MOV     R2,#HIGH ?SC_0
+0004 7900        R     MOV     R1,#LOW ?SC_0
+0006 120000      E     LCALL   _PrintString1
+                                           ; SOURCE LINE # 20
+0009 D200        R     SETB    ?setSystemSleepFlag?BIT
+000B 120000      R     LCALL   setSystemSleepFlag
+                                           ; SOURCE LINE # 21
+000E 00                NOP     
+                                           ; SOURCE LINE # 22
+000F 00                NOP     
+                                           ; SOURCE LINE # 23
+0010 00                NOP     
+                                           ; SOURCE LINE # 24
+0011 438702            ORL     PCON,#02H
+                                           ; SOURCE LINE # 25
+0014 00                NOP     
+                                           ; SOURCE LINE # 26
+0015 00                NOP     
+                                           ; SOURCE LINE # 27
+0016 00                NOP     
+                                           ; SOURCE LINE # 28
+0017 00                NOP     
+                                           ; SOURCE LINE # 29
+0018 22                RET     
+             ; FUNCTION System_PowerDown (END)
+
+             ; FUNCTION POF_Boot_Delay (BEGIN)
+                                           ; SOURCE LINE # 31
+                                           ; SOURCE LINE # 32
+                                           ; SOURCE LINE # 33
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 25  
+
+0000 E587              MOV     A,PCON
+0002 30E40E            JNB     ACC.4,?C0006
+                                           ; SOURCE LINE # 34
+                                           ; SOURCE LINE # 35
+0005 7BFF              MOV     R3,#0FFH
+0007 7A00        R     MOV     R2,#HIGH ?SC_38
+0009 7900        R     MOV     R1,#LOW ?SC_38
+000B 120000      E     LCALL   _PrintString1
+                                           ; SOURCE LINE # 39
+000E 5387EF            ANL     PCON,#0EFH
+                                           ; SOURCE LINE # 41
+0011 D3                SETB    C
+0012 22                RET     
+                                           ; SOURCE LINE # 42
+0013         ?C0006:
+                                           ; SOURCE LINE # 44
+0013 C3                CLR     C
+                                           ; SOURCE LINE # 45
+0014         ?C0007:
+0014 22                RET     
+             ; FUNCTION POF_Boot_Delay (END)
+
+             ; FUNCTION Reboot_System (BEGIN)
+                                           ; SOURCE LINE # 47
+                                           ; SOURCE LINE # 48
+                                           ; SOURCE LINE # 51
+0000 E5C7              MOV     A,IAP_CONTR
+0002 30E603            JNB     ACC.6,?C0009
+                                           ; SOURCE LINE # 52
+0005 53C73F            ANL     IAP_CONTR,#03FH
+0008         ?C0009:
+                                           ; SOURCE LINE # 53
+0008 E5C7              MOV     A,IAP_CONTR
+000A 20E503            JB      ACC.5,?C0011
+                                           ; SOURCE LINE # 54
+000D 43C760            ORL     IAP_CONTR,#060H
+                                           ; SOURCE LINE # 55
+0010         ?C0011:
+0010 22                RET     
+             ; FUNCTION Reboot_System (END)
+
+             ; FUNCTION _setMontorRunningStatus (BEGIN)
+                                           ; SOURCE LINE # 57
+0000 8F00        R     MOV     runStat,R7
+                                           ; SOURCE LINE # 58
+                                           ; SOURCE LINE # 59
+0002 7500FF      R     MOV     MotorRunStatus,#0FFH
+                                           ; SOURCE LINE # 61
+0005 E500        R     MOV     A,runStat
+0007 B4010F            CJNE    A,#01H,?C0012
+                                           ; SOURCE LINE # 62
+                                           ; SOURCE LINE # 63
+000A D2B7              SETB    MotorRunningCtrl_R
+                                           ; SOURCE LINE # 64
+000C C2B6              CLR     MotorRunningCtrl_L
+                                           ; SOURCE LINE # 65
+000E 750001      R     MOV     MotorRunStatus,#01H
+                                           ; SOURCE LINE # 67
+0011 7BFF              MOV     R3,#0FFH
+0013 7A00        R     MOV     R2,#HIGH ?SC_79
+0015 7900        R     MOV     R1,#LOW ?SC_79
+                                           ; SOURCE LINE # 68
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 26  
+
+0017 8021              SJMP    ?C0019
+0019         ?C0012:
+                                           ; SOURCE LINE # 69
+0019 E500        R     MOV     A,runStat
+001B B4100F            CJNE    A,#010H,?C0014
+                                           ; SOURCE LINE # 70
+                                           ; SOURCE LINE # 71
+001E C2B7              CLR     MotorRunningCtrl_R
+                                           ; SOURCE LINE # 72
+0020 D2B6              SETB    MotorRunningCtrl_L
+                                           ; SOURCE LINE # 73
+0022 750010      R     MOV     MotorRunStatus,#010H
+                                           ; SOURCE LINE # 75
+0025 7BFF              MOV     R3,#0FFH
+0027 7A00        R     MOV     R2,#HIGH ?SC_102
+0029 7900        R     MOV     R1,#LOW ?SC_102
+002B         ?C0018:
+                                           ; SOURCE LINE # 76
+002B 800D              SJMP    ?C0019
+002D         ?C0014:
+                                           ; SOURCE LINE # 78
+                                           ; SOURCE LINE # 79
+002D D2B7              SETB    MotorRunningCtrl_R
+                                           ; SOURCE LINE # 80
+002F D2B6              SETB    MotorRunningCtrl_L
+                                           ; SOURCE LINE # 81
+0031 7500FF      R     MOV     MotorRunStatus,#0FFH
+                                           ; SOURCE LINE # 83
+0034 7BFF              MOV     R3,#0FFH
+0036 7A00        R     MOV     R2,#HIGH ?SC_125
+0038 7900        R     MOV     R1,#LOW ?SC_125
+003A         ?C0019:
+003A 120000      E     LCALL   _PrintString1
+                                           ; SOURCE LINE # 84
+003D         ?C0013:
+                                           ; SOURCE LINE # 86
+003D AF00        R     MOV     R7,MotorRunStatus
+                                           ; SOURCE LINE # 87
+003F         ?C0016:
+003F 22                RET     
+             ; FUNCTION _setMontorRunningStatus (END)
+
+             ; FUNCTION PrintSystemInfoToSerial (BEGIN)
+                                           ; SOURCE LINE # 102
+                                           ; SOURCE LINE # 103
+                                           ; SOURCE LINE # 122
+0000 22                RET     
+             ; FUNCTION PrintSystemInfoToSerial (END)
+
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 27  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+P0 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0080H  1
+P1 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0090H  1
+P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
+P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
+P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
+P5 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
+COMx_Define. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
+  id . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  TX_read. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  TX_write . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
+  B_TX_busy. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
+  RX_Cnt . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
+  RX_TimeOut . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
+  B_RX_OK. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
+init_Watch_Dog . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
+SystemSleepStatus. . . . . . . . . . .  ABSBIT   -----  BIT      0094H  1
+System_PowerDown . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
+COMx_InitDefine. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  13
+  UART_Mode. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  UART_BRT_Use . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  UART_BaudRate. . . . . . . . . . . .  MEMBER   -----  U_LONG   0002H  4
+  Morecommunicate. . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
+  UART_RxEnable. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
+  BaudRateDouble . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
+  UART_Interrupt . . . . . . . . . . .  MEMBER   -----  U_CHAR   0009H  1
+  UART_Polity. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000AH  1
+  UART_P_SW. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000BH  1
+  UART_RXD_TXD_Short . . . . . . . . .  MEMBER   -----  U_CHAR   000CH  1
+CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
+u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+POF_Boot_Delay . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+PCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0087H  1
+SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
+TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
+_PrintString1. . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+MotorRunningCtrl_L . . . . . . . . . .  ABSBIT   -----  BIT      00B6H  1
+_setMontorRunningStatus. . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  runStat. . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0000H  1
+  MotorRunStatus . . . . . . . . . . .  AUTO     DATA   U_CHAR   0001H  1
+B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
+IAP_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C7H  1
+MotorRunningCtrl_R . . . . . . . . . .  ABSBIT   -----  BIT      00B7H  1
+ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
+setSystemSleepFlag . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  sleep. . . . . . . . . . . . . . . .  AUTO     DATA   BIT      0000H  1
+PrintSystemInfoToSerial. . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+Reboot_System. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+WDT_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C1H  1
+u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
+u16. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    142    ----
+   CONSTANT SIZE    =    150    ----
+C51 COMPILER V9.52.0.0   MISC                                                              07/03/2017 23:32:52 PAGE 28  
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,1 @@
+"..\Src\delay.c" OPTIMIZE (9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Lists\delay.lst) PREPRINT(.\Lists\delay.i) OBJECT(.\Objects\delay.obj)

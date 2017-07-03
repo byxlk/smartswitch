@@ -1,0 +1,1 @@
+"..\Src\main.c" OPTIMIZE (9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Lists\main.lst) PREPRINT(.\Lists\main.i) OBJECT(.\Objects\main.obj)

@@ -1,0 +1,1 @@
+"..\Src\timer.c" OPTIMIZE (9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCLUDE SYMBOLS PRINT(.\Lists\timer.lst) PREPRINT(.\Lists\timer.i) OBJECT(.\Objects\timer.obj)
