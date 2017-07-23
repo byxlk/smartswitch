@@ -18,31 +18,23 @@
 #include  "GPIO.h"
 #include  "timer.h"
 #include  "misc.h"
-#include  "Exti.h"
-//#include  "ADC.h"
+#include  "ADC.h"
+#include  "dlt645.h"
+#include  "rs485.h"
 
-
-/*************	¹¦ÄÜËµÃ÷	**************
-
-Ë«´®¿ÚÈ«Ë«¹¤ÖÐ¶Ï·½Ê½ÊÕ·¢Í¨Ñ¶³ÌÐò¡£
-
-Í¨¹ýPCÏòMCU·¢ËÍÊý¾Ý, MCUÊÕµ½ºóÍ¨¹ý´®¿Ú°ÑÊÕµ½µÄÊý¾ÝÔ­Ñù·µ»Ø.
-
-******************************************/
 
 /*************	±¾µØ³£Á¿ÉùÃ÷	**************/
 
 /*************	±¾µØ±äÁ¿ÉùÃ÷	**************/
-//µç»ú¿ØÖÆÏà¹Ø
-static unsigned char MotorRunningCtrl_Running = MONTOR_STOP_RUNNING;//µç»ú¿ØÖÆ -- ²»×ª
-
-//¶¨Ê±¼ÆÊýÏà¹Ø
-unsigned char TimeoutCount = STOP_TIMERCOUNT;
-unsigned char sysClock = STOP_TIMERCOUNT;
-
-//ÏµÍ³¹¤×÷Ä£Ê½
-//bit lastSystemWorkMode = AUTO_CTRL_MODE;
-bit firstSystemBoot = TRUE;
+unsigned char VoltExceptionsCount = 0xFF;
+unsigned char VoltExceptionsStatus = 0x0; //µçÑ¹Õý³£
+SMART_SWITCH_T smartSwitch = {
+    0x01,                  //Ä¬ÈÏÊÇµÚÒ»´ÎÆô¶¯
+    AUTO_CTRL_MODE,        //Ä¬ÈÏÊÇ×Ô¶¯Ä£Ê½
+    MONTOR_STOP_RUNNING,   //µç»ú¿ØÖÆ -- Ä¬ÈÏ²»×ª
+    STOP_TIMERCOUNT,       //¶¨Ê±¼ÆÊýÏà¹Ø
+    //{0x68,{0x0},0x68,0x0,0x1,0x0,0xD1,0x16}
+};
 
 
 /*************	±¾µØº¯ÊýÉùÃ÷	**************/
@@ -74,18 +66,18 @@ void GPIO_Config(void)
 	GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;	   //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
 	GPIO_InitStructure.Mode = GPIO_HighZ;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
 	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
-	
+
 	GPIO_InitStructure.Pin  = GPIO_Pin_4 ;	   //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
 	GPIO_InitStructure.Mode = GPIO_PullUp;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
 	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
-	
+
 	GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;	//Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
 	GPIO_InitStructure.Mode = GPIO_PullUp;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
-	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);	
+	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
 }
 
 /************************ ¶¨Ê±Æ÷ÅäÖÃ ****************************/
-void Timer_Config(void)
+void Timer_Config(void) //20ms@24.000MHz
 {
 	TIM_InitTypeDef		TIM_InitStructure;					//½á¹¹¶¨Òå
 	TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;	//Ö¸¶¨¹¤×÷Ä£Ê½,   TIM_16BitAutoReload,TIM_16Bit,TIM_8BitAutoReload,TIM_16BitAutoReloadNoMask
@@ -93,275 +85,239 @@ void Timer_Config(void)
 	TIM_InitStructure.TIM_Interrupt = ENABLE;				//ÖÐ¶ÏÊÇ·ñÔÊÐí,   ENABLE»òDISABLE
 	TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;			//Ö¸¶¨Ê±ÖÓÔ´,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK_Ext
 	TIM_InitStructure.TIM_ClkOut    = DISABLE;				//ÊÇ·ñÊä³ö¸ßËÙÂö³å, ENABLE»òDISABLE
-	TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 20));	//³õÖµ, ½ÚÅÄÎª20HZ(50ms)
+	TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 50));	//³õÖµ, ½ÚÅÄÎª50HZ(20ms)
 	TIM_InitStructure.TIM_Run       = ENABLE;				//ÊÇ·ñ³õÊ¼»¯ºóÆô¶¯¶¨Ê±Æ÷, ENABLE»òDISABLE
 	Timer_Inilize(Timer0,&TIM_InitStructure);				//³õÊ¼»¯Timer0	  Timer0,Timer1,Timer2
 }
 
-void EXTI_config(void)
-{
-	EXTI_InitTypeDef	EXTI_InitStructure;					//½á¹¹¶¨Òå
-
-	EXTI_InitStructure.EXTI_Mode      = EXT_MODE_RiseFall;	//ÖÐ¶ÏÄ£Ê½,  	EXT_MODE_RiseFall, EXT_MODE_Fall
-	EXTI_InitStructure.EXTI_Polity    = PolityHigh;			//ÖÐ¶ÏÓÅÏÈ¼¶,   PolityLow,PolityHigh
-	EXTI_InitStructure.EXTI_Interrupt = ENABLE;				//ÖÐ¶ÏÔÊÐí,     ENABLE?DISABLE
-	Ext_Inilize(EXT_INT0,&EXTI_InitStructure);				//³õÊ¼»¯INT0	EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
-	
-	EXTI_InitStructure.EXTI_Mode      = EXT_MODE_RiseFall;	//ÖÐ¶ÏÄ£Ê½,  	EXT_MODE_RiseFall, EXT_MODE_Fall
-	EXTI_InitStructure.EXTI_Polity    = PolityHigh;			//ÖÐ¶ÏÓÅÏÈ¼¶,   PolityLow,PolityHigh
-	EXTI_InitStructure.EXTI_Interrupt = ENABLE;				//ÖÐ¶ÏÔÊÐí,     ENABLE?DISABLE
-	Ext_Inilize(EXT_INT1,&EXTI_InitStructure);				//³õÊ¼»¯INT0	EXT_INT0,EXT_INT1,EXT_INT2,EXT_INT3,EXT_INT4
-}
-#if 0
 void ADC_config(void)
 {
 	ADC_InitTypeDef		ADC_InitStructure;				//½á¹¹¶¨Òå
 
-	ADC_InitStructure.ADC_Px        = ADC_P10;	        //ÉèÖÃÒª×öADCµÄIO,	ADC_P10 ~ ADC_P17(»ò²Ù×÷),ADC_P1_All
-	ADC_InitStructure.ADC_Speed     = ADC_360T;			//ADCËÙ¶È			ADC_90T,ADC_180T,ADC_360T,ADC_540T
+	ADC_InitStructure.ADC_Px        = ADC_P13;	        //ÉèÖÃÒª×öADCµÄIO,	ADC_P10 ~ ADC_P17(»ò²Ù×÷),ADC_P1_All
+	ADC_InitStructure.ADC_Speed     = ADC_540T;			//ADCËÙ¶È			ADC_90T,ADC_180T,ADC_360T,ADC_540T
 	ADC_InitStructure.ADC_Power     = ENABLE;			//ADC¹¦ÂÊÔÊÐí/¹Ø±Õ	ENABLE,DISABLE
-	ADC_InitStructure.ADC_AdjResult = ADC_RES_H8L2;		//ADC½á¹ûµ÷Õû,	ADC_RES_H2L8,ADC_RES_H8L2
+	ADC_InitStructure.ADC_AdjResult = ADC_RES_H2L8;		//ADC½á¹ûµ÷Õû,	ADC_RES_H2L8,ADC_RES_H8L2
 	ADC_InitStructure.ADC_Polity    = PolityLow;		//ÓÅÏÈ¼¶ÉèÖÃ	PolityHigh,PolityLow
 	ADC_InitStructure.ADC_Interrupt = DISABLE;			//ÖÐ¶ÏÔÊÐí		ENABLE,DISABLE
 	ADC_Inilize(&ADC_InitStructure);					//³õÊ¼»¯
 
 	ADC_PowerControl(ENABLE);							//µ¥¶ÀµÄADCµçÔ´²Ù×÷º¯Êý, ENABLE»òDISABLE
 }
-#endif
 
 static void delay_timer(unsigned char iTime)
 {
-    TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
-    while(TimeoutCount <= iTime) ;//µÈ1Ãë
-    TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±  
+    smartSwitch.TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
+    while(smartSwitch.TimeoutCount <= iTime) ;//µÈ1Ãë
+    smartSwitch.TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
 }
 
 static void wait_switch_on(unsigned char time_out)
 {
     //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
-    TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
+    smartSwitch.TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
     while(SwitchOnStatus != SWITCH_ON_OK)
-    {        
-        if(TimeoutCount > time_out)
+    {
+        if(smartSwitch.TimeoutCount > time_out)
         {
             LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
-            break;                        
+            break;
         }
         //if(SwitchOnStatus == SWITCH_ON_OK)
         //    delay_ms(50);
-    }             
-    TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
+    }
+    smartSwitch.TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
 }
 
 static void wait_out_off_hook(unsigned char time_out)
 {
     //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
-    TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
+    smartSwitch.TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
     while(OutOffHookCheck != OUT_OF_HOOK)
     {
-        if(TimeoutCount > time_out)
+        if(smartSwitch.TimeoutCount > time_out)
         {
             LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
-            break;                        
+            break;
         }
         //if(OutOffHookCheck != OUT_OF_HOOK)
         //    delay_ms(50);
-    }                 
-    TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
+    }
+    smartSwitch.TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
 }
-void print_signal_status_info(void)
-{
-     //LOGD("[SignalStatus]");
-     if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_LOSS)
-         LOGD("[ Ext Ctrl Signal] LOSS.\r\n");
-     else
-         LOGD("[ Ext Ctrl Signal] OK.\r\n");
-     if(SystemWorkMode == AUTO_CTRL_MODE)
-         LOGD("[System Work Mode] AUTO Mode.\r\n");
-     else 
-         LOGD("[System Work Mode] MANUAL Mode.\r\n");
-     if(OutOffHookCheck == OUT_OF_HOOK)
-         LOGD("[    Out Off Hook] YES.\r\n");
-     else
-         LOGD("[    Out Off Hook] NO. \r\n");
-     if(SwitchOnStatus == SWITCH_ON_OK)
-         LOGD("[   Switch Status] ON. \r\n");
-     else
-         LOGD("[   Switch Status] OFF. \r\n");
-}
+
 
 /**********************************************/
 void main(void)
 {
+    unsigned short Cur_Volt = 0;
+    unsigned short Max_Volt = 0;
+    unsigned short Min_Volt = 0;
+    unsigned char underVoltCount = 0;
+    unsigned char overVoltCount = 0;
+
 	//Ó²¼þ³õÊ¼»¯²Ù×÷
 	EA = 0;
     GPIO_Config();//GPIO init
-	setSystemSleepFlag(FALSE);
-	
-    EXTI_config();
+
     UART_config(); //UART init
     Timer_Config();//Timer init
-    //ADC_config(); //ADC init
-		
+    ADC_config(); //ADC init
+
 	//¿ª×ÜÖÐ¶Ï
     EA = 1;
 
-	//ÏµÍ³¶ÏµçÖØÆôÑÓÊ±4ÃëÆô¶¯
-    firstSystemBoot = POF_Boot_Delay();
-	 
-	if(firstSystemBoot)
-        PrintSystemInfoToSerial();
-	//LOGD("=====================> Hardware Init Ok <=====================\r\n");
-
 	//watch dog init
 	init_Watch_Dog();
-    LOGD("\r\n\r\n==================================================\r\n");
-	LOGD("System Init Ok, Start Watch Dog OK ... \r\n");
-    LOGD("==================================================\r\n");
-    
-    
-    
-	//=======================> Start Main Process <==========================//  
+
+	//=======================> Start Main Process <==========================//
 	while (1)
 	{
+        //¼ì²âµ±Ç°µÄÒ»¸öÖÜÆÚÄÚ×î¸ßºÍ×îµÍµçÑ¹
+        Cur_Volt = Get_ADC10bitResult(3);
+        if(Cur_Volt > Max_Volt) {
+            Max_Volt = Cur_Volt;
+            Min_Volt = Cur_Volt;
+            continue;
+        } else {
+            if(Cur_Volt < Min_Volt) {
+                Min_Volt = Cur_Volt;
+                continue;
+            }
+        }
+        
+        //¼ì²âµ±Ç°µÄµçÑ¹ÊÇ·ñ³öÏÖ¹ýÑ¹»òÕßÇ·Ñ¹
+        if(Max_Volt <= UNDER_VOLT_DIGIT_VAL) {
+            if((underVoltCount++) > 5){
+                if(Max_Volt == Min_Volt && Max_Volt == 0) 
+                    smartSwitch.VoltCurrentStatus = LOSS_VOLTAGE;
+                else
+                    smartSwitch.VoltCurrentStatus = UNDER_VOLTAGE;
+                underVoltCount = 0;
+            }
+        } else if(Max_Volt >= OVER_VOLT_DIGIT_VAL){
+            if((overVoltCount++) > 5) {
+                smartSwitch.VoltCurrentStatus = OVER_VOLTAGE;
+                overVoltCount = 0;
+            }
+        } else {
+            smartSwitch.VoltCurrentStatus = NORMAL_VOLTAGE;
+        }
+        Max_Volt = Min_Volt;
+
         //-------------------------------------------------------------------------------------
-        //¼ì²éÍâ²¿¿ØÖÆÐÅºÅ ---- ¶ªÊ§
-        if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_LOSS)
+        // µ±Ç°µçÑ¹×´Ì¬   ---   Òì³££¨°üÀ¨£ºÇ·Ñ¹¡¢¹ýÑ¹¡¢Ê§Ñ¹£
+        if(smartSwitch.VoltCurrentStatus != NORMAL_VOLTAGE)
         {
-            //µÈ50ºÁÃëºóÔÙ´ÎÈ·ÈÏÐÅºÅ×´Ì¬
-            //delay_ms(50);
-            //delay_timer(TIMEOUT_VAL_1S) ;
-            //if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_LOSS)
-            //    continue;  
-            
-            //£¨b£© Íâ²¿¿ØÖÆÐÅºÅ¶ªÊ§£º  
-            // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬ 
+            //£¨b£© Íâ²¿¿ØÖÆÐÅºÅ¶ªÊ§£º
+            // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
             //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
-            //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷          
+            //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
             if(OutOffHookCheck == OUT_OF_HOOK)
             {
-                //delay_ms(50);
-                //if(OutOffHookCheck != OUT_OF_HOOK)
-                //    continue;
-                
-                if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
-                    MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
-            }            
+                if(smartSwitch.MotorCurrentSttaus != MONTOR_STOP_RUNNING)
+                    smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
+            }
             else //Ö»Òª²»ÔÚÍÑ¿Ûµ½Î»×´Ì¬¾ÍÑÓÊ±2ÃëºóÕý×ªµç»úµ½ÍÑ¿Ûµ½Î»×´Ì¬
-            { 
-                //delay_ms(50);
-                //if(OutOffHookCheck == OUT_OF_HOOK)
-                //    continue;
-                
-                // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬ 
+            {
+                // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
                 //    ×Ô¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
                 //    ÊÖ¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
                 // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
-                //    ×Ô¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
-                //    ÊÖ¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©                
-#if ENABLE_OUT_OFF_HOOK_DELAY
-                delay_timer(TIMEOUT_VAL_1S5);//µÈ1.5Ãë     
-#endif
-                if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)
-                    MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//Õý´«
-    
+                //    ×Ô¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
+                //    ÊÖ¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
+                if(smartSwitch.VoltCurrentStatus != LOSS_VOLTAGE)
+                    delay_ms(50);
+                if(smartSwitch.MotorCurrentSttaus != MONTOR_RIGHT_RUNNING)
+                    smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//Õý´«
+
                 //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
                 wait_out_off_hook(TIMEOUT_VAL_5S);
 
-                if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)
-                    MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª                
-            }            
+                if(smartSwitch.MotorCurrentSttaus != MONTOR_STOP_RUNNING)
+                    smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
+            }
         }
-        else if(ExAutoCtrlSignal == EX_CTRL_SIGNAL_OK)
+        else //µ±Ç°µçÑ¹×´Ì¬   ---   Õý³£
         {
-            //µÈ50ºÁÃëºóÔÙ´ÎÈ·ÈÏÐÅºÅ×´Ì¬
-            //delay_ms(50);       
-            //if(ExAutoCtrlSignal != EX_CTRL_SIGNAL_OK)
-            //    continue;
-            
             //-------------------------------------------------------------------------------------
-            //£¨a£© Íâ²¿¿ØÖÆÐÅºÅ´æÔÚ£º 
-            // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬ 
+            //£¨a£© Íâ²¿¿ØÖÆÐÅºÅ´æÔÚ£º
+            // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
             //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
             //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
             if(SwitchOnStatus == SWITCH_ON_OK) // ´¦ÓÚºÏÕ¢µ½Î»×´Ì¬
             {
-                //delay_ms(50);
-                //if(SwitchOnStatus != SWITCH_ON_OK)
-                //    continue;
-                
-                if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//µç»úÍ£×ª 
-                    MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
-            } 
-            else //Ã»ÓÐ¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ  
-            {         
-                //delay_ms(50);
-                //if(SwitchOnStatus == SWITCH_ON_OK)
-                //    continue;
-                
-                // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬ 
+                if(smartSwitch.MotorCurrentSttaus != MONTOR_STOP_RUNNING)//µç»úÍ£×ª
+                    smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
+            }
+            else //Ã»ÓÐ¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ
+            {
+                // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
                 //    ×Ô¶¯£ºµç»ú£¨Õý×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
                 //    ÊÖ¶¯£ºµç»ú£¨·´×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
                 // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
                 //    ×Ô¶¯£ºµç»ú£¨Õý×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
                 //    ÊÖ¶¯£ºµç»ú£¨·´×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
-                  
+
                 if(SystemWorkMode == AUTO_CTRL_MODE){
-                    if(MotorRunningCtrl_Running != MONTOR_RIGHT_RUNNING)//µç»úÕý×ª
-                        MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
+                    if(smartSwitch.MotorCurrentSttaus != MONTOR_RIGHT_RUNNING)//µç»úÕý×ª
+                        smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
                 } else {
-                    if(MotorRunningCtrl_Running != MONTOR_LEFT_RUNNING)//µç»ú·´×ª
-                        MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
+                    if(smartSwitch.MotorCurrentSttaus != MONTOR_LEFT_RUNNING)//µç»ú·´×ª
+                        smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
                 }
 
                 //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
                 wait_switch_on(TIMEOUT_VAL_5S);
                 delay_timer(TIMEOUT_DELAY_VAL);
-                if(MotorRunningCtrl_Running != MONTOR_STOP_RUNNING)//µç»úÍ£×ª  
-                    MotorRunningCtrl_Running = setMontorRunningStatus(MONTOR_STOP_RUNNING);
+                if(smartSwitch.MotorCurrentSttaus != MONTOR_STOP_RUNNING)//µç»úÍ£×ª
+                    smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
             }
         }
-        else //Òì³£Çé¿ö
-            Reboot_System(); 
-
-#if ENABLE_CPU_SLEEP_SUPPORT
-        print_signal_status_info();
-#endif
-        /*******************************************************
-         * Ö´ÐÐÍêÁËÈÃÏµÍ³½øÈëµôµçÄ£Ê½£¬´ËÊ±CPU¼Ä´æÆ÷Öµ±£³Ö²»±ä£¬
-         * ÊÕµ½Íâ²¿ÖÐ¶ÏINT0/INT1ÐÅºÅ»½ÐÑ
-         * »½ÐÑºó´Ó½øÈëµôµçÄ£Ê½µÄÎ»ÖÃ¼ÌÐøÖ´ÐÐÏÂÒ»ÌõÖ¸Áî
-        ********************************************************/
-        System_PowerDown();
-//#endif
-    }	
-}
-
-/********************* INT0ÖÐ¶Ïº¯Êý *************************/
-void Ext_INT0 (void) interrupt INT0_VECTOR		//½øÖÐ¶ÏÊ±ÒÑ¾­Çå³ý±êÖ¾
-{
-    _nop_();
-    Reboot_System();
-    _nop_();
-}
-
-/********************* INT1ÖÐ¶Ïº¯Êý *************************/
-void Ext_INT1 (void) interrupt INT1_VECTOR		//½øÖÐ¶ÏÊ±ÒÑ¾­Çå³ý±êÖ¾
-{
-	 _nop_();
-   Reboot_System();
-   _nop_();
+     }
 }
 
 /********************* Timer0ÖÐ¶Ïº¯Êý************************/
-void timer0_int (void) interrupt TIMER0_VECTOR
+void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
 {
 	// process watch dog signal
 	WDT_CONTR &= 0x7F;
     WDT_CONTR |= 0x10;
 
 	//timer out counter
-	if(TimeoutCount <= TIMEOUT_VAL_MAX)
-		TimeoutCount++;	    
+	if(smartSwitch.TimeoutCount <= TIMEOUT_VAL_MAX)
+		smartSwitch.TimeoutCount++;
+
+    //status indicator lamp
+    if(!VoltExceptionsStatus)
+    {
+        VoltStatusLamp = 1;
+        VoltStatusPlus = 1;
+        if(VoltExceptionsCount != 0xFF) VoltExceptionsCount = 0xFF;
+    }
+    else
+    {
+        VoltExceptionsCount++;
+
+        if(VoltExceptionsCount > 5) VoltStatusPlus = 1;
+        else VoltStatusPlus = 0;
+
+        if(smartSwitch.VoltCurrentStatus == UNDER_VOLTAGE)
+        {
+            if(VoltExceptionsCount < 15 && VoltExceptionsCount > 0) VoltStatusLamp = 0; //300ms
+            else if(VoltExceptionsCount < 20 && VoltExceptionsCount >= 15) VoltStatusLamp = 1; //100ms
+            else if(VoltExceptionsCount < 35 && VoltExceptionsCount >= 20) VoltStatusLamp = 0; //300ms
+            else if(VoltExceptionsCount < 135 && VoltExceptionsCount >= 35) VoltStatusLamp = 1; //2000ms
+            else if(VoltExceptionsCount < 150 && VoltExceptionsCount >= 135) VoltStatusLamp = 0; //300ms
+            else if(VoltExceptionsCount < 155 && VoltExceptionsCount >= 150) VoltStatusLamp = 1; //100ms
+            else if(VoltExceptionsCount < 170 && VoltExceptionsCount >= 155) VoltStatusLamp = 0; //300ms
+            else if(VoltExceptionsCount >= 175) VoltStatusLamp = 0; //300ms
+        }
+        else if(smartSwitch.VoltCurrentStatus == OVER_VOLTAGE)
+        {
+            if(VoltExceptionsCount > 25) VoltStatusLamp = 1;
+            else VoltStatusLamp = 0;
+        }
+    }
 }
 

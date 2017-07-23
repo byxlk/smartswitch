@@ -617,17 +617,15 @@
  
  
  
-#line 540 "..\Src\STC15Fxxxx.H" /1
+ 
+ 
+#line 542 "..\Src\STC15Fxxxx.H" /1
   
  
   
  
   
  
-#line 546 "..\Src\STC15Fxxxx.H" /0
- 
- 
-#line 548 "..\Src\STC15Fxxxx.H" /1
   
  
   
@@ -993,13 +991,47 @@
  
  
  
- sbit  MotorRunningCtrl_R = P3^7;     
- sbit  MotorRunningCtrl_L = P3^6;     
- sbit  ExAutoCtrlSignal = P1^0;       
- sbit  SystemWorkMode = P1^1;         
- sbit  SwitchOnStatus = P1^2;         
- sbit  OutOffHookCheck = P1^3;         
- sbit  SystemSleepStatus = P1^4;       
+ 
+ 
+ 
+ 
+ 
+ sbit  SwitchStatus           = P1^0;       
+ sbit  SystemWorkMode         = P1^1;       
+ sbit  VoltStatusLamp         = P1^2;       
+ sbit  VoltStatusPlus         = P3^3;       
+ sbit  VoltCapturePortA       = P1^3;       
+ sbit  VoltCapturePortB       = P1^4;       
+ sbit  VoltCapturePortC       = P1^5;       
+ sbit  SwitchOnStatus         = P5^4;       
+ sbit  OutOffHookCheck        = P5^5;       
+ 
+ sbit  RS485_Recv_Send_Enable = P3^2;       
+ sbit  MotorRunningCtrl_R     = P3^7;       
+ sbit  MotorRunningCtrl_L     = P3^6;       
+ 
+ typedef struct {
+ unsigned char firstStartCode;
+ unsigned char devAddr[6];
+ unsigned char secondStartCode;
+ unsigned char CtrlCode;
+ unsigned char DataLength;
+ unsigned char *Dat;
+ unsigned char cs;
+ unsigned char endCode;
+ } DLT645_T;
+ 
+ typedef struct {
+ unsigned char isfirstSystemBoot;
+ unsigned char CurrentSystemWorkMode;
+ unsigned char MotorCurrentSttaus;
+ unsigned char SwitchCurrentStatus;
+ unsigned char TimeoutCount;
+ unsigned char VoltCurrentStatus;
+ unsigned char VoltStatusA;
+ unsigned char VoltStatusB;
+ unsigned char VoltStatusC;
+ } SMART_SWITCH_T;
  
  
 #line 1 "..\Src\misc.c" /0
@@ -1066,10 +1098,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1077,29 +1105,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1109,8 +1129,54 @@
  
   
   
+  
  
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1174,10 +1240,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1185,29 +1247,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1217,8 +1271,54 @@
  
   
   
+  
  
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1306,10 +1406,10 @@
  WDT_CONTR = 0x3A;   
  }
  
- void setSystemSleepFlag(bit sleep)
- {
- SystemSleepStatus = (sleep)? 0 : 1 ;
- }
+ 
+ 
+ 
+ 
  
  void System_PowerDown(void)
  {
@@ -1332,10 +1432,8 @@
  {
   PrintString1("Cold reset, delay 4s entery system ...\r\n");
  
-#line 37 "..\Src\misc.c" /1
+ delay_4000ms()	;  
  
- 
-#line 39 "..\Src\misc.c" /0
  PCON &= 0xEF;  
  
  return 1;
@@ -1360,16 +1458,16 @@
  
  if(0x01 == runStat)  
  {
- MotorRunningCtrl_R = 1;
- MotorRunningCtrl_L = 0;
+ MotorRunningCtrl_R = 0;
+ MotorRunningCtrl_L = 1;
  MotorRunStatus = 0x01;
  
   PrintString1("[Motor status] ===> \r\n");
  }
  else if(0x10 == runStat)  
  {
- MotorRunningCtrl_R = 0;
- MotorRunningCtrl_L = 1;
+ MotorRunningCtrl_R = 1;
+ MotorRunningCtrl_L = 0;
  MotorRunStatus = 0x10;
  
   PrintString1("[Motor status] <=== \r\n");
@@ -1387,42 +1485,38 @@
  }
  
  
-#line 90 "..\Src\misc.c" /1
+ void PrintSameString(u8 *puts, unsigned char nSize)
+ {
+ unsigned char i = 0;
+ if(nSize > 0)
+ { 
+ for(i = 0; i < nSize; i++) 
+  PrintString1(puts);
+  PrintString1("\r\n");
+ }
+ }
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#line 101 "..\Src\misc.c" /0
  
  void PrintSystemInfoToSerial(void)
  {	
  
-#line 105 "..\Src\misc.c" /1
+ PrintSameString("*", 62);	   
+ PrintSameString(" ", 1);
+  PrintString1("        湖北盛佳电器设备有限公司 - 智能自动合闸控制系统\r\n");
+ PrintSameString(" ", 1);
+ PrintSameString(" ", 1);
+ 
+  PrintString1("  Version No.   : Ver 1.0\r\n");
+  PrintString1("  Designed Time : 2016-03-21\r\n");
  
  
  
+  PrintString1("  Telephone     : 027 - 83520066 / 83567077\r\n");
+ PrintSameString(" ", 1);
+  PrintString1("        All rights reserved (c)2016  http://www.sjdq.com/\r\n");
+ PrintSameString(" ", 1);
+ PrintSameString("*", 62);
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#line 122 "..\Src\misc.c" /0
  }
  
  

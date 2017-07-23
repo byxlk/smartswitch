@@ -1,34 +1,9 @@
 
-#line 1 "..\Src\USART1.C" /0
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+#line 1 "..\Src\ADC.c" /0
  
  
   
-#line 1 "..\Src\USART1.h" /0
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+#line 1 "..\Src\adc.h" /0
  
  
  
@@ -1067,7 +1042,10 @@
  } SMART_SWITCH_T;
  
  
-#line 18 "..\Src\USART1.h" /0
+#line 5 "..\Src\adc.h" /0
+ 
+ 
+ 
  
  
  
@@ -1097,176 +1075,110 @@
  
  
  typedef struct
- { 
- u8	id;				 
- 
- u8	TX_read;		 
- u8	TX_write;		 
- u8	B_TX_busy;		 
- 
- u8 	RX_Cnt;			 
- u8	RX_TimeOut;		 
- u8	B_RX_OK;		 
- } COMx_Define; 
- 
- typedef struct
- { 
- u8	UART_Mode;			 
- u8	UART_BRT_Use;		 
- u32	UART_BaudRate;		 
- u8	Morecommunicate;	 
- u8	UART_RxEnable;		 
- u8	BaudRateDouble;		 
- u8	UART_Interrupt;		 
- u8	UART_Polity;		 
- u8	UART_P_SW;			 
- u8	UART_RXD_TXD_Short;	 
- 
- } COMx_InitDefine; 
- 
- extern	COMx_Define	COM1,COM2;
- extern	u8 idata	TX1_Buffer[64];	 
- extern	u8 idata	RX1_Buffer[64];	 
- 
- u8	USART_Configuration(u8 UARTx, COMx_InitDefine *COMx);
- void TX1_write2buff(u8 dat);	 
- void TX2_write2buff(u8 dat);	 
- void PrintString1(u8 *puts);
- 
- 
- 
-#line 15 "..\Src\USART1.C" /0
- 
- 
- 
- COMx_Define	COM1;
- u8	idata TX1_Buffer[64];	 
- u8 	idata RX1_Buffer[64];	 
- 
- u8 USART_Configuration(u8 UARTx, COMx_InitDefine *COMx)
  {
+ u8	ADC_Px;			 
+ u8	ADC_Speed;		 
+ u8	ADC_Power;		 
+ u8	ADC_AdjResult;	 
+ u8	ADC_Polity;		 
+ u8	ADC_Interrupt;	 
+ } ADC_InitTypeDef;
+ 
+ void	ADC_Inilize(ADC_InitTypeDef *ADCx);
+ void	ADC_PowerControl(u8 pwr);
+ u16		Get_ADC10bitResult(u8 channel);	 
+ 
+ 
+#line 3 "..\Src\ADC.c" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ void	ADC_Inilize(ADC_InitTypeDef *ADCx)
+ {
+ P1ASF = ADCx->ADC_Px;
+ ADC_CONTR = (ADC_CONTR & ~(3<<5)) | ADCx->ADC_Speed;
+ if(ADCx->ADC_Power == 1)	ADC_CONTR |= 0x80;
+ else							ADC_CONTR &= 0x7F;
+ if(ADCx->ADC_AdjResult == 1)	PCON2 |=  (1<<5);	 
+ else									PCON2 &= ~(1<<5);	 
+ if(ADCx->ADC_Interrupt == 1)	EADC = 1;			 
+ else								EADC = 0;
+ if(ADCx->ADC_Polity == 1)	PADC = 1;		 
+ else								PADC = 0;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ void	ADC_PowerControl(u8 pwr)
+ {
+ if(pwr == 1)	ADC_CONTR |= 0x80;
+ else				ADC_CONTR &= 0x7f;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ u16	Get_ADC10bitResult(u8 channel)	 
+ {
+ u16	adc;
  u8	i;
- u32	j;
  
- if(UARTx == 1)
- {
- COM1.id = 1;
- COM1.TX_read    = 0;
- COM1.TX_write   = 0;
- COM1.B_TX_busy  = 0;
- COM1.RX_Cnt     = 0;
- COM1.RX_TimeOut = 0;
- COM1.B_RX_OK    = 0;
- for(i=0; i<64; i++)	TX1_Buffer[i] = 0;
- for(i=0; i<64; i++)	RX1_Buffer[i] = 0;
+ if(channel > 7)	return	1024;	 
+ ADC_RES = 0;
+ ADC_RESL = 0;
  
- if(COMx->UART_Mode > (3<<6))	return 1;	 
- if(COMx->UART_Polity == 1)		PS = 1;	 
- else									PS = 0;	 
- SCON = (SCON & 0x3f) | COMx->UART_Mode;
- if((COMx->UART_Mode == (3<<6)) ||(COMx->UART_Mode == (1<<6)))	 
+ ADC_CONTR = (ADC_CONTR & 0xe0) | (1<<3) | channel; 
+      _nop_(),_nop_(),_nop_(),_nop_();			 
+ 
+ for(i=0; i<250; i++)		 
  {
- j = (24000000L / 4) / COMx->UART_BaudRate;	 
- if(j >= 65536UL)	return 2;	 
- j = 65536UL - j;
- if(COMx->UART_BRT_Use == 1)
+ if(ADC_CONTR & (1<<4))
  {
- TR1 = 0;
- AUXR &= ~0x01;		 
- TMOD &= ~(1<<6);	 
- TMOD &= ~0x30;		 
- AUXR |=  (1<<6);	 
- TH1 = (u8)(j>>8);
- TL1 = (u8)j;
- ET1 = 0;	 
- TMOD &= ~0x40;	 
- INT_CLKO &= ~0x02;	 
- TR1  = 1;
- }
- else if(COMx->UART_BRT_Use == 2)
+ ADC_CONTR &= ~(1<<4);
+ if(PCON2 &  (1<<5))		 
  {
- AUXR &= ~(1<<4);	 
- AUXR |= 0x01;		 
- AUXR &= ~(1<<3);	 
- AUXR |=  (1<<2);	 
- TH2 = (u8)(j>>8);
- TL2 = (u8)j;
- IE2  &= ~(1<<2);	 
- AUXR &= ~(1<<3);	 
- AUXR |=  (1<<4);	 
+ adc = (u16)(ADC_RES & 3);
+ adc = (adc << 8) | ADC_RESL;
  }
- else return 2;	 
- }
- else if(COMx->UART_Mode == 0)
+ else		 
  {
- if(COMx->BaudRateDouble == 1)	AUXR |=  (1<<5);	 
- else								AUXR &= ~(1<<5);	 
+ adc = (u16)ADC_RES;
+ adc = (adc << 2) | (ADC_RESL & 3);
  }
- else if(COMx->UART_Mode == (2<<6))	 
- {
- if(COMx->BaudRateDouble == 1)	PCON |=  (1<<7);	 
- else								PCON &= ~(1<<7);	 
+ return	adc;
  }
- if(COMx->UART_Interrupt == 1)	ES = 1;	 
- else								ES = 0;	 
- if(COMx->UART_RxEnable == 1)	REN = 1;	 
- else								REN = 0;	 
- P_SW1 = (P_SW1 & 0x3f) | (COMx->UART_P_SW & 0xc0);	 
- if(COMx->UART_RXD_TXD_Short == 1)	PCON2 |=  (1<<4);	 
- else									PCON2 &= ~(1<<4);
- return	0;
  }
- return 3;	 
+ return	1024;	 
  }
  
  
  
  
- void TX1_write2buff(u8 dat)	 
- {
- while(COM1.B_TX_busy);
- TX1_Buffer[COM1.TX_write] = dat;	 
- if(++COM1.TX_write >= 64)
- COM1.TX_write = 0;
- 
- if(COM1.B_TX_busy == 0)		 
- {  
- COM1.B_TX_busy = 1;		 
- TI = 1;					 
- }
- }
- 
- void PrintString1(u8 *puts)
- {
- for (; *puts != 0;	puts++)  TX1_write2buff(*puts); 	 
- }
  
  
- void UART1_int (void) interrupt 4
- {
- if(RI)
- {
- RI = 0;
- if(COM1.B_RX_OK == 0)
- {
- if(COM1.RX_Cnt >= 64)	COM1.RX_Cnt = 0;
- RX1_Buffer[COM1.RX_Cnt++] = SBUF;
- COM1.RX_TimeOut = 5;
- }
- }
- 
- if(TI)
- {
- TI = 0;
- if(COM1.TX_read != COM1.TX_write)
- {
- SBUF = TX1_Buffer[COM1.TX_read];
- if(++COM1.TX_read >= 64)		COM1.TX_read = 0;
- }
- else	COM1.B_TX_busy = 0;
- }
- }
  
  
+ 
+ void ADC_int (void) interrupt 5
+ {
+ ADC_CONTR &= ~(1<<4);
+ }
  
  

@@ -657,17 +657,15 @@
  
  
  
-#line 540 "..\Src\STC15Fxxxx.H" /1
+ 
+ 
+#line 542 "..\Src\STC15Fxxxx.H" /1
   
  
   
  
   
  
-#line 546 "..\Src\STC15Fxxxx.H" /0
- 
- 
-#line 548 "..\Src\STC15Fxxxx.H" /1
   
  
   
@@ -1033,13 +1031,47 @@
  
  
  
- sbit  MotorRunningCtrl_R = P3^7;     
- sbit  MotorRunningCtrl_L = P3^6;     
- sbit  ExAutoCtrlSignal = P1^0;       
- sbit  SystemWorkMode = P1^1;         
- sbit  SwitchOnStatus = P1^2;         
- sbit  OutOffHookCheck = P1^3;         
- sbit  SystemSleepStatus = P1^4;       
+ 
+ 
+ 
+ 
+ 
+ sbit  SwitchStatus           = P1^0;       
+ sbit  SystemWorkMode         = P1^1;       
+ sbit  VoltStatusLamp         = P1^2;       
+ sbit  VoltStatusPlus         = P3^3;       
+ sbit  VoltCapturePortA       = P1^3;       
+ sbit  VoltCapturePortB       = P1^4;       
+ sbit  VoltCapturePortC       = P1^5;       
+ sbit  SwitchOnStatus         = P5^4;       
+ sbit  OutOffHookCheck        = P5^5;       
+ 
+ sbit  RS485_Recv_Send_Enable = P3^2;       
+ sbit  MotorRunningCtrl_R     = P3^7;       
+ sbit  MotorRunningCtrl_L     = P3^6;       
+ 
+ typedef struct {
+ unsigned char firstStartCode;
+ unsigned char devAddr[6];
+ unsigned char secondStartCode;
+ unsigned char CtrlCode;
+ unsigned char DataLength;
+ unsigned char *Dat;
+ unsigned char cs;
+ unsigned char endCode;
+ } DLT645_T;
+ 
+ typedef struct {
+ unsigned char isfirstSystemBoot;
+ unsigned char CurrentSystemWorkMode;
+ unsigned char MotorCurrentSttaus;
+ unsigned char SwitchCurrentStatus;
+ unsigned char TimeoutCount;
+ unsigned char VoltCurrentStatus;
+ unsigned char VoltStatusA;
+ unsigned char VoltStatusB;
+ unsigned char VoltStatusC;
+ } SMART_SWITCH_T;
  
  
 #line 18 "..\Src\delay.h" /0
@@ -1072,36 +1104,23 @@
  
  
  
+#line 44 "..\Src\delay.c" /0
+ void  delay_ms(unsigned char ms)  
+ {
+ unsigned char i, j;
+ do {
+ i = 24;
+ j = 85;
+ do
+ {
+ while (--j);
+ } while (--i);
+ } while(--ms);
+ }
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#line 56 "..\Src\delay.c" /0
- 
- 
-#line 58 "..\Src\delay.c" /1
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+#line 59 "..\Src\delay.c" /1
  
  
  
@@ -1120,10 +1139,22 @@
  
  
  
+#line 77 "..\Src\delay.c" /0
+ void delay_4000ms(void)		 
+ {
+ unsigned char i, j, k;
  
+ _nop_();
+ _nop_();
+ i = 109;
+ j = 200;
+ k = 199;
+ do
+ {
+ do
+ {
+ while (--k);
+ } while (--j);
+ } while (--i);
+ }
  
- 
- 
- 
- 
-#error *** WARNING C316 IN LINE 95 OF ..\Src\delay.c: unterminated conditionals

@@ -382,14 +382,24 @@
               <FilePath>..\Src\misc.c</FilePath>
             </File>
             <File>
-              <FileName>Exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Exti.c</FilePath>
-            </File>
-            <File>
               <FileName>Release.txt</FileName>
               <FileType>5</FileType>
               <FilePath>.\Release.txt</FilePath>
+            </File>
+            <File>
+              <FileName>ADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>dlt645.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\dlt645.c</FilePath>
+            </File>
+            <File>
+              <FileName>rs485.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\rs485.c</FilePath>
             </File>
           </Files>
         </Group>

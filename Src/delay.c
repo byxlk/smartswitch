@@ -44,17 +44,17 @@ void  delay_ms(unsigned char ms) //@11.0592MHz
 void  delay_ms(unsigned char ms) //@24.0000MHz
 {
     unsigned char i, j;
-
-	i = 24;
-	j = 85;
-	do
-	{
-		while (--j);
-	} while (--i);
+    do {
+        i = 24;
+        j = 85;
+        do
+        {
+            while (--j);
+        } while (--i);
+    } while(--ms);
 }
 #endif
 
-#if ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET
 #if (MAIN_Fosc == 12000000L)
 void delay_4000ms(void)		//@11.0592MHz
 {
@@ -92,4 +92,3 @@ void delay_4000ms(void)		//@24.0000MHz
 	} while (--i);
 }
 #endif
-

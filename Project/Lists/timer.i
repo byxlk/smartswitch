@@ -650,17 +650,15 @@
  
  
  
-#line 540 "..\Src\STC15Fxxxx.H" /1
+ 
+ 
+#line 542 "..\Src\STC15Fxxxx.H" /1
   
  
   
  
   
  
-#line 546 "..\Src\STC15Fxxxx.H" /0
- 
- 
-#line 548 "..\Src\STC15Fxxxx.H" /1
   
  
   
@@ -1026,13 +1024,47 @@
  
  
  
- sbit  MotorRunningCtrl_R = P3^7;     
- sbit  MotorRunningCtrl_L = P3^6;     
- sbit  ExAutoCtrlSignal = P1^0;       
- sbit  SystemWorkMode = P1^1;         
- sbit  SwitchOnStatus = P1^2;         
- sbit  OutOffHookCheck = P1^3;         
- sbit  SystemSleepStatus = P1^4;       
+ 
+ 
+ 
+ 
+ 
+ sbit  SwitchStatus           = P1^0;       
+ sbit  SystemWorkMode         = P1^1;       
+ sbit  VoltStatusLamp         = P1^2;       
+ sbit  VoltStatusPlus         = P3^3;       
+ sbit  VoltCapturePortA       = P1^3;       
+ sbit  VoltCapturePortB       = P1^4;       
+ sbit  VoltCapturePortC       = P1^5;       
+ sbit  SwitchOnStatus         = P5^4;       
+ sbit  OutOffHookCheck        = P5^5;       
+ 
+ sbit  RS485_Recv_Send_Enable = P3^2;       
+ sbit  MotorRunningCtrl_R     = P3^7;       
+ sbit  MotorRunningCtrl_L     = P3^6;       
+ 
+ typedef struct {
+ unsigned char firstStartCode;
+ unsigned char devAddr[6];
+ unsigned char secondStartCode;
+ unsigned char CtrlCode;
+ unsigned char DataLength;
+ unsigned char *Dat;
+ unsigned char cs;
+ unsigned char endCode;
+ } DLT645_T;
+ 
+ typedef struct {
+ unsigned char isfirstSystemBoot;
+ unsigned char CurrentSystemWorkMode;
+ unsigned char MotorCurrentSttaus;
+ unsigned char SwitchCurrentStatus;
+ unsigned char TimeoutCount;
+ unsigned char VoltCurrentStatus;
+ unsigned char VoltStatusA;
+ unsigned char VoltStatusB;
+ unsigned char VoltStatusC;
+ } SMART_SWITCH_T;
  
  
 #line 15 "..\Src\timer.h" /0

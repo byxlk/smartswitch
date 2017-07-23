@@ -4,6 +4,8 @@
 ".\Objects\timer.obj",
 ".\Objects\USART1.obj",
 ".\Objects\misc.obj",
-".\Objects\Exti.obj" 
+".\Objects\ADC.obj",
+".\Objects\dlt645.obj",
+".\Objects\rs485.obj" 
 TO ".\Objects\SmartSwitch" 
 PRINT(".\Lists\SmartSwitch.m51") RAMSIZE(256) 

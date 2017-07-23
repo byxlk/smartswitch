@@ -8,10 +8,10 @@ void init_Watch_Dog(void)
 	WDT_CONTR = 0x3A;  //0011 1010
 }
 
-void setSystemSleepFlag(bit sleep)
-{
-	SystemSleepStatus = (sleep)? FALSE : TRUE ;
-}
+//void setSystemSleepFlag(bit sleep)
+//{
+	//SystemSleepStatus = (sleep)? FALSE : TRUE ;
+//}
 
 void System_PowerDown(void)
 {
@@ -33,9 +33,9 @@ bit POF_Boot_Delay(void)
     if(PCON & 0x10)
     {
 		LOGD("Cold reset, delay 4s entery system ...\r\n");
-#if ENABLE_BOOT_4S_DELAY_AFTER_COLDRESET
+
         delay_4000ms()	; //boot delay 4s
-#endif
+
         PCON &= 0xEF; //清零POF寄存器 
 				
 		return TRUE;
@@ -60,16 +60,16 @@ unsigned char setMontorRunningStatus(unsigned char runStat)
     
     if(MONTOR_RIGHT_RUNNING == runStat) //正转
     {
-        MotorRunningCtrl_R = 1;
-        MotorRunningCtrl_L = 0;
+        MotorRunningCtrl_R = 0;
+        MotorRunningCtrl_L = 1;
         MotorRunStatus = MONTOR_RIGHT_RUNNING;
         //delay_ms(1);
         LOGD("[Motor status] ===> \r\n");
     }
     else if(MONTOR_LEFT_RUNNING == runStat) //反转
     {
-        MotorRunningCtrl_R = 0;
-        MotorRunningCtrl_L = 1;
+        MotorRunningCtrl_R = 1;
+        MotorRunningCtrl_L = 0;
         MotorRunStatus = MONTOR_LEFT_RUNNING;
         //delay_ms(1);
         LOGD("[Motor status] <=== \r\n");

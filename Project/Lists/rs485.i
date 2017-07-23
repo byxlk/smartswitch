@@ -1,37 +1,14 @@
 
-#line 1 "..\Src\USART1.C" /0
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+#line 1 "..\Src\rs485.c" /0
  
   
-#line 1 "..\Src\USART1.h" /0
+#line 1 "..\Src\rs485.h" /0
  
  
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+#line 2 "..\Src\rs485.c" /0
  
   
 #line 1 "..\Src\config.h" /0
@@ -1067,205 +1044,145 @@
  } SMART_SWITCH_T;
  
  
-#line 18 "..\Src\USART1.h" /0
+#line 3 "..\Src\rs485.c" /0
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- typedef struct
- { 
- u8	id;				 
- 
- u8	TX_read;		 
- u8	TX_write;		 
- u8	B_TX_busy;		 
- 
- u8 	RX_Cnt;			 
- u8	RX_TimeOut;		 
- u8	B_RX_OK;		 
- } COMx_Define; 
- 
- typedef struct
- { 
- u8	UART_Mode;			 
- u8	UART_BRT_Use;		 
- u32	UART_BaudRate;		 
- u8	Morecommunicate;	 
- u8	UART_RxEnable;		 
- u8	BaudRateDouble;		 
- u8	UART_Interrupt;		 
- u8	UART_Polity;		 
- u8	UART_P_SW;			 
- u8	UART_RXD_TXD_Short;	 
- 
- } COMx_InitDefine; 
- 
- extern	COMx_Define	COM1,COM2;
- extern	u8 idata	TX1_Buffer[64];	 
- extern	u8 idata	RX1_Buffer[64];	 
- 
- u8	USART_Configuration(u8 UARTx, COMx_InitDefine *COMx);
- void TX1_write2buff(u8 dat);	 
- void TX2_write2buff(u8 dat);	 
- void PrintString1(u8 *puts);
- 
- 
- 
-#line 15 "..\Src\USART1.C" /0
- 
- 
- 
- COMx_Define	COM1;
- u8	idata TX1_Buffer[64];	 
- u8 	idata RX1_Buffer[64];	 
- 
- u8 USART_Configuration(u8 UARTx, COMx_InitDefine *COMx)
+ static void rs485_enable_send(void)
  {
- u8	i;
- u32	j;
+ RS485_Recv_Send_Enable = 1;
+ }
  
- if(UARTx == 1)
+ static void rs485_enable_recv(void)
  {
- COM1.id = 1;
- COM1.TX_read    = 0;
- COM1.TX_write   = 0;
- COM1.B_TX_busy  = 0;
- COM1.RX_Cnt     = 0;
- COM1.RX_TimeOut = 0;
- COM1.B_RX_OK    = 0;
- for(i=0; i<64; i++)	TX1_Buffer[i] = 0;
- for(i=0; i<64; i++)	RX1_Buffer[i] = 0;
+ RS485_Recv_Send_Enable = 0;
+ }
  
- if(COMx->UART_Mode > (3<<6))	return 1;	 
- if(COMx->UART_Polity == 1)		PS = 1;	 
- else									PS = 0;	 
- SCON = (SCON & 0x3f) | COMx->UART_Mode;
- if((COMx->UART_Mode == (3<<6)) ||(COMx->UART_Mode == (1<<6)))	 
+ 
+ 
+ void SendByteData(unsigned char dat)
  {
- j = (24000000L / 4) / COMx->UART_BaudRate;	 
- if(j >= 65536UL)	return 2;	 
- j = 65536UL - j;
- if(COMx->UART_BRT_Use == 1)
+ 
+ TI=0;   
+ SBUF=dat;
+ while(TI ==0);  
+ TI=0;   
+ 
+ }
+ 
+ 
+ void SendDataFrame(unsigned char Length,unsigned char *str)
  {
- TR1 = 0;
- AUXR &= ~0x01;		 
- TMOD &= ~(1<<6);	 
- TMOD &= ~0x30;		 
- AUXR |=  (1<<6);	 
- TH1 = (u8)(j>>8);
- TL1 = (u8)j;
- ET1 = 0;	 
- TMOD &= ~0x40;	 
- INT_CLKO &= ~0x02;	 
- TR1  = 1;
- }
- else if(COMx->UART_BRT_Use == 2)
+ unsigned char i;
+ 
+ 
+ for (i=0;i<Length;i++)
  {
- AUXR &= ~(1<<4);	 
- AUXR |= 0x01;		 
- AUXR &= ~(1<<3);	 
- AUXR |=  (1<<2);	 
- TH2 = (u8)(j>>8);
- TL2 = (u8)j;
- IE2  &= ~(1<<2);	 
- AUXR &= ~(1<<3);	 
- AUXR |=  (1<<4);	 
+ SendByteData(*(str++));
+ 
  }
- else return 2;	 
- }
- else if(COMx->UART_Mode == 0)
- {
- if(COMx->BaudRateDouble == 1)	AUXR |=  (1<<5);	 
- else								AUXR &= ~(1<<5);	 
- }
- else if(COMx->UART_Mode == (2<<6))	 
- {
- if(COMx->BaudRateDouble == 1)	PCON |=  (1<<7);	 
- else								PCON &= ~(1<<7);	 
- }
- if(COMx->UART_Interrupt == 1)	ES = 1;	 
- else								ES = 0;	 
- if(COMx->UART_RxEnable == 1)	REN = 1;	 
- else								REN = 0;	 
- P_SW1 = (P_SW1 & 0x3f) | (COMx->UART_P_SW & 0xc0);	 
- if(COMx->UART_RXD_TXD_Short == 1)	PCON2 |=  (1<<4);	 
- else									PCON2 &= ~(1<<4);
- return	0;
- }
- return 3;	 
+ 
+ 
  }
  
  
  
  
- void TX1_write2buff(u8 dat)	 
- {
- while(COM1.B_TX_busy);
- TX1_Buffer[COM1.TX_write] = dat;	 
- if(++COM1.TX_write >= 64)
- COM1.TX_write = 0;
- 
- if(COM1.B_TX_busy == 0)		 
- {  
- COM1.B_TX_busy = 1;		 
- TI = 1;					 
- }
- }
- 
- void PrintString1(u8 *puts)
- {
- for (; *puts != 0;	puts++)  TX1_write2buff(*puts); 	 
- }
  
  
- void UART1_int (void) interrupt 4
- {
- if(RI)
- {
- RI = 0;
- if(COM1.B_RX_OK == 0)
- {
- if(COM1.RX_Cnt >= 64)	COM1.RX_Cnt = 0;
- RX1_Buffer[COM1.RX_Cnt++] = SBUF;
- COM1.RX_TimeOut = 5;
- }
- }
  
- if(TI)
- {
- TI = 0;
- if(COM1.TX_read != COM1.TX_write)
- {
- SBUF = TX1_Buffer[COM1.TX_read];
- if(++COM1.TX_read >= 64)		COM1.TX_read = 0;
- }
- else	COM1.B_TX_busy = 0;
- }
- }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  

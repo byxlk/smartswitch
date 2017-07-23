@@ -631,17 +631,15 @@
  
  
  
-#line 540 "..\Src\STC15Fxxxx.H" /1
+ 
+ 
+#line 542 "..\Src\STC15Fxxxx.H" /1
   
  
   
  
   
  
-#line 546 "..\Src\STC15Fxxxx.H" /0
- 
- 
-#line 548 "..\Src\STC15Fxxxx.H" /1
   
  
   
@@ -1007,13 +1005,47 @@
  
  
  
- sbit  MotorRunningCtrl_R = P3^7;     
- sbit  MotorRunningCtrl_L = P3^6;     
- sbit  ExAutoCtrlSignal = P1^0;       
- sbit  SystemWorkMode = P1^1;         
- sbit  SwitchOnStatus = P1^2;         
- sbit  OutOffHookCheck = P1^3;         
- sbit  SystemSleepStatus = P1^4;       
+ 
+ 
+ 
+ 
+ 
+ sbit  SwitchStatus           = P1^0;       
+ sbit  SystemWorkMode         = P1^1;       
+ sbit  VoltStatusLamp         = P1^2;       
+ sbit  VoltStatusPlus         = P3^3;       
+ sbit  VoltCapturePortA       = P1^3;       
+ sbit  VoltCapturePortB       = P1^4;       
+ sbit  VoltCapturePortC       = P1^5;       
+ sbit  SwitchOnStatus         = P5^4;       
+ sbit  OutOffHookCheck        = P5^5;       
+ 
+ sbit  RS485_Recv_Send_Enable = P3^2;       
+ sbit  MotorRunningCtrl_R     = P3^7;       
+ sbit  MotorRunningCtrl_L     = P3^6;       
+ 
+ typedef struct {
+ unsigned char firstStartCode;
+ unsigned char devAddr[6];
+ unsigned char secondStartCode;
+ unsigned char CtrlCode;
+ unsigned char DataLength;
+ unsigned char *Dat;
+ unsigned char cs;
+ unsigned char endCode;
+ } DLT645_T;
+ 
+ typedef struct {
+ unsigned char isfirstSystemBoot;
+ unsigned char CurrentSystemWorkMode;
+ unsigned char MotorCurrentSttaus;
+ unsigned char SwitchCurrentStatus;
+ unsigned char TimeoutCount;
+ unsigned char VoltCurrentStatus;
+ unsigned char VoltStatusA;
+ unsigned char VoltStatusB;
+ unsigned char VoltStatusC;
+ } SMART_SWITCH_T;
  
  
 #line 15 "..\Src\main.c" /0
@@ -1062,10 +1094,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1073,29 +1101,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1105,8 +1125,54 @@
  
   
   
+  
  
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1232,10 +1298,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1243,29 +1305,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1275,8 +1329,54 @@
  
   
   
+  
  
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1340,10 +1440,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1351,29 +1447,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1383,8 +1471,54 @@
  
   
   
+  
  
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1474,10 +1608,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1485,29 +1615,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1517,8 +1639,54 @@
  
   
   
+  
  
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1583,7 +1751,7 @@
 #line 20 "..\Src\main.c" /0
  
   
-#line 1 "..\Src\Exti.h" /0
+#line 1 "..\Src\ADC.h" /0
  
  
  
@@ -1613,10 +1781,6 @@
  
  
  
-  
- 
- 
- 
  
  
   
@@ -1624,29 +1788,21 @@
  
  
   
+ 
+  
+ 
+ 
+  
+ 
   
   
  
   
   
-  
-  
-  
-  
-  
  
   
   
-  
  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1656,7 +1812,24 @@
  
   
   
+  
  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
   
  
  
@@ -1668,8 +1841,57 @@
  
  
  
-#line 5 "..\Src\Exti.h" /0
-#line 5 "..\Src\Exti.h" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 5 "..\Src\ADC.h" /0
+#line 5 "..\Src\ADC.h" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1683,40 +1905,54 @@
  
  typedef struct
  {
- u8	EXTI_Mode;			 
- u8	EXTI_Polity;		 
- u8	EXTI_Interrupt;		 
- } EXTI_InitTypeDef;
+ u8	ADC_Px;			 
+ u8	ADC_Speed;		 
+ u8	ADC_Power;		 
+ u8	ADC_AdjResult;	 
+ u8	ADC_Polity;		 
+ u8	ADC_Interrupt;	 
+ } ADC_InitTypeDef;
  
- u8	Ext_Inilize(u8 EXT, EXTI_InitTypeDef *INTx);
+ void	ADC_Inilize(ADC_InitTypeDef *ADCx);
+ void	ADC_PowerControl(u8 pwr);
+ u16		Get_ADC10bitResult(u8 channel);	 
  
  
 #line 21 "..\Src\main.c" /0
  
- 
- 
- 
-
-
-
-
-
-
+  
+#line 1 "..\Src\dlt645.h" /0
  
  
  
  
  
  
- static unsigned char MotorRunningCtrl_Running = 0xff; 
+#line 22 "..\Src\main.c" /0
+ 
+  
+#line 1 "..\Src\rs485.h" /0
  
  
- unsigned char TimeoutCount = 0xFF;
- unsigned char sysClock = 0xFF;
  
  
  
- bit firstSystemBoot = 1;
+#line 23 "..\Src\main.c" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ unsigned char VoltExceptionsCount = 0xFF;
+ unsigned char VoltExceptionsStatus = 0x0;  
+ SMART_SWITCH_T smartSwitch = {
+ 0x01,                   
+  1,         
+  0xff,    
+  0xFF,        
+ 
+ };
  
  
  
@@ -1755,11 +1991,11 @@
  
  GPIO_InitStructure.Pin  = 0x40 | 0x80;	 
  GPIO_InitStructure.Mode = 0;		            
- GPIO_Inilize(3,&GPIO_InitStructure);	
+ GPIO_Inilize(3,&GPIO_InitStructure);
  }
  
  
- void Timer_Config(void)
+ void Timer_Config(void)  
  {
  TIM_InitTypeDef		TIM_InitStructure;					 
  TIM_InitStructure.TIM_Mode      = 0;	 
@@ -1767,196 +2003,161 @@
  TIM_InitStructure.TIM_Interrupt = 1;				 
  TIM_InitStructure.TIM_ClkSource = 1;			 
  TIM_InitStructure.TIM_ClkOut    = 0;				 
- TIM_InitStructure.TIM_Value     = 65536 - (11059200L / (12 * 20));	 
+ TIM_InitStructure.TIM_Value     = 65536 - (24000000L / (12 * 50));	 
  TIM_InitStructure.TIM_Run       = 1;				 
  Timer_Inilize(0,&TIM_InitStructure);				 
  }
  
- void EXTI_config(void)
+ void ADC_config(void)
  {
- EXTI_InitTypeDef	EXTI_InitStructure;					 
+ ADC_InitTypeDef		ADC_InitStructure;				 
  
- EXTI_InitStructure.EXTI_Mode      = 0;	 
- EXTI_InitStructure.EXTI_Polity    = 1;			 
- EXTI_InitStructure.EXTI_Interrupt = 1;				 
- Ext_Inilize(0,&EXTI_InitStructure);				 
+ ADC_InitStructure.ADC_Px        = 0x08;	         
+ ADC_InitStructure.ADC_Speed     = 0;			 
+ ADC_InitStructure.ADC_Power     = 1;			 
+ ADC_InitStructure.ADC_AdjResult = 1;		 
+ ADC_InitStructure.ADC_Polity    = 0;		 
+ ADC_InitStructure.ADC_Interrupt = 0;			 
+ ADC_Inilize(&ADC_InitStructure);					 
  
- EXTI_InitStructure.EXTI_Mode      = 0;	 
- EXTI_InitStructure.EXTI_Polity    = 1;			 
- EXTI_InitStructure.EXTI_Interrupt = 1;				 
- Ext_Inilize(1,&EXTI_InitStructure);				 
+ ADC_PowerControl(1);							 
  }
- 
-#line 116 "..\Src\main.c" /1
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#line 131 "..\Src\main.c" /0
  
  static void delay_timer(unsigned char iTime)
  {
- TimeoutCount = 0; 
- while(TimeoutCount <= iTime) ; 
- TimeoutCount = 0xFF; 
+ smartSwitch.TimeoutCount = 0; 
+ while(smartSwitch.TimeoutCount <= iTime) ; 
+ smartSwitch.TimeoutCount = 0xFF; 
  }
  
  static void wait_switch_on(unsigned char time_out)
  {
  
- TimeoutCount = 0; 
+ smartSwitch.TimeoutCount = 0; 
  while(SwitchOnStatus != 0)
- {        
- if(TimeoutCount > time_out)
+ {
+ if(smartSwitch.TimeoutCount > time_out)
  {
   PrintString1("[TimeOut] Wait Montor <=== timeout 5 Sec.");
- break;                        
+ break;
  }
  
  
- }             
- TimeoutCount = 0xFF; 
+ }
+ smartSwitch.TimeoutCount = 0xFF; 
  }
  
  static void wait_out_off_hook(unsigned char time_out)
  {
  
- TimeoutCount = 0; 
+ smartSwitch.TimeoutCount = 0; 
  while(OutOffHookCheck != 0)
  {
- if(TimeoutCount > time_out)
+ if(smartSwitch.TimeoutCount > time_out)
  {
   PrintString1("[TimeOut] Wait Montor <=== timeout 5 Sec.");
- break;                        
+ break;
  }
  
  
- }                 
- TimeoutCount = 0xFF; 
  }
- void print_signal_status_info(void)
- {
+ smartSwitch.TimeoutCount = 0xFF; 
+ }
  
- if(ExAutoCtrlSignal == 1)
-  PrintString1("[ Ext Ctrl Signal] LOSS.\r\n");
- else
-  PrintString1("[ Ext Ctrl Signal] OK.\r\n");
- if(SystemWorkMode == 1)
-  PrintString1("[System Work Mode] AUTO Mode.\r\n");
- else 
-  PrintString1("[System Work Mode] MANUAL Mode.\r\n");
- if(OutOffHookCheck == 0)
-  PrintString1("[    Out Off Hook] YES.\r\n");
- else
-  PrintString1("[    Out Off Hook] NO. \r\n");
- if(SwitchOnStatus == 0)
-  PrintString1("[   Switch Status] ON. \r\n");
- else
-  PrintString1("[   Switch Status] OFF. \r\n");
- }
  
  
  void main(void)
  {
+ unsigned short Cur_Volt = 0;
+ unsigned short Max_Volt = 0;
+ unsigned short Min_Volt = 0;
+ unsigned char underVoltCount = 0;
+ unsigned char overVoltCount = 0;
+ 
  
  EA = 0;
  GPIO_Config(); 
- setSystemSleepFlag(0);
  
- EXTI_config();
  UART_config();  
  Timer_Config(); 
- 
+ ADC_config();  
  
  
  EA = 1;
  
  
- firstSystemBoot = POF_Boot_Delay();
- 
- if(firstSystemBoot)
- PrintSystemInfoToSerial();
- 
- 
- 
  init_Watch_Dog();
-  PrintString1("\r\n\r\n==================================================\r\n");
-  PrintString1("System Init Ok, Start Watch Dog OK ... \r\n");
-  PrintString1("==================================================\r\n");
- 
- 
  
  
  while (1)
  {
  
+ Cur_Volt = Get_ADC10bitResult(3);
+ if(Cur_Volt > Max_Volt) {
+ Max_Volt = Cur_Volt;
+ Min_Volt = Cur_Volt;
+ continue;
+ } else {
+ if(Cur_Volt < Min_Volt) {
+ Min_Volt = Cur_Volt;
+ continue;
+ }
+ }
  
- if(ExAutoCtrlSignal == 1)
+ 
+ if(Max_Volt <= 521) {
+ if((underVoltCount++) > 5){
+ if(Max_Volt == Min_Volt && Max_Volt == 0) 
+ smartSwitch.VoltCurrentStatus = 0x11;
+ else
+ smartSwitch.VoltCurrentStatus = 0x01;
+ underVoltCount = 0;
+ }
+ } else if(Max_Volt >= 782){
+ if((overVoltCount++) > 5) {
+ smartSwitch.VoltCurrentStatus = 0x10;
+ overVoltCount = 0;
+ }
+ } else {
+ smartSwitch.VoltCurrentStatus = 0x0;
+ }
+ Max_Volt = Min_Volt;
+ 
+ 
+ 
+ if(smartSwitch.VoltCurrentStatus != 0x0)
  {
- 
- 
- 
- 
- 
- 
  
  
  
  
  if(OutOffHookCheck == 0)
  {
- 
- 
- 
- 
- if(MotorRunningCtrl_Running != 0xff)
- MotorRunningCtrl_Running = setMontorRunningStatus(0xff); 
- }            
- else  
- { 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#line 263 "..\Src\main.c" /1
- 
- 
-#line 265 "..\Src\main.c" /0
- if(MotorRunningCtrl_Running != 0x01)
- MotorRunningCtrl_Running = setMontorRunningStatus(0x01); 
- 
- 
- wait_out_off_hook(100);
- 
- if(MotorRunningCtrl_Running != 0xff)
- MotorRunningCtrl_Running = setMontorRunningStatus(0xff); 
- }            
+ if(smartSwitch.MotorCurrentSttaus != 0xff)
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff); 
  }
- else if(ExAutoCtrlSignal == 0)
+ else  
  {
  
  
  
  
  
+ 
+ if(smartSwitch.VoltCurrentStatus != 0x11)
+ delay_ms(50);
+ if(smartSwitch.MotorCurrentSttaus != 0x01)
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0x01); 
+ 
+ 
+ wait_out_off_hook(100);
+ 
+ if(smartSwitch.MotorCurrentSttaus != 0xff)
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff); 
+ }
+ }
+ else  
+ {
  
  
  
@@ -1964,19 +2165,11 @@
  
  if(SwitchOnStatus == 0)  
  {
- 
- 
- 
- 
- if(MotorRunningCtrl_Running != 0xff) 
- MotorRunningCtrl_Running = setMontorRunningStatus(0xff);
- } 
+ if(smartSwitch.MotorCurrentSttaus != 0xff) 
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff);
+ }
  else  
- {         
- 
- 
- 
- 
+ {
  
  
  
@@ -1985,61 +2178,64 @@
  
  
  if(SystemWorkMode == 1){
- if(MotorRunningCtrl_Running != 0x01) 
- MotorRunningCtrl_Running = setMontorRunningStatus(0x01);
+ if(smartSwitch.MotorCurrentSttaus != 0x01) 
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0x01);
  } else {
- if(MotorRunningCtrl_Running != 0x10) 
- MotorRunningCtrl_Running = setMontorRunningStatus(0x10);
+ if(smartSwitch.MotorCurrentSttaus != 0x10) 
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0x10);
  }
  
  
  wait_switch_on(100);
  delay_timer(4);
- if(MotorRunningCtrl_Running != 0xff) 
- MotorRunningCtrl_Running = setMontorRunningStatus(0xff);
+ if(smartSwitch.MotorCurrentSttaus != 0xff) 
+ smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff);
  }
  }
- else  
- Reboot_System(); 
- 
- 
- print_signal_status_info();
- 
-
-
-
-
- 
- System_PowerDown();
- 
- }	
+ }
  }
  
  
- void Ext_INT0 (void) interrupt 0		 
- {
- _nop_();
- Reboot_System();
- _nop_();
- }
- 
- 
- void Ext_INT1 (void) interrupt 2		 
- {
- _nop_();
- Reboot_System();
- _nop_();
- }
- 
- 
- void timer0_int (void) interrupt 1
+ void timer0_int (void) interrupt 1  
  {
  
  WDT_CONTR &= 0x7F;
  WDT_CONTR |= 0x10;
  
  
- if(TimeoutCount <= 200)
- TimeoutCount++;	    
+ if(smartSwitch.TimeoutCount <= 200)
+ smartSwitch.TimeoutCount++;
+ 
+ 
+ if(!VoltExceptionsStatus)
+ {
+ VoltStatusLamp = 1;
+ VoltStatusPlus = 1;
+ if(VoltExceptionsCount != 0xFF) VoltExceptionsCount = 0xFF;
+ }
+ else
+ {
+ VoltExceptionsCount++;
+ 
+ if(VoltExceptionsCount > 5) VoltStatusPlus = 1;
+ else VoltStatusPlus = 0;
+ 
+ if(smartSwitch.VoltCurrentStatus == 0x01)
+ {
+ if(VoltExceptionsCount < 15 && VoltExceptionsCount > 0) VoltStatusLamp = 0;  
+ else if(VoltExceptionsCount < 20 && VoltExceptionsCount >= 15) VoltStatusLamp = 1;  
+ else if(VoltExceptionsCount < 35 && VoltExceptionsCount >= 20) VoltStatusLamp = 0;  
+ else if(VoltExceptionsCount < 135 && VoltExceptionsCount >= 35) VoltStatusLamp = 1;  
+ else if(VoltExceptionsCount < 150 && VoltExceptionsCount >= 135) VoltStatusLamp = 0;  
+ else if(VoltExceptionsCount < 155 && VoltExceptionsCount >= 150) VoltStatusLamp = 1;  
+ else if(VoltExceptionsCount < 170 && VoltExceptionsCount >= 155) VoltStatusLamp = 0;  
+ else if(VoltExceptionsCount >= 175) VoltStatusLamp = 0;  
+ }
+ else if(smartSwitch.VoltCurrentStatus == 0x10)
+ {
+ if(VoltExceptionsCount > 25) VoltStatusLamp = 1;
+ else VoltStatusLamp = 0;
+ }
+ }
  }
  

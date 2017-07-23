@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 1   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE EXTI
@@ -62,7 +62,7 @@ line level    source
    8      =3  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =3  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =3  /* If you want to use the program or the program referenced in the  */
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 2   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 2   
 
   11      =3  /* article, please specify in which data and procedures from STC    */
   12      =3  /*------------------------------------------------------------------*/
@@ -126,7 +126,7 @@ line level    source
   31      =3  sfr TMOD = 0x89;
   32      =3  sfr TL0  = 0x8A;
   33      =3  sfr TL1  = 0x8B;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 3   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 3   
 
   34      =3  sfr TH0  = 0x8C;
   35      =3  sfr TH1  = 0x8D;
@@ -190,7 +190,7 @@ line level    source
   93      =3  sfr WDT_CONTR = 0xC1;
   94      =3  sfr IAP_DATA  = 0xC2;
   95      =3  sfr IAP_ADDRH = 0xC3;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 4   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 4   
 
   96      =3  sfr IAP_ADDRL = 0xC4;
   97      =3  sfr IAP_CMD   = 0xC5;
@@ -254,7 +254,7 @@ line level    source
  155      =3  sfr CCAP0L = 0xEA;      //PCA模块0的捕捉/比较寄存器低8位。
  156      =3  sfr CCAP1L = 0xEB;      //PCA模块1的捕捉/比较寄存器低8位。
  157      =3  sfr CCAP2L = 0xEC;      //PCA模块2的捕捉/比较寄存器低8位。
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 5   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 5   
 
  158      =3  
  159      =3  sfr B      = 0xF0;
@@ -318,7 +318,7 @@ line level    source
  217      =3  sbit  SPI_MOSI  = P1^3;
  218      =3  sbit  SPI_MISO  = P1^4;
  219      =3  sbit  SPI_SCLK  = P1^5;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 6   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 6   
 
  220      =3  
  221      =3  /*  P2  */
@@ -382,7 +382,7 @@ line level    source
  279      =3  sbit TB8  = SCON^3;     //发送数据第8位
  280      =3  sbit RB8  = SCON^2;     //接收数据第8位
  281      =3  sbit TI   = SCON^1;     //发送中断标志位
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 7   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 7   
 
  282      =3  sbit RI   = SCON^0;     //接收中断标志位
  283      =3  
@@ -446,7 +446,7 @@ line level    source
  341      =3  sbit PX1        = IP^2; //外部中断1优先级设定位
  342      =3  sbit PT0        = IP^1; //定时中断0优先级设定位
  343      =3  sbit PX0        = IP^0; //外部中断0优先级设定位
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 8   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 8   
 
  344      =3  
  345      =3  //                                           7      6      5     4     3     2    1     0        Reset Val
@@ -510,7 +510,7 @@ line level    source
  402      =3  #define         S2TB8_SET()                     S2CON |=  8
  403      =3  #define         S2TB8_CLR()                     S2CON &= ~8
  404      =3  #define         S2_Int_en()                     IE2   |=  1             //串口2允许中断
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 9   
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 9   
 
  405      =3  #define         S2_USE_P10P11()         P_SW2 &= ~1             //UART2 使用P1口        默认
  406      =3  #define         S2_USE_P46P47()         P_SW2 |=  1             //UART2 使用P4口
@@ -574,7 +574,7 @@ line level    source
              -以1T或12T。
  463      =3  #define         T0_pulseP34_disable()           AUXR2 &= ~1
  464      =3  #define         T1_pulseP35_enable()            AUXR2 |=  2             //允许 T1 溢出脉冲在T1(P3.4)脚输出，Fck1 = 1/2 T1 溢出率，T1可
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 10  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 10  
 
              -以1T或12T。
  465      =3  #define         T1_pulseP35_disable()           AUXR2 &= ~2
@@ -638,7 +638,7 @@ line level    source
  519      =3  #define         ISP_ERASE()             ISP_CMD = 3             //ISP擦除命令
  520      =3  
  521      =3  //sfr ISP_TRIG  = 0xC6;
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 11  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 11  
 
  522      =3  #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP触发命令
  523      =3  
@@ -702,7 +702,7 @@ line level    source
  579      =3  #define SPI_SCLK_NormalH()      SPCTL |=  (1<<3)                //1: 空闲时SCLK为高电平
  580      =3  #define SPI_SCLK_NormalL()      SPCTL &= ~(1<<3)                //0: 空闲时SCLK为低电平
  581      =3  #define SPI_PhaseH()            SPCTL |=  (1<<2)                //1: 
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 12  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 12  
 
  582      =3  #define SPI_PhaseL()            SPCTL &= ~(1<<2)                //0: 
  583      =3  #define SPI_Speed(n)            SPCTL = (SPCTL & ~3) | (n)      //设置速度, 0 -- fosc/4, 1 -- fosc/16, 2 -- fosc/64, 3 --
@@ -766,7 +766,7 @@ line level    source
  634      =3  #define PCA_CLK_4T()            CMOD = (CMOD & ~0x0E) + 10      //PCA计数脉冲选择外部晶振/4。   Fosc/4
  635      =3  #define PCA_CLK_6T()            CMOD = (CMOD & ~0x0E) + 12      //PCA计数脉冲选择外部晶振/6。   Fosc/6
  636      =3  #define PCA_CLK_8T()            CMOD = (CMOD & ~0x0E) + 14      //PCA计数脉冲选择外部晶振/8。   Fosc/8
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 13  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 13  
 
  637      =3  #define PCA_INT_ENABLE()        CMOD |=  1                                      //PCA计数器溢出中断允许位，1---允许CF（CCON.7）产生中断。
  638      =3  #define PCA_INT_DISABLE()       CMOD &= ~1                                      //PCA计数器溢出中断禁止。
@@ -830,7 +830,7 @@ line level    source
  692      =3  #define         PCA1_capture_fall()             CCAPM1 = (0x10 + 1)
  693      =3  #define         PCA1_capture_edge()             CCAPM1 = (0x30 + 1)
  694      =3  #define         PCA1_16bit_Timer()              CCAPM1 = (0x48 + 1)
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 14  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 14  
 
  695      =3  #define         PCA1_High_Pulse()               CCAPM1 = (0x4C + 1)
  696      =3  
@@ -894,7 +894,7 @@ line level    source
  754      =3  #define NOP36() NOP35(),NOP1()
  755      =3  #define NOP37() NOP36(),NOP1()
  756      =3  #define NOP38() NOP37(),NOP1()
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 15  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 15  
 
  757      =3  #define NOP39() NOP38(),NOP1()
  758      =3  #define NOP40() NOP39(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  814      =3  #define         BUS_SPEED_2T()  BUS_SPEED = 1
  815      =3  #define         BUS_SPEED_4T()  BUS_SPEED = 2
  816      =3  #define         BUS_SPEED_8T()  BUS_SPEED = 3
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 16  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 16  
 
  817      =3  
  818      =3  /*   interrupt vector */
@@ -1022,7 +1022,7 @@ line level    source
   35      =2  #define ENABLE_CPU_SLEEP_SUPPORT 1
   36      =2  
   37      =2  #define POWER_OK 1            //短路信号正常
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 17  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 17  
 
   38      =2  #define POWER_ERR 0           //短路信号异常
   39      =2  #define AUTO_CTRL_MODE 1      //自动控制模式
@@ -1055,15 +1055,53 @@ line level    source
   66      =2  
   67      =2  #define EEPROM_ADDR 0x0200
   68      =2  
-  69      =2  sbit  MotorRunningCtrl_R = P3^7;    //P36=0 P37=1 --- 电机正传
-  70      =2  sbit  MotorRunningCtrl_L = P3^6;    //P36=1 P37=0 --- 电机反转
-  71      =2  sbit  ExAutoCtrlSignal = P1^0;      //外部控制信号 1: 控制信号丢失 0：有控制信号
-  72      =2  sbit  SystemWorkMode = P1^1;        //1：自动  0：手动
-  73      =2  sbit  SwitchOnStatus = P1^2;        //0: 合闸到位 1：合闸不到位
-  74      =2  sbit  OutOffHookCheck = P1^3;        //脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  75      =2  sbit  SystemSleepStatus = P1^4;      //睡眠指示灯 0：系统掉电  1：系统唤醒
-  76      =2  
-  77      =2  #endif
+  69      =2  sbit  ExAutoCtrlSignal       = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
+  70      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
+  71      =2  sbit  SystemSleepStatus      = P3^3;      // 睡眠指示灯 0：系统掉电  1：系统唤醒
+  72      =2  sbit  VoltCapturePort        = P1^3;      // 电压采集端口
+  73      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
+  74      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  75      =2  
+  76      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
+  77      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
+  78      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
+  79      =2  
+  80      =2  typedef struct {
+  81      =2      unsigned char firstStartCode;
+  82      =2      union devAddress {
+  83      =2          unsigned char Addr[6];
+  84      =2          unsigned char A0;
+  85      =2          unsigned char A1;
+  86      =2          unsigned char A2;
+  87      =2          unsigned char A3;
+  88      =2          unsigned char A4;
+  89      =2          unsigned char A5;
+  90      =2      };
+*** ERROR C141 IN LINE 90 OF ..\Src\config.h: syntax error near ';'
+  91      =2      unsigned char secondStartCode;
+  92      =2      unsigned char CtrlCode;
+  93      =2      unsigned char DataLength;
+  94      =2      unsigned char *Dat;
+  95      =2      unsigned char cs;
+  96      =2      unsigned char endCode;
+  97      =2  } DLT645_T;
+*** ERROR C141 IN LINE 97 OF ..\Src\config.h: syntax error near '}'
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 18  
+
+  98      =2  
+  99      =2  typedef struct {
+ 100      =2      bit isfirstSystemBoot;
+ 101      =2      bit CurrentSystemWorkMode;
+ 102      =2      unsigned char MotorCurrentSttaus;
+ 103      =2      unsigned char TimeoutCount;
+ 104      =2      DLT645_T dlt645;
+*** ERROR C141 IN LINE 104 OF ..\Src\config.h: syntax error near 'DLT645_T'
+*** ERROR C150 IN LINE 104 OF ..\Src\config.h: 'isfirstSystemBoot': bit member in struct/union
+*** ERROR C150 IN LINE 104 OF ..\Src\config.h: 'CurrentSystemWorkMode': bit member in struct/union
+*** ERROR C129 IN LINE 104 OF ..\Src\config.h: missing ';' before 'dlt645'
+ 105      =2  } SMART_SWITCH_T;
+ 106      =2  
+ 107      =2  #endif
    6      =1  
    7      =1  #define EXT_INT0                        0       //初始化外中断0
    8      =1  #define EXT_INT1                        1       //初始化外中断1
@@ -1086,24 +1124,22 @@ line level    source
   25      =1  #endif
   11          
   12          /********************* INT2中断函数 *************************/
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 18  
-
   13          void Ext_INT2 (void) interrupt INT2_VECTOR      //
   14          {
-  15   1              _nop_();
-  16   1      }
+  15                  _nop_();
+  16          }
   17          
   18          /********************* INT3中断函数 *************************/
   19          void Ext_INT3 (void) interrupt INT3_VECTOR
   20          {
-  21   1              _nop_();
-  22   1      }
+  21                  _nop_();
+  22          }
   23          
   24          /********************* INT4中断函数 *************************/
   25          void Ext_INT4 (void) interrupt INT4_VECTOR
   26          {
-  27   1              _nop_();
-  28   1      }
+  27                  _nop_();
+  28          }
   29          
   30          //========================================================================
   31          // 函数: u8     Ext_Inilize(u8 EXT, EXTI_InitTypeDef *INTx)
@@ -1114,291 +1150,53 @@ line level    source
   36          //========================================================================
   37          u8      Ext_Inilize(u8 EXT, EXTI_InitTypeDef *INTx)
   38          {
-  39   1              if(EXT >  EXT_INT4)     return 1;       //空操作
-  40   1              
-  41   1              if(EXT == EXT_INT0)     //外中断0
-  42   1              {
-  43   2                      if(INTx->EXTI_Interrupt == ENABLE)              EX0 = 1;        //允许中断
-  44   2                      else                                                                    EX0 = 0;        //禁止中断
-  45   2                      if(INTx->EXTI_Polity == PolityHigh)             PX0 = 1;        //高优先级中断
-  46   2                      else                                                                    PX0 = 0;        //低优先级中断
-  47   2                      if(INTx->EXTI_Mode == EXT_MODE_Fall)    IT0 = 1;        //下降沿中断
-  48   2                      else                                                                    IT0 = 0;        //上升,下降沿中断
-  49   2                      return  0;              //成功
-  50   2              }
-  51   1      
-  52   1              if(EXT == EXT_INT1)     //外中断1
-  53   1              {
-  54   2                      if(INTx->EXTI_Interrupt == ENABLE)              EX1 = 1;        //允许中断
-  55   2                      else                                                                    EX1 = 0;        //禁止中断
-  56   2                      if(INTx->EXTI_Polity == PolityHigh)             PX1 = 1;        //高优先级中断
-  57   2                      else                                                                    PX1 = 0;        //低优先级中断
-  58   2                      if(INTx->EXTI_Mode == EXT_MODE_Fall)    IT1 = 1;        //下降沿中断
-  59   2                      else                                                                    IT1 = 0;        //上升,下降沿中断
-  60   2                      return  0;              //成功
-  61   2              }
-  62   1      
-  63   1              if(EXT == EXT_INT2)             //外中断2, 固定为下降沿低优先级中断
-  64   1              {
-  65   2                      if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 4);  //允许中断      
-  66   2                      else                                                            INT_CLKO &= ~(1 << 4);  //禁止中断
-  67   2                      return  0;              //成功
-  68   2              }
-  69   1      
-  70   1              if(EXT == EXT_INT3)             //外中断3, 固定为下降沿低优先级中断
-  71   1              {
-  72   2                      if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 5);  //允许中断      
-  73   2                      else                                                            INT_CLKO &= ~(1 << 5);  //禁止中断
-  74   2                      return  0;              //成功
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 19  
+C51 COMPILER V9.52.0.0   EXTI                                                              07/12/2017 23:22:13 PAGE 19  
 
-  75   2              }
-  76   1      
-  77   1              if(EXT == EXT_INT4)             //外中断4, 固定为下降沿低优先级中断
-  78   1              {
-  79   2                      if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 6);  //允许中断      
-  80   2                      else                                                            INT_CLKO &= ~(1 << 6);  //禁止中断
-  81   2                      return  0;              //成功
-  82   2              }
-  83   1              return 2;       //失败
-  84   1      }
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 20  
+  39                  if(EXT >  EXT_INT4)     return 1;       //空操作
+  40                  
+  41                  if(EXT == EXT_INT0)     //外中断0
+  42                  {
+  43                          if(INTx->EXTI_Interrupt == ENABLE)              EX0 = 1;        //允许中断
+  44                          else                                                                    EX0 = 0;        //禁止中断
+  45                          if(INTx->EXTI_Polity == PolityHigh)             PX0 = 1;        //高优先级中断
+  46                          else                                                                    PX0 = 0;        //低优先级中断
+  47                          if(INTx->EXTI_Mode == EXT_MODE_Fall)    IT0 = 1;        //下降沿中断
+  48                          else                                                                    IT0 = 0;        //上升,下降沿中断
+  49                          return  0;              //成功
+  50                  }
+  51          
+  52                  if(EXT == EXT_INT1)     //外中断1
+  53                  {
+  54                          if(INTx->EXTI_Interrupt == ENABLE)              EX1 = 1;        //允许中断
+  55                          else                                                                    EX1 = 0;        //禁止中断
+  56                          if(INTx->EXTI_Polity == PolityHigh)             PX1 = 1;        //高优先级中断
+  57                          else                                                                    PX1 = 0;        //低优先级中断
+  58                          if(INTx->EXTI_Mode == EXT_MODE_Fall)    IT1 = 1;        //下降沿中断
+  59                          else                                                                    IT1 = 0;        //上升,下降沿中断
+  60                          return  0;              //成功
+  61                  }
+  62          
+  63                  if(EXT == EXT_INT2)             //外中断2, 固定为下降沿低优先级中断
+  64                  {
+  65                          if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 4);  //允许中断      
+  66                          else                                                            INT_CLKO &= ~(1 << 4);  //禁止中断
+  67                          return  0;              //成功
+  68                  }
+  69          
+  70                  if(EXT == EXT_INT3)             //外中断3, 固定为下降沿低优先级中断
+  71                  {
+  72                          if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 5);  //允许中断      
+  73                          else                                                            INT_CLKO &= ~(1 << 5);  //禁止中断
+  74                          return  0;              //成功
+  75                  }
+  76          
+  77                  if(EXT == EXT_INT4)             //外中断4, 固定为下降沿低优先级中断
+  78                  {
+  79                          if(INTx->EXTI_Interrupt == ENABLE)      INT_CLKO |=  (1 << 6);  //允许中断      
+  80                          else                                                            INT_CLKO &= ~(1 << 6);  //禁止中断
+  81                          return  0;              //成功
+  82                  }
+  83                  return 2;       //失败
+  84          }
 
-ASSEMBLY LISTING OF GENERATED OBJECT CODE
-
-
-             ; FUNCTION Com001D (BEGIN)
-0000         L?0030:
-0000         L?0031:
-0000 900002            MOV     DPTR,#02H
-0003 020000      E     LJMP    ?C?CLDOPTR
-             ; FUNCTION Com001D (END)
-
-             ; FUNCTION Ext_INT2 (BEGIN)
-                                           ; SOURCE LINE # 13
-                                           ; SOURCE LINE # 15
-0000 00                NOP     
-                                           ; SOURCE LINE # 16
-0001 32                RETI    
-             ; FUNCTION Ext_INT2 (END)
-
-             ; FUNCTION Ext_INT3 (BEGIN)
-                                           ; SOURCE LINE # 19
-                                           ; SOURCE LINE # 21
-0000 00                NOP     
-                                           ; SOURCE LINE # 22
-0001 32                RETI    
-             ; FUNCTION Ext_INT3 (END)
-
-             ; FUNCTION Ext_INT4 (BEGIN)
-                                           ; SOURCE LINE # 25
-                                           ; SOURCE LINE # 27
-0000 00                NOP     
-                                           ; SOURCE LINE # 28
-0001 32                RETI    
-             ; FUNCTION Ext_INT4 (END)
-
-             ; FUNCTION _Ext_Inilize (BEGIN)
-                                           ; SOURCE LINE # 37
-;---- Variable 'INTx' assigned to Register 'R1/R2/R3' ----
-;---- Variable 'EXT' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 38
-                                           ; SOURCE LINE # 39
-0000 EF                MOV     A,R7
-0001 D3                SETB    C
-0002 9404              SUBB    A,#04H
-0004 4003              JC      ?C0004
-0006 7F01              MOV     R7,#01H
-0008 22                RET     
-0009         ?C0004:
-                                           ; SOURCE LINE # 41
-0009 EF                MOV     A,R7
-000A 702A              JNZ     ?C0006
-                                           ; SOURCE LINE # 42
-                                           ; SOURCE LINE # 43
-000C 120000      R     LCALL   L?0030
-000F B40104            CJNE    A,#01H,?C0007
-0012 D2A8              SETB    EX0
-0014 8002              SJMP    ?C0008
-0016         ?C0007:
-                                           ; SOURCE LINE # 44
-0016 C2A8              CLR     EX0
-0018         ?C0008:
-                                           ; SOURCE LINE # 45
-0018 900001            MOV     DPTR,#01H
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 21  
-
-001B 120000      E     LCALL   ?C?CLDOPTR
-001E B40104            CJNE    A,#01H,?C0009
-0021 D2B8              SETB    PX0
-0023 8002              SJMP    ?C0010
-0025         ?C0009:
-                                           ; SOURCE LINE # 46
-0025 C2B8              CLR     PX0
-0027         ?C0010:
-                                           ; SOURCE LINE # 47
-0027 120000      E     LCALL   ?C?CLDPTR
-002A B40104            CJNE    A,#01H,?C0011
-002D D288              SETB    IT0
-002F 8002              SJMP    ?C0012
-0031         ?C0011:
-                                           ; SOURCE LINE # 48
-0031 C288              CLR     IT0
-0033         ?C0012:
-                                           ; SOURCE LINE # 49
-0033 7F00              MOV     R7,#00H
-0035 22                RET     
-                                           ; SOURCE LINE # 50
-0036         ?C0006:
-                                           ; SOURCE LINE # 52
-0036 EF                MOV     A,R7
-0037 6401              XRL     A,#01H
-0039 702A              JNZ     ?C0013
-                                           ; SOURCE LINE # 53
-                                           ; SOURCE LINE # 54
-003B 120000      R     LCALL   L?0030
-003E B40104            CJNE    A,#01H,?C0014
-0041 D2AA              SETB    EX1
-0043 8002              SJMP    ?C0015
-0045         ?C0014:
-                                           ; SOURCE LINE # 55
-0045 C2AA              CLR     EX1
-0047         ?C0015:
-                                           ; SOURCE LINE # 56
-0047 900001            MOV     DPTR,#01H
-004A 120000      E     LCALL   ?C?CLDOPTR
-004D B40104            CJNE    A,#01H,?C0016
-0050 D2BA              SETB    PX1
-0052 8002              SJMP    ?C0017
-0054         ?C0016:
-                                           ; SOURCE LINE # 57
-0054 C2BA              CLR     PX1
-0056         ?C0017:
-                                           ; SOURCE LINE # 58
-0056 120000      E     LCALL   ?C?CLDPTR
-0059 B40104            CJNE    A,#01H,?C0018
-005C D28A              SETB    IT1
-005E 8002              SJMP    ?C0019
-0060         ?C0018:
-                                           ; SOURCE LINE # 59
-0060 C28A              CLR     IT1
-0062         ?C0019:
-                                           ; SOURCE LINE # 60
-0062 7F00              MOV     R7,#00H
-0064 22                RET     
-                                           ; SOURCE LINE # 61
-0065         ?C0013:
-                                           ; SOURCE LINE # 63
-0065 BF0211            CJNE    R7,#02H,?C0020
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 22  
-
-                                           ; SOURCE LINE # 64
-                                           ; SOURCE LINE # 65
-0068 120000      R     LCALL   L?0031
-006B B40105            CJNE    A,#01H,?C0021
-006E 438F10            ORL     INT_CLKO,#010H
-0071 8003              SJMP    ?C0022
-0073         ?C0021:
-                                           ; SOURCE LINE # 66
-0073 538FEF            ANL     INT_CLKO,#0EFH
-0076         ?C0022:
-                                           ; SOURCE LINE # 67
-0076 7F00              MOV     R7,#00H
-0078 22                RET     
-                                           ; SOURCE LINE # 68
-0079         ?C0020:
-                                           ; SOURCE LINE # 70
-0079 BF0311            CJNE    R7,#03H,?C0023
-                                           ; SOURCE LINE # 71
-                                           ; SOURCE LINE # 72
-007C 120000      R     LCALL   L?0031
-007F B40105            CJNE    A,#01H,?C0024
-0082 438F20            ORL     INT_CLKO,#020H
-0085 8003              SJMP    ?C0025
-0087         ?C0024:
-                                           ; SOURCE LINE # 73
-0087 538FDF            ANL     INT_CLKO,#0DFH
-008A         ?C0025:
-                                           ; SOURCE LINE # 74
-008A 7F00              MOV     R7,#00H
-008C 22                RET     
-                                           ; SOURCE LINE # 75
-008D         ?C0023:
-                                           ; SOURCE LINE # 77
-008D BF0411            CJNE    R7,#04H,?C0026
-                                           ; SOURCE LINE # 78
-                                           ; SOURCE LINE # 79
-0090 120000      R     LCALL   L?0031
-0093 B40105            CJNE    A,#01H,?C0027
-0096 438F40            ORL     INT_CLKO,#040H
-0099 8003              SJMP    ?C0028
-009B         ?C0027:
-                                           ; SOURCE LINE # 80
-009B 538FBF            ANL     INT_CLKO,#0BFH
-009E         ?C0028:
-                                           ; SOURCE LINE # 81
-009E 7F00              MOV     R7,#00H
-00A0 22                RET     
-                                           ; SOURCE LINE # 82
-00A1         ?C0026:
-                                           ; SOURCE LINE # 83
-00A1 7F02              MOV     R7,#02H
-                                           ; SOURCE LINE # 84
-00A3         ?C0005:
-00A3 22                RET     
-             ; FUNCTION _Ext_Inilize (END)
-
-C51 COMPILER V9.52.0.0   EXTI                                                              07/03/2017 23:32:52 PAGE 23  
-
-NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
-====                                    =====   ======  ====    ======  ====
-
-
-P0 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0080H  1
-P1 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0090H  1
-P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
-P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
-P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
-P5 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
-IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
-IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
-CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
-u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
-Ext_INT2 . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-Ext_INT3 . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-Ext_INT4 . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
-TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
-ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
-EX0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A8H  1
-IT0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0088H  1
-EX1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AAH  1
-IT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008AH  1
-PX0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B8H  1
-PX1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BAH  1
-u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
-u16. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
-EXTI_InitTypeDef . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  3
-  EXTI_Mode. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  EXTI_Polity. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  EXTI_Interrupt . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
-_Ext_Inilize . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  EXT. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  INTx . . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
-INT_CLKO . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008FH  1
-PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
-
-
-MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    176    ----
-   CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
-   IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----    ----
-END OF MODULE INFORMATION.
-
-
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)

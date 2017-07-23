@@ -1,14 +1,21 @@
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 1   
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 1   
 
 
-C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MISC
-OBJECT MODULE PLACED IN .\Objects\misc.obj
-COMPILER INVOKED BY: C:\Keil_c51\C51\BIN\C51.EXE ..\Src\misc.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCL
-                    -UDE SYMBOLS PRINT(.\Lists\misc.lst) PREPRINT(.\Lists\misc.i) OBJECT(.\Objects\misc.obj)
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE RS485
+OBJECT MODULE PLACED IN .\Objects\rs485.obj
+COMPILER INVOKED BY: C:\Keil_c51\C51\BIN\C51.EXE ..\Src\rs485.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINC
+                    -LUDE SYMBOLS PRINT(.\Lists\rs485.lst) PREPRINT(.\Lists\rs485.i) OBJECT(.\Objects\rs485.obj)
 
 line level    source
 
-   1          #include "config.h"
+   1          
+   2          #include "rs485.h"
+   1      =1  #ifndef         __RS485_H
+   2      =1  #define         __RS485_H
+   3      =1  
+   4      =1  
+   5      =1  #endif
+   3          #include "config.h"
    1      =1  
    2      =1  /*------------------------------------------------------------------*/
    3      =1  /* --- STC MCU International Limited -------------------------------*/
@@ -55,6 +62,8 @@ line level    source
   15      =2  
   16      =2  #ifndef _STC15Fxxxx_H
   17      =2  #define _STC15Fxxxx_H
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 2   
+
   18      =2  
   19      =2  #include <intrins.h>
    1      =3  /*--------------------------------------------------------------------------
@@ -62,8 +71,6 @@ line level    source
    3      =3  
    4      =3  Intrinsic functions for C51.
    5      =3  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 2   
-
    6      =3  All rights reserved.
    7      =3  --------------------------------------------------------------------------*/
    8      =3  
@@ -119,6 +126,8 @@ line level    source
   38      =2  sfr INT_CLKO = 0x8F;
   39      =2  sfr     AUXR2    = 0x8F;
   40      =2  
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 3   
+
   41      =2  sfr RL_TL0  = 0x8A;
   42      =2  sfr RL_TL1  = 0x8B;
   43      =2  sfr RL_TH0  = 0x8C;
@@ -126,8 +135,6 @@ line level    source
   45      =2  
   46      =2  
   47      =2  sfr P1   = 0x90;
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 3   
-
   48      =2  sfr P1M1 = 0x91;        //P1M1.n,P1M0.n         =00--->Standard,        01--->push-pull         实际上1T的都一样
   49      =2  sfr P1M0 = 0x92;        //                                      =10--->pure input,      11--->open drain
   50      =2  sfr P0M1 = 0x93;        //P0M1.n,P0M0.n         =00--->Standard,        01--->push-pull
@@ -183,6 +190,8 @@ line level    source
  100      =2  
  101      =2  sfr ISP_DATA  = 0xC2;
  102      =2  sfr ISP_ADDRH = 0xC3;
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 4   
+
  103      =2  sfr ISP_ADDRL = 0xC4;
  104      =2  sfr ISP_CMD   = 0xC5;
  105      =2  sfr ISP_TRIG  = 0xC6;
@@ -190,8 +199,6 @@ line level    source
  107      =2  
  108      =2  sfr P5     = 0xC8;      //
  109      =2  sfr P5M1   = 0xC9;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 4   
-
  110      =2  sfr P5M0   = 0xCA;      //                                      =10--->pure input,      11--->open drain
  111      =2  sfr P6M1   = 0xCB;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
  112      =2  sfr P6M0   = 0xCC;      //                                      =10--->pure input,      11--->open drain
@@ -247,6 +254,8 @@ line level    source
  162      =2  sfr PCA_PWM2 = 0xF4;    //PCA模块2 PWM寄存器。
  163      =2  
  164      =2  sfr     P7     = 0xF8;
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 5   
+
  165      =2  sfr CH     = 0xF9;
  166      =2  sfr CCAP0H = 0xFA;              //PCA模块0的捕捉/比较寄存器高8位。
  167      =2  sfr CCAP1H = 0xFB;              //PCA模块1的捕捉/比较寄存器高8位。
@@ -254,8 +263,6 @@ line level    source
  169      =2  
  170      =2  
  171      =2  /*  BIT Registers  */
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 5   
-
  172      =2  /*  PSW   */
  173      =2  sbit CY   = PSW^7;
  174      =2  sbit AC   = PSW^6;
@@ -311,6 +318,8 @@ line level    source
  224      =2  sbit  P22 = P2^2;
  225      =2  sbit  P23 = P2^3;
  226      =2  sbit  P24 = P2^4;
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 6   
+
  227      =2  sbit  P25 = P2^5;
  228      =2  sbit  P26 = P2^6;
  229      =2  sbit  P27 = P2^7;
@@ -318,8 +327,6 @@ line level    source
  231      =2  /*  P3  */
  232      =2  sbit  P30 = P3^0;
  233      =2  sbit  P31 = P3^1;
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 6   
-
  234      =2  sbit  P32 = P3^2;
  235      =2  sbit  P33 = P3^3;
  236      =2  sbit  P34 = P3^4;
@@ -375,6 +382,8 @@ line level    source
  286      =2  sbit ELVD = IE^6;       //低压监测中断允许位
  287      =2  sbit EADC = IE^5;       //ADC 中断 允许位
  288      =2  sbit ES   = IE^4;       //串行中断 允许控制位
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 7   
+
  289      =2  sbit ET1  = IE^3;       //定时中断1允许控制位
  290      =2  sbit EX1  = IE^2;       //外部中断1允许控制位
  291      =2  sbit ET0  = IE^1;       //定时中断0允许控制位
@@ -382,8 +391,6 @@ line level    source
  293      =2  
  294      =2  
  295      =2  /*  IP   */ 
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 7   
-
  296      =2  /*
  297      =2  sbit PPCA = IP^7;       //PCA 中断 优先级设定位
  298      =2  sbit PLVD = IP^6;       //低压中断 优先级设定位
@@ -439,6 +446,8 @@ line level    source
  347      =2  //sfr IP2   = 0xB5; //                       -      -      -     -     -     -   PSPI   PS2   xxxx,xx00
  348      =2  //sfr IPH2  = 0xB6; //                       -      -      -     -     -     -   PSPIH  PS2H  xxxx,xx00
  349      =2  #define         PPCAH   0x80
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 8   
+
  350      =2  #define         PLVDH   0x40
  351      =2  #define         PADCH   0x20
  352      =2  #define         PSH             0x10
@@ -446,8 +455,6 @@ line level    source
  354      =2  #define         PX1H    0x04
  355      =2  #define         PT0H    0x02
  356      =2  #define         PX0H    0x01
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 8   
-
  357      =2  
  358      =2  #define         PCA_InterruptFirst()    PPCA = 1
  359      =2  #define         LVD_InterruptFirst()    PLVD = 1
@@ -503,6 +510,8 @@ line level    source
  409      =2  #define         S3_USE_P50P51()         P_SW2 |=  2             //UART3 使用P5口
  410      =2  #define         S4_USE_P02P03()         P_SW2 &= ~4             //UART4 使用P0口        默认
  411      =2  #define         S4_USE_P52P53()         P_SW2 |=  4             //UART4 使用P5口
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 9   
+
  412      =2  
  413      =2  
  414      =2  /**********************************************************/
@@ -510,8 +519,6 @@ line level    source
  416      =2  #define         Timer0_16bitAutoReload()        TMOD &= ~0x03                                   //16位自动重装
  417      =2  #define         Timer0_16bit()                          TMOD  = (TMOD & ~0x03) | 0x01   //16位
  418      =2  #define         Timer0_8bitAutoReload()         TMOD  = (TMOD & ~0x03) | 0x02   //8位自动重装
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 9   
-
  419      =2  #define         Timer0_16bitAutoRL_NoMask()     TMOD |=  0x03           //16位自动重装不可屏蔽中断
  420      =2  #define         Timer0_AsCounterP32()           TMOD |=  4              //时器0用做计数器
  421      =2  #define         Timer0_AsTimer()                        TMOD &= ~4              //时器0用做定时器
@@ -567,6 +574,8 @@ line level    source
  467      =2  #define         T2_pulseP30_disable()           AUXR2 &= ~4
  468      =2  
  469      =2  #define         T0_pulseP35(n)          ET0=0,Timer0_AsTimer(),Timer0_1T(),Timer0_16bitAutoReload(),TH0=(65536-(n/2+MAIN_
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 10  
+
              -Fosc/2)/(n))/256,TL0=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit0,TR0=1            //fx=fosc/(2*M)/n,  M=1 or M=12
  470      =2  #define         T1_pulseP34(n)          ET1=0,Timer1_AsTimer(),Timer1_1T(),Timer1_16bitAutoReload(),TH1=(65536-(n/2+MAIN_
              -Fosc/2)/(n))/256,TL1=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit1,TR1=1            //fx=fosc/(2*M)/n,  M=1 or M=12
@@ -574,8 +583,6 @@ line level    source
              -2)/(n))/256,TL2=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit2,Timer2_Run()  //fx=fosc/(2*M)/n,  M=1 or M=12
  472      =2  
  473      =2  #define         Timer0_Load(n)          TH0 = (n) / 256,        TL0 = (n) % 256
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 10  
-
  474      =2  #define         Timer1_Load(n)          TH1 = (n) / 256,        TL1 = (n) % 256
  475      =2  #define         Timer2_Load(n)          TH2 = (n) / 256,        TL2 = (n) % 256
  476      =2  
@@ -631,6 +638,8 @@ line level    source
  526      =2  #define ISP_EN                  (1<<7)
  527      =2  #define ISP_SWBS                (1<<6)
  528      =2  #define ISP_SWRST               (1<<5)
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 11  
+
  529      =2  #define ISP_CMD_FAIL    (1<<4)
  530      =2  #define ISP_WAIT_1MHZ   7
  531      =2  #define ISP_WAIT_2MHZ   6
@@ -638,8 +647,6 @@ line level    source
  533      =2  #define ISP_WAIT_6MHZ   4
  534      =2  #define ISP_WAIT_12MHZ  3
  535      =2  #define ISP_WAIT_20MHZ  2
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 11  
-
  536      =2  #define ISP_WAIT_24MHZ  1
  537      =2  #define ISP_WAIT_30MHZ  0
  538      =2  
@@ -695,6 +702,8 @@ line level    source
  585      =2  //sfr SPDAT  = 0xCF; //SPI Data Register                                                     0000,0000
  586      =2  //sfr SPSTAT  = 0xCD;   //SPI状态寄存器
  587      =2  //   7       6      5   4   3   2   1   0       Reset Value
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 12  
+
  588      =2  //      SPIF    WCOL    -       -       -       -       -       -
  589      =2  #define SPIF    0x80            //SPI传输完成标志。写入1清0。
  590      =2  #define WCOL    0x40            //SPI写冲突标志。写入1清0。
@@ -702,8 +711,6 @@ line level    source
  592      =2  #define         SPI_USE_P12P13P14P15()  AUXR1 &= ~0x0c  //将SPI切换到P12(SS) P13(MOSI) P14(MISO) P15(SCLK)(上电默认
              -)。
  593      =2  #define         SPI_USE_P24P23P22P21()  AUXR1 = (AUXR1 & ~0x0c) | 0x04  //将SPI切换到P24(SS) P23(MOSI) P22(MISO) P2
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 12  
-
              -1(SCLK)。
  594      =2  #define         SPI_USE_P54P40P41P43()  AUXR1 = (AUXR1 & ~0x0c) | 0x08  //将SPI切换到P54(SS) P40(MOSI) P41(MISO) P4
              -3(SCLK)。
@@ -759,6 +766,8 @@ line level    source
  641      =2  //sfr AUXR1 = 0xA2;       S1_S1  S1_S0  CCP_S1   CCP_S0  SPI_S1   SPI_S0    -     DPS   0100,0000       //Auxiliary 
              -Register 1
  642      =2  
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 13  
+
  643      =2  #define         PCA_USE_P12P11P10P37()  AUXR1 &= ~0x30          //将PCA/PWM切换到P12(ECI) P11(CCP0) P10(CCP1) P37(CCP2)(上
              -电默认)。
  644      =2  #define         PCA_USE_P34P35P36P37()  AUXR1 = (AUXR1 & ~0x30) | 0x10  //将PCA/PWM切换到P34(ECI) P35(CCP0) P36(CCP
@@ -766,8 +775,6 @@ line level    source
  645      =2  #define         PCA_USE_P24P25P26P27()  AUXR1 = (AUXR1 & ~0x30) | 0x20  //将PCA/PWM切换到P24(ECI) P25(CCP0) P26(CCP
              -1) P27(CCP2)。
  646      =2  
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 13  
-
  647      =2  #define         DPS_SEL1()              AUXR1 |=  1             //1：选择DPTR1。
  648      =2  #define         DPS_SEL0()              AUXR1 &= ~1             //0：选择DPTR0(上电默认)。
  649      =2  
@@ -823,6 +830,8 @@ line level    source
  699      =2  #define         PCA2_PWM_rise_int(nbit) CCAPM2 = 0x63,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  700      =2  #define         PCA2_PWM_fall_int(nbit) CCAPM2 = 0x53,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  701      =2  #define         PCA2_PWM_edge_int(nbit) CCAPM2 = 0x73,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 14  
+
  702      =2  #define         PCA2_capture_rise()             CCAPM2 = (0x20 + 1)
  703      =2  #define         PCA2_capture_fall()             CCAPM2 = (0x10 + 1)
  704      =2  #define         PCA2_capture_edge()             CCAPM2 = (0x30 + 1)
@@ -830,8 +839,6 @@ line level    source
  706      =2  #define         PCA2_High_Pulse()               CCAPM2 = (0x4C + 1)
  707      =2  
  708      =2  /* Above is STC additional SFR or change */
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 14  
-
  709      =2  
  710      =2  
  711      =2  
@@ -887,6 +894,8 @@ line level    source
  761      =2  
  762      =2  /**********************************************/
  763      =2  
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 15  
+
  764      =2  
  765      =2  /****************************************************************/
  766      =2  
@@ -894,8 +903,6 @@ line level    source
  768      =2  //sfr INT_CLKO = 0x8F;  //附加的 SFR WAKE_CLKO (地址：0x8F)
  769      =2  /*
  770      =2      7   6    5    4   3     2        1       0         Reset Value
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 15  
-
  771      =2      -  EX4  EX3  EX2  -   T2CLKO   T1CLKO  T0CLKO      0000,0000B
  772      =2  b6 -  EX4      : 外中断INT4允许
  773      =2  b5 -  EX3      : 外中断INT3允许
@@ -951,6 +958,8 @@ line level    source
  821      =2  #define         INT1_VECTOR             2
  822      =2  #define         TIMER1_VECTOR   3
  823      =2  #define         UART1_VECTOR    4
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 16  
+
  824      =2  #define         ADC_VECTOR              5
  825      =2  #define         LVD_VECTOR              6
  826      =2  #define         PCA_VECTOR              7
@@ -958,8 +967,6 @@ line level    source
  828      =2  #define         SPI_VECTOR              9
  829      =2  #define         INT2_VECTOR             10
  830      =2  #define         INT3_VECTOR             11
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 16  
-
  831      =2  #define         TIMER2_VECTOR   12
  832      =2  #define         INT4_VECTOR             16
  833      =2  #define         UART3_VECTOR    17
@@ -1015,6 +1022,8 @@ line level    source
   42      =1  #define OUT_OF_HOOK 0         //脱扣到位
   43      =1  #define SWITCH_ON_OK 0        //合闸到位
   44      =1  
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 17  
+
   45      =1  #define LOSS_VOLTAGE 0x11
   46      =1  #define UNDER_VOLTAGE 0x01
   47      =1  #define OVER_VOLTAGE 0x10
@@ -1022,8 +1031,6 @@ line level    source
   49      =1  #define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
   50      =1  #define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
   51      =1  
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 17  
-
   52      =1  #define MONTOR_RIGHT_RUNNING 0x01
   53      =1  #define MONTOR_LEFT_RUNNING 0x10
   54      =1  #define MONTOR_STOP_RUNNING 0xff
@@ -1079,767 +1086,241 @@ line level    source
  104      =1      unsigned char TimeoutCount;
  105      =1      unsigned char VoltCurrentStatus;
  106      =1      unsigned char VoltStatusA;
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 18  
+
  107      =1      unsigned char VoltStatusB;
  108      =1      unsigned char VoltStatusC;
  109      =1  } SMART_SWITCH_T;
  110      =1  
  111      =1  #endif
-   2          #include "misc.h"
-   1      =1  #ifndef __MISC_H
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 18  
-
-   2      =1  #define __MISC_H
-   3      =1  
-   4      =1  #define LOGD PrintString1
-   5      =1  
-   6      =1  void init_Watch_Dog(void);
-   7      =1  void System_PowerDown();
-   8      =1  bit POF_Boot_Delay(void);
-   9      =1  void setSystemSleepFlag(bit sleep);
-  10      =1  void Reboot_System(void);
-  11      =1  unsigned char setMontorRunningStatus(unsigned char runStat);
-  12      =1  void PrintSystemInfoToSerial(void);
-  13      =1  
-  14      =1  #endif
-   3          #include "delay.h"
-   1      =1  
-   2      =1  /*------------------------------------------------------------------*/
-   3      =1  /* --- STC MCU International Limited -------------------------------*/
-   4      =1  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-   5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
-   6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
-   7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-   8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-   9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
-  10      =1  /* If you want to use the program or the program referenced in the  */
-  11      =1  /* article, please specify in which data and procedures from STC    */
-  12      =1  /*------------------------------------------------------------------*/
-  13      =1  
-  14      =1  
-  15      =1  #ifndef __DELAY_H
-  16      =1  #define __DELAY_H
-  17      =1  
-  18      =1  #include        "config.h"
-   1      =2  
-   2      =2  /*------------------------------------------------------------------*/
-   3      =2  /* --- STC MCU International Limited -------------------------------*/
-   4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-   5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
-   6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
-   7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-   8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-   9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
-  10      =2  /* If you want to use the program or the program referenced in the  */
-  11      =2  /* article, please specify in which data and procedures from STC    */
-  12      =2  /*------------------------------------------------------------------*/
-  13      =2  
-  14      =2  
-  15      =2  #ifndef         __CONFIG_H
-           =2 #define         __CONFIG_H
-           =2 
-           =2 
-           =2 /*********************************************************/
-           =2 
-           =2 //#define MAIN_Fosc             22118400L       //定义主时钟
-           =2 //#define MAIN_Fosc             12000000L       //定义主时钟
-           =2 //#define MAIN_Fosc             11059200L       //定义主时钟
-           =2 //#define MAIN_Fosc              5529600L       //定义主时钟
-           =2 #define MAIN_Fosc               24000000L       //定义主时钟
-           =2 
-           =2 
-           =2 /*********************************************************/
-           =2 #include        "STC15Fxxxx.H"
-           =2 
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 19  
-
-           =2 #define DEBUG 0
-           =2 
-           =2 
-           =2 #define AUTO_CTRL_MODE 1      //自动控制模式
-           =2 
-           =2 #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
-           =2 #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
-           =2 
-           =2 #define SWITCH_STATUS_ON 0x5A
-           =2 #define SWITCH_STATUS_OFF 0xA5
-           =2 
-           =2 #define OUT_OF_HOOK 0         //脱扣到位
-           =2 #define SWITCH_ON_OK 0        //合闸到位
-           =2 
-           =2 #define LOSS_VOLTAGE 0x11
-           =2 #define UNDER_VOLTAGE 0x01
-           =2 #define OVER_VOLTAGE 0x10
-           =2 #define NORMAL_VOLTAGE 0x0
-           =2 #define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 
-           =2 #define MONTOR_RIGHT_RUNNING 0x01
-           =2 #define MONTOR_LEFT_RUNNING 0x10
-           =2 #define MONTOR_STOP_RUNNING 0xff
-           =2 
-           =2 #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-           =2 #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-           =2 #define TIMEOUT_DELAY_VAL 4
-           =2 
-           =2 #define TIMECOUNTER_START 0
-           =2 #define STOP_TIMERCOUNT 0xFF
-           =2 
-           =2 sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
-           =2 sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
-           =2 sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
-           =2 sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
-           =2 sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
-           =2 sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
-           =2 sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
-           =2 sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
-           =2 sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
-           =2 
-           =2 sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-           =2 sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
-           =2 sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-           =2 
-           =2 typedef struct {
-           =2     unsigned char firstStartCode;
-           =2     unsigned char devAddr[6];
-           =2     unsigned char secondStartCode;
-           =2     unsigned char CtrlCode;
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 20  
-
-           =2     unsigned char DataLength;
-           =2     unsigned char *Dat;
-           =2     unsigned char cs;
-           =2     unsigned char endCode;
-           =2 } DLT645_T;
-           =2 
-           =2 typedef struct {
-           =2     unsigned char isfirstSystemBoot;
-           =2     unsigned char CurrentSystemWorkMode;
-           =2     unsigned char MotorCurrentSttaus;
-           =2     unsigned char SwitchCurrentStatus;
-           =2     unsigned char TimeoutCount;
-           =2     unsigned char VoltCurrentStatus;
-           =2     unsigned char VoltStatusA;
-           =2     unsigned char VoltStatusB;
-           =2     unsigned char VoltStatusC;
-           =2 } SMART_SWITCH_T;
-           =2 
-           =2 #endif
-  19      =1  
-  20      =1  void  delay_ms(unsigned char ms);
-  21      =1  void delay_4000ms(void);
-  22      =1  #endif
-   4          #include "USART1.h"
-   1      =1  
-   2      =1  /*------------------------------------------------------------------*/
-   3      =1  /* --- STC MCU International Limited -------------------------------*/
-   4      =1  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-   5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
-   6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
-   7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-   8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-   9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
-  10      =1  /* If you want to use the program or the program referenced in the  */
-  11      =1  /* article, please specify in which data and procedures from STC    */
-  12      =1  /*------------------------------------------------------------------*/
-  13      =1  
-  14      =1  
-  15      =1  #ifndef __USART_H
-  16      =1  #define __USART_H        
-  17      =1  
-  18      =1  #include        "config.h"
-   1      =2  
-   2      =2  /*------------------------------------------------------------------*/
-   3      =2  /* --- STC MCU International Limited -------------------------------*/
-   4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-   5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
-   6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
-   7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-   8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-   9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
-  10      =2  /* If you want to use the program or the program referenced in the  */
-  11      =2  /* article, please specify in which data and procedures from STC    */
-  12      =2  /*------------------------------------------------------------------*/
-  13      =2  
-  14      =2  
-  15      =2  #ifndef         __CONFIG_H
-           =2 #define         __CONFIG_H
-           =2 
-           =2 
-           =2 /*********************************************************/
-           =2 
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 21  
-
-           =2 //#define MAIN_Fosc             22118400L       //定义主时钟
-           =2 //#define MAIN_Fosc             12000000L       //定义主时钟
-           =2 //#define MAIN_Fosc             11059200L       //定义主时钟
-           =2 //#define MAIN_Fosc              5529600L       //定义主时钟
-           =2 #define MAIN_Fosc               24000000L       //定义主时钟
-           =2 
-           =2 
-           =2 /*********************************************************/
-           =2 #include        "STC15Fxxxx.H"
-           =2 
-           =2 #define DEBUG 0
-           =2 
-           =2 
-           =2 #define AUTO_CTRL_MODE 1      //自动控制模式
-           =2 
-           =2 #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
-           =2 #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
-           =2 
-           =2 #define SWITCH_STATUS_ON 0x5A
-           =2 #define SWITCH_STATUS_OFF 0xA5
-           =2 
-           =2 #define OUT_OF_HOOK 0         //脱扣到位
-           =2 #define SWITCH_ON_OK 0        //合闸到位
-           =2 
-           =2 #define LOSS_VOLTAGE 0x11
-           =2 #define UNDER_VOLTAGE 0x01
-           =2 #define OVER_VOLTAGE 0x10
-           =2 #define NORMAL_VOLTAGE 0x0
-           =2 #define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 
-           =2 #define MONTOR_RIGHT_RUNNING 0x01
-           =2 #define MONTOR_LEFT_RUNNING 0x10
-           =2 #define MONTOR_STOP_RUNNING 0xff
-           =2 
-           =2 #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-           =2 #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-           =2 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-           =2 #define TIMEOUT_DELAY_VAL 4
-           =2 
-           =2 #define TIMECOUNTER_START 0
-           =2 #define STOP_TIMERCOUNT 0xFF
-           =2 
-           =2 sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
-           =2 sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
-           =2 sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
-           =2 sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
-           =2 sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
-           =2 sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
-           =2 sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
-           =2 sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
-           =2 sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 22  
-
-           =2 
-           =2 sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-           =2 sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
-           =2 sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-           =2 
-           =2 typedef struct {
-           =2     unsigned char firstStartCode;
-           =2     unsigned char devAddr[6];
-           =2     unsigned char secondStartCode;
-           =2     unsigned char CtrlCode;
-           =2     unsigned char DataLength;
-           =2     unsigned char *Dat;
-           =2     unsigned char cs;
-           =2     unsigned char endCode;
-           =2 } DLT645_T;
-           =2 
-           =2 typedef struct {
-           =2     unsigned char isfirstSystemBoot;
-           =2     unsigned char CurrentSystemWorkMode;
-           =2     unsigned char MotorCurrentSttaus;
-           =2     unsigned char SwitchCurrentStatus;
-           =2     unsigned char TimeoutCount;
-           =2     unsigned char VoltCurrentStatus;
-           =2     unsigned char VoltStatusA;
-           =2     unsigned char VoltStatusB;
-           =2     unsigned char VoltStatusC;
-           =2 } SMART_SWITCH_T;
-           =2 
-           =2 #endif
-  19      =1  
-  20      =1  #define COM_TX1_Lenth   64
-  21      =1  #define COM_RX1_Lenth   64
-  22      =1  #define COM_TX2_Lenth   128
-  23      =1  #define COM_RX2_Lenth   128
-  24      =1  
-  25      =1  #define USART1  1
-  26      =1  #define USART2  2
-  27      =1  
-  28      =1  #define UART_ShiftRight 0               //同步移位输出
-  29      =1  #define UART_8bit_BRTx  (1<<6)  //8位数据,可变波特率
-  30      =1  #define UART_9bit               (2<<6)  //9位数据,固定波特率
-  31      =1  #define UART_9bit_BRTx  (3<<6)  //9位数据,可变波特率
-  32      =1  
-  33      =1  #define UART1_SW_P30_P31        0
-  34      =1  #define UART1_SW_P36_P37        (1<<6)
-  35      =1  #define UART1_SW_P16_P17        (2<<6)  //必须使用内部时钟
-  36      =1  #define UART2_SW_P10_P11        0
-  37      =1  #define UART2_SW_P46_P47        1
-  38      =1  
-  39      =1  
-  40      =1  #define TimeOutSet1             5
-  41      =1  #define TimeOutSet2             5
-  42      =1  
-  43      =1  #define BRT_Timer1      1
-  44      =1  #define BRT_Timer2      2
-  45      =1  
-  46      =1  typedef struct
-  47      =1  { 
-  48      =1          u8      id;                             //串口号
-  49      =1  
-  50      =1          u8      TX_read;                //发送读指针
-  51      =1          u8      TX_write;               //发送写指针
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 23  
-
-  52      =1          u8      B_TX_busy;              //忙标志
-  53      =1  
-  54      =1          u8      RX_Cnt;                 //接收字节计数
-  55      =1          u8      RX_TimeOut;             //接收超时
-  56      =1          u8      B_RX_OK;                //接收块完成
-  57      =1  } COMx_Define; 
-  58      =1  
-  59      =1  typedef struct
-  60      =1  { 
-  61      =1          u8      UART_Mode;                      //模式,         UART_ShiftRight,UART_8bit_BRTx,UART_9bit,UART_9bit_BRTx
-  62      =1          u8      UART_BRT_Use;           //使用波特率,   BRT_Timer1,BRT_Timer2
-  63      =1          u32     UART_BaudRate;          //波特率,       ENABLE,DISABLE
-  64      =1          u8      Morecommunicate;        //多机通讯允许, ENABLE,DISABLE
-  65      =1          u8      UART_RxEnable;          //允许接收,   ENABLE,DISABLE
-  66      =1          u8      BaudRateDouble;         //波特率加倍, ENABLE,DISABLE
-  67      =1          u8      UART_Interrupt;         //中断控制,   ENABLE,DISABLE
-  68      =1          u8      UART_Polity;            //优先级,     PolityLow,PolityHigh
-  69      =1          u8      UART_P_SW;                      //切换端口,   UART1_SW_P30_P31,UART1_SW_P36_P37,UART1_SW_P16_P17(必须使用内部时钟)
-  70      =1          u8      UART_RXD_TXD_Short;     //内部短路RXD与TXD, 做中继, ENABLE,DISABLE
-  71      =1  
-  72      =1  } COMx_InitDefine; 
-  73      =1  
-  74      =1  extern  COMx_Define     COM1,COM2;
-  75      =1  extern  u8 idata        TX1_Buffer[COM_TX1_Lenth];      //发送缓冲
-  76      =1  extern  u8 idata        RX1_Buffer[COM_RX1_Lenth];      //接收缓冲
-  77      =1  
-  78      =1  u8      USART_Configuration(u8 UARTx, COMx_InitDefine *COMx);
-  79      =1  void TX1_write2buff(u8 dat);    //写入发送缓冲，指针+1
-  80      =1  void TX2_write2buff(u8 dat);    //写入发送缓冲，指针+1
-  81      =1  void PrintString1(u8 *puts);
-  82      =1  
-  83      =1  #endif
-  84      =1  
+   4          
    5          
-   6          void init_Watch_Dog(void)
+   6          static void rs485_enable_send(void)
    7          {
-   8   1              WDT_CONTR = 0x3A;  //0011 1010
+   8   1          RS485_Recv_Send_Enable = 1;
    9   1      }
   10          
-  11          //void setSystemSleepFlag(bit sleep)
-  12          //{
-  13                  //SystemSleepStatus = (sleep)? FALSE : TRUE ;
-  14          //}
+  11          static void rs485_enable_recv(void)
+  12          {
+  13   1          RS485_Recv_Send_Enable = 0;
+  14   1      }
   15          
-  16          void System_PowerDown(void)
-  17          {
-  18   1          //PCON |= 2 //MCU 进入 睡眠 模式
-  19   1          LOGD("System entery Power Down mode ...\r\n\r\n");
-  20   1              setSystemSleepFlag(TRUE);
-  21   1              _nop_();
-  22   1          _nop_();
-  23   1          _nop_();
-  24   1          MCU_POWER_DOWN();
-  25   1          _nop_();    // 唤醒后首先执行此语句，再进入中断服务子程序
-  26   1          _nop_();
-  27   1          _nop_();
-  28   1          _nop_();
-  29   1      }
-  30          
-  31          bit POF_Boot_Delay(void)
-  32          {
-  33   1          if(PCON & 0x10)
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 24  
-
-  34   1          {
-  35   2                      LOGD("Cold reset, delay 4s entery system ...\r\n");
-  36   2      
-  37   2              delay_4000ms()  ; //boot delay 4s
-  38   2      
-  39   2              PCON &= 0xEF; //清零POF寄存器 
-  40   2                                      
-  41   2                      return TRUE;
-  42   2          }
-  43   1              else
-  44   1                      return FALSE;
-  45   1      }
+  16          
+  17          //串口发送一个字节数据
+  18          void SendByteData(unsigned char dat)
+  19          {
+  20   1              //ES=0;  //关串口中断
+  21   1          TI=0;  //清零串口发送完成中断请求标志
+  22   1          SBUF=dat;
+  23   1          while(TI ==0); //等待发送完成
+  24   1          TI=0;  //清零串口发送完成中断请求标志
+  25   1          //ES=1;  //允许串口中断
+  26   1      }
+  27          
+  28          //发送一帧数据包
+  29          void SendDataFrame(unsigned char Length,unsigned char *str)
+  30          {
+  31   1              unsigned char i;
+  32   1      //      Rs485Enable = TransferEnable;//485发送数据使能
+  33   1      //      DelayFun(600);
+  34   1              for (i=0;i<Length;i++)
+  35   1              {
+  36   2                      SendByteData(*(str++));
+  37   2      //        DelayFun(20);
+  38   2              }
+  39   1      //      Rs485Enable = RevEnable;//数据发送完毕485等待接受数据
+  40   1      //      DelayFun(600);
+  41   1      }
+  42          
+  43          
+  44          
+  45          
   46          
-  47          void Reboot_System(void)
-  48          {
-  49   1          //LOGD("Reboot System ...\n");
-  50   1              //if run to here, system must be reboot now from user space
-  51   1              if(IAP_CONTR & 0x40)
-  52   1                      IAP_CONTR &= 0x3F; // 0011 1111
-  53   1              if(!(IAP_CONTR & 0x20))
-  54   1                      IAP_CONTR |= 0x60; // 0010 0000
-  55   1      }
+  47          
+  48          
+  49          
+  50          
+  51          
+  52          
+  53          
+  54          
+  55          
   56          
-  57          unsigned char setMontorRunningStatus(unsigned char runStat)
-  58          {
-  59   1          unsigned char MotorRunStatus = MONTOR_STOP_RUNNING;
-  60   1          
-  61   1          if(MONTOR_RIGHT_RUNNING == runStat) //正转
-  62   1          {
-  63   2              MotorRunningCtrl_R = 0;
-  64   2              MotorRunningCtrl_L = 1;
-  65   2              MotorRunStatus = MONTOR_RIGHT_RUNNING;
-  66   2              //delay_ms(1);
-  67   2              LOGD("[Motor status] ===> \r\n");
-  68   2          }
-  69   1          else if(MONTOR_LEFT_RUNNING == runStat) //反转
-  70   1          {
-  71   2              MotorRunningCtrl_R = 1;
-  72   2              MotorRunningCtrl_L = 0;
-  73   2              MotorRunStatus = MONTOR_LEFT_RUNNING;
-  74   2              //delay_ms(1);
-  75   2              LOGD("[Motor status] <=== \r\n");
-  76   2          }
-  77   1          else //停转
-  78   1          {
-  79   2              MotorRunningCtrl_R = 1;
-  80   2              MotorRunningCtrl_L = 1;
-  81   2              MotorRunStatus = MONTOR_STOP_RUNNING;
-  82   2              //delay_ms(1);
-  83   2              LOGD("[Motor status] Stop.\r\n\r\n");
-  84   2          }
-  85   1          
-  86   1          return MotorRunStatus;
-  87   1      }
-  88          
-  89          #ifdef DEBUG
-  90          void PrintSameString(u8 *puts, unsigned char nSize)
-  91          {
-  92   1              unsigned char i = 0;
-  93   1              if(nSize > 0)
-  94   1              { 
-  95   2                      for(i = 0; i < nSize; i++) 
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 25  
+  57          
+  58          
+  59          
+  60          
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 19  
 
-  96   2                              LOGD(puts);
-  97   2                      LOGD("\r\n");
-  98   2              }
-  99   1      }
- 100          #endif
+  61          
+  62          
+  63          
+  64          
+  65          
+  66          
+  67          
+  68          
+  69          
+  70          
+  71          
+  72          
+  73          
+  74          
+  75          
+  76          
+  77          
+  78          
+  79          
+  80          
+  81          
+  82          
+  83          
+  84          
+  85          
+  86          
+  87          
+  88          
+  89          
+  90          
+  91          
+  92          
+  93          
+  94          
+  95          
+  96          
+  97          
+  98          
+  99          
+ 100          
  101          
- 102          void PrintSystemInfoToSerial(void)
- 103          {       
- 104   1      #ifdef DEBUG
- 105   1              PrintSameString("*", 62);          
- 106   1              PrintSameString(" ", 1);
- 107   1              LOGD("        湖北盛佳电器设备有限公司 - 智能自动合闸控制系统\r\n");
- 108   1              PrintSameString(" ", 1);
- 109   1              PrintSameString(" ", 1);
- 110   1              //LOGD("  Project Name  : Smart Switch Control System\r\n");
- 111   1              LOGD("  Version No.   : Ver 1.0\r\n");
- 112   1              LOGD("  Designed Time : 2016-03-21\r\n");
- 113   1              //LOGD("  Auth Name     : Li Shuliang\r\n");
- 114   1              //LOGD("  Auth Email    : 313424410@qq.com\r\n");
- 115   1              //LOGD("  Project Owner : SJDQ\r\n");
- 116   1              LOGD("  Telephone     : 027 - 83520066 / 83567077\r\n");
- 117   1              PrintSameString(" ", 1);
- 118   1              LOGD("        All rights reserved (c)2016  http://www.sjdq.com/\r\n");
- 119   1              PrintSameString(" ", 1);
- 120   1          PrintSameString("*", 62);
- 121   1      #endif
- 122   1      }
+ 102          
+ 103          
+ 104          
+ 105          
+ 106          
+ 107          
+ 108          
+ 109          
+ 110          
+ 111          
+ 112          
+ 113          
+ 114          
+ 115          
+ 116          
+ 117          
+ 118          
+ 119          
+ 120          
+ 121          
+ 122          
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 20  
+
  123          
- 124          ////////////////////////////////////////////////////////////////////////
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 26  
+ 124          
+ 125          
+ 126          
+ 127          
+ 128          
+ 129          
+ 130          
+ 131          
+ 132          
+ 133          
+ 134          
+ 135          
+ 136          
+ 137          
+ 138          
+ 139          
+ 140          
+ 141          
+ 142          
+ 143          
+ 144          
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 21  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
-             ; FUNCTION init_Watch_Dog (BEGIN)
+             ; FUNCTION rs485_enable_send (BEGIN)
                                            ; SOURCE LINE # 6
                                            ; SOURCE LINE # 7
                                            ; SOURCE LINE # 8
-0000 75C13A            MOV     WDT_CONTR,#03AH
+0000 D2B2              SETB    RS485_Recv_Send_Enable
                                            ; SOURCE LINE # 9
-0003 22                RET     
-             ; FUNCTION init_Watch_Dog (END)
+0002 22                RET     
+             ; FUNCTION rs485_enable_send (END)
 
-             ; FUNCTION System_PowerDown (BEGIN)
-                                           ; SOURCE LINE # 16
-                                           ; SOURCE LINE # 17
+             ; FUNCTION rs485_enable_recv (BEGIN)
+                                           ; SOURCE LINE # 11
+                                           ; SOURCE LINE # 12
+                                           ; SOURCE LINE # 13
+0000 C2B2              CLR     RS485_Recv_Send_Enable
+                                           ; SOURCE LINE # 14
+0002 22                RET     
+             ; FUNCTION rs485_enable_recv (END)
+
+             ; FUNCTION _SendByteData (BEGIN)
+                                           ; SOURCE LINE # 18
+;---- Variable 'dat' assigned to Register 'R7' ----
                                            ; SOURCE LINE # 19
-0000 7BFF              MOV     R3,#0FFH
-0002 7A00        R     MOV     R2,#HIGH ?SC_0
-0004 7900        R     MOV     R1,#LOW ?SC_0
-0006 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 20
-0009 D200        E     SETB    ?setSystemSleepFlag?BIT
-000B 120000      E     LCALL   setSystemSleepFlag
                                            ; SOURCE LINE # 21
-000E 00                NOP     
+0000 C299              CLR     TI
                                            ; SOURCE LINE # 22
-000F 00                NOP     
+0002 8F99              MOV     SBUF,R7
+0004         ?C0003:
                                            ; SOURCE LINE # 23
-0010 00                NOP     
+0004 3099FD            JNB     TI,?C0003
+0007         ?C0004:
                                            ; SOURCE LINE # 24
-0011 438702            ORL     PCON,#02H
-                                           ; SOURCE LINE # 25
-0014 00                NOP     
+0007 C299              CLR     TI
                                            ; SOURCE LINE # 26
-0015 00                NOP     
-                                           ; SOURCE LINE # 27
-0016 00                NOP     
-                                           ; SOURCE LINE # 28
-0017 00                NOP     
+0009 22                RET     
+             ; FUNCTION _SendByteData (END)
+
+             ; FUNCTION _SendDataFrame (BEGIN)
                                            ; SOURCE LINE # 29
-0018 22                RET     
-             ; FUNCTION System_PowerDown (END)
-
-             ; FUNCTION POF_Boot_Delay (BEGIN)
-                                           ; SOURCE LINE # 31
-                                           ; SOURCE LINE # 32
-                                           ; SOURCE LINE # 33
-0000 E587              MOV     A,PCON
-0002 30E411            JNB     ACC.4,?C0003
+0000 8B00        R     MOV     str,R3
+0002 8A00        R     MOV     str+01H,R2
+0004 8900        R     MOV     str+02H,R1
+;---- Variable 'Length' assigned to Register 'R6' ----
+0006 AE07              MOV     R6,AR7
+                                           ; SOURCE LINE # 30
                                            ; SOURCE LINE # 34
-                                           ; SOURCE LINE # 35
-0005 7BFF              MOV     R3,#0FFH
-0007 7A00        R     MOV     R2,#HIGH ?SC_38
-0009 7900        R     MOV     R1,#LOW ?SC_38
-000B 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 37
-000E 120000      E     LCALL   delay_4000ms
-                                           ; SOURCE LINE # 39
-0011 5387EF            ANL     PCON,#0EFH
-                                           ; SOURCE LINE # 41
-0014 D3                SETB    C
-0015 22                RET     
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 27  
-
-                                           ; SOURCE LINE # 42
-0016         ?C0003:
-                                           ; SOURCE LINE # 44
-0016 C3                CLR     C
-                                           ; SOURCE LINE # 45
-0017         ?C0004:
-0017 22                RET     
-             ; FUNCTION POF_Boot_Delay (END)
-
-             ; FUNCTION Reboot_System (BEGIN)
-                                           ; SOURCE LINE # 47
-                                           ; SOURCE LINE # 48
-                                           ; SOURCE LINE # 51
-0000 E5C7              MOV     A,IAP_CONTR
-0002 30E603            JNB     ACC.6,?C0006
-                                           ; SOURCE LINE # 52
-0005 53C73F            ANL     IAP_CONTR,#03FH
-0008         ?C0006:
-                                           ; SOURCE LINE # 53
-0008 E5C7              MOV     A,IAP_CONTR
-000A 20E503            JB      ACC.5,?C0008
-                                           ; SOURCE LINE # 54
-000D 43C760            ORL     IAP_CONTR,#060H
-                                           ; SOURCE LINE # 55
-0010         ?C0008:
-0010 22                RET     
-             ; FUNCTION Reboot_System (END)
-
-             ; FUNCTION _setMontorRunningStatus (BEGIN)
-                                           ; SOURCE LINE # 57
-0000 8F00        R     MOV     runStat,R7
-                                           ; SOURCE LINE # 58
-                                           ; SOURCE LINE # 59
-0002 7500FF      R     MOV     MotorRunStatus,#0FFH
-                                           ; SOURCE LINE # 61
-0005 E500        R     MOV     A,runStat
-0007 B4010F            CJNE    A,#01H,?C0009
-                                           ; SOURCE LINE # 62
-                                           ; SOURCE LINE # 63
-000A C2B7              CLR     MotorRunningCtrl_R
-                                           ; SOURCE LINE # 64
-000C D2B6              SETB    MotorRunningCtrl_L
-                                           ; SOURCE LINE # 65
-000E 750001      R     MOV     MotorRunStatus,#01H
-                                           ; SOURCE LINE # 67
-0011 7BFF              MOV     R3,#0FFH
-0013 7A00        R     MOV     R2,#HIGH ?SC_79
-0015 7900        R     MOV     R1,#LOW ?SC_79
-                                           ; SOURCE LINE # 68
-0017 8021              SJMP    ?C0021
-0019         ?C0009:
-                                           ; SOURCE LINE # 69
-0019 E500        R     MOV     A,runStat
-001B B4100F            CJNE    A,#010H,?C0011
-                                           ; SOURCE LINE # 70
-                                           ; SOURCE LINE # 71
-001E D2B7              SETB    MotorRunningCtrl_R
-                                           ; SOURCE LINE # 72
-0020 C2B6              CLR     MotorRunningCtrl_L
-                                           ; SOURCE LINE # 73
-0022 750010      R     MOV     MotorRunStatus,#010H
-                                           ; SOURCE LINE # 75
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 28  
-
-0025 7BFF              MOV     R3,#0FFH
-0027 7A00        R     MOV     R2,#HIGH ?SC_102
-0029 7900        R     MOV     R1,#LOW ?SC_102
-002B         ?C0020:
-                                           ; SOURCE LINE # 76
-002B 800D              SJMP    ?C0021
-002D         ?C0011:
-                                           ; SOURCE LINE # 78
-                                           ; SOURCE LINE # 79
-002D D2B7              SETB    MotorRunningCtrl_R
-                                           ; SOURCE LINE # 80
-002F D2B6              SETB    MotorRunningCtrl_L
-                                           ; SOURCE LINE # 81
-0031 7500FF      R     MOV     MotorRunStatus,#0FFH
-                                           ; SOURCE LINE # 83
-0034 7BFF              MOV     R3,#0FFH
-0036 7A00        R     MOV     R2,#HIGH ?SC_125
-0038 7900        R     MOV     R1,#LOW ?SC_125
-003A         ?C0021:
-003A 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 84
-003D         ?C0010:
-                                           ; SOURCE LINE # 86
-003D AF00        R     MOV     R7,MotorRunStatus
-                                           ; SOURCE LINE # 87
-003F         ?C0013:
-003F 22                RET     
-             ; FUNCTION _setMontorRunningStatus (END)
-
-             ; FUNCTION _PrintSameString (BEGIN)
-                                           ; SOURCE LINE # 90
-0000 8B00        R     MOV     puts,R3
-0002 8A00        R     MOV     puts+01H,R2
-0004 8900        R     MOV     puts+02H,R1
-0006 8D00        R     MOV     nSize,R5
-                                           ; SOURCE LINE # 91
-                                           ; SOURCE LINE # 92
+;---- Variable 'i' assigned to Register 'R5' ----
 0008 E4                CLR     A
-0009 F500        R     MOV     i,A
-                                           ; SOURCE LINE # 93
-000B E500        R     MOV     A,nSize
-000D D3                SETB    C
-000E 9400              SUBB    A,#00H
-0010 4020              JC      ?C0018
-                                           ; SOURCE LINE # 94
-                                           ; SOURCE LINE # 95
-0012 E4                CLR     A
-0013 F500        R     MOV     i,A
-0015         ?C0015:
-0015 E500        R     MOV     A,i
-0017 C3                CLR     C
-0018 9500        R     SUBB    A,nSize
-001A 500D              JNC     ?C0016
-                                           ; SOURCE LINE # 96
-001C AB00        R     MOV     R3,puts
-001E AA00        R     MOV     R2,puts+01H
-0020 A900        R     MOV     R1,puts+02H
-0022 120000      E     LCALL   _PrintString1
-0025 0500        R     INC     i
-0027 80EC              SJMP    ?C0015
-0029         ?C0016:
-                                           ; SOURCE LINE # 97
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 29  
+0009 FD                MOV     R5,A
+000A         ?C0006:
+000A ED                MOV     A,R5
+000B C3                CLR     C
+000C 9E                SUBB    A,R6
+000D 5018              JNC     ?C0009
+                                           ; SOURCE LINE # 35
+                                           ; SOURCE LINE # 36
+000F AB00        R     MOV     R3,str
+0011 0500        R     INC     str+02H
+0013 E500        R     MOV     A,str+02H
+0015 AA00        R     MOV     R2,str+01H
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 22  
 
-0029 7BFF              MOV     R3,#0FFH
-002B 7A00        R     MOV     R2,#HIGH ?SC_150
-002D 7900        R     MOV     R1,#LOW ?SC_150
-002F 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 98
-                                           ; SOURCE LINE # 99
-0032         ?C0018:
-0032 22                RET     
-             ; FUNCTION _PrintSameString (END)
+0017 7002              JNZ     ?C0010
+0019 0500        R     INC     str+01H
+001B         ?C0010:
+001B 14                DEC     A
+001C F9                MOV     R1,A
+001D 120000      E     LCALL   ?C?CLDPTR
+0020 FF                MOV     R7,A
+0021 120000      R     LCALL   _SendByteData
+                                           ; SOURCE LINE # 38
+0024 0D                INC     R5
+0025 80E3              SJMP    ?C0006
+                                           ; SOURCE LINE # 41
+0027         ?C0009:
+0027 22                RET     
+             ; FUNCTION _SendDataFrame (END)
 
-             ; FUNCTION PrintSystemInfoToSerial (BEGIN)
-                                           ; SOURCE LINE # 102
-                                           ; SOURCE LINE # 103
-                                           ; SOURCE LINE # 105
-0000 7BFF              MOV     R3,#0FFH
-0002 7A00        R     MOV     R2,#HIGH ?SC_153
-0004 7900        R     MOV     R1,#LOW ?SC_153
-0006 7D3E              MOV     R5,#03EH
-0008 120000      R     LCALL   _PrintSameString
-                                           ; SOURCE LINE # 106
-000B 120000      R     LCALL   L?0023
-                                           ; SOURCE LINE # 107
-000E 7A00        R     MOV     R2,#HIGH ?SC_157
-0010 7900        R     MOV     R1,#LOW ?SC_157
-                                           ; SOURCE LINE # 108
-                                           ; SOURCE LINE # 109
-0012 120000      R     LCALL   L?0022
-0015 7A00        R     MOV     R2,#HIGH ?SC_155
-0017 7900        R     MOV     R1,#LOW ?SC_155
-0019 7D01              MOV     R5,#01H
-001B 120000      R     LCALL   _PrintSameString
-                                           ; SOURCE LINE # 111
-001E 7BFF              MOV     R3,#0FFH
-0020 7A00        R     MOV     R2,#HIGH ?SC_215
-0022 7900        R     MOV     R1,#LOW ?SC_215
-0024 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 112
-0027 7BFF              MOV     R3,#0FFH
-0029 7A00        R     MOV     R2,#HIGH ?SC_243
-002B 7900        R     MOV     R1,#LOW ?SC_243
-002D 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 116
-0030 7A00        R     MOV     R2,#HIGH ?SC_274
-0032 7900        R     MOV     R1,#LOW ?SC_274
-                                           ; SOURCE LINE # 117
-                                           ; SOURCE LINE # 118
-0034 120000      R     LCALL   L?0022
-0037 7A00        R     MOV     R2,#HIGH ?SC_320
-0039 7900        R     MOV     R1,#LOW ?SC_320
-003B 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 119
-003E 120000      R     LCALL   L?0023
-                                           ; SOURCE LINE # 120
-0041 7BFF              MOV     R3,#0FFH
-0043 7A00        R     MOV     R2,#HIGH ?SC_153
-0045 7900        R     MOV     R1,#LOW ?SC_153
-0047 7D3E              MOV     R5,#03EH
-0049 020000      R     LJMP    _PrintSameString
-                                           ; SOURCE LINE # 122
-004C         L?0022:
-004C 7BFF              MOV     R3,#0FFH
-004E 120000      E     LCALL   _PrintString1
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 30  
-
-0051 7BFF              MOV     R3,#0FFH
-0053 7A00        R     MOV     R2,#HIGH ?SC_155
-0055 7900        R     MOV     R1,#LOW ?SC_155
-0057 7D01              MOV     R5,#01H
-0059 120000      R     LCALL   _PrintSameString
-005C 7BFF              MOV     R3,#0FFH
-005E 22                RET     
-005F         L?0023:
-005F 7BFF              MOV     R3,#0FFH
-0061 7A00        R     MOV     R2,#HIGH ?SC_155
-0063 7900        R     MOV     R1,#LOW ?SC_155
-0065 7D01              MOV     R5,#01H
-0067 120000      R     LCALL   _PrintSameString
-006A 22                RET     
-             ; FUNCTION PrintSystemInfoToSerial (END)
-
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 31  
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 23  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -1851,38 +1332,14 @@ P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
 P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
 P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
 P5 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
-COMx_Define. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
-  id . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  TX_read. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  TX_write . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
-  B_TX_busy. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
-  RX_Cnt . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
-  RX_TimeOut . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
-  B_RX_OK. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-init_Watch_Dog . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
-_PrintSameString . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  puts . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
-  nSize. . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0003H  1
-  i. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0004H  1
-System_PowerDown . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-delay_4000ms . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
-COMx_InitDefine. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  13
-  UART_Mode. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  UART_BRT_Use . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  UART_BaudRate. . . . . . . . . . . .  MEMBER   -----  U_LONG   0002H  4
-  Morecommunicate. . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-  UART_RxEnable. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  BaudRateDouble . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
-  UART_Interrupt . . . . . . . . . . .  MEMBER   -----  U_CHAR   0009H  1
-  UART_Polity. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000AH  1
-  UART_P_SW. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000BH  1
-  UART_RXD_TXD_Short . . . . . . . . .  MEMBER   -----  U_CHAR   000CH  1
+TI . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0099H  1
+_SendByteData. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  dat. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
 u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
-POF_Boot_Delay . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-PCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0087H  1
+SBUF . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0099H  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
 DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
@@ -1894,27 +1351,13 @@ DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
   Dat. . . . . . . . . . . . . . . . .  MEMBER   -----  PTR      000AH  3
   cs . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000DH  1
   endCode. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000EH  1
-_PrintString1. . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
-MotorRunningCtrl_L . . . . . . . . . .  ABSBIT   -----  BIT      00B6H  1
-_setMontorRunningStatus. . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  runStat. . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0000H  1
-  MotorRunStatus . . . . . . . . . . .  AUTO     DATA   U_CHAR   0001H  1
 B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
-IAP_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C7H  1
-MotorRunningCtrl_R . . . . . . . . . .  ABSBIT   -----  BIT      00B7H  1
-C51 COMPILER V9.52.0.0   MISC                                                              07/23/2017 22:49:15 PAGE 32  
-
-NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
-====                                    =====   ======  ====    ======  ====
-
-
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
-setSystemSleepFlag . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
-PrintSystemInfoToSerial. . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-Reboot_System. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-WDT_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C1H  1
+RS485_Recv_Send_Enable . . . . . . . .  ABSBIT   -----  BIT      00B2H  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 u16. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+rs485_enable_send. . . . . . . . . . .  STATIC   CODE   PROC     0000H  -----
+rs485_enable_recv. . . . . . . . . . .  STATIC   CODE   PROC     0000H  -----
 SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
   isfirstSystemBoot. . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
   CurrentSystemWorkMode. . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
@@ -1925,18 +1368,24 @@ SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
   VoltStatusA. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
   VoltStatusB. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
   VoltStatusC. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
+_SendDataFrame . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  Length . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0006H  1
+  str. . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
+  i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0005H  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    292    ----
-   CONSTANT SIZE    =    380    ----
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----       7
+   DATA SIZE        =   ----       3
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
+
+C51 COMPILER V9.52.0.0   RS485                                                             07/23/2017 22:49:16 PAGE 24  
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

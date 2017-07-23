@@ -1008,13 +1008,43 @@
  
  
  
- sbit  MotorRunningCtrl_R = P3^7;     
- sbit  MotorRunningCtrl_L = P3^6;     
- sbit  ExAutoCtrlSignal = P1^0;       
- sbit  SystemWorkMode = P1^1;         
- sbit  SwitchOnStatus = P1^2;         
- sbit  OutOffHookCheck = P1^3;         
- sbit  SystemSleepStatus = P1^4;       
+ sbit  ExAutoCtrlSignal       = P1^0;       
+ sbit  SystemWorkMode         = P1^1;       
+ sbit  SystemSleepStatus      = P3^3;       
+ sbit  VoltCapturePort        = P1^3;       
+ sbit  SwitchOnStatus         = P5^4;       
+ sbit  OutOffHookCheck        = P5^5;       
+ 
+ sbit  RS485_Recv_Send_Enable = P3^2;       
+ sbit  MotorRunningCtrl_R     = P3^7;       
+ sbit  MotorRunningCtrl_L     = P3^6;       
+ 
+ typedef struct {
+ unsigned char firstStartCode;
+ union devAddress {
+ unsigned char Addr[6];
+ unsigned char A0;
+ unsigned char A1;
+ unsigned char A2;
+ unsigned char A3;
+ unsigned char A4;
+ unsigned char A5;
+ };
+ unsigned char secondStartCode;
+ unsigned char CtrlCode;
+ unsigned char DataLength;
+ unsigned char *Dat;
+ unsigned char cs;
+ unsigned char endCode;
+ } DLT645_T;
+ 
+ typedef struct {
+ bit isfirstSystemBoot;
+ bit CurrentSystemWorkMode;
+ unsigned char MotorCurrentSttaus;
+ unsigned char TimeoutCount;
+ DLT645_T dlt645;
+ } SMART_SWITCH_T;
  
  
 #line 5 "..\Src\Exti.h" /0

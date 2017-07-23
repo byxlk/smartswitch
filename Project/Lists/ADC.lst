@@ -1,46 +1,21 @@
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 1   
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 1   
 
 
-C51 COMPILER V9.52.0.0, COMPILATION OF MODULE USART1
-OBJECT MODULE PLACED IN .\Objects\USART1.obj
-COMPILER INVOKED BY: C:\Keil_c51\C51\BIN\C51.EXE ..\Src\USART1.C OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTIN
-                    -CLUDE SYMBOLS PRINT(.\Lists\USART1.lst) PREPRINT(.\Lists\USART1.i) OBJECT(.\Objects\USART1.obj)
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE ADC
+OBJECT MODULE PLACED IN .\Objects\ADC.obj
+COMPILER INVOKED BY: C:\Keil_c51\C51\BIN\C51.EXE ..\Src\ADC.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE LISTINCLU
+                    -DE SYMBOLS PRINT(.\Lists\ADC.lst) PREPRINT(.\Lists\ADC.i) OBJECT(.\Objects\ADC.obj)
 
 line level    source
 
    1          
-   2          /*------------------------------------------------------------------*/
-   3          /* --- STC MCU International Limited -------------------------------*/
-   4          /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-   5          /* --- Mobile: (86)13922805190 -------------------------------------*/
-   6          /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
-   7          /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-   8          /* --- Web: www.GXWMCU.com -----------------------------------------*/
-   9          /* --- QQ:  800003751 ----------------------------------------------*/
-  10          /* If you want to use the program or the program referenced in the  */
-  11          /* article, please specify in which data and procedures from STC    */
-  12          /*------------------------------------------------------------------*/
-  13          
-  14          
-  15          #include "USART1.h"
+   2          
+   3          #include        "adc.h"
    1      =1  
-   2      =1  /*------------------------------------------------------------------*/
-   3      =1  /* --- STC MCU International Limited -------------------------------*/
-   4      =1  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
-   5      =1  /* --- Mobile: (86)13922805190 -------------------------------------*/
-   6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
-   7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
-   8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-   9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
-  10      =1  /* If you want to use the program or the program referenced in the  */
-  11      =1  /* article, please specify in which data and procedures from STC    */
-  12      =1  /*------------------------------------------------------------------*/
-  13      =1  
-  14      =1  
-  15      =1  #ifndef __USART_H
-  16      =1  #define __USART_H        
-  17      =1  
-  18      =1  #include        "config.h"
+   2      =1  #ifndef __ADC_H
+   3      =1  #define __ADC_H
+   4      =1  
+   5      =1  #include        "config.h"
    1      =2  
    2      =2  /*------------------------------------------------------------------*/
    3      =2  /* --- STC MCU International Limited -------------------------------*/
@@ -62,8 +37,6 @@ line level    source
   19      =2  /*********************************************************/
   20      =2  
   21      =2  //#define MAIN_Fosc             22118400L       //¶¨ÒåÖ÷Ê±ÖÓ
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 2   
-
   22      =2  //#define MAIN_Fosc             12000000L       //¶¨ÒåÖ÷Ê±ÖÓ
   23      =2  //#define MAIN_Fosc             11059200L       //¶¨ÒåÖ÷Ê±ÖÓ
   24      =2  //#define MAIN_Fosc              5529600L       //¶¨ÒåÖ÷Ê±ÖÓ
@@ -89,6 +62,8 @@ line level    source
   15      =3  
   16      =3  #ifndef _STC15Fxxxx_H
   17      =3  #define _STC15Fxxxx_H
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 2   
+
   18      =3  
   19      =3  #include <intrins.h>
    1      =4  /*--------------------------------------------------------------------------
@@ -126,8 +101,6 @@ line level    source
   33      =4  extern void          _pop_     (unsigned char _sfr);
   34      =4  #endif
   35      =4  
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 3   
-
   36      =4  #pragma RESTORE
   37      =4  
   38      =4  #endif
@@ -153,6 +126,8 @@ line level    source
   38      =3  sfr INT_CLKO = 0x8F;
   39      =3  sfr     AUXR2    = 0x8F;
   40      =3  
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 3   
+
   41      =3  sfr RL_TL0  = 0x8A;
   42      =3  sfr RL_TL1  = 0x8B;
   43      =3  sfr RL_TH0  = 0x8C;
@@ -190,8 +165,6 @@ line level    source
   75      =3  
   76      =3  sfr P3    = 0xB0;
   77      =3  sfr P3M1  = 0xB1;       //P3M1.n,P3M0.n         =00--->Standard,        01--->push-pull
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 4   
-
   78      =3  sfr P3M0  = 0xB2;       //                                      =10--->pure input,      11--->open drain
   79      =3  sfr P4M1  = 0xB3;       //P4M1.n,P4M0.n         =00--->Standard,        01--->push-pull
   80      =3  sfr P4M0  = 0xB4;       //                                      =10--->pure input,      11--->open drain
@@ -217,6 +190,8 @@ line level    source
  100      =3  
  101      =3  sfr ISP_DATA  = 0xC2;
  102      =3  sfr ISP_ADDRH = 0xC3;
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 4   
+
  103      =3  sfr ISP_ADDRL = 0xC4;
  104      =3  sfr ISP_CMD   = 0xC5;
  105      =3  sfr ISP_TRIG  = 0xC6;
@@ -254,8 +229,6 @@ line level    source
  137      =3  sfr     RL_T2H  = 0xD6;
  138      =3  sfr     RL_T2L  = 0xD7;
  139      =3  
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 5   
-
  140      =3  sfr CCON = 0xD8;        //
  141      =3  sfr CMOD = 0xD9;        //
  142      =3  sfr CCAPM0 = 0xDA;      //PCAÄ£¿é0µÄ¹¤×÷Ä£Ê½¼Ä´æÆ÷¡£
@@ -281,6 +254,8 @@ line level    source
  162      =3  sfr PCA_PWM2 = 0xF4;    //PCAÄ£¿é2 PWM¼Ä´æÆ÷¡£
  163      =3  
  164      =3  sfr     P7     = 0xF8;
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 5   
+
  165      =3  sfr CH     = 0xF9;
  166      =3  sfr CCAP0H = 0xFA;              //PCAÄ£¿é0µÄ²¶×½/±È½Ï¼Ä´æÆ÷¸ß8Î»¡£
  167      =3  sfr CCAP1H = 0xFB;              //PCAÄ£¿é1µÄ²¶×½/±È½Ï¼Ä´æÆ÷¸ß8Î»¡£
@@ -318,8 +293,6 @@ line level    source
  199      =3  sbit  P06 = P0^6;
  200      =3  sbit  P07 = P0^7;
  201      =3  
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 6   
-
  202      =3  /*  P1  */
  203      =3  sbit  P10 = P1^0;
  204      =3  sbit  P11 = P1^1;
@@ -345,6 +318,8 @@ line level    source
  224      =3  sbit  P22 = P2^2;
  225      =3  sbit  P23 = P2^3;
  226      =3  sbit  P24 = P2^4;
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 6   
+
  227      =3  sbit  P25 = P2^5;
  228      =3  sbit  P26 = P2^6;
  229      =3  sbit  P27 = P2^7;
@@ -382,8 +357,6 @@ line level    source
  261      =3  sbit  P46 = P4^6;
  262      =3  sbit  P47 = P4^7;
  263      =3  
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 7   
-
  264      =3  /*  P5  */
  265      =3  sbit  P50 = P5^0;
  266      =3  sbit  P51 = P5^1;
@@ -409,6 +382,8 @@ line level    source
  286      =3  sbit ELVD = IE^6;       //µÍÑ¹¼à²âÖÐ¶ÏÔÊÐíÎ»
  287      =3  sbit EADC = IE^5;       //ADC ÖÐ¶Ï ÔÊÐíÎ»
  288      =3  sbit ES   = IE^4;       //´®ÐÐÖÐ¶Ï ÔÊÐí¿ØÖÆÎ»
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 7   
+
  289      =3  sbit ET1  = IE^3;       //¶¨Ê±ÖÐ¶Ï1ÔÊÐí¿ØÖÆÎ»
  290      =3  sbit EX1  = IE^2;       //Íâ²¿ÖÐ¶Ï1ÔÊÐí¿ØÖÆÎ»
  291      =3  sbit ET0  = IE^1;       //¶¨Ê±ÖÐ¶Ï0ÔÊÐí¿ØÖÆÎ»
@@ -446,8 +421,6 @@ line level    source
  323      =3  sbit B7 = B^7;
  324      =3  
  325      =3  
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 8   
-
  326      =3  //                                                      7     6     5    4    3    2    1     0    Reset Value
  327      =3  //sfr IE2       = 0xAF;         -     -     -    -    -    -   ESPI  ES2   0000,0000B   //Auxiliary Interrupt   
  328      =3  #define         SPI_INT_ENABLE()                IE2 |=  2       //ÔÊÐíSPIÖÐ¶Ï
@@ -473,6 +446,8 @@ line level    source
  347      =3  //sfr IP2   = 0xB5; //                       -      -      -     -     -     -   PSPI   PS2   xxxx,xx00
  348      =3  //sfr IPH2  = 0xB6; //                       -      -      -     -     -     -   PSPIH  PS2H  xxxx,xx00
  349      =3  #define         PPCAH   0x80
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 8   
+
  350      =3  #define         PLVDH   0x40
  351      =3  #define         PADCH   0x20
  352      =3  #define         PSH             0x10
@@ -510,8 +485,6 @@ line level    source
  384      =3  #define         S1_BRT_UseTimer1()      AUXR &= ~1
  385      =3  
  386      =3  //                                                7      6      5      4      3      2     1     0        Reset Value
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 9   
-
  387      =3  //sfr S2CON = 0x9A;             S2SM0    -    S2SM2  S2REN  S2TB8  S2RB8  S2TI  S2RI      00000000B              //S2 Control
  388      =3  
  389      =3  #define         S2_8bit()                       S2CON &= ~(1<<7)                //´®¿Ú2Ä£Ê½0£¬8Î»UART£¬²¨ÌØÂÊ = ¶¨Ê±Æ÷2µÄÒç³öÂÊ / 4
@@ -537,6 +510,8 @@ line level    source
  409      =3  #define         S3_USE_P50P51()         P_SW2 |=  2             //UART3 Ê¹ÓÃP5¿Ú
  410      =3  #define         S4_USE_P02P03()         P_SW2 &= ~4             //UART4 Ê¹ÓÃP0¿Ú        Ä¬ÈÏ
  411      =3  #define         S4_USE_P52P53()         P_SW2 |=  4             //UART4 Ê¹ÓÃP5¿Ú
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 9   
+
  412      =3  
  413      =3  
  414      =3  /**********************************************************/
@@ -574,8 +549,6 @@ line level    source
  445      =3  #define         Timer0_12T()                            AUXR &= ~(1<<7) //Timer0 clodk = fo/12  12·ÖÆµ, default
  446      =3  #define         Timer1_1T()                                     AUXR |=  (1<<6) //Timer1 clodk = fo
  447      =3  #define         Timer1_12T()                            AUXR &= ~(1<<6) //Timer1 clodk = fo/12  12·ÖÆµ, default
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 10  
-
  448      =3  #define         S1_M0x6()                                       AUXR |=  (1<<5) //UART Mode0 Speed is 6x Standard
  449      =3  #define         S1_M0x1()                                       AUXR &= ~(1<<5) //default,      UART Mode0 Speed is Standard
  450      =3  #define         Timer2_Run()                            AUXR |=  (1<<4) //ÔÊÐí¶¨Ê±Æ÷2¼ÆÊý
@@ -601,6 +574,8 @@ line level    source
  467      =3  #define         T2_pulseP30_disable()           AUXR2 &= ~4
  468      =3  
  469      =3  #define         T0_pulseP35(n)          ET0=0,Timer0_AsTimer(),Timer0_1T(),Timer0_16bitAutoReload(),TH0=(65536-(n/2+MAIN_
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 10  
+
              -Fosc/2)/(n))/256,TL0=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit0,TR0=1            //fx=fosc/(2*M)/n,  M=1 or M=12
  470      =3  #define         T1_pulseP34(n)          ET1=0,Timer1_AsTimer(),Timer1_1T(),Timer1_16bitAutoReload(),TH1=(65536-(n/2+MAIN_
              -Fosc/2)/(n))/256,TL1=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit1,TR1=1            //fx=fosc/(2*M)/n,  M=1 or M=12
@@ -638,8 +613,6 @@ line level    source
  501      =3  //                                                7     6      5    4     3      2    1     0     Reset Value
  502      =3  //sfr PCON   = 0x87;    SMOD  SMOD0  LVDF  POF   GF1    GF0   PD   IDL    0001,0000      //Power Control 
  503      =3  //SMOD          //´®¿ÚË«±¶ËÙ
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 11  
-
  504      =3  //SMOD0
  505      =3  #define         LVDF            (1<<5)  //P4.6µÍÑ¹¼ì²â±êÖ¾
  506      =3  //POF
@@ -665,6 +638,8 @@ line level    source
  526      =3  #define ISP_EN                  (1<<7)
  527      =3  #define ISP_SWBS                (1<<6)
  528      =3  #define ISP_SWRST               (1<<5)
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 11  
+
  529      =3  #define ISP_CMD_FAIL    (1<<4)
  530      =3  #define ISP_WAIT_1MHZ   7
  531      =3  #define ISP_WAIT_2MHZ   6
@@ -702,8 +677,6 @@ line level    source
  562      =3  //sfr ADC_RES  = 0xBD;          ADCV.9 ADCV.8 ADCV.7 ADCV.6 ADCV.5 ADCV.4 ADCV.3 ADCV.2   0000,0000     //A/D ×ª»»½á¹û
              -¸ß8Î» 
  563      =3  //sfr ADC_RESL = 0xBE;                                                                                            ADCV.1 ADCV.0   0000,0000     //A/D ×ª»»½á¹ûµÍ2Î»
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 12  
-
  564      =3  //sfr ADC_CONTR  = 0xBC;        //Ö±½ÓÓÃMOV²Ù×÷£¬²»ÒªÓÃÓë»ò
  565      =3  
  566      =3  
@@ -729,6 +702,8 @@ line level    source
  585      =3  //sfr SPDAT  = 0xCF; //SPI Data Register                                                     0000,0000
  586      =3  //sfr SPSTAT  = 0xCD;   //SPI×´Ì¬¼Ä´æÆ÷
  587      =3  //   7       6      5   4   3   2   1   0       Reset Value
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 12  
+
  588      =3  //      SPIF    WCOL    -       -       -       -       -       -
  589      =3  #define SPIF    0x80            //SPI´«ÊäÍê³É±êÖ¾¡£Ð´Èë1Çå0¡£
  590      =3  #define WCOL    0x40            //SPIÐ´³åÍ»±êÖ¾¡£Ð´Èë1Çå0¡£
@@ -766,8 +741,6 @@ line level    source
  619      =3  sbit CCF0  = CCON^0;    //PCA Ä£¿é0ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
  620      =3  sbit CCF1  = CCON^1;    //PCA Ä£¿é1ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
  621      =3  sbit CCF2  = CCON^2;    //PCA Ä£¿é2ÖÐ¶Ï±êÖ¾£¬ÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇå0¡£
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 13  
-
  622      =3  sbit CR    = CCON^6;    //1: ÔÊÐíPCA¼ÆÊýÆ÷¼ÆÊý£¬±ØÐëÓÉÈí¼þÇå0¡£
  623      =3  sbit CF    = CCON^7;    //PCA¼ÆÊýÆ÷Òç³ö£¨CH£¬CLÓÉFFFFH±äÎª0000H£©±êÖ¾¡£PCA¼ÆÊýÆ÷Òç³öºóÓÉÓ²¼þÖÃÎ»£¬±ØÐëÓÉÈí¼þÇ
              -å0¡£
@@ -793,6 +766,8 @@ line level    source
  641      =3  //sfr AUXR1 = 0xA2;       S1_S1  S1_S0  CCP_S1   CCP_S0  SPI_S1   SPI_S0    -     DPS   0100,0000       //Auxiliary 
              -Register 1
  642      =3  
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 13  
+
  643      =3  #define         PCA_USE_P12P11P10P37()  AUXR1 &= ~0x30          //½«PCA/PWMÇÐ»»µ½P12(ECI) P11(CCP0) P10(CCP1) P37(CCP2)(ÉÏ
              -µçÄ¬ÈÏ)¡£
  644      =3  #define         PCA_USE_P34P35P36P37()  AUXR1 = (AUXR1 & ~0x30) | 0x10  //½«PCA/PWMÇÐ»»µ½P34(ECI) P35(CCP0) P36(CCP
@@ -830,8 +805,6 @@ line level    source
  674      =3  ;*******************************************************************/
  675      =3  #define         PCA0_none()                             CCAPM0 = 0
  676      =3  #define         PCA0_PWM(nbit)                  CCAPM0 = 0x42,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 14  
-
  677      =3  #define         PCA0_PWM_rise_int(nbit) CCAPM0 = 0x63,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
  678      =3  #define         PCA0_PWM_fall_int(nbit) CCAPM0 = 0x53,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
  679      =3  #define         PCA0_PWM_edge_int(nbit) CCAPM0 = 0x73,PCA_PWM0 = (PCA_PWM0 & 0x0c) | ((8-nbit)<<6)
@@ -857,6 +830,8 @@ line level    source
  699      =3  #define         PCA2_PWM_rise_int(nbit) CCAPM2 = 0x63,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  700      =3  #define         PCA2_PWM_fall_int(nbit) CCAPM2 = 0x53,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  701      =3  #define         PCA2_PWM_edge_int(nbit) CCAPM2 = 0x73,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 14  
+
  702      =3  #define         PCA2_capture_rise()             CCAPM2 = (0x20 + 1)
  703      =3  #define         PCA2_capture_fall()             CCAPM2 = (0x10 + 1)
  704      =3  #define         PCA2_capture_edge()             CCAPM2 = (0x30 + 1)
@@ -894,8 +869,6 @@ line level    source
  736      =3  #define NOP18() NOP17(),NOP1()
  737      =3  #define NOP19() NOP18(),NOP1()
  738      =3  #define NOP20() NOP19(),NOP1()
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 15  
-
  739      =3  #define NOP21() NOP20(),NOP1()
  740      =3  #define NOP22() NOP21(),NOP1()
  741      =3  #define NOP23() NOP22(),NOP1()
@@ -921,6 +894,8 @@ line level    source
  761      =3  
  762      =3  /**********************************************/
  763      =3  
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 15  
+
  764      =3  
  765      =3  /****************************************************************/
  766      =3  
@@ -958,8 +933,6 @@ line level    source
  796      =3  #define         SYSTEM_CLK_8T()         CLK_DIV = (CLK_DIV & ~0x07) | 3
  797      =3  #define         SYSTEM_CLK_16T()        CLK_DIV = (CLK_DIV & ~0x07) | 4
  798      =3  #define         SYSTEM_CLK_32T()        CLK_DIV = (CLK_DIV & ~0x07) | 5
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 16  
-
  799      =3  #define         SYSTEM_CLK_64T()        CLK_DIV = (CLK_DIV & ~0x07) | 6
  800      =3  #define         SYSTEM_CLK_128T()       CLK_DIV =  CLK_DIV          | 7
  801      =3  
@@ -985,6 +958,8 @@ line level    source
  821      =3  #define         INT1_VECTOR             2
  822      =3  #define         TIMER1_VECTOR   3
  823      =3  #define         UART1_VECTOR    4
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 16  
+
  824      =3  #define         ADC_VECTOR              5
  825      =3  #define         LVD_VECTOR              6
  826      =3  #define         PCA_VECTOR              7
@@ -1022,8 +997,6 @@ line level    source
  858      =3  #define         DISABLE         0
  859      =3  
  860      =3  #define         STC15F_L2K08S2  8
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 17  
-
  861      =3  #define         STC15F_L2K16S2  16
  862      =3  #define         STC15F_L2K24S2  24
  863      =3  #define         STC15F_L2K32S2  32
@@ -1049,6 +1022,8 @@ line level    source
   42      =2  #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
   43      =2  #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
   44      =2  
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 17  
+
   45      =2  #define LOSS_VOLTAGE 0x11
   46      =2  #define UNDER_VOLTAGE 0x01
   47      =2  #define OVER_VOLTAGE 0x10
@@ -1086,8 +1061,6 @@ line level    source
   79      =2  sbit  VoltCapturePortB       = P1^4;      // µçÑ¹²É¼¯¶Ë¿Ú
   80      =2  sbit  VoltCapturePortC       = P1^5;      // µçÑ¹²É¼¯¶Ë¿Ú
   81      =2  sbit  SwitchOnStatus         = P5^4;      // 0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 18  
-
   82      =2  sbit  OutOffHookCheck        = P5^5;      // ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
   83      =2  
   84      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
@@ -1113,660 +1086,346 @@ line level    source
  104      =2      unsigned char TimeoutCount;
  105      =2      unsigned char VoltCurrentStatus;
  106      =2      unsigned char VoltStatusA;
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 18  
+
  107      =2      unsigned char VoltStatusB;
  108      =2      unsigned char VoltStatusC;
  109      =2  } SMART_SWITCH_T;
  110      =2  
  111      =2  #endif
-  19      =1  
-  20      =1  #define COM_TX1_Lenth   64
-  21      =1  #define COM_RX1_Lenth   64
-  22      =1  #define COM_TX2_Lenth   128
-  23      =1  #define COM_RX2_Lenth   128
-  24      =1  
-  25      =1  #define USART1  1
-  26      =1  #define USART2  2
-  27      =1  
-  28      =1  #define UART_ShiftRight 0               //Í¬²½ÒÆÎ»Êä³ö
-  29      =1  #define UART_8bit_BRTx  (1<<6)  //8Î»Êý¾Ý,¿É±ä²¨ÌØÂÊ
-  30      =1  #define UART_9bit               (2<<6)  //9Î»Êý¾Ý,¹Ì¶¨²¨ÌØÂÊ
-  31      =1  #define UART_9bit_BRTx  (3<<6)  //9Î»Êý¾Ý,¿É±ä²¨ÌØÂÊ
-  32      =1  
-  33      =1  #define UART1_SW_P30_P31        0
-  34      =1  #define UART1_SW_P36_P37        (1<<6)
-  35      =1  #define UART1_SW_P16_P17        (2<<6)  //±ØÐëÊ¹ÓÃÄÚ²¿Ê±ÖÓ
-  36      =1  #define UART2_SW_P10_P11        0
-  37      =1  #define UART2_SW_P46_P47        1
-  38      =1  
-  39      =1  
-  40      =1  #define TimeOutSet1             5
-  41      =1  #define TimeOutSet2             5
-  42      =1  
-  43      =1  #define BRT_Timer1      1
-  44      =1  #define BRT_Timer2      2
+   6      =1  
+   7      =1  #define ADC_P10         0x01    //IOÒý½Å Px.0
+   8      =1  #define ADC_P11         0x02    //IOÒý½Å Px.1
+   9      =1  #define ADC_P12         0x04    //IOÒý½Å Px.2
+  10      =1  #define ADC_P13         0x08    //IOÒý½Å Px.3
+  11      =1  #define ADC_P14         0x10    //IOÒý½Å Px.4
+  12      =1  #define ADC_P15         0x20    //IOÒý½Å Px.5
+  13      =1  #define ADC_P16         0x40    //IOÒý½Å Px.6
+  14      =1  #define ADC_P17         0x80    //IOÒý½Å Px.7
+  15      =1  #define ADC_P1_All      0xFF    //IOËùÓÐÒý½Å
+  16      =1  
+  17      =1  #define ADC_90T         (3<<5)
+  18      =1  #define ADC_180T        (2<<5)
+  19      =1  #define ADC_360T        (1<<5)
+  20      =1  #define ADC_540T        0
+  21      =1  #define ADC_FLAG        (1<<4)  //Èí¼þÇå0
+  22      =1  #define ADC_START       (1<<3)  //×Ô¶¯Çå0
+  23      =1  #define ADC_CH0         0
+  24      =1  #define ADC_CH1         1
+  25      =1  #define ADC_CH2         2
+  26      =1  #define ADC_CH3         3
+  27      =1  #define ADC_CH4         4
+  28      =1  #define ADC_CH5         5
+  29      =1  #define ADC_CH6         6
+  30      =1  #define ADC_CH7         7
+  31      =1  
+  32      =1  #define ADC_RES_H2L8    1
+  33      =1  #define ADC_RES_H8L2    0
+  34      =1  
+  35      =1  
+  36      =1  typedef struct
+  37      =1  {
+  38      =1          u8      ADC_Px;                 //ÉèÖÃÒª×öADCµÄIO,      ADC_P10 ~ ADC_P17,ADC_P1_All
+  39      =1          u8      ADC_Speed;              //ADCËÙ¶È                       ADC_90T,ADC_180T,ADC_360T,ADC_540T
+  40      =1          u8      ADC_Power;              //ADC¹¦ÂÊÔÊÐí/¹Ø±Õ      ENABLE,DISABLE
+  41      =1          u8      ADC_AdjResult;  //ADC½á¹ûµ÷Õû,  ADC_RES_H2L8,ADC_RES_H8L2
+  42      =1          u8      ADC_Polity;             //ÓÅÏÈ¼¶ÉèÖÃ    PolityHigh,PolityLow
+  43      =1          u8      ADC_Interrupt;  //ÖÐ¶ÏÔÊÐí              ENABLE,DISABLE
+  44      =1  } ADC_InitTypeDef;
   45      =1  
-  46      =1  typedef struct
-  47      =1  { 
-  48      =1          u8      id;                             //´®¿ÚºÅ
+  46      =1  void    ADC_Inilize(ADC_InitTypeDef *ADCx);
+  47      =1  void    ADC_PowerControl(u8 pwr);
+  48      =1  u16             Get_ADC10bitResult(u8 channel); //channel = 0~7
   49      =1  
-  50      =1          u8      TX_read;                //·¢ËÍ¶ÁÖ¸Õë
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 19  
+  50      =1  #endif
+   4          
+   5          
+   6          //========================================================================
+   7          // º¯Êý: void   ADC_Inilize(ADC_InitTypeDef *ADCx)
+   8          // ÃèÊö: ADC³õÊ¼»¯³ÌÐò.
+   9          // ²ÎÊý: ADCx: ½á¹¹²ÎÊý,Çë²Î¿¼adc.hÀïµÄ¶¨Òå.
+  10          // ·µ»Ø: none.
+  11          // °æ±¾: V1.0, 2012-10-22
+  12          //========================================================================
+  13          void    ADC_Inilize(ADC_InitTypeDef *ADCx)
+  14          {
+  15   1              P1ASF = ADCx->ADC_Px;
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 19  
 
-  51      =1          u8      TX_write;               //·¢ËÍÐ´Ö¸Õë
-  52      =1          u8      B_TX_busy;              //Ã¦±êÖ¾
-  53      =1  
-  54      =1          u8      RX_Cnt;                 //½ÓÊÕ×Ö½Ú¼ÆÊý
-  55      =1          u8      RX_TimeOut;             //½ÓÊÕ³¬Ê±
-  56      =1          u8      B_RX_OK;                //½ÓÊÕ¿éÍê³É
-  57      =1  } COMx_Define; 
-  58      =1  
-  59      =1  typedef struct
-  60      =1  { 
-  61      =1          u8      UART_Mode;                      //Ä£Ê½,         UART_ShiftRight,UART_8bit_BRTx,UART_9bit,UART_9bit_BRTx
-  62      =1          u8      UART_BRT_Use;           //Ê¹ÓÃ²¨ÌØÂÊ,   BRT_Timer1,BRT_Timer2
-  63      =1          u32     UART_BaudRate;          //²¨ÌØÂÊ,       ENABLE,DISABLE
-  64      =1          u8      Morecommunicate;        //¶à»úÍ¨Ñ¶ÔÊÐí, ENABLE,DISABLE
-  65      =1          u8      UART_RxEnable;          //ÔÊÐí½ÓÊÕ,   ENABLE,DISABLE
-  66      =1          u8      BaudRateDouble;         //²¨ÌØÂÊ¼Ó±¶, ENABLE,DISABLE
-  67      =1          u8      UART_Interrupt;         //ÖÐ¶Ï¿ØÖÆ,   ENABLE,DISABLE
-  68      =1          u8      UART_Polity;            //ÓÅÏÈ¼¶,     PolityLow,PolityHigh
-  69      =1          u8      UART_P_SW;                      //ÇÐ»»¶Ë¿Ú,   UART1_SW_P30_P31,UART1_SW_P36_P37,UART1_SW_P16_P17(±ØÐëÊ¹ÓÃÄÚ²¿Ê±ÖÓ)
-  70      =1          u8      UART_RXD_TXD_Short;     //ÄÚ²¿¶ÌÂ·RXDÓëTXD, ×öÖÐ¼Ì, ENABLE,DISABLE
-  71      =1  
-  72      =1  } COMx_InitDefine; 
-  73      =1  
-  74      =1  extern  COMx_Define     COM1,COM2;
-  75      =1  extern  u8 idata        TX1_Buffer[COM_TX1_Lenth];      //·¢ËÍ»º³å
-  76      =1  extern  u8 idata        RX1_Buffer[COM_RX1_Lenth];      //½ÓÊÕ»º³å
-  77      =1  
-  78      =1  u8      USART_Configuration(u8 UARTx, COMx_InitDefine *COMx);
-  79      =1  void TX1_write2buff(u8 dat);    //Ð´Èë·¢ËÍ»º³å£¬Ö¸Õë+1
-  80      =1  void TX2_write2buff(u8 dat);    //Ð´Èë·¢ËÍ»º³å£¬Ö¸Õë+1
-  81      =1  void PrintString1(u8 *puts);
-  82      =1  
-  83      =1  #endif
-  84      =1  
-  16          
-  17          
-  18          COMx_Define     COM1;
-  19          u8      idata TX1_Buffer[COM_TX1_Lenth];        //·¢ËÍ»º³å
-  20          u8      idata RX1_Buffer[COM_RX1_Lenth];        //½ÓÊÕ»º³å
-  21          
-  22          u8 USART_Configuration(u8 UARTx, COMx_InitDefine *COMx)
-  23          {
-  24   1              u8      i;
-  25   1              u32     j;
-  26   1              
-  27   1              if(UARTx == USART1)
-  28   1              {
-  29   2                      COM1.id = 1;
-  30   2                      COM1.TX_read    = 0;
-  31   2                      COM1.TX_write   = 0;
-  32   2                      COM1.B_TX_busy  = 0;
-  33   2                      COM1.RX_Cnt     = 0;
-  34   2                      COM1.RX_TimeOut = 0;
-  35   2                      COM1.B_RX_OK    = 0;
-  36   2                      for(i=0; i<COM_TX1_Lenth; i++)  TX1_Buffer[i] = 0;
-  37   2                      for(i=0; i<COM_RX1_Lenth; i++)  RX1_Buffer[i] = 0;
-  38   2      
-  39   2                      if(COMx->UART_Mode > UART_9bit_BRTx)    return 1;       //Ä£Ê½´íÎó
-  40   2                      if(COMx->UART_Polity == PolityHigh)             PS = 1; //¸ßÓÅÏÈ¼¶ÖÐ¶Ï
-  41   2                      else                                                                    PS = 0; //µÍÓÅÏÈ¼¶ÖÐ¶Ï
-  42   2                      SCON = (SCON & 0x3f) | COMx->UART_Mode;
-  43   2                      if((COMx->UART_Mode == UART_9bit_BRTx) ||(COMx->UART_Mode == UART_8bit_BRTx))   //¿É±ä²¨ÌØÂÊ
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 20  
+  16   1              ADC_CONTR = (ADC_CONTR & ~ADC_90T) | ADCx->ADC_Speed;
+  17   1              if(ADCx->ADC_Power == ENABLE)   ADC_CONTR |= 0x80;
+  18   1              else                                                    ADC_CONTR &= 0x7F;
+  19   1              if(ADCx->ADC_AdjResult == ADC_RES_H2L8) PCON2 |=  (1<<5);       //10Î»AD½á¹ûµÄ¸ß2Î»·ÅADC_RESµÄµÍ2Î»£¬µÍ8Î»ÔÚADC
+             -_RESL¡£
+  20   1              else                                                                    PCON2 &= ~(1<<5);       //10Î»AD½á¹ûµÄ¸ß8Î»·ÅADC_RES£¬µÍ2Î»ÔÚADC_RESLµÄµÍ2Î»¡£
+  21   1              if(ADCx->ADC_Interrupt == ENABLE)       EADC = 1;                       //ÖÐ¶ÏÔÊÐí              ENABLE,DISABLE
+  22   1              else                                                            EADC = 0;
+  23   1              if(ADCx->ADC_Polity == PolityHigh)      PADC = 1;               //ÓÅÏÈ¼¶ÉèÖÃ    PolityHigh,PolityLow
+  24   1              else                                                            PADC = 0;
+  25   1      }
+  26          
+  27          
+  28          //========================================================================
+  29          // º¯Êý: void   ADC_PowerControl(u8 pwr)
+  30          // ÃèÊö: ADCµçÔ´¿ØÖÆ³ÌÐò.
+  31          // ²ÎÊý: pwr: µçÔ´¿ØÖÆ,ENABLE»òDISABLE.
+  32          // ·µ»Ø: none.
+  33          // °æ±¾: V1.0, 2012-10-22
+  34          //========================================================================
+  35          void    ADC_PowerControl(u8 pwr)
+  36          {
+  37   1              if(pwr == ENABLE)       ADC_CONTR |= 0x80;
+  38   1              else                            ADC_CONTR &= 0x7f;
+  39   1      }
+  40          
+  41          //========================================================================
+  42          // º¯Êý: u16    Get_ADC10bitResult(u8 channel)
+  43          // ÃèÊö: ²éÑ¯·¨¶ÁÒ»´ÎADC½á¹û.
+  44          // ²ÎÊý: channel: Ñ¡ÔñÒª×ª»»µÄADC.
+  45          // ·µ»Ø: 10Î»ADC½á¹û.
+  46          // °æ±¾: V1.0, 2012-10-22
+  47          //========================================================================
+  48          u16     Get_ADC10bitResult(u8 channel)  //channel = 0~7
+  49          {
+  50   1              u16     adc;
+  51   1              u8      i;
+  52   1      
+  53   1              if(channel > ADC_CH7)   return  1024;   //´íÎó,·µ»Ø1024,µ÷ÓÃµÄ³ÌÐòÅÐ¶Ï  
+  54   1              ADC_RES = 0;
+  55   1              ADC_RESL = 0;
+  56   1      
+  57   1              ADC_CONTR = (ADC_CONTR & 0xe0) | ADC_START | channel; 
+  58   1              NOP(4);                 //¶ÔADC_CONTR²Ù×÷ºóÒª4TÖ®ºó²ÅÄÜ·ÃÎÊ
+  59   1      
+  60   1              for(i=0; i<250; i++)            //³¬Ê±
+  61   1              {
+  62   2                      if(ADC_CONTR & ADC_FLAG)
+  63   2                      {
+  64   3                              ADC_CONTR &= ~ADC_FLAG;
+  65   3                              if(PCON2 &  (1<<5))             //10Î»AD½á¹ûµÄ¸ß2Î»·ÅADC_RESµÄµÍ2Î»£¬µÍ8Î»ÔÚADC_RESL¡£
+  66   3                              {
+  67   4                                      adc = (u16)(ADC_RES & 3);
+  68   4                                      adc = (adc << 8) | ADC_RESL;
+  69   4                              }
+  70   3                              else            //10Î»AD½á¹ûµÄ¸ß8Î»·ÅADC_RES£¬µÍ2Î»ÔÚADC_RESLµÄµÍ2Î»¡£
+  71   3                              {
+  72   4                                      adc = (u16)ADC_RES;
+  73   4                                      adc = (adc << 2) | (ADC_RESL & 3);
+  74   4                              }
+  75   3                              return  adc;
+  76   3                      }
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 20  
 
-  44   2                      {
-  45   3                              j = (MAIN_Fosc / 4) / COMx->UART_BaudRate;      //°´1T¼ÆËã
-  46   3                              if(j >= 65536UL)        return 2;       //´íÎó
-  47   3                              j = 65536UL - j;
-  48   3                              if(COMx->UART_BRT_Use == BRT_Timer1)
-  49   3                              {
-  50   4                                      TR1 = 0;
-  51   4                                      AUXR &= ~0x01;          //S1 BRT Use Timer1;
-  52   4                                      TMOD &= ~(1<<6);        //Timer1 set As Timer
-  53   4                                      TMOD &= ~0x30;          //Timer1_16bitAutoReload;
-  54   4                                      AUXR |=  (1<<6);        //Timer1 set as 1T mode
-  55   4                                      TH1 = (u8)(j>>8);
-  56   4                                      TL1 = (u8)j;
-  57   4                                      ET1 = 0;        //½ûÖ¹ÖÐ¶Ï
-  58   4                                      TMOD &= ~0x40;  //¶¨Ê±
-  59   4                                      INT_CLKO &= ~0x02;      //²»Êä³öÊ±ÖÓ
-  60   4                                      TR1  = 1;
-  61   4                              }
-  62   3                              else if(COMx->UART_BRT_Use == BRT_Timer2)
-  63   3                              {
-  64   4                                      AUXR &= ~(1<<4);        //Timer stop
-  65   4                                      AUXR |= 0x01;           //S1 BRT Use Timer2;
-  66   4                                      AUXR &= ~(1<<3);        //Timer2 set As Timer
-  67   4                                      AUXR |=  (1<<2);        //Timer2 set as 1T mode
-  68   4                                      TH2 = (u8)(j>>8);
-  69   4                                      TL2 = (u8)j;
-  70   4                                      IE2  &= ~(1<<2);        //½ûÖ¹ÖÐ¶Ï
-  71   4                                      AUXR &= ~(1<<3);        //¶¨Ê±
-  72   4                                      AUXR |=  (1<<4);        //Timer run enable
-  73   4                              }
-  74   3                              else return 2;  //´íÎó
-  75   3                      }
-  76   2                      else if(COMx->UART_Mode == UART_ShiftRight)
-  77   2                      {
-  78   3                              if(COMx->BaudRateDouble == ENABLE)      AUXR |=  (1<<5);        //¹Ì¶¨²¨ÌØÂÊSysClk/2
-  79   3                              else                                                            AUXR &= ~(1<<5);        //¹Ì¶¨²¨ÌØÂÊSysClk/12
-  80   3                      }
-  81   2                      else if(COMx->UART_Mode == UART_9bit)   //¹Ì¶¨²¨ÌØÂÊSysClk*2^SMOD/64
-  82   2                      {
-  83   3                              if(COMx->BaudRateDouble == ENABLE)      PCON |=  (1<<7);        //¹Ì¶¨²¨ÌØÂÊSysClk/32
-  84   3                              else                                                            PCON &= ~(1<<7);        //¹Ì¶¨²¨ÌØÂÊSysClk/64
-  85   3                      }
-  86   2                      if(COMx->UART_Interrupt == ENABLE)      ES = 1; //ÔÊÐíÖÐ¶Ï
-  87   2                      else                                                            ES = 0; //½ûÖ¹ÖÐ¶Ï
-  88   2                      if(COMx->UART_RxEnable == ENABLE)       REN = 1;        //ÔÊÐí½ÓÊÕ
-  89   2                      else                                                            REN = 0;        //½ûÖ¹½ÓÊÕ
-  90   2                      P_SW1 = (P_SW1 & 0x3f) | (COMx->UART_P_SW & 0xc0);      //ÇÐ»»IO
-  91   2                      if(COMx->UART_RXD_TXD_Short == ENABLE)  PCON2 |=  (1<<4);       //ÄÚ²¿¶ÌÂ·RXDÓëTXD, ×öÖÐ¼Ì, ENABLE,DISABLE
-  92   2                      else                                                                    PCON2 &= ~(1<<4);
-  93   2                      return  0;
-  94   2              }
-  95   1              return 3;       //ÆäËü´íÎó
-  96   1      }
-  97          
-  98          
-  99          /*************** ×°ÔØ´®¿Ú·¢ËÍ»º³å *******************************/
- 100          
- 101          void TX1_write2buff(u8 dat)     //Ð´Èë·¢ËÍ»º³å£¬Ö¸Õë+1
- 102          {
- 103   1              while(COM1.B_TX_busy);
- 104   1              TX1_Buffer[COM1.TX_write] = dat;        //×°·¢ËÍ»º³å
- 105   1              if(++COM1.TX_write >= COM_TX1_Lenth)
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 21  
-
- 106   1                      COM1.TX_write = 0;
- 107   1      
- 108   1              if(COM1.B_TX_busy == 0)         //¿ÕÏÐ
- 109   1              {  
- 110   2                      COM1.B_TX_busy = 1;             //±êÖ¾Ã¦
- 111   2                      TI = 1;                                 //´¥·¢·¢ËÍÖÐ¶Ï
- 112   2              }
- 113   1      }
- 114          
- 115          void PrintString1(u8 *puts)
- 116          {
- 117   1          for (; *puts != 0;  puts++)  TX1_write2buff(*puts);         //Óöµ½Í£Ö¹·û0½áÊø
- 118   1      }
- 119          
- 120          /********************* UART1ÖÐ¶Ïº¯Êý************************/
- 121          void UART1_int (void) interrupt UART1_VECTOR
- 122          {
- 123   1              if(RI)
- 124   1              {
- 125   2                      RI = 0;
- 126   2                      if(COM1.B_RX_OK == 0)
- 127   2                      {
- 128   3                              if(COM1.RX_Cnt >= COM_RX1_Lenth)        COM1.RX_Cnt = 0;
- 129   3                              RX1_Buffer[COM1.RX_Cnt++] = SBUF;
- 130   3                              COM1.RX_TimeOut = TimeOutSet1;
- 131   3                      }
- 132   2              }
- 133   1      
- 134   1              if(TI)
- 135   1              {
- 136   2                      TI = 0;
- 137   2                      if(COM1.TX_read != COM1.TX_write)
- 138   2                      {
- 139   3                              SBUF = TX1_Buffer[COM1.TX_read];
- 140   3                              if(++COM1.TX_read >= COM_TX1_Lenth)             COM1.TX_read = 0;
- 141   3                      }
- 142   2                      else    COM1.B_TX_busy = 0;
- 143   2              }
- 144   1      }
- 145          
- 146          
- 147          
- 148          
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 22  
+  77   2              }
+  78   1              return  1024;   //´íÎó,·µ»Ø1024,µ÷ÓÃµÄ³ÌÐòÅÐ¶Ï
+  79   1      }
+  80          
+  81          
+  82          //========================================================================
+  83          // º¯Êý: void ADC_int(void) interrupt ADC_VECTOR
+  84          // ÃèÊö: ADCÖÐ¶Ïº¯Êý.
+  85          // ²ÎÊý: none.
+  86          // ·µ»Ø: none.
+  87          // °æ±¾: V1.0, 2012-10-22
+  88          //========================================================================
+  89          void ADC_int (void) interrupt ADC_VECTOR
+  90          {
+  91   1              ADC_CONTR &= ~ADC_FLAG;
+  92   1      }
+  93          
+  94          
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 21  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
-             ; FUNCTION Com0034 (BEGIN)
-0000         L?0053:
-0000 AF00        R     MOV     R7,j+03H
-0002 AE00        R     MOV     R6,j+02H
-0004 AD00        R     MOV     R5,j+01H
-0006 AC00        R     MOV     R4,j
-0008 7808              MOV     R0,#08H
-000A 020000      E     LJMP    ?C?ULSHR
-000D         L?0054:
-000D         L?0055:
-000D AB00        R     MOV     R3,COMx
-000F AA00        R     MOV     R2,COMx+01H
-0011 A900        R     MOV     R1,COMx+02H
-0013 22                RET     
-             ; FUNCTION Com0034 (END)
-
-             ; FUNCTION _USART_Configuration (BEGIN)
+             ; FUNCTION _ADC_Inilize (BEGIN)
+                                           ; SOURCE LINE # 13
+;---- Variable 'ADCx' assigned to Register 'R1/R2/R3' ----
+                                           ; SOURCE LINE # 14
+                                           ; SOURCE LINE # 15
+0000 120000      E     LCALL   ?C?CLDPTR
+0003 F59D              MOV     P1ASF,A
+                                           ; SOURCE LINE # 16
+0005 900001            MOV     DPTR,#01H
+0008 120000      E     LCALL   ?C?CLDOPTR
+000B FF                MOV     R7,A
+000C E5BC              MOV     A,ADC_CONTR
+000E 549F              ANL     A,#09FH
+0010 4F                ORL     A,R7
+0011 F5BC              MOV     ADC_CONTR,A
+                                           ; SOURCE LINE # 17
+0013 900002            MOV     DPTR,#02H
+0016 120000      E     LCALL   ?C?CLDOPTR
+0019 B40105            CJNE    A,#01H,?C0001
+001C 43BC80            ORL     ADC_CONTR,#080H
+001F 8003              SJMP    ?C0002
+0021         ?C0001:
+                                           ; SOURCE LINE # 18
+0021 53BC7F            ANL     ADC_CONTR,#07FH
+0024         ?C0002:
+                                           ; SOURCE LINE # 19
+0024 900003            MOV     DPTR,#03H
+0027 120000      E     LCALL   ?C?CLDOPTR
+002A B40105            CJNE    A,#01H,?C0003
+002D 439720            ORL     PCON2,#020H
+0030 8003              SJMP    ?C0004
+0032         ?C0003:
+                                           ; SOURCE LINE # 20
+0032 5397DF            ANL     PCON2,#0DFH
+0035         ?C0004:
+                                           ; SOURCE LINE # 21
+0035 900005            MOV     DPTR,#05H
+0038 120000      E     LCALL   ?C?CLDOPTR
+003B B40104            CJNE    A,#01H,?C0005
+003E D2AD              SETB    EADC
+0040 8002              SJMP    ?C0006
+0042         ?C0005:
                                            ; SOURCE LINE # 22
-0000 8B00        R     MOV     COMx,R3
-0002 8A00        R     MOV     COMx+01H,R2
-0004 8900        R     MOV     COMx+02H,R1
-;---- Variable 'UARTx' assigned to Register 'R7' ----
+0042 C2AD              CLR     EADC
+0044         ?C0006:
                                            ; SOURCE LINE # 23
-                                           ; SOURCE LINE # 27
-0006 EF                MOV     A,R7
-0007 6401              XRL     A,#01H
-0009 6003              JZ      $ + 5H
-000B 020000      R     LJMP    ?C0001
-                                           ; SOURCE LINE # 28
-                                           ; SOURCE LINE # 29
-000E 750001      R     MOV     COM1,#01H
-                                           ; SOURCE LINE # 30
-0011 F500        R     MOV     COM1+01H,A
-                                           ; SOURCE LINE # 31
-0013 F500        R     MOV     COM1+02H,A
-                                           ; SOURCE LINE # 32
-0015 F500        R     MOV     COM1+03H,A
-                                           ; SOURCE LINE # 33
-0017 F500        R     MOV     COM1+04H,A
-                                           ; SOURCE LINE # 34
-0019 F500        R     MOV     COM1+05H,A
+0044 900004            MOV     DPTR,#04H
+0047 120000      E     LCALL   ?C?CLDOPTR
+004A B40103            CJNE    A,#01H,?C0007
+004D D2BD              SETB    PADC
+004F 22                RET     
+0050         ?C0007:
+                                           ; SOURCE LINE # 24
+0050 C2BD              CLR     PADC
+                                           ; SOURCE LINE # 25
+0052         ?C0009:
+0052 22                RET     
+             ; FUNCTION _ADC_Inilize (END)
+
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 22  
+
+             ; FUNCTION _ADC_PowerControl (BEGIN)
                                            ; SOURCE LINE # 35
-001B F500        R     MOV     COM1+06H,A
+;---- Variable 'pwr' assigned to Register 'R7' ----
                                            ; SOURCE LINE # 36
-;---- Variable 'i' assigned to Register 'R7' ----
-001D         ?C0002:
-001D 7F40              MOV     R7,#040H
-001F 7800        R     MOV     R0,#LOW TX1_Buffer
-0021 E4                CLR     A
-0022         ?C0050:
-0022 F6                MOV     @R0,A
-0023 08                INC     R0
-0024 DFFC              DJNZ    R7,?C0050
-0026         ?C0003:
                                            ; SOURCE LINE # 37
-0026         ?C0005:
-0026 7F40              MOV     R7,#040H
-0028 7800        R     MOV     R0,#LOW RX1_Buffer
-002A E4                CLR     A
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 23  
-
-002B         ?C0051:
-002B F6                MOV     @R0,A
-002C 08                INC     R0
-002D DFFC              DJNZ    R7,?C0051
-002F         ?C0006:
+0000 BF0104            CJNE    R7,#01H,?C0010
+0003 43BC80            ORL     ADC_CONTR,#080H
+0006 22                RET     
+0007         ?C0010:
+                                           ; SOURCE LINE # 38
+0007 53BC7F            ANL     ADC_CONTR,#07FH
                                            ; SOURCE LINE # 39
-002F 120000      R     LCALL   L?0054
-0032 120000      E     LCALL   ?C?CLDPTR
-0035 D3                SETB    C
-0036 94C0              SUBB    A,#0C0H
-0038 4003              JC      ?C0008
-003A 7F01              MOV     R7,#01H
-003C 22                RET     
-003D         ?C0008:
-                                           ; SOURCE LINE # 40
-003D 90000A            MOV     DPTR,#0AH
-0040 120000      E     LCALL   ?C?CLDOPTR
-0043 B40104            CJNE    A,#01H,?C0010
-0046 D2BC              SETB    PS
-0048 8002              SJMP    ?C0011
-004A         ?C0010:
-                                           ; SOURCE LINE # 41
-004A C2BC              CLR     PS
-004C         ?C0011:
-                                           ; SOURCE LINE # 42
-004C 120000      E     LCALL   ?C?CLDPTR
-004F FF                MOV     R7,A
-0050 E598              MOV     A,SCON
-0052 543F              ANL     A,#03FH
-0054 4F                ORL     A,R7
-0055 F598              MOV     SCON,A
-                                           ; SOURCE LINE # 43
-0057 EF                MOV     A,R7
-0058 64C0              XRL     A,#0C0H
-005A 6008              JZ      ?C0013
-005C EF                MOV     A,R7
-005D 6440              XRL     A,#040H
-005F 6003              JZ      $ + 5H
-0061 020000      R     LJMP    ?C0012
-0064         ?C0013:
-                                           ; SOURCE LINE # 44
-                                           ; SOURCE LINE # 45
-0064 900002            MOV     DPTR,#02H
-0067 120000      E     LCALL   ?C?LLDOPTR0
-006A 7F80              MOV     R7,#080H
-006C 7E8D              MOV     R6,#08DH
-006E 7D5B              MOV     R5,#05BH
-0070 7C00              MOV     R4,#00H
-0072 120000      E     LCALL   ?C?ULDIV
-0075 8F00        R     MOV     j+03H,R7
-0077 8E00        R     MOV     j+02H,R6
-0079 8D00        R     MOV     j+01H,R5
-007B 8C00        R     MOV     j,R4
-                                           ; SOURCE LINE # 46
-007D E4                CLR     A
-007E FF                MOV     R7,A
-007F FE                MOV     R6,A
-0080 7D01              MOV     R5,#01H
-0082 FC                MOV     R4,A
-0083 AB00        R     MOV     R3,j+03H
-0085 AA00        R     MOV     R2,j+02H
-0087 A900        R     MOV     R1,j+01H
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 24  
+000A         ?C0012:
+000A 22                RET     
+             ; FUNCTION _ADC_PowerControl (END)
 
-0089 A800        R     MOV     R0,j
-008B C3                CLR     C
-008C 120000      E     LCALL   ?C?ULCMP
-008F 4003              JC      ?C0014
-0091 7F02              MOV     R7,#02H
-0093 22                RET     
-0094         ?C0014:
-                                           ; SOURCE LINE # 47
-0094 C3                CLR     C
-0095 E4                CLR     A
-0096 9500        R     SUBB    A,j+03H
-0098 F500        R     MOV     j+03H,A
-009A E4                CLR     A
-009B 9500        R     SUBB    A,j+02H
-009D F500        R     MOV     j+02H,A
-009F 7401              MOV     A,#01H
-00A1 9500        R     SUBB    A,j+01H
-00A3 F500        R     MOV     j+01H,A
-00A5 E4                CLR     A
-00A6 9500        R     SUBB    A,j
-00A8 F500        R     MOV     j,A
+             ; FUNCTION _Get_ADC10bitResult (BEGIN)
                                            ; SOURCE LINE # 48
-00AA 120000      R     LCALL   L?0054
-00AD 900001            MOV     DPTR,#01H
-00B0 120000      E     LCALL   ?C?CLDOPTR
-00B3 FB                MOV     R3,A
-00B4 6401              XRL     A,#01H
-00B6 7022              JNZ     ?C0015
+;---- Variable 'adc' assigned to Register 'R4/R5' ----
+;---- Variable 'channel' assigned to Register 'R7' ----
                                            ; SOURCE LINE # 49
-                                           ; SOURCE LINE # 50
-00B8 C28E              CLR     TR1
-                                           ; SOURCE LINE # 51
-00BA 538EFE            ANL     AUXR,#0FEH
-                                           ; SOURCE LINE # 52
-00BD 5389BF            ANL     TMOD,#0BFH
                                            ; SOURCE LINE # 53
-00C0 5389CF            ANL     TMOD,#0CFH
+0000 EF                MOV     A,R7
+0001 D3                SETB    C
+0002 9407              SUBB    A,#07H
+0004 4002              JC      ?C0013
+0006 8050              SJMP    ?C0023
+0008         ?C0013:
                                            ; SOURCE LINE # 54
-00C3 438E40            ORL     AUXR,#040H
+0008 E4                CLR     A
+0009 F5BD              MOV     ADC_RES,A
                                            ; SOURCE LINE # 55
-00C6 120000      R     LCALL   L?0053
-00C9 8F8D              MOV     TH1,R7
-                                           ; SOURCE LINE # 56
-00CB 85008B      R     MOV     TL1,j+03H
+000B F5BE              MOV     ADC_RESL,A
                                            ; SOURCE LINE # 57
-00CE C2AB              CLR     ET1
+000D E5BC              MOV     A,ADC_CONTR
+000F 54E0              ANL     A,#0E0H
+0011 4408              ORL     A,#08H
+0013 4F                ORL     A,R7
+0014 F5BC              MOV     ADC_CONTR,A
                                            ; SOURCE LINE # 58
-00D0 5389BF            ANL     TMOD,#0BFH
-                                           ; SOURCE LINE # 59
-00D3 538FFD            ANL     INT_CLKO,#0FDH
+0016 00                NOP     
+0017 00                NOP     
+0018 00                NOP     
+0019 00                NOP     
                                            ; SOURCE LINE # 60
-00D6 D28E              SETB    TR1
+;---- Variable 'i' assigned to Register 'R3' ----
+001A E4                CLR     A
+001B FB                MOV     R3,A
+001C         ?C0015:
                                            ; SOURCE LINE # 61
-00D8 8058              SJMP    ?C0019
-00DA         ?C0015:
                                            ; SOURCE LINE # 62
-00DA EB                MOV     A,R3
-00DB 6402              XRL     A,#02H
-00DD 701F              JNZ     ?C0017
+001C E5BC              MOV     A,ADC_CONTR
+001E 30E433            JNB     ACC.4,?C0017
                                            ; SOURCE LINE # 63
                                            ; SOURCE LINE # 64
-00DF 538EEF            ANL     AUXR,#0EFH
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 25  
-
+0021 53BCEF            ANL     ADC_CONTR,#0EFH
                                            ; SOURCE LINE # 65
-00E2 438E01            ORL     AUXR,#01H
+0024 E597              MOV     A,PCON2
+0026 30E509            JNB     ACC.5,?C0019
                                            ; SOURCE LINE # 66
-00E5 538EF7            ANL     AUXR,#0F7H
                                            ; SOURCE LINE # 67
-00E8 438E04            ORL     AUXR,#04H
+0029 E5BD              MOV     A,ADC_RES
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 23  
+
+002B 5403              ANL     A,#03H
                                            ; SOURCE LINE # 68
-00EB 120000      R     LCALL   L?0053
-00EE 8FD6              MOV     TH2,R7
+002D ADBE              MOV     R5,ADC_RESL
+002F FC                MOV     R4,A
                                            ; SOURCE LINE # 69
-00F0 8500D7      R     MOV     TL2,j+03H
-                                           ; SOURCE LINE # 70
-00F3 53AFFB            ANL     IE2,#0FBH
+0030 801D              SJMP    ?C0020
+0032         ?C0019:
                                            ; SOURCE LINE # 71
-00F6 538EF7            ANL     AUXR,#0F7H
                                            ; SOURCE LINE # 72
-00F9 438E10            ORL     AUXR,#010H
+0032 AFBD              MOV     R7,ADC_RES
+0034 7C00              MOV     R4,#00H
+0036 AD07              MOV     R5,AR7
                                            ; SOURCE LINE # 73
-00FC 8034              SJMP    ?C0019
-00FE         ?C0017:
+0038 ED                MOV     A,R5
+0039 7E00              MOV     R6,#00H
+003B 7802              MOV     R0,#02H
+003D         ?C0022:
+003D C3                CLR     C
+003E 33                RLC     A
+003F CE                XCH     A,R6
+0040 33                RLC     A
+0041 CE                XCH     A,R6
+0042 D8F9              DJNZ    R0,?C0022
+0044 FF                MOV     R7,A
+0045 E5BE              MOV     A,ADC_RESL
+0047 5403              ANL     A,#03H
+0049 FD                MOV     R5,A
+004A EE                MOV     A,R6
+004B FC                MOV     R4,A
+004C EF                MOV     A,R7
+004D 4D                ORL     A,R5
+004E FD                MOV     R5,A
                                            ; SOURCE LINE # 74
-00FE 7F02              MOV     R7,#02H
-0100 22                RET     
+004F         ?C0020:
                                            ; SOURCE LINE # 75
-0101         ?C0012:
+004F AF05              MOV     R7,AR5
+0051 AE04              MOV     R6,AR4
+0053 22                RET     
                                            ; SOURCE LINE # 76
-0101 120000      R     LCALL   L?0055
-0104 120000      E     LCALL   ?C?CLDPTR
-0107 FF                MOV     R7,A
-0108 7013              JNZ     ?C0020
                                            ; SOURCE LINE # 77
+0054         ?C0017:
+0054 0B                INC     R3
+0055 BBFAC4            CJNE    R3,#0FAH,?C0015
+0058         ?C0016:
                                            ; SOURCE LINE # 78
-010A 900008            MOV     DPTR,#08H
-010D 120000      E     LCALL   ?C?CLDOPTR
-0110 B40105            CJNE    A,#01H,?C0021
-0113 438E20            ORL     AUXR,#020H
-0116 801A              SJMP    ?C0019
-0118         ?C0021:
+0058         ?C0023:
+0058 7E04              MOV     R6,#04H
+005A 7F00              MOV     R7,#00H
                                            ; SOURCE LINE # 79
-0118 538EDF            ANL     AUXR,#0DFH
-                                           ; SOURCE LINE # 80
-011B 8015              SJMP    ?C0019
-011D         ?C0020:
-                                           ; SOURCE LINE # 81
-011D EF                MOV     A,R7
-011E B48011            CJNE    A,#080H,?C0019
-                                           ; SOURCE LINE # 82
-                                           ; SOURCE LINE # 83
-0121 900008            MOV     DPTR,#08H
-0124 120000      E     LCALL   ?C?CLDOPTR
-0127 B40105            CJNE    A,#01H,?C0025
-012A 438780            ORL     PCON,#080H
-012D 8003              SJMP    ?C0019
-012F         ?C0025:
-                                           ; SOURCE LINE # 84
-012F 53877F            ANL     PCON,#07FH
-                                           ; SOURCE LINE # 85
-0132         ?C0019:
-                                           ; SOURCE LINE # 86
-0132 120000      R     LCALL   L?0055
-0135 900009            MOV     DPTR,#09H
-0138 120000      E     LCALL   ?C?CLDOPTR
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 26  
+005C         ?C0014:
+005C 22                RET     
+             ; FUNCTION _Get_ADC10bitResult (END)
 
-013B B40104            CJNE    A,#01H,?C0027
-013E D2AC              SETB    ES
-0140 8002              SJMP    ?C0028
-0142         ?C0027:
-                                           ; SOURCE LINE # 87
-0142 C2AC              CLR     ES
-0144         ?C0028:
-                                           ; SOURCE LINE # 88
-0144 900007            MOV     DPTR,#07H
-0147 120000      E     LCALL   ?C?CLDOPTR
-014A B40104            CJNE    A,#01H,?C0029
-014D D29C              SETB    REN
-014F 8002              SJMP    ?C0030
-0151         ?C0029:
+             ; FUNCTION ADC_int (BEGIN)
                                            ; SOURCE LINE # 89
-0151 C29C              CLR     REN
-0153         ?C0030:
-                                           ; SOURCE LINE # 90
-0153 90000B            MOV     DPTR,#0BH
-0156 120000      E     LCALL   ?C?CLDOPTR
-0159 54C0              ANL     A,#0C0H
-015B FF                MOV     R7,A
-015C E5A2              MOV     A,P_SW1
-015E 543F              ANL     A,#03FH
-0160 4F                ORL     A,R7
-0161 F5A2              MOV     P_SW1,A
                                            ; SOURCE LINE # 91
-0163 90000C            MOV     DPTR,#0CH
-0166 120000      E     LCALL   ?C?CLDOPTR
-0169 B40105            CJNE    A,#01H,?C0031
-016C 439710            ORL     PCON2,#010H
-016F 8003              SJMP    ?C0032
-0171         ?C0031:
+0000 53BCEF            ANL     ADC_CONTR,#0EFH
                                            ; SOURCE LINE # 92
-0171 5397EF            ANL     PCON2,#0EFH
-0174         ?C0032:
-                                           ; SOURCE LINE # 93
-0174 7F00              MOV     R7,#00H
-0176 22                RET     
-                                           ; SOURCE LINE # 94
-0177         ?C0001:
-                                           ; SOURCE LINE # 95
-0177 7F03              MOV     R7,#03H
-                                           ; SOURCE LINE # 96
-0179         ?C0009:
-0179 22                RET     
-             ; FUNCTION _USART_Configuration (END)
+0003 32                RETI    
+             ; FUNCTION ADC_int (END)
 
-             ; FUNCTION _TX1_write2buff (BEGIN)
-                                           ; SOURCE LINE # 101
-;---- Variable 'dat' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 102
-0000         ?C0033:
-                                           ; SOURCE LINE # 103
-0000 E500        R     MOV     A,COM1+03H
-0002 70FC              JNZ     ?C0033
-0004         ?C0034:
-                                           ; SOURCE LINE # 104
-0004 7400        R     MOV     A,#LOW TX1_Buffer
-0006 2500        R     ADD     A,COM1+02H
-0008 F8                MOV     R0,A
-0009 A607              MOV     @R0,AR7
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 27  
-
-                                           ; SOURCE LINE # 105
-000B 0500        R     INC     COM1+02H
-000D E500        R     MOV     A,COM1+02H
-000F C3                CLR     C
-0010 9440              SUBB    A,#040H
-0012 4003              JC      ?C0035
-                                           ; SOURCE LINE # 106
-0014 E4                CLR     A
-0015 F500        R     MOV     COM1+02H,A
-0017         ?C0035:
-                                           ; SOURCE LINE # 108
-0017 E500        R     MOV     A,COM1+03H
-0019 7005              JNZ     ?C0037
-                                           ; SOURCE LINE # 109
-                                           ; SOURCE LINE # 110
-001B 750001      R     MOV     COM1+03H,#01H
-                                           ; SOURCE LINE # 111
-001E D299              SETB    TI
-                                           ; SOURCE LINE # 112
-                                           ; SOURCE LINE # 113
-0020         ?C0037:
-0020 22                RET     
-             ; FUNCTION _TX1_write2buff (END)
-
-             ; FUNCTION _PrintString1 (BEGIN)
-                                           ; SOURCE LINE # 115
-;---- Variable 'puts' assigned to Register 'R1/R2/R3' ----
-                                           ; SOURCE LINE # 116
-                                           ; SOURCE LINE # 117
-0000         ?C0038:
-0000 120000      E     LCALL   ?C?CLDPTR
-0003 FF                MOV     R7,A
-0004 600C              JZ      ?C0041
-0006 120000      R     LCALL   _TX1_write2buff
-0009 7401              MOV     A,#01H
-000B 29                ADD     A,R1
-000C F9                MOV     R1,A
-000D E4                CLR     A
-000E 3A                ADDC    A,R2
-000F FA                MOV     R2,A
-0010 80EE              SJMP    ?C0038
-                                           ; SOURCE LINE # 118
-0012         ?C0041:
-0012 22                RET     
-             ; FUNCTION _PrintString1 (END)
-
-             ; FUNCTION UART1_int (BEGIN)
-0000 C0E0              PUSH    ACC
-0002 C0D0              PUSH    PSW
-0004 75D000            MOV     PSW,#00H
-0007 C000              PUSH    AR0
-0009 C007              PUSH    AR7
-                                           ; SOURCE LINE # 121
-                                           ; SOURCE LINE # 123
-000B 30981D            JNB     RI,?C0042
-                                           ; SOURCE LINE # 124
-                                           ; SOURCE LINE # 125
-000E C298              CLR     RI
-                                           ; SOURCE LINE # 126
-0010 E500        R     MOV     A,COM1+06H
-0012 7017              JNZ     ?C0042
-                                           ; SOURCE LINE # 127
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 28  
-
-                                           ; SOURCE LINE # 128
-0014 E500        R     MOV     A,COM1+04H
-0016 C3                CLR     C
-0017 9440              SUBB    A,#040H
-0019 4003              JC      ?C0044
-001B 750000      R     MOV     COM1+04H,#00H
-001E         ?C0044:
-                                           ; SOURCE LINE # 129
-001E AF00        R     MOV     R7,COM1+04H
-0020 0500        R     INC     COM1+04H
-0022 7400        R     MOV     A,#LOW RX1_Buffer
-0024 2F                ADD     A,R7
-0025 F8                MOV     R0,A
-0026 A699              MOV     @R0,SBUF
-                                           ; SOURCE LINE # 130
-0028 750005      R     MOV     COM1+05H,#05H
-                                           ; SOURCE LINE # 131
-                                           ; SOURCE LINE # 132
-002B         ?C0042:
-                                           ; SOURCE LINE # 134
-002B 309921            JNB     TI,?C0049
-                                           ; SOURCE LINE # 135
-                                           ; SOURCE LINE # 136
-002E C299              CLR     TI
-                                           ; SOURCE LINE # 137
-0030 E500        R     MOV     A,COM1+01H
-0032 6500        R     XRL     A,COM1+02H
-0034 6016              JZ      ?C0046
-                                           ; SOURCE LINE # 138
-                                           ; SOURCE LINE # 139
-0036 7400        R     MOV     A,#LOW TX1_Buffer
-0038 2500        R     ADD     A,COM1+01H
-003A F8                MOV     R0,A
-003B E6                MOV     A,@R0
-003C F599              MOV     SBUF,A
-                                           ; SOURCE LINE # 140
-003E 0500        R     INC     COM1+01H
-0040 E500        R     MOV     A,COM1+01H
-0042 C3                CLR     C
-0043 9440              SUBB    A,#040H
-0045 4008              JC      ?C0049
-0047 750000      R     MOV     COM1+01H,#00H
-                                           ; SOURCE LINE # 141
-004A 8003              SJMP    ?C0049
-004C         ?C0046:
-                                           ; SOURCE LINE # 142
-004C 750000      R     MOV     COM1+03H,#00H
-                                           ; SOURCE LINE # 143
-                                           ; SOURCE LINE # 144
-004F         ?C0049:
-004F D007              POP     AR7
-0051 D000              POP     AR0
-0053 D0D0              POP     PSW
-0055 D0E0              POP     ACC
-0057 32                RETI    
-             ; FUNCTION UART1_int (END)
-
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 29  
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 24  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -1774,46 +1433,23 @@ NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 
 P0 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0080H  1
 P1 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0090H  1
+_ADC_Inilize . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  ADCx . . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
 P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
 P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
 P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
 P5 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
-COMx_Define. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
-  id . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  TX_read. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  TX_write . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
-  B_TX_busy. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
-  RX_Cnt . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
-  RX_TimeOut . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
-  B_RX_OK. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-P_SW1. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A2H  1
+EADC . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ADH  1
 IE . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A8H  1
-COM1 . . . . . . . . . . . . . . . . .  PUBLIC   DATA   STRUCT   0000H  7
-ES . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ACH  1
+ADC_RES. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00BDH  1
+PADC . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BDH  1
 IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
-RX1_Buffer . . . . . . . . . . . . . .  PUBLIC   IDATA  ARRAY    0000H  64
-RI . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0098H  1
-UART1_int. . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-TX1_Buffer . . . . . . . . . . . . . .  PUBLIC   IDATA  ARRAY    0040H  64
-TI . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0099H  1
-COMx_InitDefine. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  13
-  UART_Mode. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  UART_BRT_Use . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  UART_BaudRate. . . . . . . . . . . .  MEMBER   -----  U_LONG   0002H  4
-  Morecommunicate. . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-  UART_RxEnable. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  BaudRateDouble . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
-  UART_Interrupt . . . . . . . . . . .  MEMBER   -----  U_CHAR   0009H  1
-  UART_Polity. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000AH  1
-  UART_P_SW. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000BH  1
-  UART_RXD_TXD_Short . . . . . . . . .  MEMBER   -----  U_CHAR   000CH  1
-PS . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BCH  1
+_ADC_PowerControl. . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  pwr. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
 u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
-SBUF . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0099H  1
-PCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0087H  1
+ADC_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00BCH  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
-TMOD . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0089H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
 DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
   firstStartCode . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
@@ -1824,35 +1460,17 @@ DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
   Dat. . . . . . . . . . . . . . . . .  MEMBER   -----  PTR      000AH  3
   cs . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000DH  1
   endCode. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000EH  1
-_PrintString1. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  puts . . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
-IE2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00AFH  1
 B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
-AUXR . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008EH  1
-C51 COMPILER V9.52.0.0   USART1                                                            07/23/2017 22:49:15 PAGE 30  
-
-NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
-====                                    =====   ======  ====    ======  ====
-
-
-_TX1_write2buff. . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  dat. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
-ET1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00ABH  1
-TH1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008DH  1
-TH2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D6H  1
-TL1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008BH  1
-TL2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D7H  1
-_USART_Configuration . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  UARTx. . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  COMx . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
-  i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  j. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_LONG   0003H  4
-TR1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008EH  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 u16. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+P1ASF. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   009DH  1
+ADC_RESL . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00BEH  1
 PCON2. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0097H  1
-REN. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009CH  1
+_Get_ADC10bitResult. . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  channel. . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+  adc. . . . . . . . . . . . . . . . .  * REG *  DATA   U_INT    0004H  2
+  i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0003H  1
 SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
   isfirstSystemBoot. . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
   CurrentSystemWorkMode. . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
@@ -1863,17 +1481,30 @@ SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
   VoltStatusA. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
   VoltStatusB. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
   VoltStatusC. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
-INT_CLKO . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008FH  1
+ADC_int. . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+ADC_InitTypeDef. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  6
+  ADC_Px . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  ADC_Speed. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  ADC_Power. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
+  ADC_AdjResult. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
+  ADC_Polity . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
+C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 25  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+  ADC_Interrupt. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    538    ----
+   CODE SIZE        =    191    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      7       7
-   IDATA SIZE       =    128    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
