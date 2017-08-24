@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 1   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE ADC
@@ -62,7 +62,7 @@ line level    source
   15      =3  
   16      =3  #ifndef _STC15Fxxxx_H
   17      =3  #define _STC15Fxxxx_H
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 2   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 2   
 
   18      =3  
   19      =3  #include <intrins.h>
@@ -126,7 +126,7 @@ line level    source
   38      =3  sfr INT_CLKO = 0x8F;
   39      =3  sfr     AUXR2    = 0x8F;
   40      =3  
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 3   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 3   
 
   41      =3  sfr RL_TL0  = 0x8A;
   42      =3  sfr RL_TL1  = 0x8B;
@@ -190,7 +190,7 @@ line level    source
  100      =3  
  101      =3  sfr ISP_DATA  = 0xC2;
  102      =3  sfr ISP_ADDRH = 0xC3;
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 4   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 4   
 
  103      =3  sfr ISP_ADDRL = 0xC4;
  104      =3  sfr ISP_CMD   = 0xC5;
@@ -254,7 +254,7 @@ line level    source
  162      =3  sfr PCA_PWM2 = 0xF4;    //PCA模块2 PWM寄存器。
  163      =3  
  164      =3  sfr     P7     = 0xF8;
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 5   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 5   
 
  165      =3  sfr CH     = 0xF9;
  166      =3  sfr CCAP0H = 0xFA;              //PCA模块0的捕捉/比较寄存器高8位。
@@ -318,7 +318,7 @@ line level    source
  224      =3  sbit  P22 = P2^2;
  225      =3  sbit  P23 = P2^3;
  226      =3  sbit  P24 = P2^4;
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 6   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 6   
 
  227      =3  sbit  P25 = P2^5;
  228      =3  sbit  P26 = P2^6;
@@ -382,7 +382,7 @@ line level    source
  286      =3  sbit ELVD = IE^6;       //低压监测中断允许位
  287      =3  sbit EADC = IE^5;       //ADC 中断 允许位
  288      =3  sbit ES   = IE^4;       //串行中断 允许控制位
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 7   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 7   
 
  289      =3  sbit ET1  = IE^3;       //定时中断1允许控制位
  290      =3  sbit EX1  = IE^2;       //外部中断1允许控制位
@@ -446,7 +446,7 @@ line level    source
  347      =3  //sfr IP2   = 0xB5; //                       -      -      -     -     -     -   PSPI   PS2   xxxx,xx00
  348      =3  //sfr IPH2  = 0xB6; //                       -      -      -     -     -     -   PSPIH  PS2H  xxxx,xx00
  349      =3  #define         PPCAH   0x80
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 8   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 8   
 
  350      =3  #define         PLVDH   0x40
  351      =3  #define         PADCH   0x20
@@ -510,7 +510,7 @@ line level    source
  409      =3  #define         S3_USE_P50P51()         P_SW2 |=  2             //UART3 使用P5口
  410      =3  #define         S4_USE_P02P03()         P_SW2 &= ~4             //UART4 使用P0口        默认
  411      =3  #define         S4_USE_P52P53()         P_SW2 |=  4             //UART4 使用P5口
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 9   
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 9   
 
  412      =3  
  413      =3  
@@ -574,7 +574,7 @@ line level    source
  467      =3  #define         T2_pulseP30_disable()           AUXR2 &= ~4
  468      =3  
  469      =3  #define         T0_pulseP35(n)          ET0=0,Timer0_AsTimer(),Timer0_1T(),Timer0_16bitAutoReload(),TH0=(65536-(n/2+MAIN_
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 10  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 10  
 
              -Fosc/2)/(n))/256,TL0=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit0,TR0=1            //fx=fosc/(2*M)/n,  M=1 or M=12
  470      =3  #define         T1_pulseP34(n)          ET1=0,Timer1_AsTimer(),Timer1_1T(),Timer1_16bitAutoReload(),TH1=(65536-(n/2+MAIN_
@@ -638,7 +638,7 @@ line level    source
  526      =3  #define ISP_EN                  (1<<7)
  527      =3  #define ISP_SWBS                (1<<6)
  528      =3  #define ISP_SWRST               (1<<5)
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 11  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 11  
 
  529      =3  #define ISP_CMD_FAIL    (1<<4)
  530      =3  #define ISP_WAIT_1MHZ   7
@@ -702,7 +702,7 @@ line level    source
  585      =3  //sfr SPDAT  = 0xCF; //SPI Data Register                                                     0000,0000
  586      =3  //sfr SPSTAT  = 0xCD;   //SPI状态寄存器
  587      =3  //   7       6      5   4   3   2   1   0       Reset Value
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 12  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 12  
 
  588      =3  //      SPIF    WCOL    -       -       -       -       -       -
  589      =3  #define SPIF    0x80            //SPI传输完成标志。写入1清0。
@@ -766,7 +766,7 @@ line level    source
  641      =3  //sfr AUXR1 = 0xA2;       S1_S1  S1_S0  CCP_S1   CCP_S0  SPI_S1   SPI_S0    -     DPS   0100,0000       //Auxiliary 
              -Register 1
  642      =3  
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 13  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 13  
 
  643      =3  #define         PCA_USE_P12P11P10P37()  AUXR1 &= ~0x30          //将PCA/PWM切换到P12(ECI) P11(CCP0) P10(CCP1) P37(CCP2)(上
              -电默认)。
@@ -830,7 +830,7 @@ line level    source
  699      =3  #define         PCA2_PWM_rise_int(nbit) CCAPM2 = 0x63,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  700      =3  #define         PCA2_PWM_fall_int(nbit) CCAPM2 = 0x53,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  701      =3  #define         PCA2_PWM_edge_int(nbit) CCAPM2 = 0x73,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 14  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 14  
 
  702      =3  #define         PCA2_capture_rise()             CCAPM2 = (0x20 + 1)
  703      =3  #define         PCA2_capture_fall()             CCAPM2 = (0x10 + 1)
@@ -894,7 +894,7 @@ line level    source
  761      =3  
  762      =3  /**********************************************/
  763      =3  
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 15  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 15  
 
  764      =3  
  765      =3  /****************************************************************/
@@ -958,7 +958,7 @@ line level    source
  821      =3  #define         INT1_VECTOR             2
  822      =3  #define         TIMER1_VECTOR   3
  823      =3  #define         UART1_VECTOR    4
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 16  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 16  
 
  824      =3  #define         ADC_VECTOR              5
  825      =3  #define         LVD_VECTOR              6
@@ -1022,77 +1022,54 @@ line level    source
   42      =2  #define OUT_OF_HOOK 0         //脱扣到位
   43      =2  #define SWITCH_ON_OK 0        //合闸到位
   44      =2  
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 17  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 17  
 
   45      =2  #define LOSS_VOLTAGE 0x11
   46      =2  #define UNDER_VOLTAGE 0x01
   47      =2  #define OVER_VOLTAGE 0x10
   48      =2  #define NORMAL_VOLTAGE 0x0
-  49      =2  #define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-  50      =2  #define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-  51      =2  
-  52      =2  #define MONTOR_RIGHT_RUNNING 0x01
-  53      =2  #define MONTOR_LEFT_RUNNING 0x10
-  54      =2  #define MONTOR_STOP_RUNNING 0xff
-  55      =2  
-  56      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  57      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  58      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  59      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  60      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  61      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  62      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-  63      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  64      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  65      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  66      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  67      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  68      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  69      =2  #define TIMEOUT_DELAY_VAL 4
-  70      =2  
-  71      =2  #define TIMECOUNTER_START 0
-  72      =2  #define STOP_TIMERCOUNT 0xFF
-  73      =2  
-  74      =2  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
-  75      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
-  76      =2  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
-  77      =2  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
-  78      =2  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
-  79      =2  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
-  80      =2  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
-  81      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
-  82      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  83      =2  
-  84      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-  85      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
-  86      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-  87      =2  
-  88      =2  typedef struct {
-  89      =2      unsigned char firstStartCode;
-  90      =2      unsigned char devAddr[6];
-  91      =2      unsigned char secondStartCode;
-  92      =2      unsigned char CtrlCode;
-  93      =2      unsigned char DataLength;
-  94      =2      unsigned char *Dat;
-  95      =2      unsigned char cs;
-  96      =2      unsigned char endCode;
-  97      =2  } DLT645_T;
-  98      =2  
-  99      =2  typedef struct {
- 100      =2      unsigned char isfirstSystemBoot;
- 101      =2      unsigned char CurrentSystemWorkMode;
- 102      =2      unsigned char MotorCurrentSttaus;
- 103      =2      unsigned char SwitchCurrentStatus;
- 104      =2      unsigned char TimeoutCount;
- 105      =2      unsigned char VoltCurrentStatus;
- 106      =2      unsigned char VoltStatusA;
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 18  
-
- 107      =2      unsigned char VoltStatusB;
- 108      =2      unsigned char VoltStatusC;
- 109      =2  } SMART_SWITCH_T;
- 110      =2  
- 111      =2  #endif
+  49      =2  //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
+  50      =2  //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
+  51      =2  #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
+  52      =2  #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+  53      =2  
+  54      =2  #define MONTOR_RIGHT_RUNNING 0x01
+  55      =2  #define MONTOR_LEFT_RUNNING 0x10
+  56      =2  #define MONTOR_STOP_RUNNING 0xff
+  57      =2  
+  58      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  59      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  60      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+  61      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  62      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  63      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  64      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  65      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  66      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  67      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  68      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  69      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  70      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  71      =2  #define TIMEOUT_DELAY_VAL 4
+  72      =2  
+  73      =2  #define TIMECOUNTER_START 0
+  74      =2  #define STOP_TIMERCOUNT 0xFF
+  75      =2  
+  76      =2  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
+  77      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
+  78      =2  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
+  79      =2  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
+  80      =2  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
+  81      =2  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
+  82      =2  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
+  83      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
+  84      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  85      =2  
+  86      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
+  87      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
+  88      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
+  89      =2  
+  90      =2  #endif
    6      =1  
    7      =1  #define ADC_P10         0x01    //IO引脚 Px.0
    8      =1  #define ADC_P11         0x02    //IO引脚 Px.1
@@ -1109,6 +1086,8 @@ line level    source
   19      =1  #define ADC_360T        (1<<5)
   20      =1  #define ADC_540T        0
   21      =1  #define ADC_FLAG        (1<<4)  //软件清0
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 18  
+
   22      =1  #define ADC_START       (1<<3)  //自动清0
   23      =1  #define ADC_CH0         0
   24      =1  #define ADC_CH1         1
@@ -1150,8 +1129,6 @@ line level    source
   13          void    ADC_Inilize(ADC_InitTypeDef *ADCx)
   14          {
   15   1              P1ASF = ADCx->ADC_Px;
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 19  
-
   16   1              ADC_CONTR = (ADC_CONTR & ~ADC_90T) | ADCx->ADC_Speed;
   17   1              if(ADCx->ADC_Power == ENABLE)   ADC_CONTR |= 0x80;
   18   1              else                                                    ADC_CONTR &= 0x7F;
@@ -1173,6 +1150,8 @@ line level    source
   33          // 版本: V1.0, 2012-10-22
   34          //========================================================================
   35          void    ADC_PowerControl(u8 pwr)
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 19  
+
   36          {
   37   1              if(pwr == ENABLE)       ADC_CONTR |= 0x80;
   38   1              else                            ADC_CONTR &= 0x7f;
@@ -1214,8 +1193,6 @@ line level    source
   74   4                              }
   75   3                              return  adc;
   76   3                      }
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 20  
-
   77   2              }
   78   1              return  1024;   //错误,返回1024,调用的程序判断
   79   1      }
@@ -1234,7 +1211,7 @@ line level    source
   92   1      }
   93          
   94          
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 21  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 20  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1298,7 +1275,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0052 22                RET     
              ; FUNCTION _ADC_Inilize (END)
 
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 22  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 21  
 
              ; FUNCTION _ADC_PowerControl (BEGIN)
                                            ; SOURCE LINE # 35
@@ -1362,7 +1339,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 66
                                            ; SOURCE LINE # 67
 0029 E5BD              MOV     A,ADC_RES
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 23  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 22  
 
 002B 5403              ANL     A,#03H
                                            ; SOURCE LINE # 68
@@ -1425,7 +1402,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0003 32                RETI    
              ; FUNCTION ADC_int (END)
 
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 24  
+C51 COMPILER V9.52.0.0   ADC                                                               08/24/2017 23:54:50 PAGE 23  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -1451,15 +1428,6 @@ u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 ADC_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00BCH  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
-  firstStartCode . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  devAddr. . . . . . . . . . . . . . .  MEMBER   -----  ARRAY    0001H  6
-  secondStartCode. . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  CtrlCode . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
-  DataLength . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0009H  1
-  Dat. . . . . . . . . . . . . . . . .  MEMBER   -----  PTR      000AH  3
-  cs . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000DH  1
-  endCode. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000EH  1
 B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
@@ -1471,16 +1439,6 @@ _Get_ADC10bitResult. . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   channel. . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   adc. . . . . . . . . . . . . . . . .  * REG *  DATA   U_INT    0004H  2
   i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0003H  1
-SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
-  isfirstSystemBoot. . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  CurrentSystemWorkMode. . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  MotorCurrentSttaus . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
-  SwitchCurrentStatus. . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
-  TimeoutCount . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
-  VoltCurrentStatus. . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
-  VoltStatusA. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-  VoltStatusB. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  VoltStatusC. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
 ADC_int. . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 ADC_InitTypeDef. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  6
   ADC_Px . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
@@ -1488,12 +1446,6 @@ ADC_InitTypeDef. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  6
   ADC_Power. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
   ADC_AdjResult. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
   ADC_Polity . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
-C51 COMPILER V9.52.0.0   ADC                                                               07/23/2017 22:49:15 PAGE 25  
-
-NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
-====                                    =====   ======  ====    ======  ====
-
-
   ADC_Interrupt. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 

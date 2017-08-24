@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 1   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE GPIO
@@ -62,7 +62,7 @@ line level    source
   13      =2  
   14      =2  
   15      =2  #ifndef         __CONFIG_H
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 2   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 2   
 
   16      =2  #define         __CONFIG_H
   17      =2  
@@ -126,7 +126,7 @@ line level    source
   27      =4  extern unsigned char _chkfloat_(float);
   28      =4  #if defined (__CX2__)
            =4 extern int           abs       (int);
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 3   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 3   
 
            =4 #endif
   31      =4  #if !defined (__CX2__)
@@ -190,7 +190,7 @@ line level    source
   69      =3  sfr SADDR = 0xA9;
   70      =3  sfr WKTCL = 0xAA;       //唤醒定时器低字节
   71      =3  sfr WKTCH = 0xAB;       //唤醒定时器高字节
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 4   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 4   
 
   72      =3  sfr     S3CON = 0xAC;
   73      =3  sfr S3BUF = 0xAD;
@@ -254,7 +254,7 @@ line level    source
  131      =3  sfr     TL2  = 0xD7;
  132      =3  
  133      =3  sfr     RL_T4H  = 0xD2;
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 5   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 5   
 
  134      =3  sfr     RL_T4L  = 0xD3;
  135      =3  sfr     RL_T3H  = 0xD4;
@@ -318,7 +318,7 @@ line level    source
  193      =3  sbit  P00 = P0^0;
  194      =3  sbit  P01 = P0^1;
  195      =3  sbit  P02 = P0^2;
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 6   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 6   
 
  196      =3  sbit  P03 = P0^3;
  197      =3  sbit  P04 = P0^4;
@@ -382,7 +382,7 @@ line level    source
  255      =3  sbit  P40 = P4^0;
  256      =3  sbit  P41 = P4^1;
  257      =3  sbit  P42 = P4^2;
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 7   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 7   
 
  258      =3  sbit  P43 = P4^3;
  259      =3  sbit  P44 = P4^4;
@@ -446,7 +446,7 @@ line level    source
  317      =3  sbit B1 = B^1;
  318      =3  sbit B2 = B^2;
  319      =3  sbit B3 = B^3;
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 8   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 8   
 
  320      =3  sbit B4 = B^4;
  321      =3  sbit B5 = B^5;
@@ -510,7 +510,7 @@ line level    source
  378      =3  #define         S1_USE_P30P31()         P_SW1 &= ~0xc0                                  //UART1 使用P30 P31口   默认
  379      =3  #define         S1_USE_P36P37()         P_SW1 = (P_SW1 & ~0xc0) | 0x40  //UART1 使用P36 P37口
  380      =3  #define         S1_USE_P16P17()         P_SW1 = (P_SW1 & ~0xc0) | 0x80  //UART1 使用P16 P17口
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 9   
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 9   
 
  381      =3  #define         S1_TXD_RXD_SHORT()      PCON2 |=  (1<<4)        //将TXD与RXD连接中继输出
  382      =3  #define         S1_TXD_RXD_OPEN()       PCON2 &= ~(1<<4)        //将TXD与RXD连接中继断开        默认
@@ -574,7 +574,7 @@ line level    source
  440      =3  
  441      =3  //                                                 7     6       5      4     3      2      1      0    Reset Value
  442      =3  //sfr AUXR  = 0x8E;             T0x12 T1x12 UART_M0x6  T2R  T2_C/T T2x12 EXTRAM  S1ST2  0000,0000       //Auxiliary Registe
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 10  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 10  
 
              -r 
  443      =3  
@@ -638,7 +638,7 @@ line level    source
  495      =3  #define D_WDT_SCALE_128         6
  496      =3  #define D_WDT_SCALE_256         7
  497      =3  
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 11  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 11  
 
  498      =3  #define WDT_reset(n)    WDT_CONTR = D_EN_WDT + D_CLR_WDT + D_IDLE_WDT + (n)             //初始化WDT，喂狗
  499      =3  
@@ -702,7 +702,7 @@ line level    source
  557      =3  
  558      =3  
  559      =3  /* ADC Register */
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 12  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 12  
 
  560      =3  //                                                              7       6      5       4         3      2    1    0   Reset Value
  561      =3  //sfr ADC_CONTR = 0xBC;         ADC_POWER SPEED1 SPEED0 ADC_FLAG ADC_START CHS2 CHS1 CHS0 0000,0000     //AD 转换控制
@@ -766,7 +766,7 @@ line level    source
  613      =3  #define         PWM2_OUT_0()    PCA_PWM2 |=  3                          //PWM2一直输出0
  614      =3  #define         PWM2_OUT_1()    PCA_PWM2 &= ~3, CCAP2H = 0      //PWM2一直输出1
  615      =3  
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 13  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 13  
 
  616      =3  
  617      =3  //                                              7     6     5     4     3     2     1     0     Reset Value
@@ -830,7 +830,7 @@ line level    source
  668      =3  ;  1     0     0    1    1    0     x           4CH     16位高速脉冲输出。
  669      =3  ;  1     0     0    0    0    1     0           42H     8位PWM。无中断
  670      =3  ;  1     1     0    0    0    1     1           63H     8位PWM。低变高可产生中断
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 14  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 14  
 
  671      =3  ;  1     0     1    0    0    1     1           53H     8位PWM。高变低可产生中断
  672      =3  ;  1     1     1    0    0    1     1           73H     8位PWM。低变高或高变低均可产生中断
@@ -894,7 +894,7 @@ line level    source
  730      =3  #define NOP12() NOP11(),NOP1()
  731      =3  #define NOP13() NOP12(),NOP1()
  732      =3  #define NOP14() NOP13(),NOP1()
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 15  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 15  
 
  733      =3  #define NOP15() NOP14(),NOP1()
  734      =3  #define NOP16() NOP15(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  791      =3  
  792      =3  //sfr CLK_DIV = 0x97; //Clock Divder 系统时钟分频  -     -      -       -     -  CLKS2 CLKS1 CLKS0 xxxx,x0
              -00
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 16  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 16  
 
  793      =3  #define         SYSTEM_CLK_1T()         CLK_DIV &= ~0x07        //default
  794      =3  #define         SYSTEM_CLK_2T()         CLK_DIV = (CLK_DIV & ~0x07) | 1
@@ -1022,7 +1022,7 @@ line level    source
  852      =3  #define         MCLKO_None      0
  853      =3  #define         MCLKO_DIV1      1
  854      =3  #define         MCLKO_DIV2      2
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 17  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 17  
 
  855      =3  #define         MCLKO_DIV4      3
  856      =3  
@@ -1059,71 +1059,50 @@ line level    source
   46      =2  #define UNDER_VOLTAGE 0x01
   47      =2  #define OVER_VOLTAGE 0x10
   48      =2  #define NORMAL_VOLTAGE 0x0
-  49      =2  #define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-  50      =2  #define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-  51      =2  
-  52      =2  #define MONTOR_RIGHT_RUNNING 0x01
-  53      =2  #define MONTOR_LEFT_RUNNING 0x10
-  54      =2  #define MONTOR_STOP_RUNNING 0xff
-  55      =2  
-  56      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  57      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  58      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  59      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  60      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  61      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  62      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-  63      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  64      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  65      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  66      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  67      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  68      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  69      =2  #define TIMEOUT_DELAY_VAL 4
-  70      =2  
-  71      =2  #define TIMECOUNTER_START 0
-  72      =2  #define STOP_TIMERCOUNT 0xFF
-  73      =2  
-  74      =2  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
-  75      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 18  
+  49      =2  //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
+  50      =2  //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
+  51      =2  #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
+  52      =2  #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+  53      =2  
+  54      =2  #define MONTOR_RIGHT_RUNNING 0x01
+  55      =2  #define MONTOR_LEFT_RUNNING 0x10
+  56      =2  #define MONTOR_STOP_RUNNING 0xff
+  57      =2  
+  58      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  59      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  60      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+  61      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  62      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  63      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  64      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  65      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  66      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  67      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  68      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  69      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  70      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  71      =2  #define TIMEOUT_DELAY_VAL 4
+  72      =2  
+  73      =2  #define TIMECOUNTER_START 0
+  74      =2  #define STOP_TIMERCOUNT 0xFF
+  75      =2  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 18  
 
-  76      =2  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
-  77      =2  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
-  78      =2  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
-  79      =2  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
-  80      =2  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
-  81      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
-  82      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  83      =2  
-  84      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-  85      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
-  86      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-  87      =2  
-  88      =2  typedef struct {
-  89      =2      unsigned char firstStartCode;
-  90      =2      unsigned char devAddr[6];
-  91      =2      unsigned char secondStartCode;
-  92      =2      unsigned char CtrlCode;
-  93      =2      unsigned char DataLength;
-  94      =2      unsigned char *Dat;
-  95      =2      unsigned char cs;
-  96      =2      unsigned char endCode;
-  97      =2  } DLT645_T;
-  98      =2  
-  99      =2  typedef struct {
- 100      =2      unsigned char isfirstSystemBoot;
- 101      =2      unsigned char CurrentSystemWorkMode;
- 102      =2      unsigned char MotorCurrentSttaus;
- 103      =2      unsigned char SwitchCurrentStatus;
- 104      =2      unsigned char TimeoutCount;
- 105      =2      unsigned char VoltCurrentStatus;
- 106      =2      unsigned char VoltStatusA;
- 107      =2      unsigned char VoltStatusB;
- 108      =2      unsigned char VoltStatusC;
- 109      =2  } SMART_SWITCH_T;
- 110      =2  
- 111      =2  #endif
+  76      =2  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
+  77      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
+  78      =2  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
+  79      =2  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
+  80      =2  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
+  81      =2  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
+  82      =2  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
+  83      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
+  84      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  85      =2  
+  86      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
+  87      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
+  88      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
+  89      =2  
+  90      =2  #endif
   19      =1  
   20      =1  #define GPIO_PullUp             0       //上拉准双向口
   21      =1  #define GPIO_HighZ              1       //浮空输入
@@ -1150,8 +1129,6 @@ line level    source
   42      =1  
   43      =1  typedef struct
   44      =1  {
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 19  
-
   45      =1          u8      Mode;           //IO模式,               GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
   46      =1          u8      Pin;            //要设置的端口  
   47      =1  } GPIO_InitTypeDef;
@@ -1173,6 +1150,8 @@ line level    source
   33   1              if(GPIO > GPIO_P5)                              return 1;       //空操作
   34   1              if(GPIOx->Mode > GPIO_OUT_PP)   return 2;       //错误
   35   1              if(GPIO == GPIO_P0)
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 19  
+
   36   1              {
   37   2                      if(GPIOx->Mode == GPIO_PullUp)          P0M1 &= ~GPIOx->Pin,    P0M0 &= ~GPIOx->Pin;     //上拉准双向口
   38   2                      if(GPIOx->Mode == GPIO_HighZ)           P0M1 |=  GPIOx->Pin,    P0M0 &= ~GPIOx->Pin;     //浮空输入
@@ -1214,11 +1193,9 @@ line level    source
   74   2                      if(GPIOx->Mode == GPIO_OUT_OD)          P5M1 |=  GPIOx->Pin,    P5M0 |=  GPIOx->Pin;     //开漏输出
   75   2                      if(GPIOx->Mode == GPIO_OUT_PP)          P5M1 &= ~GPIOx->Pin,    P5M0 |=  GPIOx->Pin;     //推挽输出
   76   2              }
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 20  
-
   77   1              return 0;       //成功
   78   1      }
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 21  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 20  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1282,7 +1259,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 003F         ?C0007:
                                            ; SOURCE LINE # 40
 003F EE                MOV     A,R6
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 22  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 21  
 
 0040 B4030A            CJNE    A,#03H,?C0004
 0043 120000      R     LCALL   L?0036
@@ -1346,7 +1323,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0097 F4                CPL     A
 0098 5295              ANL     P2M1,A
 009A 5296              ANL     P2M0,A
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 23  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 22  
 
 009C         ?C0015:
                                            ; SOURCE LINE # 52
@@ -1410,7 +1387,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00F7 120000      R     LCALL   L?0036
 00FA FE                MOV     R6,A
 00FB F4                CPL     A
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 24  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 23  
 
 00FC 52B1              ANL     P3M1,A
 00FE EE                MOV     A,R6
@@ -1474,7 +1451,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 73
 0150 EF                MOV     A,R7
 0151 B40108            CJNE    A,#01H,?C0031
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 25  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 24  
 
 0154 120000      R     LCALL   L?0036
 0157 42C9              ORL     P5M1,A
@@ -1506,7 +1483,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 017B 22                RET     
              ; FUNCTION _GPIO_Inilize (END)
 
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 26  
+C51 COMPILER V9.52.0.0   GPIO                                                              08/24/2017 23:54:49 PAGE 25  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -1535,15 +1512,6 @@ CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
 u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
-  firstStartCode . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  devAddr. . . . . . . . . . . . . . .  MEMBER   -----  ARRAY    0001H  6
-  secondStartCode. . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  CtrlCode . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
-  DataLength . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0009H  1
-  Dat. . . . . . . . . . . . . . . . .  MEMBER   -----  PTR      000AH  3
-  cs . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000DH  1
-  endCode. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000EH  1
 B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
@@ -1554,24 +1522,12 @@ GPIO_InitTypeDef . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  2
 _GPIO_Inilize. . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   GPIO . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   GPIOx. . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
-SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
-  isfirstSystemBoot. . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  CurrentSystemWorkMode. . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  MotorCurrentSttaus . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
-  SwitchCurrentStatus. . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
-  TimeoutCount . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
-  VoltCurrentStatus. . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
-  VoltStatusA. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-  VoltStatusB. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  VoltStatusC. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 P0M0 . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0094H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =    386    ----
-C51 COMPILER V9.52.0.0   GPIO                                                              07/23/2017 22:49:15 PAGE 27  
-
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

@@ -10,5 +10,7 @@ void setSystemSleepFlag(bit sleep);
 void Reboot_System(void);
 unsigned char setMontorRunningStatus(unsigned char runStat);
 void PrintSystemInfoToSerial(void);
+void debug(unsigned char num);
+unsigned short getACVppVolt(void);
 
 #endif

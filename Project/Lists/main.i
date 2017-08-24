@@ -1010,6 +1010,8 @@
  
  
  
+ 
+ 
  sbit  SwitchStatus           = P1^0;       
  sbit  SystemWorkMode         = P1^1;       
  sbit  VoltStatusLamp         = P1^2;       
@@ -1023,29 +1025,6 @@
  sbit  RS485_Recv_Send_Enable = P3^2;       
  sbit  MotorRunningCtrl_R     = P3^7;       
  sbit  MotorRunningCtrl_L     = P3^6;       
- 
- typedef struct {
- unsigned char firstStartCode;
- unsigned char devAddr[6];
- unsigned char secondStartCode;
- unsigned char CtrlCode;
- unsigned char DataLength;
- unsigned char *Dat;
- unsigned char cs;
- unsigned char endCode;
- } DLT645_T;
- 
- typedef struct {
- unsigned char isfirstSystemBoot;
- unsigned char CurrentSystemWorkMode;
- unsigned char MotorCurrentSttaus;
- unsigned char SwitchCurrentStatus;
- unsigned char TimeoutCount;
- unsigned char VoltCurrentStatus;
- unsigned char VoltStatusA;
- unsigned char VoltStatusB;
- unsigned char VoltStatusC;
- } SMART_SWITCH_T;
  
  
 #line 15 "..\Src\main.c" /0
@@ -1120,6 +1099,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1144,29 +1125,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1324,6 +1282,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1348,29 +1308,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1390,7 +1327,7 @@
 #line 18 "..\Src\delay.h" /0
 #line 18 "..\Src\delay.h" /0
  
- 
+ void delay_us(unsigned char us)	;
  void  delay_ms(unsigned char ms);
  void delay_4000ms(void);
  
@@ -1466,6 +1403,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1490,29 +1429,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1634,6 +1550,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1658,29 +1576,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1746,6 +1641,8 @@
  void Reboot_System(void);
  unsigned char setMontorRunningStatus(unsigned char runStat);
  void PrintSystemInfoToSerial(void);
+ void debug(unsigned char num);
+ unsigned short getACVppVolt(void);
  
  
 #line 20 "..\Src\main.c" /0
@@ -1807,6 +1704,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1831,29 +1730,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1946,15 +1822,10 @@
  
  unsigned char VoltExceptionsCount = 0xFF;
  unsigned char VoltExceptionsStatus = 0x0;  
- SMART_SWITCH_T smartSwitch = {
- 0x01,                   
-  1,         
-  0xff,    
-  0xFF,        
  
- };
- 
- 
+ unsigned char TimeoutCount = 0xFF;
+ unsigned char VoltCurrentStatus = 0x11;
+ unsigned char MotorCurrentStatus = 0xff;
  
  
  
@@ -1981,7 +1852,7 @@
  {
  GPIO_InitTypeDef	GPIO_InitStructure;		             
  
- GPIO_InitStructure.Pin  = 0x01 | 0x02 | 0x04 | 0x08;	    
+ GPIO_InitStructure.Pin  = 0x01 | 0x02 | 0x04;	    
  GPIO_InitStructure.Mode = 1;		            
  GPIO_Inilize(1,&GPIO_InitStructure);	            
  
@@ -2025,18 +1896,18 @@
  
  static void delay_timer(unsigned char iTime)
  {
- smartSwitch.TimeoutCount = 0; 
- while(smartSwitch.TimeoutCount <= iTime) ; 
- smartSwitch.TimeoutCount = 0xFF; 
+ TimeoutCount = 0; 
+ while(TimeoutCount <= iTime) ; 
+ TimeoutCount = 0xFF; 
  }
  
  static void wait_switch_on(unsigned char time_out)
  {
  
- smartSwitch.TimeoutCount = 0; 
+ TimeoutCount = 0; 
  while(SwitchOnStatus != 0)
  {
- if(smartSwitch.TimeoutCount > time_out)
+ if(TimeoutCount > time_out)
  {
   PrintString1("[TimeOut] Wait Montor <=== timeout 5 Sec.");
  break;
@@ -2044,16 +1915,16 @@
  
  
  }
- smartSwitch.TimeoutCount = 0xFF; 
+ TimeoutCount = 0xFF; 
  }
  
  static void wait_out_off_hook(unsigned char time_out)
  {
  
- smartSwitch.TimeoutCount = 0; 
+ TimeoutCount = 0; 
  while(OutOffHookCheck != 0)
  {
- if(smartSwitch.TimeoutCount > time_out)
+ if(TimeoutCount > time_out)
  {
   PrintString1("[TimeOut] Wait Montor <=== timeout 5 Sec.");
  break;
@@ -2061,18 +1932,15 @@
  
  
  }
- smartSwitch.TimeoutCount = 0xFF; 
+ TimeoutCount = 0xFF; 
  }
  
  
  
  void main(void)
  {
- unsigned short Cur_Volt = 0;
+ unsigned char i = 0;
  unsigned short Max_Volt = 0;
- unsigned short Min_Volt = 0;
- unsigned char underVoltCount = 0;
- unsigned char overVoltCount = 0;
  
  
  EA = 0;
@@ -2091,50 +1959,45 @@
  
  while (1)
  {
+ VoltCapturePortC = ~VoltCapturePortC;
+ Max_Volt = getACVppVolt();
+  PrintString1("Max Volt: ");
+ debug(Max_Volt / 1000 % 10);
+ debug(Max_Volt / 100 % 10);
+ debug(Max_Volt / 10 % 10);
+ debug(Max_Volt % 10);
+  PrintString1("\r\n");
  
- Cur_Volt = Get_ADC10bitResult(3);
- if(Cur_Volt > Max_Volt) {
- Max_Volt = Cur_Volt;
- Min_Volt = Cur_Volt;
- continue;
+ 
+ if(Max_Volt >= 379){
+ VoltCurrentStatus = 0x10;
+  PrintString1("OVER_VOLTAGE\r\n");
+ } else if(Max_Volt <= 338) {
+ if(Max_Volt == 0) {
+ VoltCurrentStatus = 0x11;
+  PrintString1("LOSS_VOLTAGE\r\n");
  } else {
- if(Cur_Volt < Min_Volt) {
- Min_Volt = Cur_Volt;
- continue;
- }
- }
- 
- 
- if(Max_Volt <= 521) {
- if((underVoltCount++) > 5){
- if(Max_Volt == Min_Volt && Max_Volt == 0) 
- smartSwitch.VoltCurrentStatus = 0x11;
- else
- smartSwitch.VoltCurrentStatus = 0x01;
- underVoltCount = 0;
- }
- } else if(Max_Volt >= 782){
- if((overVoltCount++) > 5) {
- smartSwitch.VoltCurrentStatus = 0x10;
- overVoltCount = 0;
+ VoltCurrentStatus = 0x01;
+  PrintString1("UNDER_VOLTAGE\r\n");
  }
  } else {
- smartSwitch.VoltCurrentStatus = 0x0;
+ VoltCurrentStatus = 0x0;
+  PrintString1("NORMAL_VOLTAGE\r\n");
  }
- Max_Volt = Min_Volt;
+ Max_Volt = 0;
  
  
  
- if(smartSwitch.VoltCurrentStatus != 0x0)
- {
+ if(VoltCurrentStatus != 0x0)
+ {            
  
  
  
  
  if(OutOffHookCheck == 0)
  {
- if(smartSwitch.MotorCurrentSttaus != 0xff)
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff); 
+ if(MotorCurrentStatus != 0xff)
+ MotorCurrentStatus = setMontorRunningStatus(0xff); 
  }
  else  
  {
@@ -2144,20 +2007,21 @@
  
  
  
- if(smartSwitch.VoltCurrentStatus != 0x11)
+ if(VoltCurrentStatus != 0x11)
  delay_ms(50);
- if(smartSwitch.MotorCurrentSttaus != 0x01)
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0x01); 
+ if(MotorCurrentStatus != 0x01)
+ MotorCurrentStatus = setMontorRunningStatus(0x01); 
  
  
  wait_out_off_hook(100);
  
- if(smartSwitch.MotorCurrentSttaus != 0xff)
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff); 
+ if(MotorCurrentStatus != 0xff)
+ MotorCurrentStatus = setMontorRunningStatus(0xff); 
  }
  }
  else  
  {
+ VoltCapturePortB = ~VoltCapturePortB;
  
  
  
@@ -2165,8 +2029,8 @@
  
  if(SwitchOnStatus == 0)  
  {
- if(smartSwitch.MotorCurrentSttaus != 0xff) 
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff);
+ if(MotorCurrentStatus != 0xff) 
+ MotorCurrentStatus = setMontorRunningStatus(0xff);
  }
  else  
  {
@@ -2178,20 +2042,24 @@
  
  
  if(SystemWorkMode == 1){
- if(smartSwitch.MotorCurrentSttaus != 0x01) 
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0x01);
+ if(MotorCurrentStatus != 0x01) 
+ MotorCurrentStatus = setMontorRunningStatus(0x01);
  } else {
- if(smartSwitch.MotorCurrentSttaus != 0x10) 
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0x10);
+ if(MotorCurrentStatus != 0x10) 
+ MotorCurrentStatus = setMontorRunningStatus(0x10);
  }
  
  
  wait_switch_on(100);
  delay_timer(4);
- if(smartSwitch.MotorCurrentSttaus != 0xff) 
- smartSwitch.MotorCurrentSttaus = setMontorRunningStatus(0xff);
+ if(MotorCurrentStatus != 0xff) 
+ MotorCurrentStatus = setMontorRunningStatus(0xff);
  }
  }
+ delay_ms(250);
+ delay_ms(250);
+ delay_ms(250);
+ delay_ms(250);
  }
  }
  
@@ -2203,8 +2071,8 @@
  WDT_CONTR |= 0x10;
  
  
- if(smartSwitch.TimeoutCount <= 200)
- smartSwitch.TimeoutCount++;
+ if(TimeoutCount <= 200)
+ TimeoutCount++;
  
  
  if(!VoltExceptionsStatus)
@@ -2220,7 +2088,7 @@
  if(VoltExceptionsCount > 5) VoltStatusPlus = 1;
  else VoltStatusPlus = 0;
  
- if(smartSwitch.VoltCurrentStatus == 0x01)
+ if(VoltCurrentStatus == 0x01)
  {
  if(VoltExceptionsCount < 15 && VoltExceptionsCount > 0) VoltStatusLamp = 0;  
  else if(VoltExceptionsCount < 20 && VoltExceptionsCount >= 15) VoltStatusLamp = 1;  
@@ -2231,7 +2099,7 @@
  else if(VoltExceptionsCount < 170 && VoltExceptionsCount >= 155) VoltStatusLamp = 0;  
  else if(VoltExceptionsCount >= 175) VoltStatusLamp = 0;  
  }
- else if(smartSwitch.VoltCurrentStatus == 0x10)
+ else if(VoltCurrentStatus == 0x10)
  {
  if(VoltExceptionsCount > 25) VoltStatusLamp = 1;
  else VoltStatusLamp = 0;

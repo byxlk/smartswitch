@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 1   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE DLT645
@@ -62,7 +62,7 @@ line level    source
   15      =2  
   16      =2  #ifndef _STC15Fxxxx_H
   17      =2  #define _STC15Fxxxx_H
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 2   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 2   
 
   18      =2  
   19      =2  #include <intrins.h>
@@ -126,7 +126,7 @@ line level    source
   38      =2  sfr INT_CLKO = 0x8F;
   39      =2  sfr     AUXR2    = 0x8F;
   40      =2  
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 3   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 3   
 
   41      =2  sfr RL_TL0  = 0x8A;
   42      =2  sfr RL_TL1  = 0x8B;
@@ -190,7 +190,7 @@ line level    source
  100      =2  
  101      =2  sfr ISP_DATA  = 0xC2;
  102      =2  sfr ISP_ADDRH = 0xC3;
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 4   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 4   
 
  103      =2  sfr ISP_ADDRL = 0xC4;
  104      =2  sfr ISP_CMD   = 0xC5;
@@ -254,7 +254,7 @@ line level    source
  162      =2  sfr PCA_PWM2 = 0xF4;    //PCA模块2 PWM寄存器。
  163      =2  
  164      =2  sfr     P7     = 0xF8;
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 5   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 5   
 
  165      =2  sfr CH     = 0xF9;
  166      =2  sfr CCAP0H = 0xFA;              //PCA模块0的捕捉/比较寄存器高8位。
@@ -318,7 +318,7 @@ line level    source
  224      =2  sbit  P22 = P2^2;
  225      =2  sbit  P23 = P2^3;
  226      =2  sbit  P24 = P2^4;
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 6   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 6   
 
  227      =2  sbit  P25 = P2^5;
  228      =2  sbit  P26 = P2^6;
@@ -382,7 +382,7 @@ line level    source
  286      =2  sbit ELVD = IE^6;       //低压监测中断允许位
  287      =2  sbit EADC = IE^5;       //ADC 中断 允许位
  288      =2  sbit ES   = IE^4;       //串行中断 允许控制位
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 7   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 7   
 
  289      =2  sbit ET1  = IE^3;       //定时中断1允许控制位
  290      =2  sbit EX1  = IE^2;       //外部中断1允许控制位
@@ -446,7 +446,7 @@ line level    source
  347      =2  //sfr IP2   = 0xB5; //                       -      -      -     -     -     -   PSPI   PS2   xxxx,xx00
  348      =2  //sfr IPH2  = 0xB6; //                       -      -      -     -     -     -   PSPIH  PS2H  xxxx,xx00
  349      =2  #define         PPCAH   0x80
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 8   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 8   
 
  350      =2  #define         PLVDH   0x40
  351      =2  #define         PADCH   0x20
@@ -510,7 +510,7 @@ line level    source
  409      =2  #define         S3_USE_P50P51()         P_SW2 |=  2             //UART3 使用P5口
  410      =2  #define         S4_USE_P02P03()         P_SW2 &= ~4             //UART4 使用P0口        默认
  411      =2  #define         S4_USE_P52P53()         P_SW2 |=  4             //UART4 使用P5口
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 9   
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 9   
 
  412      =2  
  413      =2  
@@ -574,7 +574,7 @@ line level    source
  467      =2  #define         T2_pulseP30_disable()           AUXR2 &= ~4
  468      =2  
  469      =2  #define         T0_pulseP35(n)          ET0=0,Timer0_AsTimer(),Timer0_1T(),Timer0_16bitAutoReload(),TH0=(65536-(n/2+MAIN_
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 10  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 10  
 
              -Fosc/2)/(n))/256,TL0=(65536-(n/2+MAIN_Fosc/2)/(n))%256,AUXR2 |= bit0,TR0=1            //fx=fosc/(2*M)/n,  M=1 or M=12
  470      =2  #define         T1_pulseP34(n)          ET1=0,Timer1_AsTimer(),Timer1_1T(),Timer1_16bitAutoReload(),TH1=(65536-(n/2+MAIN_
@@ -638,7 +638,7 @@ line level    source
  526      =2  #define ISP_EN                  (1<<7)
  527      =2  #define ISP_SWBS                (1<<6)
  528      =2  #define ISP_SWRST               (1<<5)
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 11  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 11  
 
  529      =2  #define ISP_CMD_FAIL    (1<<4)
  530      =2  #define ISP_WAIT_1MHZ   7
@@ -702,7 +702,7 @@ line level    source
  585      =2  //sfr SPDAT  = 0xCF; //SPI Data Register                                                     0000,0000
  586      =2  //sfr SPSTAT  = 0xCD;   //SPI状态寄存器
  587      =2  //   7       6      5   4   3   2   1   0       Reset Value
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 12  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 12  
 
  588      =2  //      SPIF    WCOL    -       -       -       -       -       -
  589      =2  #define SPIF    0x80            //SPI传输完成标志。写入1清0。
@@ -766,7 +766,7 @@ line level    source
  641      =2  //sfr AUXR1 = 0xA2;       S1_S1  S1_S0  CCP_S1   CCP_S0  SPI_S1   SPI_S0    -     DPS   0100,0000       //Auxiliary 
              -Register 1
  642      =2  
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 13  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 13  
 
  643      =2  #define         PCA_USE_P12P11P10P37()  AUXR1 &= ~0x30          //将PCA/PWM切换到P12(ECI) P11(CCP0) P10(CCP1) P37(CCP2)(上
              -电默认)。
@@ -830,7 +830,7 @@ line level    source
  699      =2  #define         PCA2_PWM_rise_int(nbit) CCAPM2 = 0x63,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  700      =2  #define         PCA2_PWM_fall_int(nbit) CCAPM2 = 0x53,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
  701      =2  #define         PCA2_PWM_edge_int(nbit) CCAPM2 = 0x73,PCA_PWM2 = (PCA_PWM2 & 0x0c) | ((8-nbit)<<6)
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 14  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 14  
 
  702      =2  #define         PCA2_capture_rise()             CCAPM2 = (0x20 + 1)
  703      =2  #define         PCA2_capture_fall()             CCAPM2 = (0x10 + 1)
@@ -894,7 +894,7 @@ line level    source
  761      =2  
  762      =2  /**********************************************/
  763      =2  
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 15  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 15  
 
  764      =2  
  765      =2  /****************************************************************/
@@ -958,7 +958,7 @@ line level    source
  821      =2  #define         INT1_VECTOR             2
  822      =2  #define         TIMER1_VECTOR   3
  823      =2  #define         UART1_VECTOR    4
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 16  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 16  
 
  824      =2  #define         ADC_VECTOR              5
  825      =2  #define         LVD_VECTOR              6
@@ -1022,77 +1022,54 @@ line level    source
   42      =1  #define OUT_OF_HOOK 0         //脱扣到位
   43      =1  #define SWITCH_ON_OK 0        //合闸到位
   44      =1  
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 17  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 17  
 
   45      =1  #define LOSS_VOLTAGE 0x11
   46      =1  #define UNDER_VOLTAGE 0x01
   47      =1  #define OVER_VOLTAGE 0x10
   48      =1  #define NORMAL_VOLTAGE 0x0
-  49      =1  #define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-  50      =1  #define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-  51      =1  
-  52      =1  #define MONTOR_RIGHT_RUNNING 0x01
-  53      =1  #define MONTOR_LEFT_RUNNING 0x10
-  54      =1  #define MONTOR_STOP_RUNNING 0xff
-  55      =1  
-  56      =1  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  57      =1  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  58      =1  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  59      =1  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  60      =1  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  61      =1  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  62      =1  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-  63      =1  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  64      =1  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  65      =1  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  66      =1  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  67      =1  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  68      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  69      =1  #define TIMEOUT_DELAY_VAL 4
-  70      =1  
-  71      =1  #define TIMECOUNTER_START 0
-  72      =1  #define STOP_TIMERCOUNT 0xFF
-  73      =1  
-  74      =1  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
-  75      =1  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
-  76      =1  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
-  77      =1  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
-  78      =1  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
-  79      =1  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
-  80      =1  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
-  81      =1  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
-  82      =1  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  83      =1  
-  84      =1  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-  85      =1  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
-  86      =1  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-  87      =1  
-  88      =1  typedef struct {
-  89      =1      unsigned char firstStartCode;
-  90      =1      unsigned char devAddr[6];
-  91      =1      unsigned char secondStartCode;
-  92      =1      unsigned char CtrlCode;
-  93      =1      unsigned char DataLength;
-  94      =1      unsigned char *Dat;
-  95      =1      unsigned char cs;
-  96      =1      unsigned char endCode;
-  97      =1  } DLT645_T;
-  98      =1  
-  99      =1  typedef struct {
- 100      =1      unsigned char isfirstSystemBoot;
- 101      =1      unsigned char CurrentSystemWorkMode;
- 102      =1      unsigned char MotorCurrentSttaus;
- 103      =1      unsigned char SwitchCurrentStatus;
- 104      =1      unsigned char TimeoutCount;
- 105      =1      unsigned char VoltCurrentStatus;
- 106      =1      unsigned char VoltStatusA;
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 18  
-
- 107      =1      unsigned char VoltStatusB;
- 108      =1      unsigned char VoltStatusC;
- 109      =1  } SMART_SWITCH_T;
- 110      =1  
- 111      =1  #endif
+  49      =1  //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
+  50      =1  //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
+  51      =1  #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
+  52      =1  #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+  53      =1  
+  54      =1  #define MONTOR_RIGHT_RUNNING 0x01
+  55      =1  #define MONTOR_LEFT_RUNNING 0x10
+  56      =1  #define MONTOR_STOP_RUNNING 0xff
+  57      =1  
+  58      =1  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  59      =1  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  60      =1  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+  61      =1  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  62      =1  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  63      =1  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  64      =1  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  65      =1  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  66      =1  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  67      =1  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  68      =1  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  69      =1  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  70      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  71      =1  #define TIMEOUT_DELAY_VAL 4
+  72      =1  
+  73      =1  #define TIMECOUNTER_START 0
+  74      =1  #define STOP_TIMERCOUNT 0xFF
+  75      =1  
+  76      =1  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
+  77      =1  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
+  78      =1  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
+  79      =1  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
+  80      =1  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
+  81      =1  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
+  82      =1  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
+  83      =1  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
+  84      =1  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  85      =1  
+  86      =1  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
+  87      =1  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
+  88      =1  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
+  89      =1  
+  90      =1  #endif
    3          
    4          // DLT645 Frame EOF/BOF Flag
    5          #define DLT645_FRAME_BOF   0x68
@@ -1109,6 +1086,8 @@ line level    source
   16   1              checkSum += ps[i];
   17   1       
   18   1              return checkSum;                
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 18  
+
   19   1      }
   20          
   21          #if 0
@@ -1150,8 +1129,6 @@ line level    source
                                       break;
                               case 4:
                                       Relay_Four = RelayStatusCtrl == 1 ? 1:0;
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 19  
-
                                       break;
                               case 5:
                                       Relay_Five = RelayStatusCtrl == 1 ? 1:0;
@@ -1173,6 +1150,8 @@ line level    source
                                       {
                                               P1=0xff;
                                               Relay_Seven = 1;                                
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 19  
+
                                       }
                                       else
                                       {
@@ -1214,8 +1193,6 @@ line level    source
                                       
                               case DATACODE_ERROR:    //数据域错误
                                       DataFrameBuf[10]=0xEE;
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 20  
-
                                       DataFrameBuf[11]=0xEE;
                                       DataFrameBuf[12]=Get_Chksum(DataFrameBuf,VERYDAT_NUM);
                                       break;
@@ -1237,6 +1214,8 @@ line level    source
               {
                       //接收的数据个数大于等于指令的个数14，否则接收的数据不全，数据帧丢掉不处理
                       if(pointer_buf485==MaxFrameLength)
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 20  
+
                       {               //SendByteData(0x18);
                               //ES=0;                         //处理解析数据帧的时候禁止接收数据              
                               //判断第一和第二起始符68h以及结束符16h
@@ -1278,8 +1257,6 @@ line level    source
                                                                       Relay_CtrlFun(RELAY_4,(DataFrameBuf[10] && 0x02 == 0x02) ? RELAY_ON:RELAY_OFF);
                                                                       Relay_CtrlFun(RELAY_3,(DataFrameBuf[10] && 0x04 == 0x04) ? RELAY_ON:RELAY_OFF);
                                                                       Relay_CtrlFun(RELAY_2,(DataFrameBuf[10] && 0x08 == 0x08) ? RELAY_ON:RELAY_OFF);
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 21  
-
                                                                       Relay_CtrlFun(RELAY_1,(DataFrameBuf[10] && 0x10 == 0x10) ? RELAY_ON:RELAY_OFF);
                                                                       Relay_CtrlFun(RELAY_8,(DataFrameBuf[10] && 0x20 == 0x20) ? RELAY_ON:RELAY_OFF);
                                                                       Relay_CtrlFun(RELAY_9,(DataFrameBuf[10] && 0x40 == 0x40) ? RELAY_ON:RELAY_OFF);
@@ -1301,6 +1278,8 @@ line level    source
                                                       }       
                                                       
                                                       //特殊功能设置代码
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 21  
+
                                                       else if (DataFrameBuf[CTRL_CODE]==0x04)//设置系统参数
                                                       {
                                                               if (DataFrameBuf[10]==0x01 && DataFrameBuf[11]==0xE8)
@@ -1342,8 +1321,6 @@ line level    source
                                                               else if (DataFrameBuf[10]==0x02 && DataFrameBuf[11]==0x01)
                                                               {
                                                                       IapProgramByte(VERYFIY_ADDR,0X01);
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 22  
-
                                                                       SendDataFrame(MaxFrameLength,DataFrameBuf);                                                     
                                                                       ReBootCtrl=0;//设置完成后重启系统
                                                               }//设置EVEN
@@ -1365,6 +1342,8 @@ line level    source
                                                                       DataFrameBuf[12]=Get_Chksum(DataFrameBuf,VERYDAT_NUM);
                                                                       SendDataFrame(MaxFrameLength,DataFrameBuf);                                                     
                                                               }//重启计数查询                                         
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 22  
+
                                                               else if (DataFrameBuf[10]==0x03 && DataFrameBuf[11]==0x02)
                                                               {
                                                                       //清除内存中记录的数据
@@ -1406,8 +1385,6 @@ line level    source
                                                               }//恢复出厂设置
                                                               else if (DataFrameBuf[10]==0x06 && DataFrameBuf[11]==0x06)
                                                               {
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 23  
-
                                                                       SendDataFrame(MaxFrameLength,DataFrameBuf);
                                                               }//自适应测试指令
                                                               else if (DataFrameBuf[10]==0x07 && DataFrameBuf[11]==0x07)
@@ -1429,7 +1406,7 @@ line level    source
               #endif
  326          
  327                  
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 24  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 23  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1473,7 +1450,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0023 22                RET     
              ; FUNCTION _Get_Chksum (END)
 
-C51 COMPILER V9.52.0.0   DLT645                                                            07/23/2017 22:49:15 PAGE 25  
+C51 COMPILER V9.52.0.0   DLT645                                                            08/24/2017 23:54:50 PAGE 24  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -1491,15 +1468,6 @@ CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
 u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-DLT645_T . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  15
-  firstStartCode . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  devAddr. . . . . . . . . . . . . . .  MEMBER   -----  ARRAY    0001H  6
-  secondStartCode. . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  CtrlCode . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
-  DataLength . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0009H  1
-  Dat. . . . . . . . . . . . . . . . .  MEMBER   -----  PTR      000AH  3
-  cs . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000DH  1
-  endCode. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   000EH  1
 B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
@@ -1509,16 +1477,6 @@ _Get_Chksum. . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   length . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0005H  1
   i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
   checkSum . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0006H  1
-SMART_SWITCH_T . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  9
-  isfirstSystemBoot. . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
-  CurrentSystemWorkMode. . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-  MotorCurrentSttaus . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
-  SwitchCurrentStatus. . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
-  TimeoutCount . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
-  VoltCurrentStatus. . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
-  VoltStatusA. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0006H  1
-  VoltStatusB. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-  VoltStatusC. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0008H  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 

@@ -1006,6 +1006,8 @@
  
  
  
+ 
+ 
  sbit  SwitchStatus           = P1^0;       
  sbit  SystemWorkMode         = P1^1;       
  sbit  VoltStatusLamp         = P1^2;       
@@ -1019,29 +1021,6 @@
  sbit  RS485_Recv_Send_Enable = P3^2;       
  sbit  MotorRunningCtrl_R     = P3^7;       
  sbit  MotorRunningCtrl_L     = P3^6;       
- 
- typedef struct {
- unsigned char firstStartCode;
- unsigned char devAddr[6];
- unsigned char secondStartCode;
- unsigned char CtrlCode;
- unsigned char DataLength;
- unsigned char *Dat;
- unsigned char cs;
- unsigned char endCode;
- } DLT645_T;
- 
- typedef struct {
- unsigned char isfirstSystemBoot;
- unsigned char CurrentSystemWorkMode;
- unsigned char MotorCurrentSttaus;
- unsigned char SwitchCurrentStatus;
- unsigned char TimeoutCount;
- unsigned char VoltCurrentStatus;
- unsigned char VoltStatusA;
- unsigned char VoltStatusB;
- unsigned char VoltStatusC;
- } SMART_SWITCH_T;
  
  
 #line 2 "..\Src\dlt645.c" /0

@@ -22,7 +22,6 @@
 #include	"delay.h"
 
 
-#if (MAIN_Fosc == 12000000L)
 //========================================================================
 // 函数: void  delay_ms(unsigned char ms)
 // 描述: 延时函数。
@@ -32,6 +31,7 @@
 // 日期: 2013-4-1
 // 备注: 
 //========================================================================
+#if (MAIN_Fosc == 11059200L)
 void  delay_ms(unsigned char ms) //@11.0592MHz
 {
      unsigned int i;
@@ -53,9 +53,21 @@ void  delay_ms(unsigned char ms) //@24.0000MHz
         } while (--i);
     } while(--ms);
 }
+
+void delay_us(unsigned char us)		//@24.000MHz
+{
+	unsigned char i;
+
+    do {
+        _nop_();
+        _nop_();
+        i = 3;
+        while (--i);
+    } while(us--);
+}
 #endif
 
-#if (MAIN_Fosc == 12000000L)
+#if (MAIN_Fosc == 11059200L)
 void delay_4000ms(void)		//@11.0592MHz
 {
 	unsigned char i, j, k;

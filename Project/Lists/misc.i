@@ -996,6 +996,8 @@
  
  
  
+ 
+ 
  sbit  SwitchStatus           = P1^0;       
  sbit  SystemWorkMode         = P1^1;       
  sbit  VoltStatusLamp         = P1^2;       
@@ -1009,29 +1011,6 @@
  sbit  RS485_Recv_Send_Enable = P3^2;       
  sbit  MotorRunningCtrl_R     = P3^7;       
  sbit  MotorRunningCtrl_L     = P3^6;       
- 
- typedef struct {
- unsigned char firstStartCode;
- unsigned char devAddr[6];
- unsigned char secondStartCode;
- unsigned char CtrlCode;
- unsigned char DataLength;
- unsigned char *Dat;
- unsigned char cs;
- unsigned char endCode;
- } DLT645_T;
- 
- typedef struct {
- unsigned char isfirstSystemBoot;
- unsigned char CurrentSystemWorkMode;
- unsigned char MotorCurrentSttaus;
- unsigned char SwitchCurrentStatus;
- unsigned char TimeoutCount;
- unsigned char VoltCurrentStatus;
- unsigned char VoltStatusA;
- unsigned char VoltStatusB;
- unsigned char VoltStatusC;
- } SMART_SWITCH_T;
  
  
 #line 1 "..\Src\misc.c" /0
@@ -1050,6 +1029,8 @@
  void Reboot_System(void);
  unsigned char setMontorRunningStatus(unsigned char runStat);
  void PrintSystemInfoToSerial(void);
+ void debug(unsigned char num);
+ unsigned short getACVppVolt(void);
  
  
 #line 2 "..\Src\misc.c" /0
@@ -1124,6 +1105,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1148,29 +1131,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1190,7 +1150,7 @@
 #line 18 "..\Src\delay.h" /0
 #line 18 "..\Src\delay.h" /0
  
- 
+ void delay_us(unsigned char us)	;
  void  delay_ms(unsigned char ms);
  void delay_4000ms(void);
  
@@ -1266,6 +1226,8 @@
   
   
   
+ 
+ 
   
   
  
@@ -1290,29 +1252,6 @@
  
   
   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
@@ -1399,6 +1338,155 @@
  
  
 #line 4 "..\Src\misc.c" /0
+ 
+  
+#line 1 "..\Src\ADC.h" /0
+ 
+ 
+ 
+ 
+  
+#line 1 "..\Src\config.h" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 16 "..\Src\config.h" /1
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+  
+ 
+  
+ 
+ 
+  
+ 
+  
+  
+ 
+  
+  
+ 
+  
+  
+ 
+  
+  
+  
+  
+ 
+ 
+  
+  
+ 
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 5 "..\Src\ADC.h" /0
+#line 5 "..\Src\ADC.h" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ typedef struct
+ {
+ u8	ADC_Px;			 
+ u8	ADC_Speed;		 
+ u8	ADC_Power;		 
+ u8	ADC_AdjResult;	 
+ u8	ADC_Polity;		 
+ u8	ADC_Interrupt;	 
+ } ADC_InitTypeDef;
+ 
+ void	ADC_Inilize(ADC_InitTypeDef *ADCx);
+ void	ADC_PowerControl(u8 pwr);
+ u16		Get_ADC10bitResult(u8 channel);	 
+ 
+ 
+#line 5 "..\Src\misc.c" /0
  
  
  void init_Watch_Dog(void)
@@ -1517,6 +1605,85 @@
  PrintSameString(" ", 1);
  PrintSameString("*", 62);
  
+ }
+ 
+ void debug(unsigned char num)
+ {
+ if(num == 0) PrintString1("0");
+ if(num == 1) PrintString1("1");
+ if(num == 2) PrintString1("2");
+ if(num == 3) PrintString1("3");
+ if(num == 4) PrintString1("4");
+ if(num == 5) PrintString1("5");
+ if(num == 6) PrintString1("6");
+ if(num == 7) PrintString1("7");
+ if(num == 8) PrintString1("8");
+ if(num == 9) PrintString1("9");
+ else PrintString1(" ");
+ }
+ 
+ 
+#line 141 "..\Src\misc.c" /1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 182 "..\Src\misc.c" /0
+ unsigned short getACVppVolt(void)
+ {
+ unsigned short Cur_Volt = 0;
+ unsigned short Max_Volt = 0;
+ unsigned short capCount = 5000;
+ 
+ do {
+ 
+ Cur_Volt = Get_ADC10bitResult(3);
+ 
+ 
+ 
+ if(Cur_Volt >= Max_Volt) {
+ Max_Volt = Cur_Volt;
+ } 
+ } while(capCount--);
+ 
+ return Max_Volt;
  }
  
  

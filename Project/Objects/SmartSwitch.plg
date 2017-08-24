@@ -9,459 +9,6 @@ Project File Date:  07/12/2017
 <h2>Output:</h2>
 Rebuild target 'Target 1'
 compiling delay.c...
-..\Src\delay.c(44): warning C280: 'ms': unreferenced local variable
-..\Src\delay.c(57): warning C322: unknown identifier
-compiling GPIO.c...
-compiling main.c...
-..\Src\main.c(34): error C242: 'scalar': too many initializers
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-..\Src\misc.c(13): error C202: 'SystemSleepStatus': undefined identifier
-..\Src\misc.c(36): warning C322: unknown identifier
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-Target not created
-Rebuild target 'Target 1'
-compiling delay.c...
-..\Src\delay.c(44): warning C280: 'ms': unreferenced local variable
-..\Src\delay.c(57): warning C322: unknown identifier
-compiling GPIO.c...
-compiling main.c...
-..\Src\main.c(34): error C242: 'scalar': too many initializers
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-..\Src\misc.c(11): warning C280: 'sleep': unreferenced local variable
-..\Src\misc.c(36): warning C322: unknown identifier
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-Target not created
-Rebuild target 'Target 1'
-compiling delay.c...
-..\Src\delay.c(44): warning C280: 'ms': unreferenced local variable
-..\Src\delay.c(57): warning C322: unknown identifier
-compiling GPIO.c...
-compiling main.c...
-..\Src\main.c(34): error C242: 'scalar': too many initializers
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-..\Src\misc.c(36): warning C322: unknown identifier
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-Target not created
-Rebuild target 'Target 1'
-compiling delay.c...
-..\Src\delay.c(44): warning C280: 'ms': unreferenced local variable
-..\Src\delay.c(57): warning C322: unknown identifier
-compiling GPIO.c...
-compiling main.c...
-..\Src\main.c(34): error C242: 'scalar': too many initializers
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-Target not created
-Rebuild target 'Target 1'
-compiling delay.c...
-..\Src\delay.c(44): warning C280: 'ms': unreferenced local variable
-compiling GPIO.c...
-compiling main.c...
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_MS?DELAY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_ADC10BITRESULT?ADC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_CHKSUM?DLT645
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SENDDATAFRAME?RS485
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0C6AH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0C6CH
-Program Size: data=196.0 xdata=0 code=3345
-creating hex file from ".\Objects\SmartSwitch"...
-User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170716-235720
-请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170716-235720.hex 
-已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170716-235720.hex 
- 驱动器 H 中的卷没有标签。
- 卷的序列号是 0005-6791
- H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/16  23:57             9,979 output_smartswitch_ad_485_20170716-235720.hex
-               1 个文件          9,979 字节
-               0 个目录 47,248,826,368 可用字节
-".\Objects\SmartSwitch" - 0 Error(s), 14 Warning(s).
-Rebuild target 'Target 1'
-compiling delay.c...
-compiling GPIO.c...
-compiling main.c...
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_MS?DELAY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_ADC10BITRESULT?ADC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_CHKSUM?DLT645
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SENDDATAFRAME?RS485
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0C6AH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0C6CH
-Program Size: data=195.0 xdata=0 code=3345
-creating hex file from ".\Objects\SmartSwitch"...
-User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170716-235854
-请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170716-235854.hex 
-已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170716-235854.hex 
- 驱动器 H 中的卷没有标签。
- 卷的序列号是 0005-6791
- H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/16  23:58             9,966 output_smartswitch_ad_485_20170716-235854.hex
-               1 个文件          9,966 字节
-               0 个目录 47,248,814,080 可用字节
-".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
-Rebuild target 'Target 1'
-compiling delay.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling GPIO.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling main.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\main.c(31): error C129: missing ';' before 'smartSwitch'
-compiling timer.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling USART1.C...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling misc.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling ADC.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling dlt645.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-compiling rs485.c...
-..\Src\config.h(110): error C141: syntax error near '}'
-..\Src\config.h(110): error C141: syntax error near '}'
-Target not created
-Rebuild target 'Target 1'
-compiling delay.c...
-compiling GPIO.c...
-compiling main.c...
-..\Src\main.c(187): error C141: syntax error near ')'
-..\Src\main.c(192): error C141: syntax error near 'else'
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-Target not created
-Rebuild target 'Target 1'
-compiling delay.c...
-compiling GPIO.c...
-compiling main.c...
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_MS?DELAY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_CHKSUM?DLT645
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SENDDATAFRAME?RS485
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DB6H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DB8H
-Program Size: data=194.0 xdata=0 code=3672
-creating hex file from ".\Objects\SmartSwitch"...
-User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170722-131916
-请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170722-131916.hex 
-已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170722-131916.hex 
- 驱动器 H 中的卷没有标签。
- 卷的序列号是 0005-6791
- H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/22  13:19            10,893 output_smartswitch_ad_485_20170722-131916.hex
-               1 个文件         10,893 字节
-               0 个目录 47,248,359,424 可用字节
-".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
-Rebuild target 'Target 1'
-compiling delay.c...
-compiling GPIO.c...
-compiling main.c...
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_MS?DELAY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_CHKSUM?DLT645
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SENDDATAFRAME?RS485
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DB6H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DB8H
-Program Size: data=194.0 xdata=0 code=3672
-creating hex file from ".\Objects\SmartSwitch"...
-User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170722-132516
-请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170722-132516.hex 
-已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170722-132516.hex 
- 驱动器 H 中的卷没有标签。
- 卷的序列号是 0005-6791
- H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/22  13:25            10,893 output_smartswitch_ad_485_20170722-132516.hex
-               1 个文件         10,893 字节
-               0 个目录 47,248,343,040 可用字节
-".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
-Rebuild target 'Target 1'
-compiling delay.c...
-compiling GPIO.c...
-compiling main.c...
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_MS?DELAY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_CHKSUM?DLT645
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SENDDATAFRAME?RS485
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DB6H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DB8H
-Program Size: data=194.0 xdata=0 code=3672
-creating hex file from ".\Objects\SmartSwitch"...
-User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170722-150310
-请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170722-150310.hex 
-已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170722-150310.hex 
- 驱动器 H 中的卷没有标签。
- 卷的序列号是 0005-6791
- H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/22  15:03            10,893 output_smartswitch_ad_485_20170722-150310.hex
-               1 个文件         10,893 字节
-               0 个目录 47,248,330,752 可用字节
-".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
-Rebuild target 'Target 1'
-compiling delay.c...
-compiling GPIO.c...
-compiling main.c...
-compiling timer.c...
-compiling USART1.C...
-compiling misc.c...
-compiling ADC.c...
-compiling dlt645.c...
-compiling rs485.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_DELAY_MS?DELAY
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_CHKSUM?DLT645
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SENDDATAFRAME?RS485
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DCCH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  SETSYSTEMSLEEPFLAG
-    MODULE:  .\Objects\misc.obj (MISC)
-    ADDRESS: 0DCEH
-Program Size: data=194.0 xdata=0 code=3694
-creating hex file from ".\Objects\SmartSwitch"...
-User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170723-222544
-请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170723-222544.hex 
-已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170723-222544.hex 
- 驱动器 H 中的卷没有标签。
- 卷的序列号是 0005-6791
- H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/23  22:25            10,950 output_smartswitch_ad_485_20170723-222544.hex
-               1 个文件         10,950 字节
-               0 个目录 47,248,310,272 可用字节
-".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
-Rebuild target 'Target 1'
-compiling delay.c...
 compiling GPIO.c...
 compiling main.c...
 compiling timer.c...
@@ -504,15 +51,3231 @@ linking...
 Program Size: data=194.0 xdata=0 code=3705
 creating hex file from ".\Objects\SmartSwitch"...
 User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20170723-224916
+20170819-160928
 请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170723-224916.hex 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-160928.hex 
 已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170723-224916.hex 
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-160928.hex 
  驱动器 H 中的卷没有标签。
  卷的序列号是 0005-6791
  H:\SmartSwitch_Project\smartswitch 的目录
-2017/07/23  22:49            10,985 output_smartswitch_ad_485_20170723-224916.hex
+2017/08/19  16:09            10,985 output_smartswitch_ad_485_20170819-160928.hex
                1 个文件         10,985 字节
-               0 个目录 47,248,252,928 可用字节
+               0 个目录 46,716,444,672 可用字节
 ".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(158): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD7H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD9H
+Program Size: data=198.0 xdata=0 code=3705
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-161800
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-161800.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-161800.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  16:18            10,985 output_smartswitch_ad_485_20170819-161800.hex
+               1 个文件         10,985 字节
+               0 个目录 46,716,420,096 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(158): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD7H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD9H
+Program Size: data=198.0 xdata=0 code=3705
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-163521
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-163521.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-163521.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  16:35            10,985 output_smartswitch_ad_485_20170819-163521.hex
+               1 个文件         10,985 字节
+               0 个目录 46,716,407,808 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(158): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDAH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDCH
+Program Size: data=198.0 xdata=0 code=3708
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-165836
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-165836.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-165836.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  16:58            10,991 output_smartswitch_ad_485_20170819-165836.hex
+               1 个文件         10,991 字节
+               0 个目录 46,716,395,520 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(158): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDAH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDCH
+Program Size: data=198.0 xdata=0 code=3713
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-172434
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-172434.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-172434.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  17:24            11,001 output_smartswitch_ad_485_20170819-172434.hex
+               1 个文件         11,001 字节
+               0 个目录 46,716,383,232 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(31): error C129: missing ';' before 'smartSwitch'
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(103): error C200: left side of '.' requires struct/union
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(103): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(104): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(105): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(111): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(114): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(122): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(128): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(131): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(139): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(189): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(191): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(196): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(200): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(206): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(214): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(215): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(225): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(227): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(228): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(233): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(234): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(246): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(247): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(259): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(260): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(262): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(263): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(269): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(270): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(284): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(285): error C202: 'TimeoutCount': undefined identifier
+..\Src\main.c(301): error C202: 'VoltCurrentStatus': undefined identifier
+..\Src\main.c(312): error C202: 'VoltCurrentStatus': undefined identifier
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(216): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(217): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(229): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(230): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(235): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(236): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(248): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(249): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(261): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(262): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(264): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(265): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(271): error C202: 'MotorCurrentSttaus': undefined identifier
+..\Src\main.c(272): error C202: 'MotorCurrentSttaus': undefined identifier
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(153): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDAH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDCH
+Program Size: data=192.0 xdata=0 code=3711
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-173818
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-173818.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-173818.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  17:38            10,984 output_smartswitch_ad_485_20170819-173818.hex
+               1 个文件         10,984 字节
+               0 个目录 46,716,407,808 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(153): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDAH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDCH
+Program Size: data=192.0 xdata=0 code=3711
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-173841
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-173841.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-173841.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  17:38            10,984 output_smartswitch_ad_485_20170819-173841.hex
+               1 个文件         10,984 字节
+               0 个目录 46,716,395,520 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(153): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDAH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DDCH
+Program Size: data=192.0 xdata=0 code=3711
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170819-173930
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170819-173930.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170819-173930.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/19  17:39            10,984 output_smartswitch_ad_485_20170819-173930.hex
+               1 个文件         10,984 字节
+               0 个目录 46,716,383,232 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(154): warning C280: 'voltbuf': unreferenced local variable
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DC6H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DC8H
+Program Size: data=193.0 xdata=0 code=3691
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170820- 12957
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170820- 12957.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170820- 12957.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(184): error C202: 'Min_Volt': undefined identifier
+..\Src\main.c(198): error C202: 'Min_Volt': undefined identifier
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(176): error C141: syntax error near '&&'
+..\Src\main.c(176): error C141: syntax error near ')'
+..\Src\main.c(185): error C141: syntax error near 'else'
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(204): warning C276: constant in condition expression
+..\Src\main.c(205): warning C294: unreachable code
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DCDH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DCFH
+Program Size: data=188.0 xdata=0 code=3698
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170821-234622
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170821-234622.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170821-234622.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/21  23:46            10,945 output_smartswitch_ad_485_20170821-234622.hex
+               1 个文件         10,945 字节
+               0 个目录 46,715,846,656 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD2H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD4H
+Program Size: data=188.0 xdata=0 code=3703
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170821-234649
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170821-234649.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170821-234649.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/21  23:46            10,968 output_smartswitch_ad_485_20170821-234649.hex
+               1 个文件         10,968 字节
+               0 个目录 46,715,834,368 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD2H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD4H
+Program Size: data=188.0 xdata=0 code=3703
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170821-234757
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170821-234757.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170821-234757.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/21  23:47            10,968 output_smartswitch_ad_485_20170821-234757.hex
+               1 个文件         10,968 字节
+               0 个目录 46,715,789,312 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD2H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD4H
+Program Size: data=188.0 xdata=0 code=3703
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170821-235939
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170821-235939.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170821-235939.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/21  23:59            10,968 output_smartswitch_ad_485_20170821-235939.hex
+               1 个文件         10,968 字节
+               0 个目录 46,715,777,024 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD6H
+Program Size: data=188.0 xdata=0 code=3705
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822- 01415
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822- 01415.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822- 01415.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD6H
+Program Size: data=188.0 xdata=0 code=3705
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822- 01444
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822- 01444.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822- 01444.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD6H
+Program Size: data=188.0 xdata=0 code=3705
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822- 01617
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822- 01617.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822- 01617.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD6H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0DD8H
+Program Size: data=188.0 xdata=0 code=3707
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822- 02430
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822- 02430.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822- 02430.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F69H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F6BH
+Program Size: data=192.0 xdata=0 code=4132
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822- 04415
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822- 04415.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822- 04415.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F69H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F6BH
+Program Size: data=192.0 xdata=0 code=4132
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-220849
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-220849.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-220849.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:08            12,190 output_smartswitch_ad_485_20170822-220849.hex
+               1 个文件         12,190 字节
+               0 个目录 46,715,731,968 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB5H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB7H
+Program Size: data=192.0 xdata=0 code=4186
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-223217
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-223217.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-223217.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:32            12,376 output_smartswitch_ad_485_20170822-223217.hex
+               1 个文件         12,376 字节
+               0 个目录 46,715,711,488 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB5H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB7H
+Program Size: data=192.0 xdata=0 code=4186
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-223421
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-223421.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-223421.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:34            12,376 output_smartswitch_ad_485_20170822-223421.hex
+               1 个文件         12,376 字节
+               0 个目录 46,715,695,104 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EF8H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EFAH
+Program Size: data=191.0 xdata=0 code=3998
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-223921
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-223921.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-223921.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:39            11,844 output_smartswitch_ad_485_20170822-223921.hex
+               1 个文件         11,844 字节
+               0 个目录 46,724,009,984 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EF8H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EFAH
+Program Size: data=191.0 xdata=0 code=3998
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-224223
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-224223.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-224223.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:42            11,844 output_smartswitch_ad_485_20170822-224223.hex
+               1 个文件         11,844 字节
+               0 个目录 46,723,997,696 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EF7H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EF9H
+Program Size: data=191.0 xdata=0 code=3997
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-224538
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-224538.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-224538.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:45            11,842 output_smartswitch_ad_485_20170822-224538.hex
+               1 个文件         11,842 字节
+               0 个目录 46,723,985,408 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F12H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F14H
+Program Size: data=191.0 xdata=0 code=4024
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-224624
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-224624.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-224624.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:46            11,935 output_smartswitch_ad_485_20170822-224624.hex
+               1 个文件         11,935 字节
+               0 个目录 46,723,973,120 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EFEH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F00H
+Program Size: data=191.0 xdata=0 code=4004
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-225317
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-225317.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-225317.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  22:53            11,882 output_smartswitch_ad_485_20170822-225317.hex
+               1 个文件         11,882 字节
+               0 个目录 46,723,956,736 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0ED2H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0ED4H
+Program Size: data=191.0 xdata=0 code=3960
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-230046
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-230046.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-230046.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:00            11,742 output_smartswitch_ad_485_20170822-230046.hex
+               1 个文件         11,742 字节
+               0 个目录 46,723,350,528 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0ED2H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0ED4H
+Program Size: data=191.0 xdata=0 code=3960
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-230102
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-230102.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-230102.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:01            11,742 output_smartswitch_ad_485_20170822-230102.hex
+               1 个文件         11,742 字节
+               0 个目录 46,723,338,240 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB6H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB8H
+Program Size: data=191.0 xdata=0 code=4188
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-231055
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-231055.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-231055.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:10            12,380 output_smartswitch_ad_485_20170822-231055.hex
+               1 个文件         12,380 字节
+               0 个目录 46,723,309,568 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB6H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FB8H
+Program Size: data=191.0 xdata=0 code=4188
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-231104
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-231104.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-231104.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:11            12,380 output_smartswitch_ad_485_20170822-231104.hex
+               1 个文件         12,380 字节
+               0 个目录 46,723,293,184 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FFEH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1000H
+Program Size: data=191.0 xdata=0 code=4260
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-231419
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-231419.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-231419.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:14            12,589 output_smartswitch_ad_485_20170822-231419.hex
+               1 个文件         12,589 字节
+               0 个目录 46,723,268,608 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 102FH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1031H
+Program Size: data=191.0 xdata=0 code=4308
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-231640
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-231640.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-231640.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:16            12,724 output_smartswitch_ad_485_20170822-231640.hex
+               1 个文件         12,724 字节
+               0 个目录 46,723,252,224 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1025H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1027H
+Program Size: data=191.0 xdata=0 code=4298
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-231917
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-231917.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-231917.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:19            12,691 output_smartswitch_ad_485_20170822-231917.hex
+               1 个文件         12,691 字节
+               0 个目录 46,723,235,840 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1026H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1028H
+Program Size: data=191.0 xdata=0 code=4294
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-232235
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-232235.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-232235.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:22            12,683 output_smartswitch_ad_485_20170822-232235.hex
+               1 个文件         12,683 字节
+               0 个目录 46,723,219,456 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1025H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1027H
+Program Size: data=191.0 xdata=0 code=4298
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-232624
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-232624.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-232624.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:26            12,691 output_smartswitch_ad_485_20170822-232624.hex
+               1 个文件         12,691 字节
+               0 个目录 46,723,203,072 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1025H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1027H
+Program Size: data=191.0 xdata=0 code=4298
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-232658
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-232658.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-232658.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:26            12,691 output_smartswitch_ad_485_20170822-232658.hex
+               1 个文件         12,691 字节
+               0 个目录 46,723,186,688 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FCFH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FD1H
+Program Size: data=191.0 xdata=0 code=4212
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-232717
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-232717.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-232717.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:27            12,454 output_smartswitch_ad_485_20170822-232717.hex
+               1 个文件         12,454 字节
+               0 个目录 46,723,178,496 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1025H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1027H
+Program Size: data=191.0 xdata=0 code=4298
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-233625
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-233625.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-233625.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:36            12,691 output_smartswitch_ad_485_20170822-233625.hex
+               1 个文件         12,691 字节
+               0 个目录 46,723,153,920 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1030H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 1032H
+Program Size: data=191.0 xdata=0 code=4309
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-234653
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-234653.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-234653.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:46            12,713 output_smartswitch_ad_485_20170822-234653.hex
+               1 个文件         12,713 字节
+               0 个目录 46,723,137,536 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FF3H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FF5H
+Program Size: data=191.0 xdata=0 code=4248
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170822-235204
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170822-235204.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170822-235204.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/22  23:52            12,513 output_smartswitch_ad_485_20170822-235204.hex
+               1 个文件         12,513 字节
+               0 个目录 46,723,125,248 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9FH
+Program Size: data=191.0 xdata=0 code=4162
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 00022
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 00022.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 00022.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling GPIO.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling main.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling timer.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling USART1.C...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling misc.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling ADC.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling dlt645.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+compiling rs485.c...
+..\Src\config.h(25): warning C317: attempt to redefine macro 'MAIN_Fosc'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9FH
+Program Size: data=191.0 xdata=0 code=4162
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 00100
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 00100.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 00100.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 21 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA0H
+Program Size: data=191.0 xdata=0 code=4158
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 00117
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 00117.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 00117.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA0H
+Program Size: data=191.0 xdata=0 code=4158
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 00233
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 00233.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 00233.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA0H
+Program Size: data=191.0 xdata=0 code=4158
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 00930
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 00930.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 00930.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FF4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FF6H
+Program Size: data=191.0 xdata=0 code=4244
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 01148
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 01148.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 01148.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FF4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FF6H
+Program Size: data=191.0 xdata=0 code=4244
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 01156
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 01156.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 01156.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F9EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA0H
+Program Size: data=191.0 xdata=0 code=4158
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 01520
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 01520.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 01520.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(175): warning C206: 'delay_us': missing function-prototype
+..\Src\main.c(175): error C267: 'delay_us': requires ANSI-style prototype
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA3H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA5H
+Program Size: data=191.0 xdata=0 code=4176
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 02240
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 02240.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 02240.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA3H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA5H
+Program Size: data=191.0 xdata=0 code=4176
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 02520
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 02520.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 02520.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA3H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0FA5H
+Program Size: data=191.0 xdata=0 code=4176
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170823- 02733
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170823- 02733.hex 
+命令语法不正确。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170823- 02733.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+找不到文件
+ H:\SmartSwitch_Project\smartswitch\Project 的目录
+找不到文件
+".\Objects\SmartSwitch" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+..\Src\misc.c(150): warning C206: 'Get_ADC10bitResult': missing function-prototype
+..\Src\misc.c(150): error C267: 'Get_ADC10bitResult': requires ANSI-style prototype
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DEBUG?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EFEH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F00H
+Program Size: data=184.0 xdata=0 code=4011
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170824-232836
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170824-232836.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170824-232836.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/24  23:28            11,883 output_smartswitch_ad_485_20170824-232836.hex
+               1 个文件         11,883 字节
+               0 个目录 46,722,543,616 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DEBUG?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EB6H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EB8H
+Program Size: data=184.0 xdata=0 code=3939
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170824-234947
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170824-234947.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170824-234947.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/24  23:49            11,674 output_smartswitch_ad_485_20170824-234947.hex
+               1 个文件         11,674 字节
+               0 个目录 46,722,535,424 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DEBUG?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EB6H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0EB8H
+Program Size: data=184.0 xdata=0 code=3939
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170824-235005
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170824-235005.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170824-235005.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/24  23:50            11,674 output_smartswitch_ad_485_20170824-235005.hex
+               1 个文件         11,674 字节
+               0 个目录 46,722,519,040 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 14 Warning(s).
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+..\Src\main.c(170): warning C206: 'LOG': missing function-prototype
+..\Src\main.c(170): error C267: 'LOG': requires ANSI-style prototype
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+Target not created
+Rebuild target 'Target 1'
+compiling delay.c...
+compiling GPIO.c...
+compiling main.c...
+compiling timer.c...
+compiling USART1.C...
+compiling misc.c...
+compiling ADC.c...
+compiling dlt645.c...
+compiling rs485.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY_US?DELAY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SYSTEM_POWERDOWN?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?POF_BOOT_DELAY?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REBOOT_SYSTEM?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?PRINTSYSTEMINFOTOSERIAL?MISC
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_CHKSUM?DLT645
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_SEND?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RS485_ENABLE_RECV?RS485
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SENDDATAFRAME?RS485
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  ?SETSYSTEMSLEEPFLAG?BIT
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F6DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  SETSYSTEMSLEEPFLAG
+    MODULE:  .\Objects\misc.obj (MISC)
+    ADDRESS: 0F6FH
+Program Size: data=183.0 xdata=0 code=4122
+creating hex file from ".\Objects\SmartSwitch"...
+User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
+20170824-235452
+请按任意键继续. . . 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20170824-235452.hex 
+已复制         1 个文件。
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20170824-235452.hex 
+ 驱动器 H 中的卷没有标签。
+ 卷的序列号是 0005-6791
+ H:\SmartSwitch_Project\smartswitch 的目录
+2017/08/24  23:54            12,196 output_smartswitch_ad_485_20170824-235452.hex
+               1 个文件         12,196 字节
+               0 个目录 46,722,502,656 可用字节
+".\Objects\SmartSwitch" - 0 Error(s), 13 Warning(s).

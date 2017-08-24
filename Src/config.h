@@ -46,8 +46,10 @@
 #define UNDER_VOLTAGE 0x01
 #define OVER_VOLTAGE 0x10
 #define NORMAL_VOLTAGE 0x0
-#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
+//#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
+//#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
+#define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
+#define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
 
 #define MONTOR_RIGHT_RUNNING 0x01
 #define MONTOR_LEFT_RUNNING 0x10
@@ -84,28 +86,5 @@ sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
 sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
 sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
 sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-
-typedef struct {
-    unsigned char firstStartCode;
-    unsigned char devAddr[6];
-    unsigned char secondStartCode;
-    unsigned char CtrlCode;
-    unsigned char DataLength;
-    unsigned char *Dat;
-    unsigned char cs;
-    unsigned char endCode;
-} DLT645_T;
-
-typedef struct {
-    unsigned char isfirstSystemBoot;
-    unsigned char CurrentSystemWorkMode;
-    unsigned char MotorCurrentSttaus;
-    unsigned char SwitchCurrentStatus;
-    unsigned char TimeoutCount;
-    unsigned char VoltCurrentStatus;
-    unsigned char VoltStatusA;
-    unsigned char VoltStatusB;
-    unsigned char VoltStatusC;
-} SMART_SWITCH_T;
 
 #endif

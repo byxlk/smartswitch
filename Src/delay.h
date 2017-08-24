@@ -16,7 +16,7 @@
 #define	__DELAY_H
 
 #include	"config.h"
-
+void delay_us(unsigned char us)	;
 void  delay_ms(unsigned char ms);
 void delay_4000ms(void);
 #endif

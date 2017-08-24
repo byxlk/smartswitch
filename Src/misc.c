@@ -2,6 +2,7 @@
 #include "misc.h"
 #include "delay.h"
 #include "USART1.h"
+#include  "ADC.h"
 
 void init_Watch_Dog(void)
 {
@@ -119,6 +120,41 @@ void PrintSystemInfoToSerial(void)
 	PrintSameString(" ", 1);
     PrintSameString("*", 62);
 #endif
+}
+
+void debug(unsigned char num)
+{
+    if(num == 0) LOGD("0");
+    if(num == 1) LOGD("1");
+    if(num == 2) LOGD("2");
+    if(num == 3) LOGD("3");
+    if(num == 4) LOGD("4");
+    if(num == 5) LOGD("5");
+    if(num == 6) LOGD("6");
+    if(num == 7) LOGD("7");
+    if(num == 8) LOGD("8");
+    if(num == 9) LOGD("9");
+    else LOGD(" ");
+}
+
+unsigned short getACVppVolt(void)
+{
+    unsigned short Cur_Volt = 0;
+    unsigned short Max_Volt = 0;
+    unsigned short capCount = 5000;
+
+    do {
+        //获取当前采集的电压值
+        Cur_Volt = Get_ADC10bitResult(3);
+        
+        
+        //检测到过零点后，查找最大值，即为半波整流后的峰值
+        if(Cur_Volt >= Max_Volt) {
+            Max_Volt = Cur_Volt;
+        } 
+    } while(capCount--);
+
+    return Max_Volt;
 }
 
 ////////////////////////////////////////////////////////////////////////

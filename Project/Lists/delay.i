@@ -1036,6 +1036,8 @@
  
  
  
+ 
+ 
  sbit  SwitchStatus           = P1^0;       
  sbit  SystemWorkMode         = P1^1;       
  sbit  VoltStatusLamp         = P1^2;       
@@ -1050,33 +1052,10 @@
  sbit  MotorRunningCtrl_R     = P3^7;       
  sbit  MotorRunningCtrl_L     = P3^6;       
  
- typedef struct {
- unsigned char firstStartCode;
- unsigned char devAddr[6];
- unsigned char secondStartCode;
- unsigned char CtrlCode;
- unsigned char DataLength;
- unsigned char *Dat;
- unsigned char cs;
- unsigned char endCode;
- } DLT645_T;
- 
- typedef struct {
- unsigned char isfirstSystemBoot;
- unsigned char CurrentSystemWorkMode;
- unsigned char MotorCurrentSttaus;
- unsigned char SwitchCurrentStatus;
- unsigned char TimeoutCount;
- unsigned char VoltCurrentStatus;
- unsigned char VoltStatusA;
- unsigned char VoltStatusB;
- unsigned char VoltStatusC;
- } SMART_SWITCH_T;
- 
  
 #line 18 "..\Src\delay.h" /0
  
- 
+ void delay_us(unsigned char us)	;
  void  delay_ms(unsigned char ms);
  void delay_4000ms(void);
  
@@ -1085,7 +1064,6 @@
  
  
  
-#line 26 "..\Src\delay.c" /1
  
  
  
@@ -1095,6 +1073,7 @@
  
  
  
+#line 35 "..\Src\delay.c" /1
  
  
  
@@ -1118,28 +1097,40 @@
  } while(--ms);
  }
  
+ void delay_us(unsigned char us)		 
+ {
+ unsigned char i;
  
- 
-#line 59 "..\Src\delay.c" /1
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ do {
+ _nop_();
+ _nop_();
+ i = 3;
+ while (--i);
+ } while(us--);
+ }
  
  
  
+#line 71 "..\Src\delay.c" /1
  
  
  
  
-#line 77 "..\Src\delay.c" /0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#line 89 "..\Src\delay.c" /0
  void delay_4000ms(void)		 
  {
  unsigned char i, j, k;
