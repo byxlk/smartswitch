@@ -997,7 +997,6 @@
  
  
  
- 
  sbit  SwitchStatus           = P1^0;       
  sbit  SystemWorkMode         = P1^1;       
  sbit  VoltStatusLamp         = P1^2;       
@@ -1105,7 +1104,6 @@
   
   
   
- 
  
   
   
@@ -1226,7 +1224,6 @@
   
   
   
- 
  
   
   
@@ -1396,7 +1393,6 @@
   
   
   
- 
  
   
   
@@ -1622,50 +1618,6 @@
  else PrintString1(" ");
  }
  
- 
-#line 141 "..\Src\misc.c" /1
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#line 182 "..\Src\misc.c" /0
  unsigned short getACVppVolt(void)
  {
  unsigned short Cur_Volt = 0;

@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 1   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE DELAY
@@ -62,7 +62,7 @@ line level    source
   12      =2  /*------------------------------------------------------------------*/
   13      =2  
   14      =2  
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 2   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 2   
 
   15      =2  #ifndef         __CONFIG_H
   16      =2  #define         __CONFIG_H
@@ -126,7 +126,7 @@ line level    source
   26      =4  extern unsigned long _lrol_    (unsigned long, unsigned char);
   27      =4  extern unsigned char _chkfloat_(float);
   28      =4  #if defined (__CX2__)
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 3   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 3   
 
            =4 extern int           abs       (int);
            =4 #endif
@@ -190,7 +190,7 @@ line level    source
   68      =3  sfr IE    = 0xA8;
   69      =3  sfr SADDR = 0xA9;
   70      =3  sfr WKTCL = 0xAA;       //唤醒定时器低字节
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 4   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 4   
 
   71      =3  sfr WKTCH = 0xAB;       //唤醒定时器高字节
   72      =3  sfr     S3CON = 0xAC;
@@ -254,7 +254,7 @@ line level    source
  130      =3  sfr     TH2  = 0xD6;
  131      =3  sfr     TL2  = 0xD7;
  132      =3  
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 5   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 5   
 
  133      =3  sfr     RL_T4H  = 0xD2;
  134      =3  sfr     RL_T4L  = 0xD3;
@@ -318,7 +318,7 @@ line level    source
  192      =3  /*  P0  */
  193      =3  sbit  P00 = P0^0;
  194      =3  sbit  P01 = P0^1;
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 6   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 6   
 
  195      =3  sbit  P02 = P0^2;
  196      =3  sbit  P03 = P0^3;
@@ -382,7 +382,7 @@ line level    source
  254      =3  /*  P4  */
  255      =3  sbit  P40 = P4^0;
  256      =3  sbit  P41 = P4^1;
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 7   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 7   
 
  257      =3  sbit  P42 = P4^2;
  258      =3  sbit  P43 = P4^3;
@@ -446,7 +446,7 @@ line level    source
  316      =3  sbit B0 = B^0;
  317      =3  sbit B1 = B^1;
  318      =3  sbit B2 = B^2;
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 8   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 8   
 
  319      =3  sbit B3 = B^3;
  320      =3  sbit B4 = B^4;
@@ -510,7 +510,7 @@ line level    source
  377      =3  #define         S1_RX_Enable()          SCON |= 0x10
  378      =3  #define         S1_USE_P30P31()         P_SW1 &= ~0xc0                                  //UART1 使用P30 P31口   默认
  379      =3  #define         S1_USE_P36P37()         P_SW1 = (P_SW1 & ~0xc0) | 0x40  //UART1 使用P36 P37口
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 9   
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 9   
 
  380      =3  #define         S1_USE_P16P17()         P_SW1 = (P_SW1 & ~0xc0) | 0x80  //UART1 使用P16 P17口
  381      =3  #define         S1_TXD_RXD_SHORT()      PCON2 |=  (1<<4)        //将TXD与RXD连接中继输出
@@ -574,7 +574,7 @@ line level    source
  439      =3  
  440      =3  
  441      =3  //                                                 7     6       5      4     3      2      1      0    Reset Value
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 10  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 10  
 
  442      =3  //sfr AUXR  = 0x8E;             T0x12 T1x12 UART_M0x6  T2R  T2_C/T T2x12 EXTRAM  S1ST2  0000,0000       //Auxiliary Registe
              -r 
@@ -638,7 +638,7 @@ line level    source
  494      =3  #define D_WDT_SCALE_64          5
  495      =3  #define D_WDT_SCALE_128         6
  496      =3  #define D_WDT_SCALE_256         7
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 11  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 11  
 
  497      =3  
  498      =3  #define WDT_reset(n)    WDT_CONTR = D_EN_WDT + D_CLR_WDT + D_IDLE_WDT + (n)             //初始化WDT，喂狗
@@ -702,7 +702,7 @@ line level    source
  556      =3  
  557      =3  
  558      =3  
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 12  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 12  
 
  559      =3  /* ADC Register */
  560      =3  //                                                              7       6      5       4         3      2    1    0   Reset Value
@@ -766,7 +766,7 @@ line level    source
  612      =3  #define         PWM2_NORMAL()   PCA_PWM2 &= ~3                          //PWM1正常输出(默认)
  613      =3  #define         PWM2_OUT_0()    PCA_PWM2 |=  3                          //PWM2一直输出0
  614      =3  #define         PWM2_OUT_1()    PCA_PWM2 &= ~3, CCAP2H = 0      //PWM2一直输出1
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 13  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 13  
 
  615      =3  
  616      =3  
@@ -830,7 +830,7 @@ line level    source
  667      =3  ;  1     0     0    1    0    0     x           48H     16位软件定时器。
  668      =3  ;  1     0     0    1    1    0     x           4CH     16位高速脉冲输出。
  669      =3  ;  1     0     0    0    0    1     0           42H     8位PWM。无中断
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 14  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 14  
 
  670      =3  ;  1     1     0    0    0    1     1           63H     8位PWM。低变高可产生中断
  671      =3  ;  1     0     1    0    0    1     1           53H     8位PWM。高变低可产生中断
@@ -894,7 +894,7 @@ line level    source
  729      =3  #define NOP11() NOP10(),NOP1()
  730      =3  #define NOP12() NOP11(),NOP1()
  731      =3  #define NOP13() NOP12(),NOP1()
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 15  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 15  
 
  732      =3  #define NOP14() NOP13(),NOP1()
  733      =3  #define NOP15() NOP14(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  790      =3  
  791      =3  
  792      =3  //sfr CLK_DIV = 0x97; //Clock Divder 系统时钟分频  -     -      -       -     -  CLKS2 CLKS1 CLKS0 xxxx,x0
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 16  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 16  
 
              -00
  793      =3  #define         SYSTEM_CLK_1T()         CLK_DIV &= ~0x07        //default
@@ -1022,7 +1022,7 @@ line level    source
  851      =3  
  852      =3  #define         MCLKO_None      0
  853      =3  #define         MCLKO_DIV1      1
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 17  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 17  
 
  854      =3  #define         MCLKO_DIV2      2
  855      =3  #define         MCLKO_DIV4      3
@@ -1060,50 +1060,49 @@ line level    source
   46      =2  #define UNDER_VOLTAGE 0x01
   47      =2  #define OVER_VOLTAGE 0x10
   48      =2  #define NORMAL_VOLTAGE 0x0
-  49      =2  //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-  50      =2  //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-  51      =2  #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-  52      =2  #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
-  53      =2  
-  54      =2  #define MONTOR_RIGHT_RUNNING 0x01
-  55      =2  #define MONTOR_LEFT_RUNNING 0x10
-  56      =2  #define MONTOR_STOP_RUNNING 0xff
-  57      =2  
-  58      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-  59      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-  60      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-  61      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-  62      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-  63      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-  64      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-  65      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-  66      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-  67      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-  68      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-  69      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
-  70      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
-  71      =2  #define TIMEOUT_DELAY_VAL 4
-  72      =2  
-  73      =2  #define TIMECOUNTER_START 0
-  74      =2  #define STOP_TIMERCOUNT 0xFF
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 18  
+  49      =2  
+  50      =2  #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+  51      =2  #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
+  52      =2  
+  53      =2  #define MONTOR_RIGHT_RUNNING 0x01
+  54      =2  #define MONTOR_LEFT_RUNNING 0x10
+  55      =2  #define MONTOR_STOP_RUNNING 0xff
+  56      =2  
+  57      =2  #define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
+  58      =2  #define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
+  59      =2  #define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
+  60      =2  #define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
+  61      =2  #define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
+  62      =2  #define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
+  63      =2  #define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
+  64      =2  #define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
+  65      =2  #define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
+  66      =2  #define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
+  67      =2  #define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
+  68      =2  #define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+  69      =2  #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
+  70      =2  #define TIMEOUT_DELAY_VAL 4
+  71      =2  
+  72      =2  #define TIMECOUNTER_START 0
+  73      =2  #define STOP_TIMERCOUNT 0xFF
+  74      =2  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 18  
 
-  75      =2  
-  76      =2  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
-  77      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
-  78      =2  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
-  79      =2  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
-  80      =2  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
-  81      =2  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
-  82      =2  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
-  83      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
-  84      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
-  85      =2  
-  86      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-  87      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
-  88      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
-  89      =2  
-  90      =2  #endif
+  75      =2  sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
+  76      =2  sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
+  77      =2  sbit  VoltStatusLamp         = P1^2;      // 电压状态指示灯 0：系统掉电  1：系统唤醒
+  78      =2  sbit  VoltStatusPlus         = P3^3;      // 脉冲信号输出
+  79      =2  sbit  VoltCapturePortA       = P1^3;      // 电压采集端口
+  80      =2  sbit  VoltCapturePortB       = P1^4;      // 电压采集端口
+  81      =2  sbit  VoltCapturePortC       = P1^5;      // 电压采集端口
+  82      =2  sbit  SwitchOnStatus         = P5^4;      // 0: 合闸到位 1：合闸不到位
+  83      =2  sbit  OutOffHookCheck        = P5^5;      // 脱扣位置检测 0: 脱扣到位 1:没有脱扣
+  84      =2  
+  85      =2  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
+  86      =2  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- 电机正传
+  87      =2  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- 电机反转
+  88      =2  
+  89      =2  #endif
   19      =1  void delay_us(unsigned char us) ;
   20      =1  void  delay_ms(unsigned char ms);
   21      =1  void delay_4000ms(void);
@@ -1150,9 +1149,9 @@ line level    source
   62   2              _nop_();
   63   2              _nop_();
   64   2              i = 3;
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 19  
-
   65   2              while (--i);
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 19  
+
   66   2          } while(us--);
   67   1      }
   68          #endif
@@ -1194,7 +1193,7 @@ line level    source
  104   2              } while (--i);
  105   1      }
  106          #endif
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 20  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 20  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1258,7 +1257,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 93
 0000 00                NOP     
                                            ; SOURCE LINE # 94
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 21  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 21  
 
 0001 00                NOP     
                                            ; SOURCE LINE # 95
@@ -1285,7 +1284,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000E 22                RET     
              ; FUNCTION delay_4000ms (END)
 
-C51 COMPILER V9.52.0.0   DELAY                                                             08/24/2017 23:54:48 PAGE 22  
+C51 COMPILER V9.52.0.0   DELAY                                                             08/27/2017 00:30:02 PAGE 22  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

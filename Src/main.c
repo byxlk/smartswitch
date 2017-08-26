@@ -26,8 +26,9 @@
 /*************	±¾µØ³£Á¿ÉùÃ÷	**************/
 
 /*************	±¾µØ±äÁ¿ÉùÃ÷	**************/
-unsigned char VoltExceptionsCount = 0xFF;
-unsigned char VoltExceptionsStatus = 0x0; //µçÑ¹Õý³£
+unsigned char VoltExceptionsPlus = 0xFF;    //µçÑ¹Òì³£Âö³å
+unsigned char VoltOverLedIndicate = 0xFF;   //µçÑ¹¹ýÑ¹
+unsigned char VoltUnderLedIndicate = 0xFF; //µçÑ¹Ç·Ñ¹
 
 unsigned char TimeoutCount = 0xFF;
 unsigned char VoltCurrentStatus = LOSS_VOLTAGE;
@@ -53,24 +54,6 @@ void UART_config(void)
 	USART_Configuration(USART1, &COMx_InitStructure);		//³õÊ¼»¯´®¿Ú1 USART1,USART2
 }
 
-/******************** IOÅäÖÃº¯Êý **************************/
-void GPIO_Config(void)
-{
-	GPIO_InitTypeDef	GPIO_InitStructure;		            //½á¹¹¶¨Òå
-
-	GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2;	   //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
-	GPIO_InitStructure.Mode = GPIO_HighZ;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
-	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
-
-	GPIO_InitStructure.Pin  = GPIO_Pin_4 ;	   //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
-	GPIO_InitStructure.Mode = GPIO_PullUp;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
-	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
-
-	GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;	//Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
-	GPIO_InitStructure.Mode = GPIO_PullUp;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
-	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
-}
-
 /************************ ¶¨Ê±Æ÷ÅäÖÃ ****************************/
 void Timer_Config(void) //20ms@24.000MHz
 {
@@ -78,18 +61,70 @@ void Timer_Config(void) //20ms@24.000MHz
 	TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;	//Ö¸¶¨¹¤×÷Ä£Ê½,   TIM_16BitAutoReload,TIM_16Bit,TIM_8BitAutoReload,TIM_16BitAutoReloadNoMask
 	TIM_InitStructure.TIM_Polity    = PolityHigh;			//Ö¸¶¨ÖÐ¶ÏÓÅÏÈ¼¶, PolityHigh,PolityLow
 	TIM_InitStructure.TIM_Interrupt = ENABLE;				//ÖÐ¶ÏÊÇ·ñÔÊÐí,   ENABLE»òDISABLE
-	TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;			//Ö¸¶¨Ê±ÖÓÔ´,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK_Ext
+	TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;		//Ö¸¶¨Ê±ÖÓÔ´,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK_Ext
 	TIM_InitStructure.TIM_ClkOut    = DISABLE;				//ÊÇ·ñÊä³ö¸ßËÙÂö³å, ENABLE»òDISABLE
 	TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 50));	//³õÖµ, ½ÚÅÄÎª50HZ(20ms)
 	TIM_InitStructure.TIM_Run       = ENABLE;				//ÊÇ·ñ³õÊ¼»¯ºóÆô¶¯¶¨Ê±Æ÷, ENABLE»òDISABLE
 	Timer_Inilize(Timer0,&TIM_InitStructure);				//³õÊ¼»¯Timer0	  Timer0,Timer1,Timer2
 }
 
+
+/******************** IOÅäÖÃº¯Êý **************************/
+//#define	GPIO_PullUp		0	//ÉÏÀ­×¼Ë«Ïò¿Ú
+//#define	GPIO_HighZ		1	//¸¡¿ÕÊäÈë
+//#define	GPIO_OUT_OD		2	//¿ªÂ©Êä³ö
+//#define	GPIO_OUT_PP		3	//ÍÆÍìÊä³ö
+void GPIO_Config(void)
+{
+	GPIO_InitTypeDef	GPIO_InitStructure;		            //½á¹¹¶¨Òå
+
+    // 220VµçÑ¹µôÑ¹¼ì²â£¬ÊÖ¶¯ºÍ×Ô¶¯Ä£Ê½Ñ¡ÔñÒý½Å
+	GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1;	   //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_HighZ;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
+    
+    //×÷ÎªAD¹¦ÄÜÇ°ÏÈÒªÉèÖÃIOÎª¸ß×èÊäÈëÄ£Ê½
+	GPIO_InitStructure.Pin  = GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5; //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_HighZ;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
+
+    // Òì³£Ö¸Ê¾µÆ
+    GPIO_InitStructure.Pin  =  GPIO_Pin_2;	                //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_PullUp;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);	           //³õÊ¼»¯
+    
+    //ÍÑ¿ÚÓëºÏÕ¢×´Ì¬¼ì²âÒý½Å
+	GPIO_InitStructure.Pin  = GPIO_Pin_4 | GPIO_Pin_5;	   //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_HighZ;		           //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P5,&GPIO_InitStructure);	           //³õÊ¼»¯
+
+    //µç»ú¿ØÖÆÒý½Å
+	GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;	    //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_OUT_OD;		            //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
+    
+    //RS485Ê¹ÄÜÒý½Å
+	GPIO_InitStructure.Pin  = GPIO_Pin_2;           	    //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_PullUp;		            //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
+    
+    //µçÑ¹Òì³£Ê±Êä³ö100msÂö³åÐÅºÅÒý½Å
+	GPIO_InitStructure.Pin  = GPIO_Pin_3;           	    //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+	GPIO_InitStructure.Mode = GPIO_PullUp;		            //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
+
+    //³õÊ¼»¯²¿·ÖGPIO
+    setMontorRunningStatus(MONTOR_STOP_RUNNING);            //µç»úÍ£×ª
+    RS485_Recv_Send_Enable = 0;                             //RS485Ê¹ÄÜÄ¬ÈÏÎª½ÓÊÕÄ£Ê½
+    VoltStatusLamp = 1;                                     //×´Ì¬Ö¸Ê¾µÆÄ¬ÈÏ²»ÁÁ
+    VoltStatusPlus = 1;                                     //Âö³åÐÅºÅÄ¬ÈÏ¸ßµçÆ½
+}
+
 void ADC_config(void)
 {
 	ADC_InitTypeDef		ADC_InitStructure;				//½á¹¹¶¨Òå
 
-	ADC_InitStructure.ADC_Px        = ADC_P13;	        //ÉèÖÃÒª×öADCµÄIO,	ADC_P10 ~ ADC_P17(»ò²Ù×÷),ADC_P1_All
+	ADC_InitStructure.ADC_Px        = ADC_P13;	//ÉèÖÃÒª×öADCµÄIO,	ADC_P10 ~ ADC_P17(»ò²Ù×÷),ADC_P1_All
 	ADC_InitStructure.ADC_Speed     = ADC_540T;			//ADCËÙ¶È			ADC_90T,ADC_180T,ADC_360T,ADC_540T
 	ADC_InitStructure.ADC_Power     = ENABLE;			//ADC¹¦ÂÊÔÊÐí/¹Ø±Õ	ENABLE,DISABLE
 	ADC_InitStructure.ADC_AdjResult = ADC_RES_H2L8;		//ADC½á¹ûµ÷Õû,	ADC_RES_H2L8,ADC_RES_H8L2
@@ -99,6 +134,7 @@ void ADC_config(void)
 
 	ADC_PowerControl(ENABLE);							//µ¥¶ÀµÄADCµçÔ´²Ù×÷º¯Êý, ENABLE»òDISABLE
 }
+
 
 static void delay_timer(unsigned char iTime)
 {
@@ -145,16 +181,15 @@ static void wait_out_off_hook(unsigned char time_out)
 /**********************************************/
 void main(void)
 {
-    unsigned char i = 0;
+    //unsigned char i = 0;
+    unsigned char iVbCount = 0;
     unsigned short Max_Volt = 0;
-    unsigned short voltbuf[10];
 
 	//Ó²¼þ³õÊ¼»¯²Ù×÷
 	EA = 0;
-    GPIO_Config();//GPIO init
-
-    UART_config(); //UART init
     Timer_Config();//Timer init
+    UART_config(); //UART init
+    GPIO_Config();//GPIO init
     ADC_config(); //ADC init
 
 	//¿ª×ÜÖÐ¶Ï
@@ -166,8 +201,14 @@ void main(void)
 	//=======================> Start Main Process <==========================//
 	while (1)
 	{
-        VoltCapturePortC = ~VoltCapturePortC;
+        RS485_Recv_Send_Enable = ~RS485_Recv_Send_Enable;
         Max_Volt = getACVppVolt();
+        //if(iVbCount++ < 10) continue;
+        //else {
+        //    Max_Volt = Max_Volt / iVbCount;
+        //    iVbCount = 0;
+        //}
+        
         LOGD("Max Volt: ");
         debug(Max_Volt / 1000 % 10);
         debug(Max_Volt / 100 % 10);
@@ -196,7 +237,12 @@ void main(void)
         //-------------------------------------------------------------------------------------
         // µ±Ç°µçÑ¹×´Ì¬   ---   Òì³££¨°üÀ¨£ºÇ·Ñ¹¡¢¹ýÑ¹¡¢Ê§Ñ¹£
         if(VoltCurrentStatus != NORMAL_VOLTAGE)
-        {            
+        {
+            //ÉèÖÃÖ¸Ê¾µÆºÍÂö³åÊä³öÐÅºÅ
+            VoltExceptionsPlus = 0;     //Êä³öµçÑ¹Òì³£µÄÂö³åÐÅºÅ
+            if(VoltCurrentStatus == UNDER_VOLTAGE)    VoltUnderLedIndicate = 0;
+            else if(VoltCurrentStatus == OVER_VOLTAGE) VoltOverLedIndicate = 0;
+
             //£¨b£© Íâ²¿¿ØÖÆÐÅºÅ¶ªÊ§£º
             // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
             //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
@@ -214,8 +260,7 @@ void main(void)
                 // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
                 //    ×Ô¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
                 //    ÊÖ¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
-                if(VoltCurrentStatus != LOSS_VOLTAGE)
-                    delay_ms(50);
+                if(VoltCurrentStatus != LOSS_VOLTAGE) delay_ms(50);
                 if(MotorCurrentStatus != MONTOR_RIGHT_RUNNING)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//Õý´«
 
@@ -225,10 +270,11 @@ void main(void)
                 if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
             }
+            //delay_timer(TIMEOUT_VAL_MAX);
+            //delay_timer(TIMEOUT_VAL_MAX);
         }
         else //µ±Ç°µçÑ¹×´Ì¬   ---   Õý³£
         {
-            VoltCapturePortB = ~VoltCapturePortB;
             //-------------------------------------------------------------------------------------
             //£¨a£© Íâ²¿¿ØÖÆÐÅºÅ´æÔÚ£º
             // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
@@ -281,36 +327,40 @@ void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
 	if(TimeoutCount <= TIMEOUT_VAL_MAX)
 		TimeoutCount++;
 
-    //status indicator lamp
-    if(!VoltExceptionsStatus)
+    // Volt exception plus signal
+    if(VoltExceptionsPlus != 0xFF)
     {
-        VoltStatusLamp = 1;
-        VoltStatusPlus = 1;
-        if(VoltExceptionsCount != 0xFF) VoltExceptionsCount = 0xFF;
+        VoltStatusPlus = 0;//Êä³öµÍµçÆ½
+        if(VoltExceptionsPlus++ > 5 ) //20 x 5 = 100ms
+        {
+            VoltExceptionsPlus = 0xFF;
+            VoltStatusPlus = 1;
+        }
     }
-    else
+    
+    //Over Volt indicate
+    if(VoltOverLedIndicate != 0xFF)
     {
-        VoltExceptionsCount++;
-
-        if(VoltExceptionsCount > 5) VoltStatusPlus = 1;
-        else VoltStatusPlus = 0;
-
-        if(VoltCurrentStatus == UNDER_VOLTAGE)
+        VoltStatusLamp = 0;//Êä³öµÍµçÆ½
+        if(VoltOverLedIndicate++ > 25 ) //20 x 25 = 500ms
         {
-            if(VoltExceptionsCount < 15 && VoltExceptionsCount > 0) VoltStatusLamp = 0; //300ms
-            else if(VoltExceptionsCount < 20 && VoltExceptionsCount >= 15) VoltStatusLamp = 1; //100ms
-            else if(VoltExceptionsCount < 35 && VoltExceptionsCount >= 20) VoltStatusLamp = 0; //300ms
-            else if(VoltExceptionsCount < 135 && VoltExceptionsCount >= 35) VoltStatusLamp = 1; //2000ms
-            else if(VoltExceptionsCount < 150 && VoltExceptionsCount >= 135) VoltStatusLamp = 0; //300ms
-            else if(VoltExceptionsCount < 155 && VoltExceptionsCount >= 150) VoltStatusLamp = 1; //100ms
-            else if(VoltExceptionsCount < 170 && VoltExceptionsCount >= 155) VoltStatusLamp = 0; //300ms
-            else if(VoltExceptionsCount >= 175) VoltStatusLamp = 0; //300ms
+            VoltOverLedIndicate = 0xFF;
+            VoltStatusLamp = 1;
         }
-        else if(VoltCurrentStatus == OVER_VOLTAGE)
-        {
-            if(VoltExceptionsCount > 25) VoltStatusLamp = 1;
-            else VoltStatusLamp = 0;
-        }
+    }
+    
+    //Under Volt indication
+    if(VoltUnderLedIndicate != 0xFF)
+    {
+        VoltUnderLedIndicate++;
+        if(VoltUnderLedIndicate < 15 && VoltUnderLedIndicate >= 0) VoltStatusLamp = 0; //300ms
+        else if(VoltUnderLedIndicate < 20 && VoltUnderLedIndicate >= 15) VoltStatusLamp = 1; //100ms
+        else if(VoltUnderLedIndicate < 35 && VoltUnderLedIndicate >= 20) VoltStatusLamp = 0; //300ms
+        else if(VoltUnderLedIndicate < 135 && VoltUnderLedIndicate >= 35) VoltStatusLamp = 1; //2000ms
+        else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0; //300ms
+        else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1; //100ms
+        else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0; //300ms
+        else if(VoltUnderLedIndicate >= 170) {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
     }
 }
 

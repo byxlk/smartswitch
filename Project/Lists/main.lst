@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 1   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 2   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 2   
 
   11      =2  /* article, please specify in which data and procedures from STC    */
   12      =2  /*------------------------------------------------------------------*/
@@ -126,7 +126,7 @@ line level    source
   31      =2  sfr TMOD = 0x89;
   32      =2  sfr TL0  = 0x8A;
   33      =2  sfr TL1  = 0x8B;
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 3   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 3   
 
   34      =2  sfr TH0  = 0x8C;
   35      =2  sfr TH1  = 0x8D;
@@ -190,7 +190,7 @@ line level    source
   93      =2  sfr WDT_CONTR = 0xC1;
   94      =2  sfr IAP_DATA  = 0xC2;
   95      =2  sfr IAP_ADDRH = 0xC3;
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 4   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 4   
 
   96      =2  sfr IAP_ADDRL = 0xC4;
   97      =2  sfr IAP_CMD   = 0xC5;
@@ -254,7 +254,7 @@ line level    source
  155      =2  sfr CCAP0L = 0xEA;      //PCAÄ£¿é0µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
  156      =2  sfr CCAP1L = 0xEB;      //PCAÄ£¿é1µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
  157      =2  sfr CCAP2L = 0xEC;      //PCAÄ£¿é2µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 5   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 5   
 
  158      =2  
  159      =2  sfr B      = 0xF0;
@@ -318,7 +318,7 @@ line level    source
  217      =2  sbit  SPI_MOSI  = P1^3;
  218      =2  sbit  SPI_MISO  = P1^4;
  219      =2  sbit  SPI_SCLK  = P1^5;
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 6   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 6   
 
  220      =2  
  221      =2  /*  P2  */
@@ -382,7 +382,7 @@ line level    source
  279      =2  sbit TB8  = SCON^3;     //·¢ËÍÊý¾ÝµÚ8Î»
  280      =2  sbit RB8  = SCON^2;     //½ÓÊÕÊý¾ÝµÚ8Î»
  281      =2  sbit TI   = SCON^1;     //·¢ËÍÖÐ¶Ï±êÖ¾Î»
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 7   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 7   
 
  282      =2  sbit RI   = SCON^0;     //½ÓÊÕÖÐ¶Ï±êÖ¾Î»
  283      =2  
@@ -446,7 +446,7 @@ line level    source
  341      =2  sbit PX1        = IP^2; //Íâ²¿ÖÐ¶Ï1ÓÅÏÈ¼¶Éè¶¨Î»
  342      =2  sbit PT0        = IP^1; //¶¨Ê±ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
  343      =2  sbit PX0        = IP^0; //Íâ²¿ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 8   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 8   
 
  344      =2  
  345      =2  //                                           7      6      5     4     3     2    1     0        Reset Val
@@ -510,7 +510,7 @@ line level    source
  402      =2  #define         S2TB8_SET()                     S2CON |=  8
  403      =2  #define         S2TB8_CLR()                     S2CON &= ~8
  404      =2  #define         S2_Int_en()                     IE2   |=  1             //´®¿Ú2ÔÊÐíÖÐ¶Ï
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 9   
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 9   
 
  405      =2  #define         S2_USE_P10P11()         P_SW2 &= ~1             //UART2 Ê¹ÓÃP1¿Ú        Ä¬ÈÏ
  406      =2  #define         S2_USE_P46P47()         P_SW2 |=  1             //UART2 Ê¹ÓÃP4¿Ú
@@ -574,7 +574,7 @@ line level    source
              -ÒÔ1T»ò12T¡£
  463      =2  #define         T0_pulseP34_disable()           AUXR2 &= ~1
  464      =2  #define         T1_pulseP35_enable()            AUXR2 |=  2             //ÔÊÐí T1 Òç³öÂö³åÔÚT1(P3.4)½ÅÊä³ö£¬Fck1 = 1/2 T1 Òç³öÂÊ£¬T1¿É
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 10  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 10  
 
              -ÒÔ1T»ò12T¡£
  465      =2  #define         T1_pulseP35_disable()           AUXR2 &= ~2
@@ -638,7 +638,7 @@ line level    source
  519      =2  #define         ISP_ERASE()             ISP_CMD = 3             //ISP²Á³ýÃüÁî
  520      =2  
  521      =2  //sfr ISP_TRIG  = 0xC6;
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 11  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 11  
 
  522      =2  #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP´¥·¢ÃüÁî
  523      =2  
@@ -702,7 +702,7 @@ line level    source
  579      =2  #define SPI_SCLK_NormalH()      SPCTL |=  (1<<3)                //1: ¿ÕÏÐÊ±SCLKÎª¸ßµçÆ½
  580      =2  #define SPI_SCLK_NormalL()      SPCTL &= ~(1<<3)                //0: ¿ÕÏÐÊ±SCLKÎªµÍµçÆ½
  581      =2  #define SPI_PhaseH()            SPCTL |=  (1<<2)                //1: 
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 12  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 12  
 
  582      =2  #define SPI_PhaseL()            SPCTL &= ~(1<<2)                //0: 
  583      =2  #define SPI_Speed(n)            SPCTL = (SPCTL & ~3) | (n)      //ÉèÖÃËÙ¶È, 0 -- fosc/4, 1 -- fosc/16, 2 -- fosc/64, 3 --
@@ -766,7 +766,7 @@ line level    source
  634      =2  #define PCA_CLK_4T()            CMOD = (CMOD & ~0x0E) + 10      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/4¡£   Fosc/4
  635      =2  #define PCA_CLK_6T()            CMOD = (CMOD & ~0x0E) + 12      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/6¡£   Fosc/6
  636      =2  #define PCA_CLK_8T()            CMOD = (CMOD & ~0x0E) + 14      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/8¡£   Fosc/8
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 13  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 13  
 
  637      =2  #define PCA_INT_ENABLE()        CMOD |=  1                                      //PCA¼ÆÊýÆ÷Òç³öÖÐ¶ÏÔÊÐíÎ»£¬1---ÔÊÐíCF£¨CCON.7£©²úÉúÖÐ¶Ï¡£
  638      =2  #define PCA_INT_DISABLE()       CMOD &= ~1                                      //PCA¼ÆÊýÆ÷Òç³öÖÐ¶Ï½ûÖ¹¡£
@@ -830,7 +830,7 @@ line level    source
  692      =2  #define         PCA1_capture_fall()             CCAPM1 = (0x10 + 1)
  693      =2  #define         PCA1_capture_edge()             CCAPM1 = (0x30 + 1)
  694      =2  #define         PCA1_16bit_Timer()              CCAPM1 = (0x48 + 1)
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 14  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 14  
 
  695      =2  #define         PCA1_High_Pulse()               CCAPM1 = (0x4C + 1)
  696      =2  
@@ -894,7 +894,7 @@ line level    source
  754      =2  #define NOP36() NOP35(),NOP1()
  755      =2  #define NOP37() NOP36(),NOP1()
  756      =2  #define NOP38() NOP37(),NOP1()
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 15  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 15  
 
  757      =2  #define NOP39() NOP38(),NOP1()
  758      =2  #define NOP40() NOP39(),NOP1()
@@ -958,7 +958,7 @@ line level    source
  814      =2  #define         BUS_SPEED_2T()  BUS_SPEED = 1
  815      =2  #define         BUS_SPEED_4T()  BUS_SPEED = 2
  816      =2  #define         BUS_SPEED_8T()  BUS_SPEED = 3
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 16  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 16  
 
  817      =2  
  818      =2  /*   interrupt vector */
@@ -1022,7 +1022,7 @@ line level    source
   35      =1  
   36      =1  #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
   37      =1  #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 17  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 17  
 
   38      =1  
   39      =1  #define SWITCH_STATUS_ON 0x5A
@@ -1035,48 +1035,47 @@ line level    source
   46      =1  #define UNDER_VOLTAGE 0x01
   47      =1  #define OVER_VOLTAGE 0x10
   48      =1  #define NORMAL_VOLTAGE 0x0
-  49      =1  //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-  50      =1  //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-  51      =1  #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-  52      =1  #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
-  53      =1  
-  54      =1  #define MONTOR_RIGHT_RUNNING 0x01
-  55      =1  #define MONTOR_LEFT_RUNNING 0x10
-  56      =1  #define MONTOR_STOP_RUNNING 0xff
-  57      =1  
-  58      =1  #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
-  59      =1  #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
-  60      =1  #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
-  61      =1  #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
-  62      =1  #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
-  63      =1  #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
-  64      =1  #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
-  65      =1  #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
-  66      =1  #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
-  67      =1  #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
-  68      =1  #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
-  69      =1  #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
-  70      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
-  71      =1  #define TIMEOUT_DELAY_VAL 4
-  72      =1  
-  73      =1  #define TIMECOUNTER_START 0
-  74      =1  #define STOP_TIMERCOUNT 0xFF
-  75      =1  
-  76      =1  sbit  SwitchStatus           = P1^0;      // Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
-  77      =1  sbit  SystemWorkMode         = P1^1;      // 1£º×Ô¶¯  0£ºÊÖ¶¯
-  78      =1  sbit  VoltStatusLamp         = P1^2;      // µçÑ¹×´Ì¬Ö¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
-  79      =1  sbit  VoltStatusPlus         = P3^3;      // Âö³åÐÅºÅÊä³ö
-  80      =1  sbit  VoltCapturePortA       = P1^3;      // µçÑ¹²É¼¯¶Ë¿Ú
-  81      =1  sbit  VoltCapturePortB       = P1^4;      // µçÑ¹²É¼¯¶Ë¿Ú
-  82      =1  sbit  VoltCapturePortC       = P1^5;      // µçÑ¹²É¼¯¶Ë¿Ú
-  83      =1  sbit  SwitchOnStatus         = P5^4;      // 0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
-  84      =1  sbit  OutOffHookCheck        = P5^5;      // ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
-  85      =1  
-  86      =1  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
-  87      =1  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- µç»úÕý´«
-  88      =1  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- µç»ú·´×ª
-  89      =1  
-  90      =1  #endif
+  49      =1  
+  50      =1  #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+  51      =1  #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
+  52      =1  
+  53      =1  #define MONTOR_RIGHT_RUNNING 0x01
+  54      =1  #define MONTOR_LEFT_RUNNING 0x10
+  55      =1  #define MONTOR_STOP_RUNNING 0xff
+  56      =1  
+  57      =1  #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
+  58      =1  #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
+  59      =1  #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
+  60      =1  #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
+  61      =1  #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
+  62      =1  #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
+  63      =1  #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
+  64      =1  #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
+  65      =1  #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
+  66      =1  #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
+  67      =1  #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
+  68      =1  #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
+  69      =1  #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
+  70      =1  #define TIMEOUT_DELAY_VAL 4
+  71      =1  
+  72      =1  #define TIMECOUNTER_START 0
+  73      =1  #define STOP_TIMERCOUNT 0xFF
+  74      =1  
+  75      =1  sbit  SwitchStatus           = P1^0;      // Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
+  76      =1  sbit  SystemWorkMode         = P1^1;      // 1£º×Ô¶¯  0£ºÊÖ¶¯
+  77      =1  sbit  VoltStatusLamp         = P1^2;      // µçÑ¹×´Ì¬Ö¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
+  78      =1  sbit  VoltStatusPlus         = P3^3;      // Âö³åÐÅºÅÊä³ö
+  79      =1  sbit  VoltCapturePortA       = P1^3;      // µçÑ¹²É¼¯¶Ë¿Ú
+  80      =1  sbit  VoltCapturePortB       = P1^4;      // µçÑ¹²É¼¯¶Ë¿Ú
+  81      =1  sbit  VoltCapturePortC       = P1^5;      // µçÑ¹²É¼¯¶Ë¿Ú
+  82      =1  sbit  SwitchOnStatus         = P5^4;      // 0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
+  83      =1  sbit  OutOffHookCheck        = P5^5;      // ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
+  84      =1  
+  85      =1  sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
+  86      =1  sbit  MotorRunningCtrl_R     = P3^7;      // P36=0 P37=1 --- µç»úÕý´«
+  87      =1  sbit  MotorRunningCtrl_L     = P3^6;      // P36=1 P37=0 --- µç»ú·´×ª
+  88      =1  
+  89      =1  #endif
   16          #include  "USART1.h"
    1      =1  
    2      =1  /*------------------------------------------------------------------*/
@@ -1086,9 +1085,9 @@ line level    source
    6      =1  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =1  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
    8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 18  
-
    9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 18  
+
   10      =1  /* If you want to use the program or the program referenced in the  */
   11      =1  /* article, please specify in which data and procedures from STC    */
   12      =1  /*------------------------------------------------------------------*/
@@ -1146,14 +1145,13 @@ line level    source
            =2 #define UNDER_VOLTAGE 0x01
            =2 #define OVER_VOLTAGE 0x10
            =2 #define NORMAL_VOLTAGE 0x0
-           =2 //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 19  
-
+           =2 
+           =2 #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+           =2 #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
            =2 
            =2 #define MONTOR_RIGHT_RUNNING 0x01
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 19  
+
            =2 #define MONTOR_LEFT_RUNNING 0x10
            =2 #define MONTOR_STOP_RUNNING 0xff
            =2 
@@ -1214,10 +1212,10 @@ line level    source
   40      =1  #define TimeOutSet1             5
   41      =1  #define TimeOutSet2             5
   42      =1  
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 20  
-
   43      =1  #define BRT_Timer1      1
   44      =1  #define BRT_Timer2      2
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 20  
+
   45      =1  
   46      =1  typedef struct
   47      =1  { 
@@ -1278,10 +1276,10 @@ line level    source
   17      =1  
   18      =1  #include        "config.h"
    1      =2  
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 21  
-
    2      =2  /*------------------------------------------------------------------*/
    3      =2  /* --- STC MCU International Limited -------------------------------*/
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 21  
+
    4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
    5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
@@ -1327,10 +1325,9 @@ line level    source
            =2 #define UNDER_VOLTAGE 0x01
            =2 #define OVER_VOLTAGE 0x10
            =2 #define NORMAL_VOLTAGE 0x0
-           =2 //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+           =2 
+           =2 #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+           =2 #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
            =2 
            =2 #define MONTOR_RIGHT_RUNNING 0x01
            =2 #define MONTOR_LEFT_RUNNING 0x10
@@ -1342,11 +1339,11 @@ line level    source
            =2 #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 22  
-
            =2 #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 22  
+
            =2 #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_1S5 30 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_1S 20 //about 2s£¬ 5s max is 250
@@ -1406,11 +1403,11 @@ line level    source
   10      =2  /* If you want to use the program or the program referenced in the  */
   11      =2  /* article, please specify in which data and procedures from STC    */
   12      =2  /*------------------------------------------------------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 23  
-
   13      =2  
   14      =2  
   15      =2  #ifndef         __CONFIG_H
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 23  
+
            =2 #define         __CONFIG_H
            =2 
            =2 
@@ -1444,10 +1441,9 @@ line level    source
            =2 #define UNDER_VOLTAGE 0x01
            =2 #define OVER_VOLTAGE 0x10
            =2 #define NORMAL_VOLTAGE 0x0
-           =2 //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+           =2 
+           =2 #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+           =2 #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
            =2 
            =2 #define MONTOR_RIGHT_RUNNING 0x01
            =2 #define MONTOR_LEFT_RUNNING 0x10
@@ -1470,12 +1466,12 @@ line level    source
            =2 
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFF
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 24  
-
            =2 
            =2 sbit  SwitchStatus           = P1^0;      // Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
            =2 sbit  SystemWorkMode         = P1^1;      // 1£º×Ô¶¯  0£ºÊÖ¶¯
            =2 sbit  VoltStatusLamp         = P1^2;      // µçÑ¹×´Ì¬Ö¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 24  
+
            =2 sbit  VoltStatusPlus         = P3^3;      // Âö³åÐÅºÅÊä³ö
            =2 sbit  VoltCapturePortA       = P1^3;      // µçÑ¹²É¼¯¶Ë¿Ú
            =2 sbit  VoltCapturePortB       = P1^4;      // µçÑ¹²É¼¯¶Ë¿Ú
@@ -1534,12 +1530,12 @@ line level    source
   10      =1  /*---------------------------------------------------------------------*/
   11      =1  
   12      =1  #ifndef __TIMER_H
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 25  
-
   13      =1  #define __TIMER_H
   14      =1  
   15      =1  #include        "config.h"
    1      =2  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 25  
+
    2      =2  /*------------------------------------------------------------------*/
    3      =2  /* --- STC MCU International Limited -------------------------------*/
    4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
@@ -1587,10 +1583,9 @@ line level    source
            =2 #define UNDER_VOLTAGE 0x01
            =2 #define OVER_VOLTAGE 0x10
            =2 #define NORMAL_VOLTAGE 0x0
-           =2 //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+           =2 
+           =2 #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+           =2 #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
            =2 
            =2 #define MONTOR_RIGHT_RUNNING 0x01
            =2 #define MONTOR_LEFT_RUNNING 0x10
@@ -1598,13 +1593,13 @@ line level    source
            =2 
            =2 #define TIMEOUT_VAL_MAX 200 //about 10s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_9S 180 //about 2s£¬ 5s max is 250
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 26  
-
            =2 #define TIMEOUT_VAL_8S 160 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_7S 140 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_6S 120 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_5S 100 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_4S 80 //about 2s£¬ 5s max is 250
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 26  
+
            =2 #define TIMEOUT_VAL_3S 60 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_2S5 50 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_2S 40 //about 2s£¬ 5s max is 250
@@ -1662,13 +1657,13 @@ line level    source
   44      =1  
   45      =1  #endif
   20          #include  "misc.h"
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 27  
-
    1      =1  #ifndef __MISC_H
    2      =1  #define __MISC_H
    3      =1  
    4      =1  #define LOGD PrintString1
    5      =1  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 27  
+
    6      =1  void init_Watch_Dog(void);
    7      =1  void System_PowerDown();
    8      =1  bit POF_Boot_Delay(void);
@@ -1726,20 +1721,19 @@ line level    source
            =2 
            =2 #define SWITCH_STATUS_ON 0x5A
            =2 #define SWITCH_STATUS_OFF 0xA5
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 28  
-
            =2 
            =2 #define OUT_OF_HOOK 0         //ÍÑ¿Ûµ½Î»
            =2 #define SWITCH_ON_OK 0        //ºÏÕ¢µ½Î»
            =2 
            =2 #define LOSS_VOLTAGE 0x11
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 28  
+
            =2 #define UNDER_VOLTAGE 0x01
            =2 #define OVER_VOLTAGE 0x10
            =2 #define NORMAL_VOLTAGE 0x0
-           =2 //#define OVER_VOLT_DIGIT_VAL 782   //((2.7 x 1.414)/5) * 1024
-           =2 //#define UNDER_VOLT_DIGIT_VAL 521      //((1.8 x 1.414)/5) * 1024
-           =2 #define OVER_VOLT_DIGIT_VAL 379      //((2.75 )/5) * 1024
-           =2 #define UNDER_VOLT_DIGIT_VAL 338      //((1.65)/5) * 1024
+           =2 
+           =2 #define OVER_VOLT_DIGIT_VAL 956      //((2.75 )/5) * 1024
+           =2 #define UNDER_VOLT_DIGIT_VAL 820      //((1.65)/5) * 1024
            =2 
            =2 #define MONTOR_RIGHT_RUNNING 0x01
            =2 #define MONTOR_LEFT_RUNNING 0x10
@@ -1790,14 +1784,14 @@ line level    source
   15      =1  #define ADC_P1_All      0xFF    //IOËùÓÐÒý½Å
   16      =1  
   17      =1  #define ADC_90T         (3<<5)
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 29  
-
   18      =1  #define ADC_180T        (2<<5)
   19      =1  #define ADC_360T        (1<<5)
   20      =1  #define ADC_540T        0
   21      =1  #define ADC_FLAG        (1<<4)  //Èí¼þÇå0
   22      =1  #define ADC_START       (1<<3)  //×Ô¶¯Çå0
   23      =1  #define ADC_CH0         0
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 29  
+
   24      =1  #define ADC_CH1         1
   25      =1  #define ADC_CH2         2
   26      =1  #define ADC_CH3         3
@@ -1843,344 +1837,402 @@ line level    source
   26          /*************  ±¾µØ³£Á¿ÉùÃ÷    **************/
   27          
   28          /*************  ±¾µØ±äÁ¿ÉùÃ÷    **************/
-  29          unsigned char VoltExceptionsCount = 0xFF;
-  30          unsigned char VoltExceptionsStatus = 0x0; //µçÑ¹Õý³£
-  31          
-  32          unsigned char TimeoutCount = 0xFF;
-  33          unsigned char VoltCurrentStatus = LOSS_VOLTAGE;
-  34          unsigned char MotorCurrentStatus = MONTOR_STOP_RUNNING;
-  35          /*************  ±¾µØº¯ÊýÉùÃ÷    **************/
-  36          
-  37          /*************  Íâ²¿º¯ÊýºÍ±äÁ¿ÉùÃ÷ *****************/
-  38          
+  29          unsigned char VoltExceptionsPlus = 0xFF;    //µçÑ¹Òì³£Âö³å
+  30          unsigned char VoltOverLedIndicate = 0xFF;   //µçÑ¹¹ýÑ¹
+  31          unsigned char VoltUnderLedIndicate = 0xFF; //µçÑ¹Ç·Ñ¹
+  32          
+  33          unsigned char TimeoutCount = 0xFF;
+  34          unsigned char VoltCurrentStatus = LOSS_VOLTAGE;
+  35          unsigned char MotorCurrentStatus = MONTOR_STOP_RUNNING;
+  36          /*************  ±¾µØº¯ÊýÉùÃ÷    **************/
+  37          
+  38          /*************  Íâ²¿º¯ÊýºÍ±äÁ¿ÉùÃ÷ *****************/
   39          
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 30  
+  40          
+  41          /*************  ´®¿Ú1³õÊ¼»¯º¯Êý *****************/
+  42          void UART_config(void)
+  43          {
+  44   1              COMx_InitDefine         COMx_InitStructure;                                     //½á¹¹¶¨Òå
+  45   1              COMx_InitStructure.UART_Mode      = UART_8bit_BRTx;             //Ä£Ê½,       UART_ShiftRight,UART_8bit_BRTx,UART_9b
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 30  
 
-  40          /*************  ´®¿Ú1³õÊ¼»¯º¯Êý *****************/
-  41          void UART_config(void)
-  42          {
-  43   1              COMx_InitDefine         COMx_InitStructure;                                     //½á¹¹¶¨Òå
-  44   1              COMx_InitStructure.UART_Mode      = UART_8bit_BRTx;             //Ä£Ê½,       UART_ShiftRight,UART_8bit_BRTx,UART_9b
              -it,UART_9bit_BRTx
-  45   1              COMx_InitStructure.UART_BRT_Use   = BRT_Timer2;                 //Ê¹ÓÃ²¨ÌØÂÊ,   BRT_Timer1, BRT_Timer2 (×¢Òâ: ´®¿Ú2¹Ì¶¨
+  46   1              COMx_InitStructure.UART_BRT_Use   = BRT_Timer2;                 //Ê¹ÓÃ²¨ÌØÂÊ,   BRT_Timer1, BRT_Timer2 (×¢Òâ: ´®¿Ú2¹Ì¶¨
              -Ê¹ÓÃBRT_Timer2)
-  46   1              COMx_InitStructure.UART_BaudRate  = 38400ul;                    //²¨ÌØÂÊ, Ò»°ã 110 ~ 115200
-  47   1              COMx_InitStructure.UART_RxEnable  = ENABLE;                             //½ÓÊÕÔÊÐí,   ENABLE»òDISABLE
-  48   1              COMx_InitStructure.BaudRateDouble = DISABLE;                    //²¨ÌØÂÊ¼Ó±¶, ENABLE»òDISABLE
-  49   1              COMx_InitStructure.UART_Interrupt = ENABLE;                             //ÖÐ¶ÏÔÊÐí,   ENABLE»òDISABLE
-  50   1              COMx_InitStructure.UART_Polity    = PolityLow;                  //ÖÐ¶ÏÓÅÏÈ¼¶, PolityLow,PolityHigh
-  51   1              COMx_InitStructure.UART_P_SW      = UART1_SW_P30_P31;   //ÇÐ»»¶Ë¿Ú,   UART1_SW_P30_P31,UART1_SW_P36_P37,UAR
+  47   1              COMx_InitStructure.UART_BaudRate  = 38400ul;                    //²¨ÌØÂÊ, Ò»°ã 110 ~ 115200
+  48   1              COMx_InitStructure.UART_RxEnable  = ENABLE;                             //½ÓÊÕÔÊÐí,   ENABLE»òDISABLE
+  49   1              COMx_InitStructure.BaudRateDouble = DISABLE;                    //²¨ÌØÂÊ¼Ó±¶, ENABLE»òDISABLE
+  50   1              COMx_InitStructure.UART_Interrupt = ENABLE;                             //ÖÐ¶ÏÔÊÐí,   ENABLE»òDISABLE
+  51   1              COMx_InitStructure.UART_Polity    = PolityLow;                  //ÖÐ¶ÏÓÅÏÈ¼¶, PolityLow,PolityHigh
+  52   1              COMx_InitStructure.UART_P_SW      = UART1_SW_P30_P31;   //ÇÐ»»¶Ë¿Ú,   UART1_SW_P30_P31,UART1_SW_P36_P37,UAR
              -T1_SW_P16_P17(±ØÐëÊ¹ÓÃÄÚ²¿Ê±ÖÓ)
-  52   1              COMx_InitStructure.UART_RXD_TXD_Short = DISABLE;                //ÄÚ²¿¶ÌÂ·RXDÓëTXD, ×öÖÐ¼Ì, ENABLE,DISABLE
-  53   1              USART_Configuration(USART1, &COMx_InitStructure);               //³õÊ¼»¯´®¿Ú1 USART1,USART2
-  54   1      }
-  55          
-  56          /******************** IOÅäÖÃº¯Êý **************************/
-  57          void GPIO_Config(void)
-  58          {
-  59   1              GPIO_InitTypeDef        GPIO_InitStructure;                         //½á¹¹¶¨Òå
-  60   1      
-  61   1              GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2;    //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_
-             -Pin_7, »ò²Ù×÷
-  62   1              GPIO_InitStructure.Mode = GPIO_HighZ;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OU
-             -T_OD,GPIO_OUT_PP
-  63   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //³õÊ¼»¯
-  64   1      
-  65   1              GPIO_InitStructure.Pin  = GPIO_Pin_4 ;     //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
-  66   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_O
-             -UT_OD,GPIO_OUT_PP
-  67   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //³õÊ¼»¯
-  68   1      
-  69   1              GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;      //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
-  70   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_O
-             -UT_OD,GPIO_OUT_PP
-  71   1              GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
-  72   1      }
-  73          
-  74          /************************ ¶¨Ê±Æ÷ÅäÖÃ ****************************/
-  75          void Timer_Config(void) //20ms@24.000MHz
-  76          {
-  77   1              TIM_InitTypeDef         TIM_InitStructure;                                      //½á¹¹¶¨Òå
-  78   1              TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;  //Ö¸¶¨¹¤×÷Ä£Ê½,   TIM_16BitAutoReload,TIM_16Bit,TI
+  53   1              COMx_InitStructure.UART_RXD_TXD_Short = DISABLE;                //ÄÚ²¿¶ÌÂ·RXDÓëTXD, ×öÖÐ¼Ì, ENABLE,DISABLE
+  54   1              USART_Configuration(USART1, &COMx_InitStructure);               //³õÊ¼»¯´®¿Ú1 USART1,USART2
+  55   1      }
+  56          
+  57          /************************ ¶¨Ê±Æ÷ÅäÖÃ ****************************/
+  58          void Timer_Config(void) //20ms@24.000MHz
+  59          {
+  60   1              TIM_InitTypeDef         TIM_InitStructure;                                      //½á¹¹¶¨Òå
+  61   1              TIM_InitStructure.TIM_Mode      = TIM_16BitAutoReload;  //Ö¸¶¨¹¤×÷Ä£Ê½,   TIM_16BitAutoReload,TIM_16Bit,TI
              -M_8BitAutoReload,TIM_16BitAutoReloadNoMask
-  79   1              TIM_InitStructure.TIM_Polity    = PolityHigh;                   //Ö¸¶¨ÖÐ¶ÏÓÅÏÈ¼¶, PolityHigh,PolityLow
-  80   1              TIM_InitStructure.TIM_Interrupt = ENABLE;                               //ÖÐ¶ÏÊÇ·ñÔÊÐí,   ENABLE»òDISABLE
-  81   1              TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;                        //Ö¸¶¨Ê±ÖÓÔ´,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK
-             -_Ext
-  82   1              TIM_InitStructure.TIM_ClkOut    = DISABLE;                              //ÊÇ·ñÊä³ö¸ßËÙÂö³å, ENABLE»òDISABLE
-  83   1              TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 50));      //³õÖµ, ½ÚÅÄÎª50HZ(20ms)
-  84   1              TIM_InitStructure.TIM_Run       = ENABLE;                               //ÊÇ·ñ³õÊ¼»¯ºóÆô¶¯¶¨Ê±Æ÷, ENABLE»òDISABLE
-  85   1              Timer_Inilize(Timer0,&TIM_InitStructure);                               //³õÊ¼»¯Timer0    Timer0,Timer1,Timer2
-  86   1      }
-  87          
-  88          void ADC_config(void)
-  89          {
-  90   1              ADC_InitTypeDef         ADC_InitStructure;                              //½á¹¹¶¨Òå
-  91   1      
-  92   1              ADC_InitStructure.ADC_Px        = ADC_P13;              //ÉèÖÃÒª×öADCµÄIO,      ADC_P10 ~ ADC_P17(»ò²Ù×÷),ADC_P1_Al
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 31  
+  62   1              TIM_InitStructure.TIM_Polity    = PolityHigh;                   //Ö¸¶¨ÖÐ¶ÏÓÅÏÈ¼¶, PolityHigh,PolityLow
+  63   1              TIM_InitStructure.TIM_Interrupt = ENABLE;                               //ÖÐ¶ÏÊÇ·ñÔÊÐí,   ENABLE»òDISABLE
+  64   1              TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;                //Ö¸¶¨Ê±ÖÓÔ´,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK_
+             -Ext
+  65   1              TIM_InitStructure.TIM_ClkOut    = DISABLE;                              //ÊÇ·ñÊä³ö¸ßËÙÂö³å, ENABLE»òDISABLE
+  66   1              TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 50));      //³õÖµ, ½ÚÅÄÎª50HZ(20ms)
+  67   1              TIM_InitStructure.TIM_Run       = ENABLE;                               //ÊÇ·ñ³õÊ¼»¯ºóÆô¶¯¶¨Ê±Æ÷, ENABLE»òDISABLE
+  68   1              Timer_Inilize(Timer0,&TIM_InitStructure);                               //³õÊ¼»¯Timer0    Timer0,Timer1,Timer2
+  69   1      }
+  70          
+  71          
+  72          /******************** IOÅäÖÃº¯Êý **************************/
+  73          //#define       GPIO_PullUp             0       //ÉÏÀ­×¼Ë«Ïò¿Ú
+  74          //#define       GPIO_HighZ              1       //¸¡¿ÕÊäÈë
+  75          //#define       GPIO_OUT_OD             2       //¿ªÂ©Êä³ö
+  76          //#define       GPIO_OUT_PP             3       //ÍÆÍìÊä³ö
+  77          void GPIO_Config(void)
+  78          {
+  79   1              GPIO_InitTypeDef        GPIO_InitStructure;                         //½á¹¹¶¨Òå
+  80   1      
+  81   1          // 220VµçÑ¹µôÑ¹¼ì²â£¬ÊÖ¶¯ºÍ×Ô¶¯Ä£Ê½Ñ¡ÔñÒý½Å
+  82   1              GPIO_InitStructure.Pin  = GPIO_Pin_0 | GPIO_Pin_1;         //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+  83   1              GPIO_InitStructure.Mode = GPIO_HighZ;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OU
+             -T_OD,GPIO_OUT_PP
+  84   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //³õÊ¼»¯
+  85   1          
+  86   1          //×÷ÎªAD¹¦ÄÜÇ°ÏÈÒªÉèÖÃIOÎª¸ß×èÊäÈëÄ£Ê½
+  87   1              GPIO_InitStructure.Pin  = GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5; //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin
+             -_7, »ò²Ù×÷
+  88   1              GPIO_InitStructure.Mode = GPIO_HighZ;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OU
+             -T_OD,GPIO_OUT_PP
+  89   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //³õÊ¼»¯
+  90   1      
+  91   1          // Òì³£Ö¸Ê¾µÆ
+  92   1          GPIO_InitStructure.Pin  =  GPIO_Pin_2;                      //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò
+             -²Ù×÷
+  93   1              GPIO_InitStructure.Mode = GPIO_PullUp;                     //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_O
+             -UT_OD,GPIO_OUT_PP
+  94   1              GPIO_Inilize(GPIO_P1,&GPIO_InitStructure);                 //³õÊ¼»¯
+  95   1          
+  96   1          //ÍÑ¿ÚÓëºÏÕ¢×´Ì¬¼ì²âÒý½Å
+  97   1              GPIO_InitStructure.Pin  = GPIO_Pin_4 | GPIO_Pin_5;         //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 31  
 
-             -l
-  93   1              ADC_InitStructure.ADC_Speed     = ADC_540T;                     //ADCËÙ¶È                       ADC_90T,ADC_180T,ADC_360T,ADC_540T
-  94   1              ADC_InitStructure.ADC_Power     = ENABLE;                       //ADC¹¦ÂÊÔÊÐí/¹Ø±Õ      ENABLE,DISABLE
-  95   1              ADC_InitStructure.ADC_AdjResult = ADC_RES_H2L8;         //ADC½á¹ûµ÷Õû,  ADC_RES_H2L8,ADC_RES_H8L2
-  96   1              ADC_InitStructure.ADC_Polity    = PolityLow;            //ÓÅÏÈ¼¶ÉèÖÃ    PolityHigh,PolityLow
-  97   1              ADC_InitStructure.ADC_Interrupt = DISABLE;                      //ÖÐ¶ÏÔÊÐí              ENABLE,DISABLE
-  98   1              ADC_Inilize(&ADC_InitStructure);                                        //³õÊ¼»¯
-  99   1      
- 100   1              ADC_PowerControl(ENABLE);                                                       //µ¥¶ÀµÄADCµçÔ´²Ù×÷º¯Êý, ENABLE»òDISABLE
- 101   1      }
- 102          
- 103          static void delay_timer(unsigned char iTime)
- 104          {
- 105   1          TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
- 106   1          while(TimeoutCount <= iTime) ;//µÈ1Ãë
- 107   1          TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
- 108   1      }
- 109          
- 110          static void wait_switch_on(unsigned char time_out)
- 111          {
- 112   1          //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
- 113   1          TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
- 114   1          while(SwitchOnStatus != SWITCH_ON_OK)
- 115   1          {
- 116   2              if(TimeoutCount > time_out)
- 117   2              {
- 118   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
- 119   3                  break;
- 120   3              }
- 121   2              //if(SwitchOnStatus == SWITCH_ON_OK)
- 122   2              //    delay_ms(50);
- 123   2          }
- 124   1          TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
- 125   1      }
- 126          
- 127          static void wait_out_off_hook(unsigned char time_out)
- 128          {
- 129   1          //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
- 130   1          TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
- 131   1          while(OutOffHookCheck != OUT_OF_HOOK)
- 132   1          {
- 133   2              if(TimeoutCount > time_out)
- 134   2              {
- 135   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
- 136   3                  break;
- 137   3              }
- 138   2              //if(OutOffHookCheck != OUT_OF_HOOK)
- 139   2              //    delay_ms(50);
- 140   2          }
- 141   1          TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
- 142   1      }
- 143          
- 144          
- 145          /**********************************************/
- 146          void main(void)
+  98   1              GPIO_InitStructure.Mode = GPIO_HighZ;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_OU
+             -T_OD,GPIO_OUT_PP
+  99   1              GPIO_Inilize(GPIO_P5,&GPIO_InitStructure);                 //³õÊ¼»¯
+ 100   1      
+ 101   1          //µç»ú¿ØÖÆÒý½Å
+ 102   1              GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;          //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×
+             -÷
+ 103   1              GPIO_InitStructure.Mode = GPIO_OUT_OD;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_
+             -OUT_OD,GPIO_OUT_PP
+ 104   1              GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
+ 105   1          
+ 106   1          //RS485Ê¹ÄÜÒý½Å
+ 107   1              GPIO_InitStructure.Pin  = GPIO_Pin_2;                       //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+ 108   1              GPIO_InitStructure.Mode = GPIO_PullUp;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_
+             -OUT_OD,GPIO_OUT_PP
+ 109   1              GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
+ 110   1          
+ 111   1          //µçÑ¹Òì³£Ê±Êä³ö100msÂö³åÐÅºÅÒý½Å
+ 112   1              GPIO_InitStructure.Pin  = GPIO_Pin_3;                       //Ö¸¶¨Òª³õÊ¼»¯µÄIO, GPIO_Pin_0 ~ GPIO_Pin_7, »ò²Ù×÷
+ 113   1              GPIO_InitStructure.Mode = GPIO_PullUp;                      //Ö¸¶¨IOµÄÊäÈë»òÊä³ö·½Ê½,GPIO_PullUp,GPIO_HighZ,GPIO_
+             -OUT_OD,GPIO_OUT_PP
+ 114   1              GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
+ 115   1      
+ 116   1          //³õÊ¼»¯²¿·ÖGPIO
+ 117   1          setMontorRunningStatus(MONTOR_STOP_RUNNING);            //µç»úÍ£×ª
+ 118   1          RS485_Recv_Send_Enable = 0;                             //RS485Ê¹ÄÜÄ¬ÈÏÎª½ÓÊÕÄ£Ê½
+ 119   1          VoltStatusLamp = 1;                                     //×´Ì¬Ö¸Ê¾µÆÄ¬ÈÏ²»ÁÁ
+ 120   1          VoltStatusPlus = 1;                                     //Âö³åÐÅºÅÄ¬ÈÏ¸ßµçÆ½
+ 121   1      }
+ 122          
+ 123          void ADC_config(void)
+ 124          {
+ 125   1              ADC_InitTypeDef         ADC_InitStructure;                              //½á¹¹¶¨Òå
+ 126   1      
+ 127   1              ADC_InitStructure.ADC_Px        = ADC_P13;      //ÉèÖÃÒª×öADCµÄIO,      ADC_P10 ~ ADC_P17(»ò²Ù×÷),ADC_P1_All
+ 128   1              ADC_InitStructure.ADC_Speed     = ADC_540T;                     //ADCËÙ¶È                       ADC_90T,ADC_180T,ADC_360T,ADC_540T
+ 129   1              ADC_InitStructure.ADC_Power     = ENABLE;                       //ADC¹¦ÂÊÔÊÐí/¹Ø±Õ      ENABLE,DISABLE
+ 130   1              ADC_InitStructure.ADC_AdjResult = ADC_RES_H2L8;         //ADC½á¹ûµ÷Õû,  ADC_RES_H2L8,ADC_RES_H8L2
+ 131   1              ADC_InitStructure.ADC_Polity    = PolityLow;            //ÓÅÏÈ¼¶ÉèÖÃ    PolityHigh,PolityLow
+ 132   1              ADC_InitStructure.ADC_Interrupt = DISABLE;                      //ÖÐ¶ÏÔÊÐí              ENABLE,DISABLE
+ 133   1              ADC_Inilize(&ADC_InitStructure);                                        //³õÊ¼»¯
+ 134   1      
+ 135   1              ADC_PowerControl(ENABLE);                                                       //µ¥¶ÀµÄADCµçÔ´²Ù×÷º¯Êý, ENABLE»òDISABLE
+ 136   1      }
+ 137          
+ 138          
+ 139          static void delay_timer(unsigned char iTime)
+ 140          {
+ 141   1          TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
+ 142   1          while(TimeoutCount <= iTime) ;//µÈ1Ãë
+ 143   1          TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
+ 144   1      }
+ 145          
+ 146          static void wait_switch_on(unsigned char time_out)
  147          {
- 148   1          unsigned char i = 0;
- 149   1          unsigned short Max_Volt = 0;
- 150   1      
- 151   1              //Ó²¼þ³õÊ¼»¯²Ù×÷
- 152   1              EA = 0;
- 153   1          GPIO_Config();//GPIO init
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 32  
+ 148   1          //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
+ 149   1          TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
+ 150   1          while(SwitchOnStatus != SWITCH_ON_OK)
+ 151   1          {
+ 152   2              if(TimeoutCount > time_out)
+ 153   2              {
+ 154   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 32  
 
- 154   1      
- 155   1          UART_config(); //UART init
- 156   1          Timer_Config();//Timer init
- 157   1          ADC_config(); //ADC init
- 158   1      
- 159   1              //¿ª×ÜÖÐ¶Ï
- 160   1          EA = 1;
- 161   1      
- 162   1              //watch dog init
- 163   1              init_Watch_Dog();
- 164   1      
- 165   1              //=======================> Start Main Process <==========================//
- 166   1              while (1)
- 167   1              {
- 168   2              VoltCapturePortC = ~VoltCapturePortC;
- 169   2              Max_Volt = getACVppVolt();
- 170   2              LOGD("Max Volt: ");
- 171   2              debug(Max_Volt / 1000 % 10);
- 172   2              debug(Max_Volt / 100 % 10);
- 173   2              debug(Max_Volt / 10 % 10);
- 174   2              debug(Max_Volt % 10);
- 175   2              LOGD("\r\n");
- 176   2       
- 177   2              //¼ì²âµ±Ç°µÄµçÑ¹ÊÇ·ñ³öÏÖ¹ýÑ¹»òÕßÇ·Ñ¹
- 178   2              if(Max_Volt >= OVER_VOLT_DIGIT_VAL){
- 179   3                  VoltCurrentStatus = OVER_VOLTAGE;
- 180   3                  LOGD("OVER_VOLTAGE\r\n");
- 181   3              } else if(Max_Volt <= UNDER_VOLT_DIGIT_VAL) {
- 182   3                  if(Max_Volt == 0) {
- 183   4                      VoltCurrentStatus = LOSS_VOLTAGE;
- 184   4                      LOGD("LOSS_VOLTAGE\r\n");
- 185   4                  } else {
- 186   4                      VoltCurrentStatus = UNDER_VOLTAGE;
- 187   4                      LOGD("UNDER_VOLTAGE\r\n");
- 188   4                  }
- 189   3              } else {
- 190   3                  VoltCurrentStatus = NORMAL_VOLTAGE;
- 191   3                  LOGD("NORMAL_VOLTAGE\r\n");
- 192   3              }
- 193   2              Max_Volt = 0;
- 194   2      
- 195   2              //-------------------------------------------------------------------------------------
- 196   2              // µ±Ç°µçÑ¹×´Ì¬   ---   Òì³££¨°üÀ¨£ºÇ·Ñ¹¡¢¹ýÑ¹¡¢Ê§Ñ¹£
- 197   2              if(VoltCurrentStatus != NORMAL_VOLTAGE)
- 198   2              {            
- 199   3                  //£¨b£© Íâ²¿¿ØÖÆÐÅºÅ¶ªÊ§£º
- 200   3                  // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
- 201   3                  //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
- 202   3                  //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
- 203   3                  if(OutOffHookCheck == OUT_OF_HOOK)
- 204   3                  {
- 205   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
- 206   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
- 207   4                  }
- 208   3                  else //Ö»Òª²»ÔÚÍÑ¿Ûµ½Î»×´Ì¬¾ÍÑÓÊ±2ÃëºóÕý×ªµç»úµ½ÍÑ¿Ûµ½Î»×´Ì¬
- 209   3                  {
- 210   4                      // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
- 211   4                      //    ×Ô¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
- 212   4                      //    ÊÖ¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
- 213   4                      // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
- 214   4                      //    ×Ô¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
- 215   4                      //    ÊÖ¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 33  
+ 155   3                  break;
+ 156   3              }
+ 157   2              //if(SwitchOnStatus == SWITCH_ON_OK)
+ 158   2              //    delay_ms(50);
+ 159   2          }
+ 160   1          TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
+ 161   1      }
+ 162          
+ 163          static void wait_out_off_hook(unsigned char time_out)
+ 164          {
+ 165   1          //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
+ 166   1          TimeoutCount = TIMECOUNTER_START;//¿ªÊ¼¼ÆÊ±
+ 167   1          while(OutOffHookCheck != OUT_OF_HOOK)
+ 168   1          {
+ 169   2              if(TimeoutCount > time_out)
+ 170   2              {
+ 171   3                  LOGD("[TimeOut] Wait Montor <=== timeout 5 Sec.");
+ 172   3                  break;
+ 173   3              }
+ 174   2              //if(OutOffHookCheck != OUT_OF_HOOK)
+ 175   2              //    delay_ms(50);
+ 176   2          }
+ 177   1          TimeoutCount = STOP_TIMERCOUNT;//Í£Ö¹¼ÆÊ±
+ 178   1      }
+ 179          
+ 180          
+ 181          /**********************************************/
+ 182          void main(void)
+ 183          {
+ 184   1          //unsigned char i = 0;
+ 185   1          unsigned char iVbCount = 0;
+ 186   1          unsigned short Max_Volt = 0;
+ 187   1      
+ 188   1              //Ó²¼þ³õÊ¼»¯²Ù×÷
+ 189   1              EA = 0;
+ 190   1          Timer_Config();//Timer init
+ 191   1          UART_config(); //UART init
+ 192   1          GPIO_Config();//GPIO init
+ 193   1          ADC_config(); //ADC init
+ 194   1      
+ 195   1              //¿ª×ÜÖÐ¶Ï
+ 196   1          EA = 1;
+ 197   1      
+ 198   1              //watch dog init
+ 199   1              init_Watch_Dog();
+ 200   1      
+ 201   1              //=======================> Start Main Process <==========================//
+ 202   1              while (1)
+ 203   1              {
+ 204   2              RS485_Recv_Send_Enable = ~RS485_Recv_Send_Enable;
+ 205   2              Max_Volt = getACVppVolt();
+ 206   2              //if(iVbCount++ < 10) continue;
+ 207   2              //else {
+ 208   2              //    Max_Volt = Max_Volt / iVbCount;
+ 209   2              //    iVbCount = 0;
+ 210   2              //}
+ 211   2              
+ 212   2              LOGD("Max Volt: ");
+ 213   2              debug(Max_Volt / 1000 % 10);
+ 214   2              debug(Max_Volt / 100 % 10);
+ 215   2              debug(Max_Volt / 10 % 10);
+ 216   2              debug(Max_Volt % 10);
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 33  
 
- 216   4                      if(VoltCurrentStatus != LOSS_VOLTAGE)
- 217   4                          delay_ms(50);
- 218   4                      if(MotorCurrentStatus != MONTOR_RIGHT_RUNNING)
- 219   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//Õý´«
- 220   4      
- 221   4                      //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
- 222   4                      wait_out_off_hook(TIMEOUT_VAL_5S);
- 223   4      
- 224   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
- 225   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
- 226   4                  }
- 227   3              }
- 228   2              else //µ±Ç°µçÑ¹×´Ì¬   ---   Õý³£
- 229   2              {
- 230   3                  VoltCapturePortB = ~VoltCapturePortB;
- 231   3                  //-------------------------------------------------------------------------------------
- 232   3                  //£¨a£© Íâ²¿¿ØÖÆÐÅºÅ´æÔÚ£º
- 233   3                  // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
- 234   3                  //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
- 235   3                  //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
- 236   3                  if(SwitchOnStatus == SWITCH_ON_OK) // ´¦ÓÚºÏÕ¢µ½Î»×´Ì¬
- 237   3                  {
- 238   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)//µç»úÍ£×ª
- 239   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
- 240   4                  }
- 241   3                  else //Ã»ÓÐ¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ
- 242   3                  {
- 243   4                      // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
- 244   4                      //    ×Ô¶¯£ºµç»ú£¨Õý×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
- 245   4                      //    ÊÖ¶¯£ºµç»ú£¨·´×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
- 246   4                      // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
- 247   4                      //    ×Ô¶¯£ºµç»ú£¨Õý×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
- 248   4                      //    ÊÖ¶¯£ºµç»ú£¨·´×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
- 249   4      
- 250   4                      if(SystemWorkMode == AUTO_CTRL_MODE){
- 251   5                          if(MotorCurrentStatus != MONTOR_RIGHT_RUNNING)//µç»úÕý×ª
- 252   5                              MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
- 253   5                      } else {
- 254   5                          if(MotorCurrentStatus != MONTOR_LEFT_RUNNING)//µç»ú·´×ª
- 255   5                              MotorCurrentStatus = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
- 256   5                      }
- 257   4      
- 258   4                      //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
- 259   4                      wait_switch_on(TIMEOUT_VAL_5S);
- 260   4                      delay_timer(TIMEOUT_DELAY_VAL);
- 261   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)//µç»úÍ£×ª
- 262   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
- 263   4                  }
- 264   3              }
- 265   2              delay_ms(250);
- 266   2              delay_ms(250);
- 267   2              delay_ms(250);
- 268   2              delay_ms(250);
- 269   2          }
- 270   1      }
- 271          
- 272          /********************* Timer0ÖÐ¶Ïº¯Êý************************/
- 273          void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
- 274          {
- 275   1              // process watch dog signal
- 276   1              WDT_CONTR &= 0x7F;
- 277   1          WDT_CONTR |= 0x10;
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 34  
+ 217   2              LOGD("  ---  ");
+ 218   2       
+ 219   2              //¼ì²âµ±Ç°µÄµçÑ¹ÊÇ·ñ³öÏÖ¹ýÑ¹»òÕßÇ·Ñ¹
+ 220   2              if(Max_Volt >= OVER_VOLT_DIGIT_VAL){
+ 221   3                  VoltCurrentStatus = OVER_VOLTAGE;
+ 222   3                  LOGD("OVER_VOLTAGE\r\n");
+ 223   3              } else if(Max_Volt <= UNDER_VOLT_DIGIT_VAL) {
+ 224   3                  if(Max_Volt == 0) {
+ 225   4                      VoltCurrentStatus = LOSS_VOLTAGE;
+ 226   4                      LOGD("LOSS_VOLTAGE\r\n");
+ 227   4                  } else {
+ 228   4                      VoltCurrentStatus = UNDER_VOLTAGE;
+ 229   4                      LOGD("UNDER_VOLTAGE\r\n");
+ 230   4                  }
+ 231   3              } else {
+ 232   3                  VoltCurrentStatus = NORMAL_VOLTAGE;
+ 233   3                  LOGD("NORMAL_VOLTAGE\r\n");
+ 234   3              }
+ 235   2              Max_Volt = 0;
+ 236   2      
+ 237   2              //-------------------------------------------------------------------------------------
+ 238   2              // µ±Ç°µçÑ¹×´Ì¬   ---   Òì³££¨°üÀ¨£ºÇ·Ñ¹¡¢¹ýÑ¹¡¢Ê§Ñ¹£
+ 239   2              if(VoltCurrentStatus != NORMAL_VOLTAGE)
+ 240   2              {
+ 241   3                  //ÉèÖÃÖ¸Ê¾µÆºÍÂö³åÊä³öÐÅºÅ
+ 242   3                  VoltExceptionsPlus = 0;     //Êä³öµçÑ¹Òì³£µÄÂö³åÐÅºÅ
+ 243   3                  if(VoltCurrentStatus == UNDER_VOLTAGE)    VoltUnderLedIndicate = 0;
+ 244   3                  else if(VoltCurrentStatus == OVER_VOLTAGE) VoltOverLedIndicate = 0;
+ 245   3      
+ 246   3                  //£¨b£© Íâ²¿¿ØÖÆÐÅºÅ¶ªÊ§£º
+ 247   3                  // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
+ 248   3                  //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
+ 249   3                  //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
+ 250   3                  if(OutOffHookCheck == OUT_OF_HOOK)
+ 251   3                  {
+ 252   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
+ 253   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
+ 254   4                  }
+ 255   3                  else //Ö»Òª²»ÔÚÍÑ¿Ûµ½Î»×´Ì¬¾ÍÑÓÊ±2ÃëºóÕý×ªµç»úµ½ÍÑ¿Ûµ½Î»×´Ì¬
+ 256   3                  {
+ 257   4                      // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
+ 258   4                      //    ×Ô¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
+ 259   4                      //    ÊÖ¶¯£ºÑÓÊ±2Ãë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
+ 260   4                      // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
+ 261   4                      //    ×Ô¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
+ 262   4                      //    ÊÖ¶¯£ºÑÓÊ±50msÃë£¬µç»ú£¨Õý×ª£©µ½£¨ÍÑ¿Ûµ½Î»£©×´Ì¬¾Í£¨Í£Ö¹ÔË×ª£©
+ 263   4                      if(VoltCurrentStatus != LOSS_VOLTAGE) delay_ms(50);
+ 264   4                      if(MotorCurrentStatus != MONTOR_RIGHT_RUNNING)
+ 265   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//Õý´«
+ 266   4      
+ 267   4                      //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
+ 268   4                      wait_out_off_hook(TIMEOUT_VAL_5S);
+ 269   4      
+ 270   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
+ 271   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//µç»úÍ£×ª
+ 272   4                  }
+ 273   3                  //delay_timer(TIMEOUT_VAL_MAX);
+ 274   3                  //delay_timer(TIMEOUT_VAL_MAX);
+ 275   3              }
+ 276   2              else //µ±Ç°µçÑ¹×´Ì¬   ---   Õý³£
+ 277   2              {
+ 278   3                  //-------------------------------------------------------------------------------------
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 34  
 
- 278   1      
- 279   1              //timer out counter
- 280   1              if(TimeoutCount <= TIMEOUT_VAL_MAX)
- 281   1                      TimeoutCount++;
- 282   1      
- 283   1          //status indicator lamp
- 284   1          if(!VoltExceptionsStatus)
- 285   1          {
- 286   2              VoltStatusLamp = 1;
- 287   2              VoltStatusPlus = 1;
- 288   2              if(VoltExceptionsCount != 0xFF) VoltExceptionsCount = 0xFF;
- 289   2          }
- 290   1          else
- 291   1          {
- 292   2              VoltExceptionsCount++;
- 293   2      
- 294   2              if(VoltExceptionsCount > 5) VoltStatusPlus = 1;
- 295   2              else VoltStatusPlus = 0;
- 296   2      
- 297   2              if(VoltCurrentStatus == UNDER_VOLTAGE)
- 298   2              {
- 299   3                  if(VoltExceptionsCount < 15 && VoltExceptionsCount > 0) VoltStatusLamp = 0; //300ms
- 300   3                  else if(VoltExceptionsCount < 20 && VoltExceptionsCount >= 15) VoltStatusLamp = 1; //100ms
- 301   3                  else if(VoltExceptionsCount < 35 && VoltExceptionsCount >= 20) VoltStatusLamp = 0; //300ms
- 302   3                  else if(VoltExceptionsCount < 135 && VoltExceptionsCount >= 35) VoltStatusLamp = 1; //2000ms
- 303   3                  else if(VoltExceptionsCount < 150 && VoltExceptionsCount >= 135) VoltStatusLamp = 0; //300ms
- 304   3                  else if(VoltExceptionsCount < 155 && VoltExceptionsCount >= 150) VoltStatusLamp = 1; //100ms
- 305   3                  else if(VoltExceptionsCount < 170 && VoltExceptionsCount >= 155) VoltStatusLamp = 0; //300ms
- 306   3                  else if(VoltExceptionsCount >= 175) VoltStatusLamp = 0; //300ms
- 307   3              }
- 308   2              else if(VoltCurrentStatus == OVER_VOLTAGE)
- 309   2              {
- 310   3                  if(VoltExceptionsCount > 25) VoltStatusLamp = 1;
- 311   3                  else VoltStatusLamp = 0;
- 312   3              }
- 313   2          }
- 314   1      }
- 315          
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 35  
+ 279   3                  //£¨a£© Íâ²¿¿ØÖÆÐÅºÅ´æÔÚ£º
+ 280   3                  // 2¡¢¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ£¬
+ 281   3                  //    ×Ô¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
+ 282   3                  //    ÊÖ¶¯£ºµç»ú²»×öÈÎºÎ¶¯×÷
+ 283   3                  if(SwitchOnStatus == SWITCH_ON_OK) // ´¦ÓÚºÏÕ¢µ½Î»×´Ì¬
+ 284   3                  {
+ 285   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)//µç»úÍ£×ª
+ 286   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
+ 287   4                  }
+ 288   3                  else //Ã»ÓÐ¼ì²âµ½ºÏÕ¢µ½Î»ÐÅºÅ
+ 289   3                  {
+ 290   4                      // 1¡¢¼ì²âµ½ÍÑ¿Ûµ½Î»ÐÅºÅ£¬
+ 291   4                      //    ×Ô¶¯£ºµç»ú£¨Õý×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
+ 292   4                      //    ÊÖ¶¯£ºµç»ú£¨·´×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
+ 293   4                      // 3¡¢ÍÑ¿Ûµ½Î»ÐÅºÅºÍºÏÕ¢µ½Î»ÐÅºÅ¶¼Î´¼ì²âµ½£¬
+ 294   4                      //    ×Ô¶¯£ºµç»ú£¨Õý×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
+ 295   4                      //    ÊÖ¶¯£ºµç»ú£¨·´×ª£©µ½£¨ºÏÕ¢µ½Î»£©×´Ì¬¾Í£¨Í£Ö¹£©
+ 296   4      
+ 297   4                      if(SystemWorkMode == AUTO_CTRL_MODE){
+ 298   5                          if(MotorCurrentStatus != MONTOR_RIGHT_RUNNING)//µç»úÕý×ª
+ 299   5                              MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
+ 300   5                      } else {
+ 301   5                          if(MotorCurrentStatus != MONTOR_LEFT_RUNNING)//µç»ú·´×ª
+ 302   5                              MotorCurrentStatus = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
+ 303   5                      }
+ 304   4      
+ 305   4                      //µÈ´ýµç»ú×ª¶¯µ½Î»£¬³¬¹ý5Ãë¾ÍÈÏÎªÊÇ³¬Ê±
+ 306   4                      wait_switch_on(TIMEOUT_VAL_5S);
+ 307   4                      delay_timer(TIMEOUT_DELAY_VAL);
+ 308   4                      if(MotorCurrentStatus != MONTOR_STOP_RUNNING)//µç»úÍ£×ª
+ 309   4                          MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
+ 310   4                  }
+ 311   3              }
+ 312   2              delay_ms(250);
+ 313   2              delay_ms(250);
+ 314   2              delay_ms(250);
+ 315   2              delay_ms(250);
+ 316   2          }
+ 317   1      }
+ 318          
+ 319          /********************* Timer0ÖÐ¶Ïº¯Êý************************/
+ 320          void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
+ 321          {
+ 322   1              // process watch dog signal
+ 323   1              WDT_CONTR &= 0x7F;
+ 324   1          WDT_CONTR |= 0x10;
+ 325   1      
+ 326   1              //timer out counter
+ 327   1              if(TimeoutCount <= TIMEOUT_VAL_MAX)
+ 328   1                      TimeoutCount++;
+ 329   1      
+ 330   1          // Volt exception plus signal
+ 331   1          if(VoltExceptionsPlus != 0xFF)
+ 332   1          {
+ 333   2              VoltStatusPlus = 0;//Êä³öµÍµçÆ½
+ 334   2              if(VoltExceptionsPlus++ > 5 ) //20 x 5 = 100ms
+ 335   2              {
+ 336   3                  VoltExceptionsPlus = 0xFF;
+ 337   3                  VoltStatusPlus = 1;
+ 338   3              }
+ 339   2          }
+ 340   1          
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 35  
+
+ 341   1          //Over Volt indicate
+ 342   1          if(VoltOverLedIndicate != 0xFF)
+ 343   1          {
+ 344   2              VoltStatusLamp = 0;//Êä³öµÍµçÆ½
+ 345   2              if(VoltOverLedIndicate++ > 25 ) //20 x 25 = 500ms
+ 346   2              {
+ 347   3                  VoltOverLedIndicate = 0xFF;
+ 348   3                  VoltStatusLamp = 1;
+ 349   3              }
+ 350   2          }
+ 351   1          
+ 352   1          //Under Volt indication
+ 353   1          if(VoltUnderLedIndicate != 0xFF)
+ 354   1          {
+ 355   2              VoltUnderLedIndicate++;
+ 356   2              if(VoltUnderLedIndicate < 15 && VoltUnderLedIndicate >= 0) VoltStatusLamp = 0; //300ms
+ 357   2              else if(VoltUnderLedIndicate < 20 && VoltUnderLedIndicate >= 15) VoltStatusLamp = 1; //100ms
+ 358   2              else if(VoltUnderLedIndicate < 35 && VoltUnderLedIndicate >= 20) VoltStatusLamp = 0; //300ms
+ 359   2              else if(VoltUnderLedIndicate < 135 && VoltUnderLedIndicate >= 35) VoltStatusLamp = 1; //2000ms
+ 360   2              else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0; //300ms
+ 361   2              else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1; //100ms
+ 362   2              else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0; //300ms
+ 363   2              else if(VoltUnderLedIndicate >= 170) {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
+ 364   2          }
+ 365   1      }
+ 366          
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 36  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
 
              ; FUNCTION UART_config (BEGIN)
-                                           ; SOURCE LINE # 41
                                            ; SOURCE LINE # 42
-                                           ; SOURCE LINE # 44
-0000 750040      R     MOV     COMx_InitStructure,#040H
+                                           ; SOURCE LINE # 43
                                            ; SOURCE LINE # 45
-0003 750002      R     MOV     COMx_InitStructure+01H,#02H
+0000 750040      R     MOV     COMx_InitStructure,#040H
                                            ; SOURCE LINE # 46
+0003 750002      R     MOV     COMx_InitStructure+01H,#02H
+                                           ; SOURCE LINE # 47
 0006 E4                CLR     A
 0007 F500        R     MOV     COMx_InitStructure+05H,A
 0009 750096      R     MOV     COMx_InitStructure+04H,#096H
 000C F500        R     MOV     COMx_InitStructure+03H,A
 000E F500        R     MOV     COMx_InitStructure+02H,A
-                                           ; SOURCE LINE # 47
-0010 750001      R     MOV     COMx_InitStructure+07H,#01H
                                            ; SOURCE LINE # 48
-0013 F500        R     MOV     COMx_InitStructure+08H,A
+0010 750001      R     MOV     COMx_InitStructure+07H,#01H
                                            ; SOURCE LINE # 49
-0015 750001      R     MOV     COMx_InitStructure+09H,#01H
+0013 F500        R     MOV     COMx_InitStructure+08H,A
                                            ; SOURCE LINE # 50
-0018 F500        R     MOV     COMx_InitStructure+0AH,A
+0015 750001      R     MOV     COMx_InitStructure+09H,#01H
                                            ; SOURCE LINE # 51
-001A F500        R     MOV     COMx_InitStructure+0BH,A
+0018 F500        R     MOV     COMx_InitStructure+0AH,A
                                            ; SOURCE LINE # 52
-001C F500        R     MOV     COMx_InitStructure+0CH,A
+001A F500        R     MOV     COMx_InitStructure+0BH,A
                                            ; SOURCE LINE # 53
+001C F500        R     MOV     COMx_InitStructure+0CH,A
+                                           ; SOURCE LINE # 54
 001E FB                MOV     R3,A
 001F 7A00        R     MOV     R2,#HIGH COMx_InitStructure
 0021 7900        R     MOV     R1,#LOW COMx_InitStructure
@@ -2188,628 +2240,691 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0025 020000      E     LJMP    _USART_Configuration
              ; FUNCTION UART_config (END)
 
-             ; FUNCTION GPIO_Config (BEGIN)
-                                           ; SOURCE LINE # 57
-                                           ; SOURCE LINE # 58
-                                           ; SOURCE LINE # 61
-0000 750007      R     MOV     GPIO_InitStructure+01H,#07H
-                                           ; SOURCE LINE # 62
-0003 750001      R     MOV     GPIO_InitStructure,#01H
-                                           ; SOURCE LINE # 63
-0006 7B00              MOV     R3,#00H
-0008 120000      R     LCALL   L?0078
-                                           ; SOURCE LINE # 65
-000B 750010      R     MOV     GPIO_InitStructure+01H,#010H
-                                           ; SOURCE LINE # 66
-000E E4                CLR     A
-000F F500        R     MOV     GPIO_InitStructure,A
-                                           ; SOURCE LINE # 67
-0011 FB                MOV     R3,A
-0012 120000      R     LCALL   L?0078
-                                           ; SOURCE LINE # 69
-0015 7500C0      R     MOV     GPIO_InitStructure+01H,#0C0H
-                                           ; SOURCE LINE # 70
-0018 E4                CLR     A
-0019 F500        R     MOV     GPIO_InitStructure,A
-                                           ; SOURCE LINE # 71
-001B FB                MOV     R3,A
-001C 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 36  
-
-001E 7900        R     MOV     R1,#LOW GPIO_InitStructure
-0020 7F03              MOV     R7,#03H
-0022 020000      E     LJMP    _GPIO_Inilize
-                                           ; SOURCE LINE # 72
-0025         L?0078:
-0025 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
-0027 7900        R     MOV     R1,#LOW GPIO_InitStructure
-0029 7F01              MOV     R7,#01H
-002B 120000      E     LCALL   _GPIO_Inilize
-002E 22                RET     
-             ; FUNCTION GPIO_Config (END)
-
              ; FUNCTION Timer_Config (BEGIN)
-                                           ; SOURCE LINE # 75
-                                           ; SOURCE LINE # 76
-                                           ; SOURCE LINE # 78
+                                           ; SOURCE LINE # 58
+                                           ; SOURCE LINE # 59
+                                           ; SOURCE LINE # 61
 0000 E4                CLR     A
 0001 F500        R     MOV     TIM_InitStructure,A
-                                           ; SOURCE LINE # 79
+                                           ; SOURCE LINE # 62
 0003 750001      R     MOV     TIM_InitStructure+01H,#01H
-                                           ; SOURCE LINE # 80
+                                           ; SOURCE LINE # 63
 0006 750001      R     MOV     TIM_InitStructure+02H,#01H
-                                           ; SOURCE LINE # 81
+                                           ; SOURCE LINE # 64
 0009 750001      R     MOV     TIM_InitStructure+03H,#01H
-                                           ; SOURCE LINE # 82
+                                           ; SOURCE LINE # 65
 000C F500        R     MOV     TIM_InitStructure+04H,A
-                                           ; SOURCE LINE # 83
+                                           ; SOURCE LINE # 66
 000E 750063      R     MOV     TIM_InitStructure+05H,#063H
 0011 7500C0      R     MOV     TIM_InitStructure+06H,#0C0H
-                                           ; SOURCE LINE # 84
+                                           ; SOURCE LINE # 67
 0014 750001      R     MOV     TIM_InitStructure+07H,#01H
-                                           ; SOURCE LINE # 85
+                                           ; SOURCE LINE # 68
 0017 FB                MOV     R3,A
 0018 7A00        R     MOV     R2,#HIGH TIM_InitStructure
 001A 7900        R     MOV     R1,#LOW TIM_InitStructure
 001C FF                MOV     R7,A
 001D 020000      E     LJMP    _Timer_Inilize
              ; FUNCTION Timer_Config (END)
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 37  
 
-             ; FUNCTION ADC_config (BEGIN)
+
+             ; FUNCTION GPIO_Config (BEGIN)
+                                           ; SOURCE LINE # 77
+                                           ; SOURCE LINE # 78
+                                           ; SOURCE LINE # 82
+0000 750003      R     MOV     GPIO_InitStructure+01H,#03H
+                                           ; SOURCE LINE # 83
+                                           ; SOURCE LINE # 84
+0003 120000      R     LCALL   L?0074
+                                           ; SOURCE LINE # 87
+0006 750038      R     MOV     GPIO_InitStructure+01H,#038H
                                            ; SOURCE LINE # 88
                                            ; SOURCE LINE # 89
+0009 120000      R     LCALL   L?0074
                                            ; SOURCE LINE # 92
-0000 750008      R     MOV     ADC_InitStructure,#08H
+000C 750004      R     MOV     GPIO_InitStructure+01H,#04H
                                            ; SOURCE LINE # 93
+000F E4                CLR     A
+0010 F500        R     MOV     GPIO_InitStructure,A
+                                           ; SOURCE LINE # 94
+0012 FB                MOV     R3,A
+0013 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
+0015 7900        R     MOV     R1,#LOW GPIO_InitStructure
+0017 7F01              MOV     R7,#01H
+0019 120000      E     LCALL   _GPIO_Inilize
+                                           ; SOURCE LINE # 97
+001C 750030      R     MOV     GPIO_InitStructure+01H,#030H
+                                           ; SOURCE LINE # 98
+001F 750001      R     MOV     GPIO_InitStructure,#01H
+                                           ; SOURCE LINE # 99
+0022 7F05              MOV     R7,#05H
+0024 120000      R     LCALL   L?0076
+                                           ; SOURCE LINE # 102
+0027 7500C0      R     MOV     GPIO_InitStructure+01H,#0C0H
+                                           ; SOURCE LINE # 103
+002A 750002      R     MOV     GPIO_InitStructure,#02H
+                                           ; SOURCE LINE # 104
+002D 7F03              MOV     R7,#03H
+002F 120000      R     LCALL   L?0076
+                                           ; SOURCE LINE # 107
+0032 750004      R     MOV     GPIO_InitStructure+01H,#04H
+                                           ; SOURCE LINE # 108
+                                           ; SOURCE LINE # 109
+0035 120000      R     LCALL   L?0075
+                                           ; SOURCE LINE # 112
+0038 750008      R     MOV     GPIO_InitStructure+01H,#08H
+                                           ; SOURCE LINE # 113
+                                           ; SOURCE LINE # 114
+003B 120000      R     LCALL   L?0075
+                                           ; SOURCE LINE # 117
+003E 7FFF              MOV     R7,#0FFH
+0040 120000      E     LCALL   _setMontorRunningStatus
+                                           ; SOURCE LINE # 118
+0043 C2B2              CLR     RS485_Recv_Send_Enable
+                                           ; SOURCE LINE # 119
+0045 D292              SETB    VoltStatusLamp
+                                           ; SOURCE LINE # 120
+0047 D2B3              SETB    VoltStatusPlus
+                                           ; SOURCE LINE # 121
+0049 22                RET     
+004A         L?0074:
+004A 750001      R     MOV     GPIO_InitStructure,#01H
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 38  
+
+004D 7B00              MOV     R3,#00H
+004F 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
+0051 7900        R     MOV     R1,#LOW GPIO_InitStructure
+0053 7F01              MOV     R7,#01H
+0055 120000      E     LCALL   _GPIO_Inilize
+0058 22                RET     
+0059         L?0075:
+0059 E4                CLR     A
+005A F500        R     MOV     GPIO_InitStructure,A
+005C FB                MOV     R3,A
+005D 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
+005F 7900        R     MOV     R1,#LOW GPIO_InitStructure
+0061 7F03              MOV     R7,#03H
+0063 120000      E     LCALL   _GPIO_Inilize
+0066 22                RET     
+0067         L?0076:
+0067 7B00              MOV     R3,#00H
+0069 7A00        R     MOV     R2,#HIGH GPIO_InitStructure
+006B 7900        R     MOV     R1,#LOW GPIO_InitStructure
+006D 120000      E     LCALL   _GPIO_Inilize
+0070 22                RET     
+             ; FUNCTION GPIO_Config (END)
+
+             ; FUNCTION ADC_config (BEGIN)
+                                           ; SOURCE LINE # 123
+                                           ; SOURCE LINE # 124
+                                           ; SOURCE LINE # 127
+0000 750008      R     MOV     ADC_InitStructure,#08H
+                                           ; SOURCE LINE # 128
 0003 E4                CLR     A
 0004 F500        R     MOV     ADC_InitStructure+01H,A
-                                           ; SOURCE LINE # 94
+                                           ; SOURCE LINE # 129
 0006 750001      R     MOV     ADC_InitStructure+02H,#01H
-                                           ; SOURCE LINE # 95
+                                           ; SOURCE LINE # 130
 0009 750001      R     MOV     ADC_InitStructure+03H,#01H
-                                           ; SOURCE LINE # 96
+                                           ; SOURCE LINE # 131
 000C F500        R     MOV     ADC_InitStructure+04H,A
-                                           ; SOURCE LINE # 97
+                                           ; SOURCE LINE # 132
 000E F500        R     MOV     ADC_InitStructure+05H,A
-                                           ; SOURCE LINE # 98
+                                           ; SOURCE LINE # 133
 0010 FB                MOV     R3,A
 0011 7A00        R     MOV     R2,#HIGH ADC_InitStructure
 0013 7900        R     MOV     R1,#LOW ADC_InitStructure
 0015 120000      E     LCALL   _ADC_Inilize
-                                           ; SOURCE LINE # 100
+                                           ; SOURCE LINE # 135
 0018 7F01              MOV     R7,#01H
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 37  
-
 001A 020000      E     LJMP    _ADC_PowerControl
              ; FUNCTION ADC_config (END)
 
              ; FUNCTION _delay_timer (BEGIN)
-                                           ; SOURCE LINE # 103
+                                           ; SOURCE LINE # 139
 ;---- Variable 'iTime' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 104
-                                           ; SOURCE LINE # 105
+                                           ; SOURCE LINE # 140
+                                           ; SOURCE LINE # 141
 0000 E4                CLR     A
 0001 F500        R     MOV     TimeoutCount,A
 0003         ?C0005:
-                                           ; SOURCE LINE # 106
+                                           ; SOURCE LINE # 142
 0003 E500        R     MOV     A,TimeoutCount
 0005 D3                SETB    C
 0006 9F                SUBB    A,R7
 0007 40FA              JC      ?C0005
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 39  
+
 0009         ?C0006:
-                                           ; SOURCE LINE # 107
+                                           ; SOURCE LINE # 143
 0009 7500FF      R     MOV     TimeoutCount,#0FFH
-                                           ; SOURCE LINE # 108
+                                           ; SOURCE LINE # 144
 000C 22                RET     
              ; FUNCTION _delay_timer (END)
 
              ; FUNCTION _wait_switch_on (BEGIN)
-                                           ; SOURCE LINE # 110
+                                           ; SOURCE LINE # 146
 ;---- Variable 'time_out' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 111
-                                           ; SOURCE LINE # 113
+                                           ; SOURCE LINE # 147
+                                           ; SOURCE LINE # 149
 0000 E4                CLR     A
 0001 F500        R     MOV     TimeoutCount,A
 0003         ?C0008:
-                                           ; SOURCE LINE # 114
+                                           ; SOURCE LINE # 150
 0003 30CC0F            JNB     SwitchOnStatus,?C0009
-                                           ; SOURCE LINE # 115
-                                           ; SOURCE LINE # 116
+                                           ; SOURCE LINE # 151
+                                           ; SOURCE LINE # 152
 0006 E500        R     MOV     A,TimeoutCount
 0008 D3                SETB    C
 0009 9F                SUBB    A,R7
 000A 40F7              JC      ?C0008
-                                           ; SOURCE LINE # 117
-                                           ; SOURCE LINE # 118
+                                           ; SOURCE LINE # 153
+                                           ; SOURCE LINE # 154
 000C 7BFF              MOV     R3,#0FFH
 000E 7A00        R     MOV     R2,#HIGH ?SC_0
 0010 7900        R     MOV     R1,#LOW ?SC_0
 0012 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 119
-                                           ; SOURCE LINE # 120
-                                           ; SOURCE LINE # 123
+                                           ; SOURCE LINE # 155
+                                           ; SOURCE LINE # 156
+                                           ; SOURCE LINE # 159
 0015         ?C0009:
-                                           ; SOURCE LINE # 124
+                                           ; SOURCE LINE # 160
 0015 7500FF      R     MOV     TimeoutCount,#0FFH
-                                           ; SOURCE LINE # 125
+                                           ; SOURCE LINE # 161
 0018 22                RET     
              ; FUNCTION _wait_switch_on (END)
 
              ; FUNCTION _wait_out_off_hook (BEGIN)
-                                           ; SOURCE LINE # 127
+                                           ; SOURCE LINE # 163
 ;---- Variable 'time_out' assigned to Register 'R7' ----
-                                           ; SOURCE LINE # 128
-                                           ; SOURCE LINE # 130
+                                           ; SOURCE LINE # 164
+                                           ; SOURCE LINE # 166
 0000 E4                CLR     A
 0001 F500        R     MOV     TimeoutCount,A
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 38  
-
 0003         ?C0012:
-                                           ; SOURCE LINE # 131
+                                           ; SOURCE LINE # 167
 0003 30CD0F            JNB     OutOffHookCheck,?C0013
-                                           ; SOURCE LINE # 132
-                                           ; SOURCE LINE # 133
+                                           ; SOURCE LINE # 168
+                                           ; SOURCE LINE # 169
 0006 E500        R     MOV     A,TimeoutCount
 0008 D3                SETB    C
 0009 9F                SUBB    A,R7
 000A 40F7              JC      ?C0012
-                                           ; SOURCE LINE # 134
-                                           ; SOURCE LINE # 135
+                                           ; SOURCE LINE # 170
+                                           ; SOURCE LINE # 171
 000C 7BFF              MOV     R3,#0FFH
 000E 7A00        R     MOV     R2,#HIGH ?SC_0
 0010 7900        R     MOV     R1,#LOW ?SC_0
 0012 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 136
-                                           ; SOURCE LINE # 137
-                                           ; SOURCE LINE # 140
+                                           ; SOURCE LINE # 172
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 40  
+
+                                           ; SOURCE LINE # 173
+                                           ; SOURCE LINE # 176
 0015         ?C0013:
-                                           ; SOURCE LINE # 141
+                                           ; SOURCE LINE # 177
 0015 7500FF      R     MOV     TimeoutCount,#0FFH
-                                           ; SOURCE LINE # 142
+                                           ; SOURCE LINE # 178
 0018 22                RET     
              ; FUNCTION _wait_out_off_hook (END)
 
              ; FUNCTION main (BEGIN)
-                                           ; SOURCE LINE # 146
-                                           ; SOURCE LINE # 147
-                                           ; SOURCE LINE # 148
+                                           ; SOURCE LINE # 182
+                                           ; SOURCE LINE # 183
+                                           ; SOURCE LINE # 185
 0000 E4                CLR     A
-0001 F500        R     MOV     i,A
-                                           ; SOURCE LINE # 149
+0001 F500        R     MOV     iVbCount,A
+                                           ; SOURCE LINE # 186
 0003 F500        R     MOV     Max_Volt,A
 0005 F500        R     MOV     Max_Volt+01H,A
-                                           ; SOURCE LINE # 152
+                                           ; SOURCE LINE # 189
 0007 C2AF              CLR     EA
-                                           ; SOURCE LINE # 153
-0009 120000      R     LCALL   GPIO_Config
-                                           ; SOURCE LINE # 155
+                                           ; SOURCE LINE # 190
+0009 120000      R     LCALL   Timer_Config
+                                           ; SOURCE LINE # 191
 000C 120000      R     LCALL   UART_config
-                                           ; SOURCE LINE # 156
-000F 120000      R     LCALL   Timer_Config
-                                           ; SOURCE LINE # 157
+                                           ; SOURCE LINE # 192
+000F 120000      R     LCALL   GPIO_Config
+                                           ; SOURCE LINE # 193
 0012 120000      R     LCALL   ADC_config
-                                           ; SOURCE LINE # 160
+                                           ; SOURCE LINE # 196
 0015 D2AF              SETB    EA
-                                           ; SOURCE LINE # 163
+                                           ; SOURCE LINE # 199
 0017 120000      E     LCALL   init_Watch_Dog
 001A         ?C0016:
-                                           ; SOURCE LINE # 166
-                                           ; SOURCE LINE # 167
-                                           ; SOURCE LINE # 168
-001A B295              CPL     VoltCapturePortC
-                                           ; SOURCE LINE # 169
+                                           ; SOURCE LINE # 202
+                                           ; SOURCE LINE # 203
+                                           ; SOURCE LINE # 204
+001A B2B2              CPL     RS485_Recv_Send_Enable
+                                           ; SOURCE LINE # 205
 001C 120000      E     LCALL   getACVppVolt
 001F 8E00        R     MOV     Max_Volt,R6
 0021 8F00        R     MOV     Max_Volt+01H,R7
-                                           ; SOURCE LINE # 170
+                                           ; SOURCE LINE # 212
 0023 7BFF              MOV     R3,#0FFH
 0025 7A00        R     MOV     R2,#HIGH ?SC_42
 0027 7900        R     MOV     R1,#LOW ?SC_42
 0029 120000      E     LCALL   _PrintString1
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 39  
-
-                                           ; SOURCE LINE # 171
+                                           ; SOURCE LINE # 213
 002C AE00        R     MOV     R6,Max_Volt
 002E AF00        R     MOV     R7,Max_Volt+01H
 0030 7C03              MOV     R4,#03H
 0032 7DE8              MOV     R5,#0E8H
 0034 120000      E     LCALL   ?C?UIDIV
-0037 120000      R     LCALL   L?0076
-                                           ; SOURCE LINE # 172
+0037 120000      R     LCALL   L?0077
+                                           ; SOURCE LINE # 214
 003A 7D64              MOV     R5,#064H
-003C 120000      R     LCALL   L?0075
-                                           ; SOURCE LINE # 173
+003C 120000      R     LCALL   L?0073
+                                           ; SOURCE LINE # 215
 003F 7D0A              MOV     R5,#0AH
-0041 120000      R     LCALL   L?0075
-                                           ; SOURCE LINE # 174
+0041 120000      R     LCALL   L?0073
+                                           ; SOURCE LINE # 216
 0044 AE00        R     MOV     R6,Max_Volt
 0046 AF00        R     MOV     R7,Max_Volt+01H
-0048 120000      R     LCALL   L?0076
-                                           ; SOURCE LINE # 175
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 41  
+
+0048 120000      R     LCALL   L?0077
+                                           ; SOURCE LINE # 217
 004B 7BFF              MOV     R3,#0FFH
 004D 7A00        R     MOV     R2,#HIGH ?SC_53
 004F 7900        R     MOV     R1,#LOW ?SC_53
 0051 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 178
+                                           ; SOURCE LINE # 220
 0054 C3                CLR     C
 0055 E500        R     MOV     A,Max_Volt+01H
-0057 947B              SUBB    A,#07BH
+0057 94BC              SUBB    A,#0BCH
 0059 E500        R     MOV     A,Max_Volt
-005B 9401              SUBB    A,#01H
+005B 9403              SUBB    A,#03H
 005D 400B              JC      ?C0018
-                                           ; SOURCE LINE # 179
+                                           ; SOURCE LINE # 221
 005F 750010      R     MOV     VoltCurrentStatus,#010H
-                                           ; SOURCE LINE # 180
+                                           ; SOURCE LINE # 222
 0062 7BFF              MOV     R3,#0FFH
-0064 7A00        R     MOV     R2,#HIGH ?SC_56
-0066 7900        R     MOV     R1,#LOW ?SC_56
-                                           ; SOURCE LINE # 181
-0068 8030              SJMP    ?C0070
+0064 7A00        R     MOV     R2,#HIGH ?SC_61
+0066 7900        R     MOV     R1,#LOW ?SC_61
+                                           ; SOURCE LINE # 223
+0068 8030              SJMP    ?C0068
 006A         ?C0018:
 006A D3                SETB    C
 006B E500        R     MOV     A,Max_Volt+01H
-006D 9452              SUBB    A,#052H
+006D 9434              SUBB    A,#034H
 006F E500        R     MOV     A,Max_Volt
-0071 9401              SUBB    A,#01H
+0071 9403              SUBB    A,#03H
 0073 501C              JNC     ?C0020
-                                           ; SOURCE LINE # 182
+                                           ; SOURCE LINE # 224
 0075 E500        R     MOV     A,Max_Volt+01H
 0077 4500        R     ORL     A,Max_Volt
 0079 700B              JNZ     ?C0021
-                                           ; SOURCE LINE # 183
+                                           ; SOURCE LINE # 225
 007B 750011      R     MOV     VoltCurrentStatus,#011H
-                                           ; SOURCE LINE # 184
+                                           ; SOURCE LINE # 226
 007E 7BFF              MOV     R3,#0FFH
-0080 7A00        R     MOV     R2,#HIGH ?SC_71
-0082 7900        R     MOV     R1,#LOW ?SC_71
-0084         ?C0068:
-                                           ; SOURCE LINE # 185
-0084 8014              SJMP    ?C0070
+0080 7A00        R     MOV     R2,#HIGH ?SC_76
+0082 7900        R     MOV     R1,#LOW ?SC_76
+0084         ?C0066:
+                                           ; SOURCE LINE # 227
+0084 8014              SJMP    ?C0068
 0086         ?C0021:
-                                           ; SOURCE LINE # 186
+                                           ; SOURCE LINE # 228
 0086 750001      R     MOV     VoltCurrentStatus,#01H
-                                           ; SOURCE LINE # 187
+                                           ; SOURCE LINE # 229
 0089 7BFF              MOV     R3,#0FFH
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 40  
-
-008B 7A00        R     MOV     R2,#HIGH ?SC_86
-008D 7900        R     MOV     R1,#LOW ?SC_86
-008F         ?C0069:
-                                           ; SOURCE LINE # 188
-                                           ; SOURCE LINE # 189
-008F 8009              SJMP    ?C0070
+008B 7A00        R     MOV     R2,#HIGH ?SC_91
+008D 7900        R     MOV     R1,#LOW ?SC_91
+008F         ?C0067:
+                                           ; SOURCE LINE # 230
+                                           ; SOURCE LINE # 231
+008F 8009              SJMP    ?C0068
 0091         ?C0020:
-                                           ; SOURCE LINE # 190
+                                           ; SOURCE LINE # 232
 0091 E4                CLR     A
 0092 F500        R     MOV     VoltCurrentStatus,A
-                                           ; SOURCE LINE # 191
+                                           ; SOURCE LINE # 233
 0094 7BFF              MOV     R3,#0FFH
-0096 7A00        R     MOV     R2,#HIGH ?SC_102
-0098 7900        R     MOV     R1,#LOW ?SC_102
-009A         ?C0070:
+0096 7A00        R     MOV     R2,#HIGH ?SC_107
+0098 7900        R     MOV     R1,#LOW ?SC_107
+009A         ?C0068:
 009A 120000      E     LCALL   _PrintString1
-                                           ; SOURCE LINE # 192
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 42  
+
+                                           ; SOURCE LINE # 234
 009D         ?C0019:
-                                           ; SOURCE LINE # 193
+                                           ; SOURCE LINE # 235
 009D E4                CLR     A
 009E F500        R     MOV     Max_Volt,A
 00A0 F500        R     MOV     Max_Volt+01H,A
-                                           ; SOURCE LINE # 197
-00A2 E500        R     MOV     A,VoltCurrentStatus
-00A4 602E              JZ      ?C0024
-                                           ; SOURCE LINE # 198
-                                           ; SOURCE LINE # 203
-00A6 20CD07            JB      OutOffHookCheck,?C0025
-                                           ; SOURCE LINE # 204
-                                           ; SOURCE LINE # 205
-00A9 E500        R     MOV     A,MotorCurrentStatus
-00AB F4                CPL     A
-00AC 6062              JZ      ?C0031
-                                           ; SOURCE LINE # 206
-                                           ; SOURCE LINE # 207
-00AE 8059              SJMP    ?C0073
-00B0         ?C0025:
-                                           ; SOURCE LINE # 209
-                                           ; SOURCE LINE # 216
-00B0 E500        R     MOV     A,VoltCurrentStatus
-00B2 6411              XRL     A,#011H
-00B4 6005              JZ      ?C0028
-                                           ; SOURCE LINE # 217
-00B6 7F32              MOV     R7,#032H
-00B8 120000      E     LCALL   _delay_ms
-00BB         ?C0028:
-                                           ; SOURCE LINE # 218
-00BB E500        R     MOV     A,MotorCurrentStatus
-00BD 6401              XRL     A,#01H
-00BF 6007              JZ      ?C0029
-                                           ; SOURCE LINE # 219
-00C1 7F01              MOV     R7,#01H
-00C3 120000      E     LCALL   _setMontorRunningStatus
-00C6 8F00        R     MOV     MotorCurrentStatus,R7
-00C8         ?C0029:
-                                           ; SOURCE LINE # 222
-00C8 7F64              MOV     R7,#064H
-00CA 120000      R     LCALL   _wait_out_off_hook
-                                           ; SOURCE LINE # 224
-00CD E500        R     MOV     A,MotorCurrentStatus
-00CF F4                CPL     A
-00D0 603E              JZ      ?C0031
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 41  
-
-                                           ; SOURCE LINE # 225
-00D2         ?C0071:
-                                           ; SOURCE LINE # 226
-                                           ; SOURCE LINE # 227
-00D2 8035              SJMP    ?C0073
-00D4         ?C0024:
-                                           ; SOURCE LINE # 229
-                                           ; SOURCE LINE # 230
-00D4 B294              CPL     VoltCapturePortB
-                                           ; SOURCE LINE # 236
-00D6 20CC07            JB      SwitchOnStatus,?C0032
-                                           ; SOURCE LINE # 237
-                                           ; SOURCE LINE # 238
-00D9 E500        R     MOV     A,MotorCurrentStatus
-00DB F4                CPL     A
-00DC 6032              JZ      ?C0031
                                            ; SOURCE LINE # 239
-00DE         ?C0072:
+00A2 E500        R     MOV     A,VoltCurrentStatus
+00A4 6043              JZ      ?C0024
                                            ; SOURCE LINE # 240
-00DE 8029              SJMP    ?C0073
-00E0         ?C0032:
                                            ; SOURCE LINE # 242
+00A6 E4                CLR     A
+00A7 F500        R     MOV     VoltExceptionsPlus,A
+                                           ; SOURCE LINE # 243
+00A9 E500        R     MOV     A,VoltCurrentStatus
+00AB B40105            CJNE    A,#01H,?C0025
+00AE E4                CLR     A
+00AF F500        R     MOV     VoltUnderLedIndicate,A
+00B1 8008              SJMP    ?C0026
+00B3         ?C0025:
+                                           ; SOURCE LINE # 244
+00B3 E500        R     MOV     A,VoltCurrentStatus
+00B5 B41003            CJNE    A,#010H,?C0026
+00B8 E4                CLR     A
+00B9 F500        R     MOV     VoltOverLedIndicate,A
+00BB         ?C0026:
                                            ; SOURCE LINE # 250
-00E0 30910A            JNB     SystemWorkMode,?C0035
+00BB 20CD07            JB      OutOffHookCheck,?C0028
                                            ; SOURCE LINE # 251
-00E3 E500        R     MOV     A,MotorCurrentStatus
-00E5 6401              XRL     A,#01H
-00E7 6011              JZ      ?C0037
                                            ; SOURCE LINE # 252
-00E9 7F01              MOV     R7,#01H
+00BE E500        R     MOV     A,MotorCurrentStatus
+00C0 F4                CPL     A
+00C1 6060              JZ      ?C0034
                                            ; SOURCE LINE # 253
-00EB 8008              SJMP    ?C0074
-00ED         ?C0035:
                                            ; SOURCE LINE # 254
-00ED E500        R     MOV     A,MotorCurrentStatus
-00EF 6410              XRL     A,#010H
-00F1 6007              JZ      ?C0037
-                                           ; SOURCE LINE # 255
-00F3 7F10              MOV     R7,#010H
-00F5         ?C0074:
-00F5 120000      E     LCALL   _setMontorRunningStatus
-00F8 8F00        R     MOV     MotorCurrentStatus,R7
+00C3 8057              SJMP    ?C0071
+00C5         ?C0028:
                                            ; SOURCE LINE # 256
-00FA         ?C0037:
-                                           ; SOURCE LINE # 259
-00FA 7F64              MOV     R7,#064H
-00FC 120000      R     LCALL   _wait_switch_on
-                                           ; SOURCE LINE # 260
-00FF 7F04              MOV     R7,#04H
-0101 120000      R     LCALL   _delay_timer
-                                           ; SOURCE LINE # 261
-0104 E500        R     MOV     A,MotorCurrentStatus
-0106 F4                CPL     A
-0107 6007              JZ      ?C0031
-                                           ; SOURCE LINE # 262
-0109         ?C0073:
-0109 7FFF              MOV     R7,#0FFH
-010B 120000      E     LCALL   _setMontorRunningStatus
-010E 8F00        R     MOV     MotorCurrentStatus,R7
                                            ; SOURCE LINE # 263
+00C5 E500        R     MOV     A,VoltCurrentStatus
+00C7 6411              XRL     A,#011H
+00C9 6005              JZ      ?C0031
+00CB 7F32              MOV     R7,#032H
+00CD 120000      E     LCALL   _delay_ms
+00D0         ?C0031:
                                            ; SOURCE LINE # 264
-0110         ?C0031:
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 42  
-
+00D0 E500        R     MOV     A,MotorCurrentStatus
+00D2 6401              XRL     A,#01H
+00D4 6007              JZ      ?C0032
                                            ; SOURCE LINE # 265
-                                           ; SOURCE LINE # 266
-0110 120000      R     LCALL   L?0077
-                                           ; SOURCE LINE # 267
+00D6 7F01              MOV     R7,#01H
+00D8 120000      E     LCALL   _setMontorRunningStatus
+00DB 8F00        R     MOV     MotorCurrentStatus,R7
+00DD         ?C0032:
                                            ; SOURCE LINE # 268
-0113 120000      R     LCALL   L?0077
-                                           ; SOURCE LINE # 269
-0116 020000      R     LJMP    ?C0016
+00DD 7F64              MOV     R7,#064H
+00DF 120000      R     LCALL   _wait_out_off_hook
                                            ; SOURCE LINE # 270
-0119         L?0075:
-0119 AE00        R     MOV     R6,Max_Volt
-011B AF00        R     MOV     R7,Max_Volt+01H
-011D 7C00              MOV     R4,#00H
-011F 120000      E     LCALL   ?C?UIDIV
-0122 7C00              MOV     R4,#00H
-0124 7D0A              MOV     R5,#0AH
-0126 120000      E     LCALL   ?C?UIDIV
-0129 AF05              MOV     R7,AR5
-012B 120000      E     LCALL   _debug
-012E 22                RET     
-012F         L?0076:
-012F 7C00              MOV     R4,#00H
-0131 7D0A              MOV     R5,#0AH
-0133 120000      E     LCALL   ?C?UIDIV
-0136 AF05              MOV     R7,AR5
-0138 120000      E     LCALL   _debug
-013B 22                RET     
-013C         L?0077:
-013C 7FFA              MOV     R7,#0FAH
-013E 120000      E     LCALL   _delay_ms
-0141 7FFA              MOV     R7,#0FAH
-0143 120000      E     LCALL   _delay_ms
-0146 22                RET     
+00E2 E500        R     MOV     A,MotorCurrentStatus
+00E4 F4                CPL     A
+00E5 603C              JZ      ?C0034
+                                           ; SOURCE LINE # 271
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 43  
+
+00E7         ?C0069:
+                                           ; SOURCE LINE # 272
+                                           ; SOURCE LINE # 275
+00E7 8033              SJMP    ?C0071
+00E9         ?C0024:
+                                           ; SOURCE LINE # 277
+                                           ; SOURCE LINE # 283
+00E9 20CC07            JB      SwitchOnStatus,?C0035
+                                           ; SOURCE LINE # 284
+                                           ; SOURCE LINE # 285
+00EC E500        R     MOV     A,MotorCurrentStatus
+00EE F4                CPL     A
+00EF 6032              JZ      ?C0034
+                                           ; SOURCE LINE # 286
+00F1         ?C0070:
+                                           ; SOURCE LINE # 287
+00F1 8029              SJMP    ?C0071
+00F3         ?C0035:
+                                           ; SOURCE LINE # 289
+                                           ; SOURCE LINE # 297
+00F3 30910A            JNB     SystemWorkMode,?C0038
+                                           ; SOURCE LINE # 298
+00F6 E500        R     MOV     A,MotorCurrentStatus
+00F8 6401              XRL     A,#01H
+00FA 6011              JZ      ?C0040
+                                           ; SOURCE LINE # 299
+00FC 7F01              MOV     R7,#01H
+                                           ; SOURCE LINE # 300
+00FE 8008              SJMP    ?C0072
+0100         ?C0038:
+                                           ; SOURCE LINE # 301
+0100 E500        R     MOV     A,MotorCurrentStatus
+0102 6410              XRL     A,#010H
+0104 6007              JZ      ?C0040
+                                           ; SOURCE LINE # 302
+0106 7F10              MOV     R7,#010H
+0108         ?C0072:
+0108 120000      E     LCALL   _setMontorRunningStatus
+010B 8F00        R     MOV     MotorCurrentStatus,R7
+                                           ; SOURCE LINE # 303
+010D         ?C0040:
+                                           ; SOURCE LINE # 306
+010D 7F64              MOV     R7,#064H
+010F 120000      R     LCALL   _wait_switch_on
+                                           ; SOURCE LINE # 307
+0112 7F04              MOV     R7,#04H
+0114 120000      R     LCALL   _delay_timer
+                                           ; SOURCE LINE # 308
+0117 E500        R     MOV     A,MotorCurrentStatus
+0119 F4                CPL     A
+011A 6007              JZ      ?C0034
+                                           ; SOURCE LINE # 309
+011C         ?C0071:
+011C 7FFF              MOV     R7,#0FFH
+011E 120000      E     LCALL   _setMontorRunningStatus
+0121 8F00        R     MOV     MotorCurrentStatus,R7
+                                           ; SOURCE LINE # 310
+                                           ; SOURCE LINE # 311
+0123         ?C0034:
+                                           ; SOURCE LINE # 312
+                                           ; SOURCE LINE # 313
+0123 120000      R     LCALL   L?0078
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 44  
+
+                                           ; SOURCE LINE # 314
+                                           ; SOURCE LINE # 315
+0126 120000      R     LCALL   L?0078
+                                           ; SOURCE LINE # 316
+0129 020000      R     LJMP    ?C0016
+                                           ; SOURCE LINE # 317
+012C         L?0073:
+012C AE00        R     MOV     R6,Max_Volt
+012E AF00        R     MOV     R7,Max_Volt+01H
+0130 7C00              MOV     R4,#00H
+0132 120000      E     LCALL   ?C?UIDIV
+0135 7C00              MOV     R4,#00H
+0137 7D0A              MOV     R5,#0AH
+0139 120000      E     LCALL   ?C?UIDIV
+013C AF05              MOV     R7,AR5
+013E 120000      E     LCALL   _debug
+0141 22                RET     
+0142         L?0077:
+0142 7C00              MOV     R4,#00H
+0144 7D0A              MOV     R5,#0AH
+0146 120000      E     LCALL   ?C?UIDIV
+0149 AF05              MOV     R7,AR5
+014B 120000      E     LCALL   _debug
+014E 22                RET     
+014F         L?0078:
+014F 7FFA              MOV     R7,#0FAH
+0151 120000      E     LCALL   _delay_ms
+0154 7FFA              MOV     R7,#0FAH
+0156 120000      E     LCALL   _delay_ms
+0159 22                RET     
              ; FUNCTION main (END)
 
              ; FUNCTION timer0_int (BEGIN)
 0000 C0E0              PUSH    ACC
 0002 C0D0              PUSH    PSW
-                                           ; SOURCE LINE # 273
-                                           ; SOURCE LINE # 276
-0004 53C17F            ANL     WDT_CONTR,#07FH
-                                           ; SOURCE LINE # 277
-0007 43C110            ORL     WDT_CONTR,#010H
-                                           ; SOURCE LINE # 280
-000A E500        R     MOV     A,TimeoutCount
-000C D3                SETB    C
-000D 94C8              SUBB    A,#0C8H
-000F 5002              JNC     ?C0041
-                                           ; SOURCE LINE # 281
-0011 0500        R     INC     TimeoutCount
-0013         ?C0041:
-                                           ; SOURCE LINE # 284
-0013 E500        R     MOV     A,VoltExceptionsStatus
-0015 7012              JNZ     ?C0042
-                                           ; SOURCE LINE # 285
-                                           ; SOURCE LINE # 286
-0017 D292              SETB    VoltStatusLamp
-                                           ; SOURCE LINE # 287
-0019 D2B3              SETB    VoltStatusPlus
-                                           ; SOURCE LINE # 288
-001B E500        R     MOV     A,VoltExceptionsCount
-001D F4                CPL     A
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 43  
+0004 75D000            MOV     PSW,#00H
+0007 C007              PUSH    AR7
+                                           ; SOURCE LINE # 320
+                                           ; SOURCE LINE # 323
+0009 53C17F            ANL     WDT_CONTR,#07FH
+                                           ; SOURCE LINE # 324
+000C 43C110            ORL     WDT_CONTR,#010H
+                                           ; SOURCE LINE # 327
+000F E500        R     MOV     A,TimeoutCount
+0011 D3                SETB    C
+0012 94C8              SUBB    A,#0C8H
+0014 5002              JNC     ?C0044
+                                           ; SOURCE LINE # 328
+0016 0500        R     INC     TimeoutCount
+0018         ?C0044:
+                                           ; SOURCE LINE # 331
+0018 E500        R     MOV     A,VoltExceptionsPlus
+001A F4                CPL     A
+001B 6011              JZ      ?C0045
+                                           ; SOURCE LINE # 332
+                                           ; SOURCE LINE # 333
+001D C2B3              CLR     VoltStatusPlus
+                                           ; SOURCE LINE # 334
+001F AF00        R     MOV     R7,VoltExceptionsPlus
+0021 0500        R     INC     VoltExceptionsPlus
+0023 EF                MOV     A,R7
+0024 D3                SETB    C
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 45  
 
-001E 7003              JNZ     $ + 5H
-0020 020000      R     LJMP    ?C0067
-0023 7500FF      R     MOV     VoltExceptionsCount,#0FFH
-                                           ; SOURCE LINE # 289
-0026 020000      R     LJMP    ?C0067
-0029         ?C0042:
-                                           ; SOURCE LINE # 291
-                                           ; SOURCE LINE # 292
-0029 0500        R     INC     VoltExceptionsCount
-                                           ; SOURCE LINE # 294
-002B E500        R     MOV     A,VoltExceptionsCount
-002D D3                SETB    C
-002E 9405              SUBB    A,#05H
-0030 4004              JC      ?C0045
-0032 D2B3              SETB    VoltStatusPlus
-0034 8002              SJMP    ?C0046
-0036         ?C0045:
-                                           ; SOURCE LINE # 295
-0036 C2B3              CLR     VoltStatusPlus
-0038         ?C0046:
-                                           ; SOURCE LINE # 297
-0038 E500        R     MOV     A,VoltCurrentStatus
-003A 6401              XRL     A,#01H
-003C 6003              JZ      $ + 5H
-003E 020000      R     LJMP    ?C0047
-                                           ; SOURCE LINE # 298
-                                           ; SOURCE LINE # 299
-0041 E500        R     MOV     A,VoltExceptionsCount
-0043 C3                CLR     C
-0044 940F              SUBB    A,#0FH
-0046 500B              JNC     ?C0048
-0048 E500        R     MOV     A,VoltExceptionsCount
-004A 9400              SUBB    A,#00H
-004C 4005              JC      ?C0048
-004E C292              CLR     VoltStatusLamp
-0050 020000      R     LJMP    ?C0067
-0053         ?C0048:
-                                           ; SOURCE LINE # 300
-0053 E500        R     MOV     A,VoltExceptionsCount
-0055 C3                CLR     C
-0056 9414              SUBB    A,#014H
-0058 500B              JNC     ?C0050
-005A E500        R     MOV     A,VoltExceptionsCount
-005C C3                CLR     C
-005D 940F              SUBB    A,#0FH
-005F 4004              JC      ?C0050
-0061 D292              SETB    VoltStatusLamp
-0063 8077              SJMP    ?C0067
-0065         ?C0050:
-                                           ; SOURCE LINE # 301
-0065 E500        R     MOV     A,VoltExceptionsCount
-0067 C3                CLR     C
-0068 9423              SUBB    A,#023H
-006A 500B              JNC     ?C0052
-006C E500        R     MOV     A,VoltExceptionsCount
-006E C3                CLR     C
-006F 9414              SUBB    A,#014H
-0071 4004              JC      ?C0052
-0073 C292              CLR     VoltStatusLamp
-0075 8065              SJMP    ?C0067
-0077         ?C0052:
-                                           ; SOURCE LINE # 302
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 44  
+0025 9405              SUBB    A,#05H
+0027 4005              JC      ?C0045
+                                           ; SOURCE LINE # 335
+                                           ; SOURCE LINE # 336
+0029 7500FF      R     MOV     VoltExceptionsPlus,#0FFH
+                                           ; SOURCE LINE # 337
+002C D2B3              SETB    VoltStatusPlus
+                                           ; SOURCE LINE # 338
+                                           ; SOURCE LINE # 339
+002E         ?C0045:
+                                           ; SOURCE LINE # 342
+002E E500        R     MOV     A,VoltOverLedIndicate
+0030 F4                CPL     A
+0031 6011              JZ      ?C0047
+                                           ; SOURCE LINE # 343
+                                           ; SOURCE LINE # 344
+0033 C292              CLR     VoltStatusLamp
+                                           ; SOURCE LINE # 345
+0035 AF00        R     MOV     R7,VoltOverLedIndicate
+0037 0500        R     INC     VoltOverLedIndicate
+0039 EF                MOV     A,R7
+003A D3                SETB    C
+003B 9419              SUBB    A,#019H
+003D 4005              JC      ?C0047
+                                           ; SOURCE LINE # 346
+                                           ; SOURCE LINE # 347
+003F 7500FF      R     MOV     VoltOverLedIndicate,#0FFH
+                                           ; SOURCE LINE # 348
+0042 D292              SETB    VoltStatusLamp
+                                           ; SOURCE LINE # 349
+                                           ; SOURCE LINE # 350
+0044         ?C0047:
+                                           ; SOURCE LINE # 353
+0044 E500        R     MOV     A,VoltUnderLedIndicate
+0046 F4                CPL     A
+0047 7003              JNZ     $ + 5H
+0049 020000      R     LJMP    ?C0065
+                                           ; SOURCE LINE # 354
+                                           ; SOURCE LINE # 355
+004C 0500        R     INC     VoltUnderLedIndicate
+                                           ; SOURCE LINE # 356
+004E E500        R     MOV     A,VoltUnderLedIndicate
+0050 C3                CLR     C
+0051 940F              SUBB    A,#0FH
+0053 500B              JNC     ?C0050
+0055 E500        R     MOV     A,VoltUnderLedIndicate
+0057 C3                CLR     C
+0058 9400              SUBB    A,#00H
+005A 4004              JC      ?C0050
+005C C292              CLR     VoltStatusLamp
+005E 8078              SJMP    ?C0065
+0060         ?C0050:
+                                           ; SOURCE LINE # 357
+0060 E500        R     MOV     A,VoltUnderLedIndicate
+0062 C3                CLR     C
+0063 9414              SUBB    A,#014H
+0065 500B              JNC     ?C0052
+0067 E500        R     MOV     A,VoltUnderLedIndicate
+0069 C3                CLR     C
+006A 940F              SUBB    A,#0FH
+006C 4004              JC      ?C0052
+006E D292              SETB    VoltStatusLamp
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 46  
 
-0077 E500        R     MOV     A,VoltExceptionsCount
-0079 C3                CLR     C
-007A 9487              SUBB    A,#087H
-007C 500B              JNC     ?C0054
-007E E500        R     MOV     A,VoltExceptionsCount
-0080 C3                CLR     C
-0081 9423              SUBB    A,#023H
-0083 4004              JC      ?C0054
-0085 D292              SETB    VoltStatusLamp
-0087 8053              SJMP    ?C0067
-0089         ?C0054:
-                                           ; SOURCE LINE # 303
-0089 E500        R     MOV     A,VoltExceptionsCount
-008B C3                CLR     C
-008C 9496              SUBB    A,#096H
-008E 500B              JNC     ?C0056
-0090 E500        R     MOV     A,VoltExceptionsCount
-0092 C3                CLR     C
-0093 9487              SUBB    A,#087H
-0095 4004              JC      ?C0056
-0097 C292              CLR     VoltStatusLamp
-0099 8041              SJMP    ?C0067
-009B         ?C0056:
-                                           ; SOURCE LINE # 304
-009B E500        R     MOV     A,VoltExceptionsCount
-009D C3                CLR     C
-009E 949B              SUBB    A,#09BH
-00A0 500B              JNC     ?C0058
-00A2 E500        R     MOV     A,VoltExceptionsCount
-00A4 C3                CLR     C
-00A5 9496              SUBB    A,#096H
-00A7 4004              JC      ?C0058
-00A9 D292              SETB    VoltStatusLamp
-00AB 802F              SJMP    ?C0067
-00AD         ?C0058:
-                                           ; SOURCE LINE # 305
-00AD E500        R     MOV     A,VoltExceptionsCount
-00AF C3                CLR     C
-00B0 94AA              SUBB    A,#0AAH
-00B2 500B              JNC     ?C0060
-00B4 E500        R     MOV     A,VoltExceptionsCount
-00B6 C3                CLR     C
-00B7 949B              SUBB    A,#09BH
-00B9 4004              JC      ?C0060
-00BB C292              CLR     VoltStatusLamp
-00BD 801D              SJMP    ?C0067
-00BF         ?C0060:
-                                           ; SOURCE LINE # 306
-00BF E500        R     MOV     A,VoltExceptionsCount
-00C1 C3                CLR     C
-00C2 94AF              SUBB    A,#0AFH
-00C4 4016              JC      ?C0067
-00C6 C292              CLR     VoltStatusLamp
-                                           ; SOURCE LINE # 307
-00C8 8012              SJMP    ?C0067
-00CA         ?C0047:
-                                           ; SOURCE LINE # 308
-00CA E500        R     MOV     A,VoltCurrentStatus
-00CC B4100D            CJNE    A,#010H,?C0067
-                                           ; SOURCE LINE # 309
-                                           ; SOURCE LINE # 310
-00CF E500        R     MOV     A,VoltExceptionsCount
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 45  
+0070 8066              SJMP    ?C0065
+0072         ?C0052:
+                                           ; SOURCE LINE # 358
+0072 E500        R     MOV     A,VoltUnderLedIndicate
+0074 C3                CLR     C
+0075 9423              SUBB    A,#023H
+0077 500B              JNC     ?C0054
+0079 E500        R     MOV     A,VoltUnderLedIndicate
+007B C3                CLR     C
+007C 9414              SUBB    A,#014H
+007E 4004              JC      ?C0054
+0080 C292              CLR     VoltStatusLamp
+0082 8054              SJMP    ?C0065
+0084         ?C0054:
+                                           ; SOURCE LINE # 359
+0084 E500        R     MOV     A,VoltUnderLedIndicate
+0086 C3                CLR     C
+0087 9487              SUBB    A,#087H
+0089 500B              JNC     ?C0056
+008B E500        R     MOV     A,VoltUnderLedIndicate
+008D C3                CLR     C
+008E 9423              SUBB    A,#023H
+0090 4004              JC      ?C0056
+0092 D292              SETB    VoltStatusLamp
+0094 8042              SJMP    ?C0065
+0096         ?C0056:
+                                           ; SOURCE LINE # 360
+0096 E500        R     MOV     A,VoltUnderLedIndicate
+0098 C3                CLR     C
+0099 9496              SUBB    A,#096H
+009B 500B              JNC     ?C0058
+009D E500        R     MOV     A,VoltUnderLedIndicate
+009F C3                CLR     C
+00A0 9487              SUBB    A,#087H
+00A2 4004              JC      ?C0058
+00A4 C292              CLR     VoltStatusLamp
+00A6 8030              SJMP    ?C0065
+00A8         ?C0058:
+                                           ; SOURCE LINE # 361
+00A8 E500        R     MOV     A,VoltUnderLedIndicate
+00AA C3                CLR     C
+00AB 949B              SUBB    A,#09BH
+00AD 500B              JNC     ?C0060
+00AF E500        R     MOV     A,VoltUnderLedIndicate
+00B1 C3                CLR     C
+00B2 9496              SUBB    A,#096H
+00B4 4004              JC      ?C0060
+00B6 D292              SETB    VoltStatusLamp
+00B8 801E              SJMP    ?C0065
+00BA         ?C0060:
+                                           ; SOURCE LINE # 362
+00BA E500        R     MOV     A,VoltUnderLedIndicate
+00BC C3                CLR     C
+00BD 94AA              SUBB    A,#0AAH
+00BF 500B              JNC     ?C0062
+00C1 E500        R     MOV     A,VoltUnderLedIndicate
+00C3 C3                CLR     C
+00C4 949B              SUBB    A,#09BH
+00C6 4004              JC      ?C0062
+00C8 C292              CLR     VoltStatusLamp
+00CA 800C              SJMP    ?C0065
+00CC         ?C0062:
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 47  
 
-00D1 D3                SETB    C
-00D2 9419              SUBB    A,#019H
-00D4 4004              JC      ?C0065
-00D6 D292              SETB    VoltStatusLamp
-00D8 8002              SJMP    ?C0067
-00DA         ?C0065:
-                                           ; SOURCE LINE # 311
-00DA C292              CLR     VoltStatusLamp
-                                           ; SOURCE LINE # 312
-                                           ; SOURCE LINE # 313
-                                           ; SOURCE LINE # 314
-00DC         ?C0067:
-00DC D0D0              POP     PSW
-00DE D0E0              POP     ACC
-00E0 32                RETI    
+                                           ; SOURCE LINE # 363
+00CC E500        R     MOV     A,VoltUnderLedIndicate
+00CE C3                CLR     C
+00CF 94AA              SUBB    A,#0AAH
+00D1 4005              JC      ?C0065
+00D3 D292              SETB    VoltStatusLamp
+00D5 7500FF      R     MOV     VoltUnderLedIndicate,#0FFH
+                                           ; SOURCE LINE # 364
+                                           ; SOURCE LINE # 365
+00D8         ?C0065:
+00D8 D007              POP     AR7
+00DA D0D0              POP     PSW
+00DC D0E0              POP     ACC
+00DE 32                RETI    
              ; FUNCTION timer0_int (END)
 
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 46  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 48  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -2822,8 +2937,9 @@ _ADC_Inilize . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 P2 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00A0H  1
 P3 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B0H  1
 P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
+VoltOverLedIndicate. . . . . . . . . .  PUBLIC   DATA   U_CHAR   0000H  1
 P5 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
-MotorCurrentStatus . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0000H  1
+MotorCurrentStatus . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0001H  1
 EA . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AFH  1
 COMx_Define. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
   id . . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
@@ -2848,7 +2964,7 @@ TIM_InitTypeDef. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  8
   TIM_ClkOut . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
   TIM_Value. . . . . . . . . . . . . .  MEMBER   -----  U_INT    0005H  2
   TIM_Run. . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0007H  1
-VoltCurrentStatus. . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0001H  1
+VoltCurrentStatus. . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0002H  1
 IP . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00B8H  1
 COMx_InitDefine. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  13
   UART_Mode. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
@@ -2868,16 +2984,16 @@ ADC_config . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   ADC_InitStructure. . . . . . . . . .  AUTO     DATA   STRUCT   0000H  6
 CCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D8H  1
 main . . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  i. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0000H  1
+  iVbCount . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0000H  1
   Max_Volt . . . . . . . . . . . . . .  AUTO     DATA   U_INT    0001H  2
 getACVppVolt . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
-u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
-C51 COMPILER V9.52.0.0   MAIN                                                              08/24/2017 23:54:49 PAGE 47  
+C51 COMPILER V9.52.0.0   MAIN                                                              08/27/2017 00:30:03 PAGE 49  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
 
 
+u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
 SystemWorkMode . . . . . . . . . . . .  ABSBIT   -----  BIT      0091H  1
@@ -2891,24 +3007,22 @@ _setMontorRunningStatus. . . . . . . .  EXTERN   CODE   PROC     -----  -----
 B. . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F0H  1
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
 OutOffHookCheck. . . . . . . . . . . .  ABSBIT   -----  BIT      00CDH  1
+RS485_Recv_Send_Enable . . . . . . . .  ABSBIT   -----  BIT      00B2H  1
 _delay_ms. . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 _USART_Configuration . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 VoltStatusPlus . . . . . . . . . . . .  ABSBIT   -----  BIT      00B3H  1
 WDT_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C1H  1
-VoltExceptionsStatus . . . . . . . . .  PUBLIC   DATA   U_CHAR   0002H  1
 u32. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
 u16. . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
 GPIO_InitTypeDef . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  2
   Mode . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
   Pin. . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
-VoltExceptionsCount. . . . . . . . . .  PUBLIC   DATA   U_CHAR   0003H  1
+VoltUnderLedIndicate . . . . . . . . .  PUBLIC   DATA   U_CHAR   0003H  1
 _GPIO_Inilize. . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 GPIO_Config. . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   GPIO_InitStructure . . . . . . . . .  AUTO     DATA   STRUCT   0000H  2
-VoltCapturePortB . . . . . . . . . . .  ABSBIT   -----  BIT      0094H  1
 _wait_switch_on. . . . . . . . . . . .  STATIC   CODE   PROC     0000H  -----
   time_out . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-VoltCapturePortC . . . . . . . . . . .  ABSBIT   -----  BIT      0095H  1
 ADC_InitTypeDef. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  6
   ADC_Px . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
   ADC_Speed. . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
@@ -2917,15 +3031,16 @@ ADC_InitTypeDef. . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  6
   ADC_Polity . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0004H  1
   ADC_Interrupt. . . . . . . . . . . .  MEMBER   -----  U_CHAR   0005H  1
 TimeoutCount . . . . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0004H  1
+VoltExceptionsPlus . . . . . . . . . .  PUBLIC   DATA   U_CHAR   0005H  1
 PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    763    ----
-   CONSTANT SIZE    =    119    ----
+   CODE SIZE        =    846    ----
+   CONSTANT SIZE    =    124    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      5      32
+   DATA SIZE        =      6      32
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

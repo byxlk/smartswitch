@@ -1011,7 +1011,6 @@
  
  
  
- 
  sbit  SwitchStatus           = P1^0;       
  sbit  SystemWorkMode         = P1^1;       
  sbit  VoltStatusLamp         = P1^2;       
@@ -1099,7 +1098,6 @@
   
   
   
- 
  
   
   
@@ -1283,7 +1281,6 @@
   
   
  
- 
   
   
  
@@ -1403,7 +1400,6 @@
   
   
   
- 
  
   
   
@@ -1550,7 +1546,6 @@
   
   
   
- 
  
   
   
@@ -1705,7 +1700,6 @@
   
   
  
- 
   
   
  
@@ -1820,8 +1814,9 @@
  
  
  
- unsigned char VoltExceptionsCount = 0xFF;
- unsigned char VoltExceptionsStatus = 0x0;  
+ unsigned char VoltExceptionsPlus = 0xFF;     
+ unsigned char VoltOverLedIndicate = 0xFF;    
+ unsigned char VoltUnderLedIndicate = 0xFF;  
  
  unsigned char TimeoutCount = 0xFF;
  unsigned char VoltCurrentStatus = 0x11;
@@ -1848,42 +1843,76 @@
  }
  
  
- void GPIO_Config(void)
- {
- GPIO_InitTypeDef	GPIO_InitStructure;		             
- 
- GPIO_InitStructure.Pin  = 0x01 | 0x02 | 0x04;	    
- GPIO_InitStructure.Mode = 1;		            
- GPIO_Inilize(1,&GPIO_InitStructure);	            
- 
- GPIO_InitStructure.Pin  = 0x10 ;	    
- GPIO_InitStructure.Mode = 0;		            
- GPIO_Inilize(1,&GPIO_InitStructure);	            
- 
- GPIO_InitStructure.Pin  = 0x40 | 0x80;	 
- GPIO_InitStructure.Mode = 0;		            
- GPIO_Inilize(3,&GPIO_InitStructure);
- }
- 
- 
  void Timer_Config(void)  
  {
  TIM_InitTypeDef		TIM_InitStructure;					 
  TIM_InitStructure.TIM_Mode      = 0;	 
  TIM_InitStructure.TIM_Polity    = 1;			 
  TIM_InitStructure.TIM_Interrupt = 1;				 
- TIM_InitStructure.TIM_ClkSource = 1;			 
+ TIM_InitStructure.TIM_ClkSource = 1;		 
  TIM_InitStructure.TIM_ClkOut    = 0;				 
  TIM_InitStructure.TIM_Value     = 65536 - (24000000L / (12 * 50));	 
  TIM_InitStructure.TIM_Run       = 1;				 
  Timer_Inilize(0,&TIM_InitStructure);				 
  }
  
+ 
+ 
+ 
+ 
+ 
+ 
+ void GPIO_Config(void)
+ {
+ GPIO_InitTypeDef	GPIO_InitStructure;		             
+ 
+ 
+ GPIO_InitStructure.Pin  = 0x01 | 0x02;	    
+ GPIO_InitStructure.Mode = 1;		            
+ GPIO_Inilize(1,&GPIO_InitStructure);	            
+ 
+ 
+ GPIO_InitStructure.Pin  = 0x08 | 0x10 | 0x20;  
+ GPIO_InitStructure.Mode = 1;		            
+ GPIO_Inilize(1,&GPIO_InitStructure);	            
+ 
+ 
+ GPIO_InitStructure.Pin  =  0x04;	                 
+ GPIO_InitStructure.Mode = 0;		            
+ GPIO_Inilize(1,&GPIO_InitStructure);	            
+ 
+ 
+ GPIO_InitStructure.Pin  = 0x10 | 0x20;	    
+ GPIO_InitStructure.Mode = 1;		            
+ GPIO_Inilize(5,&GPIO_InitStructure);	            
+ 
+ 
+ GPIO_InitStructure.Pin  = 0x40 | 0x80;	     
+ GPIO_InitStructure.Mode = 2;		             
+ GPIO_Inilize(3,&GPIO_InitStructure);
+ 
+ 
+ GPIO_InitStructure.Pin  = 0x04;           	     
+ GPIO_InitStructure.Mode = 0;		             
+ GPIO_Inilize(3,&GPIO_InitStructure);
+ 
+ 
+ GPIO_InitStructure.Pin  = 0x08;           	     
+ GPIO_InitStructure.Mode = 0;		             
+ GPIO_Inilize(3,&GPIO_InitStructure);
+ 
+ 
+ setMontorRunningStatus(0xff);             
+ RS485_Recv_Send_Enable = 0;                              
+ VoltStatusLamp = 1;                                      
+ VoltStatusPlus = 1;                                      
+ }
+ 
  void ADC_config(void)
  {
  ADC_InitTypeDef		ADC_InitStructure;				 
  
- ADC_InitStructure.ADC_Px        = 0x08;	         
+ ADC_InitStructure.ADC_Px        = 0x08;	 
  ADC_InitStructure.ADC_Speed     = 0;			 
  ADC_InitStructure.ADC_Power     = 1;			 
  ADC_InitStructure.ADC_AdjResult = 1;		 
@@ -1893,6 +1922,7 @@
  
  ADC_PowerControl(1);							 
  }
+ 
  
  static void delay_timer(unsigned char iTime)
  {
@@ -1939,15 +1969,15 @@
  
  void main(void)
  {
- unsigned char i = 0;
+ 
+ unsigned char iVbCount = 0;
  unsigned short Max_Volt = 0;
  
  
  EA = 0;
- GPIO_Config(); 
- 
- UART_config();  
  Timer_Config(); 
+ UART_config();  
+ GPIO_Config(); 
  ADC_config();  
  
  
@@ -1959,20 +1989,26 @@
  
  while (1)
  {
- VoltCapturePortC = ~VoltCapturePortC;
+ RS485_Recv_Send_Enable = ~RS485_Recv_Send_Enable;
  Max_Volt = getACVppVolt();
+ 
+ 
+ 
+ 
+ 
+ 
   PrintString1("Max Volt: ");
  debug(Max_Volt / 1000 % 10);
  debug(Max_Volt / 100 % 10);
  debug(Max_Volt / 10 % 10);
  debug(Max_Volt % 10);
-  PrintString1("\r\n");
+  PrintString1("  ---  ");
  
  
- if(Max_Volt >= 379){
+ if(Max_Volt >= 956){
  VoltCurrentStatus = 0x10;
   PrintString1("OVER_VOLTAGE\r\n");
- } else if(Max_Volt <= 338) {
+ } else if(Max_Volt <= 820) {
  if(Max_Volt == 0) {
  VoltCurrentStatus = 0x11;
   PrintString1("LOSS_VOLTAGE\r\n");
@@ -1989,7 +2025,12 @@
  
  
  if(VoltCurrentStatus != 0x0)
- {            
+ {
+ 
+ VoltExceptionsPlus = 0;      
+ if(VoltCurrentStatus == 0x01)    VoltUnderLedIndicate = 0;
+ else if(VoltCurrentStatus == 0x10) VoltOverLedIndicate = 0;
+ 
  
  
  
@@ -2007,8 +2048,7 @@
  
  
  
- if(VoltCurrentStatus != 0x11)
- delay_ms(50);
+ if(VoltCurrentStatus != 0x11) delay_ms(50);
  if(MotorCurrentStatus != 0x01)
  MotorCurrentStatus = setMontorRunningStatus(0x01); 
  
@@ -2018,10 +2058,11 @@
  if(MotorCurrentStatus != 0xff)
  MotorCurrentStatus = setMontorRunningStatus(0xff); 
  }
+ 
+ 
  }
  else  
  {
- VoltCapturePortB = ~VoltCapturePortB;
  
  
  
@@ -2075,35 +2116,39 @@
  TimeoutCount++;
  
  
- if(!VoltExceptionsStatus)
+ if(VoltExceptionsPlus != 0xFF)
  {
- VoltStatusLamp = 1;
+ VoltStatusPlus = 0; 
+ if(VoltExceptionsPlus++ > 5 )  
+ {
+ VoltExceptionsPlus = 0xFF;
  VoltStatusPlus = 1;
- if(VoltExceptionsCount != 0xFF) VoltExceptionsCount = 0xFF;
  }
- else
- {
- VoltExceptionsCount++;
+ }
  
- if(VoltExceptionsCount > 5) VoltStatusPlus = 1;
- else VoltStatusPlus = 0;
  
- if(VoltCurrentStatus == 0x01)
+ if(VoltOverLedIndicate != 0xFF)
  {
- if(VoltExceptionsCount < 15 && VoltExceptionsCount > 0) VoltStatusLamp = 0;  
- else if(VoltExceptionsCount < 20 && VoltExceptionsCount >= 15) VoltStatusLamp = 1;  
- else if(VoltExceptionsCount < 35 && VoltExceptionsCount >= 20) VoltStatusLamp = 0;  
- else if(VoltExceptionsCount < 135 && VoltExceptionsCount >= 35) VoltStatusLamp = 1;  
- else if(VoltExceptionsCount < 150 && VoltExceptionsCount >= 135) VoltStatusLamp = 0;  
- else if(VoltExceptionsCount < 155 && VoltExceptionsCount >= 150) VoltStatusLamp = 1;  
- else if(VoltExceptionsCount < 170 && VoltExceptionsCount >= 155) VoltStatusLamp = 0;  
- else if(VoltExceptionsCount >= 175) VoltStatusLamp = 0;  
- }
- else if(VoltCurrentStatus == 0x10)
+ VoltStatusLamp = 0; 
+ if(VoltOverLedIndicate++ > 25 )  
  {
- if(VoltExceptionsCount > 25) VoltStatusLamp = 1;
- else VoltStatusLamp = 0;
+ VoltOverLedIndicate = 0xFF;
+ VoltStatusLamp = 1;
  }
+ }
+ 
+ 
+ if(VoltUnderLedIndicate != 0xFF)
+ {
+ VoltUnderLedIndicate++;
+ if(VoltUnderLedIndicate < 15 && VoltUnderLedIndicate >= 0) VoltStatusLamp = 0;  
+ else if(VoltUnderLedIndicate < 20 && VoltUnderLedIndicate >= 15) VoltStatusLamp = 1;  
+ else if(VoltUnderLedIndicate < 35 && VoltUnderLedIndicate >= 20) VoltStatusLamp = 0;  
+ else if(VoltUnderLedIndicate < 135 && VoltUnderLedIndicate >= 35) VoltStatusLamp = 1;  
+ else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0;  
+ else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1;  
+ else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0;  
+ else if(VoltUnderLedIndicate >= 170) {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
  }
  }
  
