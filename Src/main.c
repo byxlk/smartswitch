@@ -30,7 +30,7 @@ unsigned char VoltExceptionsPlus = 0xFF;    //电压异常脉冲
 unsigned char VoltOverLedIndicate = 0xFF;   //电压过压
 unsigned char VoltUnderLedIndicate = 0xFF; //电压欠压
 
-unsigned char TimeoutCount = 0xFF;
+unsigned short TimeoutCount = STOP_TIMERCOUNT;
 unsigned char VoltCurrentStatus = LOSS_VOLTAGE;
 unsigned char MotorCurrentStatus = MONTOR_STOP_RUNNING;
 /*************	本地函数声明	**************/
@@ -70,10 +70,6 @@ void Timer_Config(void) //20ms@24.000MHz
 
 
 /******************** IO配置函数 **************************/
-//#define	GPIO_PullUp		0	//上拉准双向口
-//#define	GPIO_HighZ		1	//浮空输入
-//#define	GPIO_OUT_OD		2	//开漏输出
-//#define	GPIO_OUT_PP		3	//推挽输出
 void GPIO_Config(void)
 {
 	GPIO_InitTypeDef	GPIO_InitStructure;		            //结构定义
@@ -100,7 +96,7 @@ void GPIO_Config(void)
 
     //电机控制引脚
 	GPIO_InitStructure.Pin  = GPIO_Pin_6 | GPIO_Pin_7;	    //指定要初始化的IO, GPIO_Pin_0 ~ GPIO_Pin_7, 或操作
-	GPIO_InitStructure.Mode = GPIO_OUT_OD;		            //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
+	GPIO_InitStructure.Mode = GPIO_PullUp;		            //指定IO的输入或输出方式,GPIO_PullUp,GPIO_HighZ,GPIO_OUT_OD,GPIO_OUT_PP
 	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
     
     //RS485使能引脚
@@ -114,7 +110,8 @@ void GPIO_Config(void)
 	GPIO_Inilize(GPIO_P3,&GPIO_InitStructure);
 
     //初始化部分GPIO
-    setMontorRunningStatus(MONTOR_STOP_RUNNING);            //电机停转
+    MotorRunningCtrl_R = 1;
+    MotorRunningCtrl_L = 1;            //电机停转
     RS485_Recv_Send_Enable = 0;                             //RS485使能默认为接收模式
     VoltStatusLamp = 1;                                     //状态指示灯默认不亮
     VoltStatusPlus = 1;                                     //脉冲信号默认高电平
@@ -136,7 +133,7 @@ void ADC_config(void)
 }
 
 
-static void delay_timer(unsigned char iTime)
+static void delay_timer(unsigned short iTime)
 {
     TimeoutCount = TIMECOUNTER_START;//开始计时
     while(TimeoutCount <= iTime) ;//等1秒
@@ -201,13 +198,12 @@ void main(void)
 	//=======================> Start Main Process <==========================//
 	while (1)
 	{
-        RS485_Recv_Send_Enable = ~RS485_Recv_Send_Enable;
-        Max_Volt = getACVppVolt();
-        //if(iVbCount++ < 10) continue;
-        //else {
-        //    Max_Volt = Max_Volt / iVbCount;
-        //    iVbCount = 0;
-        //}
+        Max_Volt += getACVppVolt();
+        if(iVbCount++ < 10) continue;
+        else {
+            Max_Volt = Max_Volt / iVbCount;
+            iVbCount = 0;
+        }
         
         LOGD("Max Volt: ");
         debug(Max_Volt / 1000 % 10);
@@ -270,8 +266,7 @@ void main(void)
                 if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转
             }
-            //delay_timer(TIMEOUT_VAL_MAX);
-            //delay_timer(TIMEOUT_VAL_MAX);
+            delay_timer(TIMEOUT_VAL_10S);
         }
         else //当前电压状态   ---   正常
         {
@@ -309,14 +304,11 @@ void main(void)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
             }
         }
-        delay_ms(250);
-        delay_ms(250);
-        delay_ms(250);
-        delay_ms(250);
     }
 }
 
 /********************* Timer0中断函数************************/
+#define TIMER_VALUE (65536 - (MAIN_Fosc / (12 * 50)))
 void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
 {
 	// process watch dog signal
@@ -331,7 +323,7 @@ void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
     if(VoltExceptionsPlus != 0xFF)
     {
         VoltStatusPlus = 0;//输出低电平
-        if(VoltExceptionsPlus++ > 5 ) //20 x 5 = 100ms
+        if(VoltExceptionsPlus++ >= 5 ) //20 x 5 = 100ms
         {
             VoltExceptionsPlus = 0xFF;
             VoltStatusPlus = 1;
@@ -360,7 +352,11 @@ void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
         else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0; //300ms
         else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1; //100ms
         else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0; //300ms
-        else if(VoltUnderLedIndicate >= 170) {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
+        else {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
     }
+
+    /* 减小定时器误差 */
+	//TL0 = TIMER_VALUE % 256 - TL0;
+	//TH0 = TIMER_VALUE / 256 - TH0;
 }
 

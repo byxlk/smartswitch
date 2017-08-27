@@ -69,7 +69,6 @@
  
  
  
- 
   
 #line 1 "..\Src\STC15Fxxxx.H" /0
  
@@ -990,10 +989,7 @@
  
  
  
-#line 29 "..\Src\config.h" /0
- 
- 
- 
+#line 28 "..\Src\config.h" /0
  
  
  

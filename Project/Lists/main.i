@@ -43,7 +43,6 @@
  
  
  
- 
   
 #line 1 "..\Src\STC15Fxxxx.H" /0
  
@@ -964,10 +963,7 @@
  
  
  
-#line 29 "..\Src\config.h" /0
- 
- 
- 
+#line 28 "..\Src\config.h" /0
  
  
  
@@ -1077,7 +1073,6 @@
   
  
  
- 
   
  
   
@@ -1106,9 +1101,6 @@
   
   
  
-  
-  
-  
   
   
   
@@ -1259,7 +1251,6 @@
   
  
  
- 
   
  
   
@@ -1288,9 +1279,6 @@
   
   
  
-  
-  
-  
   
   
   
@@ -1379,7 +1367,6 @@
   
  
  
- 
   
  
   
@@ -1408,9 +1395,6 @@
   
   
  
-  
-  
-  
   
   
   
@@ -1525,7 +1509,6 @@
   
  
  
- 
   
  
   
@@ -1554,9 +1537,6 @@
   
   
  
-  
-  
-  
   
   
   
@@ -1678,7 +1658,6 @@
   
  
  
- 
   
  
   
@@ -1707,9 +1686,6 @@
   
   
  
-  
-  
-  
   
   
   
@@ -1818,7 +1794,7 @@
  unsigned char VoltOverLedIndicate = 0xFF;    
  unsigned char VoltUnderLedIndicate = 0xFF;  
  
- unsigned char TimeoutCount = 0xFF;
+ unsigned short TimeoutCount = 0xFFFF;
  unsigned char VoltCurrentStatus = 0x11;
  unsigned char MotorCurrentStatus = 0xff;
  
@@ -1858,10 +1834,6 @@
  
  
  
- 
- 
- 
- 
  void GPIO_Config(void)
  {
  GPIO_InitTypeDef	GPIO_InitStructure;		             
@@ -1888,7 +1860,7 @@
  
  
  GPIO_InitStructure.Pin  = 0x40 | 0x80;	     
- GPIO_InitStructure.Mode = 2;		             
+ GPIO_InitStructure.Mode = 0;		             
  GPIO_Inilize(3,&GPIO_InitStructure);
  
  
@@ -1902,7 +1874,8 @@
  GPIO_Inilize(3,&GPIO_InitStructure);
  
  
- setMontorRunningStatus(0xff);             
+ MotorRunningCtrl_R = 1;
+ MotorRunningCtrl_L = 1;             
  RS485_Recv_Send_Enable = 0;                              
  VoltStatusLamp = 1;                                      
  VoltStatusPlus = 1;                                      
@@ -1924,11 +1897,11 @@
  }
  
  
- static void delay_timer(unsigned char iTime)
+ static void delay_timer(unsigned short iTime)
  {
  TimeoutCount = 0; 
  while(TimeoutCount <= iTime) ; 
- TimeoutCount = 0xFF; 
+ TimeoutCount = 0xFFFF; 
  }
  
  static void wait_switch_on(unsigned char time_out)
@@ -1945,7 +1918,7 @@
  
  
  }
- TimeoutCount = 0xFF; 
+ TimeoutCount = 0xFFFF; 
  }
  
  static void wait_out_off_hook(unsigned char time_out)
@@ -1962,7 +1935,7 @@
  
  
  }
- TimeoutCount = 0xFF; 
+ TimeoutCount = 0xFFFF; 
  }
  
  
@@ -1989,13 +1962,12 @@
  
  while (1)
  {
- RS485_Recv_Send_Enable = ~RS485_Recv_Send_Enable;
- Max_Volt = getACVppVolt();
- 
- 
- 
- 
- 
+ Max_Volt += getACVppVolt();
+ if(iVbCount++ < 10) continue;
+ else {
+ Max_Volt = Max_Volt / iVbCount;
+ iVbCount = 0;
+ }
  
   PrintString1("Max Volt: ");
  debug(Max_Volt / 1000 % 10);
@@ -2053,13 +2025,12 @@
  MotorCurrentStatus = setMontorRunningStatus(0x01); 
  
  
- wait_out_off_hook(100);
+ wait_out_off_hook(250);
  
  if(MotorCurrentStatus != 0xff)
  MotorCurrentStatus = setMontorRunningStatus(0xff); 
  }
- 
- 
+ delay_timer(500);
  }
  else  
  {
@@ -2091,18 +2062,15 @@
  }
  
  
- wait_switch_on(100);
+ wait_switch_on(250);
  delay_timer(4);
  if(MotorCurrentStatus != 0xff) 
  MotorCurrentStatus = setMontorRunningStatus(0xff);
  }
  }
- delay_ms(250);
- delay_ms(250);
- delay_ms(250);
- delay_ms(250);
  }
  }
+ 
  
  
  void timer0_int (void) interrupt 1  
@@ -2112,14 +2080,14 @@
  WDT_CONTR |= 0x10;
  
  
- if(TimeoutCount <= 200)
+ if(TimeoutCount <= 1000)
  TimeoutCount++;
  
  
  if(VoltExceptionsPlus != 0xFF)
  {
  VoltStatusPlus = 0; 
- if(VoltExceptionsPlus++ > 5 )  
+ if(VoltExceptionsPlus++ >= 5 )  
  {
  VoltExceptionsPlus = 0xFF;
  VoltStatusPlus = 1;
@@ -2148,7 +2116,11 @@
  else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0;  
  else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1;  
  else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0;  
- else if(VoltUnderLedIndicate >= 170) {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
+ else {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
  }
+ 
+ 
+ 
+ 
  }
  

@@ -24,7 +24,6 @@
 //#define MAIN_Fosc		 5529600L	//定义主时钟
 #define MAIN_Fosc		24000000L	//定义主时钟
 
-
 /*********************************************************/
 #include	"STC15Fxxxx.H"
 
@@ -54,23 +53,20 @@
 #define MONTOR_LEFT_RUNNING 0x10
 #define MONTOR_STOP_RUNNING 0xff
 
-#define TIMEOUT_VAL_MAX 200 //about 10s， 5s max is 250
-#define TIMEOUT_VAL_9S 180 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_8S 160 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_7S 140 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_6S 120 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_5S 100 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_4S 80 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_3S 60 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_2S5 50 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_2S 40 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_1S5 30 //about 2s， 5s max is 250
-#define TIMEOUT_VAL_1S 20 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_MAX 1000 //about 10s， 5s max is 250
+#define TIMEOUT_VAL_10S 500 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_5S 250 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_4S 200 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_3S 150 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_2S5 125 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_2S 100 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_1S5 75 //about 2s， 5s max is 250
+#define TIMEOUT_VAL_1S 50 //about 2s， 5s max is 250
 #define TIMEOUT_VAL_HS 10 //about 0.5s， 5s max is 250
 #define TIMEOUT_DELAY_VAL 4
 
 #define TIMECOUNTER_START 0
-#define STOP_TIMERCOUNT 0xFF
+#define STOP_TIMERCOUNT 0xFFFF
 
 sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
 sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
