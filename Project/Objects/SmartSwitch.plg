@@ -59,15 +59,15 @@ linking...
 Program Size: data=186.0 xdata=0 code=4040
 creating hex file from ".\Objects\SmartSwitch"...
 User command #1: H:\SmartSwitch_Project\smartswitch\Project\DelTempFile_CopyHex.bat
-20180311-014113
+20180311-014448
 请按任意键继续. . . 
-H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20180311-014113.hex 
+H:\SmartSwitch_Project\smartswitch\Project>copy Objects\smartswitch.hex ..\output_smartswitch_ad_485_20180311-014448.hex 
 已复制         1 个文件。
-H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20180311-014113.hex 
+H:\SmartSwitch_Project\smartswitch\Project>dir ..\output_smartswitch_ad_485_20180311-014448.hex 
  驱动器 H 中的卷没有标签。
  卷的序列号是 0005-6791
  H:\SmartSwitch_Project\smartswitch 的目录
-2018/03/11  01:41            11,980 output_smartswitch_ad_485_20180311-014113.hex
+2018/03/11  01:44            11,980 output_smartswitch_ad_485_20180311-014448.hex
                1 个文件         11,980 字节
-               0 个目录 45,809,840,128 可用字节
+               0 个目录 45,809,311,744 可用字节
 ".\Objects\SmartSwitch" - 0 Error(s), 16 Warning(s).

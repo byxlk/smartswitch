@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 1   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MISC
@@ -62,7 +62,7 @@ line level    source
    4      =3  Intrinsic functions for C51.
    5      =3  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
    6      =3  All rights reserved.
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 2   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 2   
 
    7      =3  --------------------------------------------------------------------------*/
    8      =3  
@@ -126,7 +126,7 @@ line level    source
   46      =2  
   47      =2  sfr P1   = 0x90;
   48      =2  sfr P1M1 = 0x91;        //P1M1.n,P1M0.n         =00--->Standard,        01--->push-pull         实际上1T的都一样
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 3   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 3   
 
   49      =2  sfr P1M0 = 0x92;        //                                      =10--->pure input,      11--->open drain
   50      =2  sfr P0M1 = 0x93;        //P0M1.n,P0M0.n         =00--->Standard,        01--->push-pull
@@ -190,7 +190,7 @@ line level    source
  108      =2  sfr P5     = 0xC8;      //
  109      =2  sfr P5M1   = 0xC9;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
  110      =2  sfr P5M0   = 0xCA;      //                                      =10--->pure input,      11--->open drain
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 4   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 4   
 
  111      =2  sfr P6M1   = 0xCB;      //      P5M1.n,P5M0.n   =00--->Standard,        01--->push-pull
  112      =2  sfr P6M0   = 0xCC;      //                                      =10--->pure input,      11--->open drain
@@ -254,7 +254,7 @@ line level    source
  170      =2  
  171      =2  /*  BIT Registers  */
  172      =2  /*  PSW   */
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 5   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 5   
 
  173      =2  sbit CY   = PSW^7;
  174      =2  sbit AC   = PSW^6;
@@ -318,7 +318,7 @@ line level    source
  232      =2  sbit  P30 = P3^0;
  233      =2  sbit  P31 = P3^1;
  234      =2  sbit  P32 = P3^2;
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 6   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 6   
 
  235      =2  sbit  P33 = P3^3;
  236      =2  sbit  P34 = P3^4;
@@ -382,7 +382,7 @@ line level    source
  294      =2  
  295      =2  /*  IP   */ 
  296      =2  /*
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 7   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 7   
 
  297      =2  sbit PPCA = IP^7;       //PCA 中断 优先级设定位
  298      =2  sbit PLVD = IP^6;       //低压中断 优先级设定位
@@ -446,7 +446,7 @@ line level    source
  355      =2  #define         PT0H    0x02
  356      =2  #define         PX0H    0x01
  357      =2  
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 8   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 8   
 
  358      =2  #define         PCA_InterruptFirst()    PPCA = 1
  359      =2  #define         LVD_InterruptFirst()    PLVD = 1
@@ -510,7 +510,7 @@ line level    source
  417      =2  #define         Timer0_16bit()                          TMOD  = (TMOD & ~0x03) | 0x01   //16位
  418      =2  #define         Timer0_8bitAutoReload()         TMOD  = (TMOD & ~0x03) | 0x02   //8位自动重装
  419      =2  #define         Timer0_16bitAutoRL_NoMask()     TMOD |=  0x03           //16位自动重装不可屏蔽中断
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 9   
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 9   
 
  420      =2  #define         Timer0_AsCounterP32()           TMOD |=  4              //时器0用做计数器
  421      =2  #define         Timer0_AsTimer()                        TMOD &= ~4              //时器0用做定时器
@@ -574,7 +574,7 @@ line level    source
  472      =2  
  473      =2  #define         Timer0_Load(n)          TH0 = (n) / 256,        TL0 = (n) % 256
  474      =2  #define         Timer1_Load(n)          TH1 = (n) / 256,        TL1 = (n) % 256
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 10  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 10  
 
  475      =2  #define         Timer2_Load(n)          TH2 = (n) / 256,        TL2 = (n) % 256
  476      =2  
@@ -638,7 +638,7 @@ line level    source
  534      =2  #define ISP_WAIT_12MHZ  3
  535      =2  #define ISP_WAIT_20MHZ  2
  536      =2  #define ISP_WAIT_24MHZ  1
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 11  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 11  
 
  537      =2  #define ISP_WAIT_30MHZ  0
  538      =2  
@@ -702,7 +702,7 @@ line level    source
              -)。
  593      =2  #define         SPI_USE_P24P23P22P21()  AUXR1 = (AUXR1 & ~0x0c) | 0x04  //将SPI切换到P24(SS) P23(MOSI) P22(MISO) P2
              -1(SCLK)。
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 12  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 12  
 
  594      =2  #define         SPI_USE_P54P40P41P43()  AUXR1 = (AUXR1 & ~0x0c) | 0x08  //将SPI切换到P54(SS) P40(MOSI) P41(MISO) P4
              -3(SCLK)。
@@ -766,7 +766,7 @@ line level    source
              -1) P27(CCP2)。
  646      =2  
  647      =2  #define         DPS_SEL1()              AUXR1 |=  1             //1：选择DPTR1。
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 13  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 13  
 
  648      =2  #define         DPS_SEL0()              AUXR1 &= ~1             //0：选择DPTR0(上电默认)。
  649      =2  
@@ -830,7 +830,7 @@ line level    source
  707      =2  
  708      =2  /* Above is STC additional SFR or change */
  709      =2  
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 14  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 14  
 
  710      =2  
  711      =2  
@@ -894,7 +894,7 @@ line level    source
  769      =2  /*
  770      =2      7   6    5    4   3     2        1       0         Reset Value
  771      =2      -  EX4  EX3  EX2  -   T2CLKO   T1CLKO  T0CLKO      0000,0000B
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 15  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 15  
 
  772      =2  b6 -  EX4      : 外中断INT4允许
  773      =2  b5 -  EX3      : 外中断INT3允许
@@ -958,7 +958,7 @@ line level    source
  829      =2  #define         INT2_VECTOR             10
  830      =2  #define         INT3_VECTOR             11
  831      =2  #define         TIMER2_VECTOR   12
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 16  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 16  
 
  832      =2  #define         INT4_VECTOR             16
  833      =2  #define         UART3_VECTOR    17
@@ -1022,7 +1022,7 @@ line level    source
   49      =1  #define OVER_VOLT_DIGIT_VAL 768      // (((265 * 1.414) / 100) * 1024) / 5 = 768
   50      =1  #define UNDER_VOLT_DIGIT_VAL 492     // (((170 * 1.414) / 100) * 1024) / 5 = 
   51      =1  
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 17  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 17  
 
   52      =1  #define MONTOR_RIGHT_RUNNING 0x01
   53      =1  #define MONTOR_LEFT_RUNNING 0x10
@@ -1086,7 +1086,7 @@ line level    source
    8      =1  /* --- Web: www.GXWMCU.com -----------------------------------------*/
    9      =1  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =1  /* If you want to use the program or the program referenced in the  */
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 18  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 18  
 
   11      =1  /* article, please specify in which data and procedures from STC    */
   12      =1  /*------------------------------------------------------------------*/
@@ -1150,7 +1150,7 @@ line level    source
            =2 #define MONTOR_RIGHT_RUNNING 0x01
            =2 #define MONTOR_LEFT_RUNNING 0x10
            =2 #define MONTOR_STOP_RUNNING 0xff
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 19  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 19  
 
            =2 
            =2 #define TIMEOUT_VAL_MAX 1000 //about 10s， 5s max is 250
@@ -1214,7 +1214,7 @@ line level    source
    6      =2  /* --- Fax: 86-0513-55012956,55012947,55012969 ---------------------*/
    7      =2  /* --- Tel: 86-0513-55012928,55012929,55012966 ---------------------*/
    8      =2  /* --- Web: www.GXWMCU.com -----------------------------------------*/
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 20  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 20  
 
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
@@ -1278,7 +1278,7 @@ line level    source
            =2 #define TIMECOUNTER_START 0
            =2 #define STOP_TIMERCOUNT 0xFFFF
            =2 
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 21  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 21  
 
            =2 sbit  SwitchStatus           = P1^0;      // 外部控制信号 1: 控制信号丢失 0：有控制信号
            =2 sbit  SystemWorkMode         = P1^1;      // 1：自动  0：手动
@@ -1342,7 +1342,7 @@ line level    source
   63      =1          u32     UART_BaudRate;          //波特率,       ENABLE,DISABLE
   64      =1          u8      Morecommunicate;        //多机通讯允许, ENABLE,DISABLE
   65      =1          u8      UART_RxEnable;          //允许接收,   ENABLE,DISABLE
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 22  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 22  
 
   66      =1          u8      BaudRateDouble;         //波特率加倍, ENABLE,DISABLE
   67      =1          u8      UART_Interrupt;         //中断控制,   ENABLE,DISABLE
@@ -1406,7 +1406,7 @@ line level    source
            =2 #define EX_CTRL_SIGNAL_LOSS 1 //外部控制信号信号丢失
            =2 #define EX_CTRL_SIGNAL_OK 0   //外部控制信号信号正常
            =2 
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 23  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 23  
 
            =2 #define SWITCH_STATUS_ON 0x5A
            =2 #define SWITCH_STATUS_OFF 0xA5
@@ -1470,7 +1470,7 @@ line level    source
   17      =1  #define ADC_90T         (3<<5)
   18      =1  #define ADC_180T        (2<<5)
   19      =1  #define ADC_360T        (1<<5)
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 24  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 24  
 
   20      =1  #define ADC_540T        0
   21      =1  #define ADC_FLAG        (1<<4)  //软件清0
@@ -1534,7 +1534,7 @@ line level    source
   34   1          if(PCON & 0x10)
   35   1          {
   36   2                      LOGD("Cold reset, delay 4s entery system ...\r\n");
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 25  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 25  
 
   37   2      
   38   2              delay_4000ms()  ; //boot delay 4s
@@ -1598,7 +1598,7 @@ line level    source
   96   2                      for(i = 0; i < nSize; i++) 
   97   2                              LOGD(puts);
   98   2                      LOGD("\r\n");
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 26  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 26  
 
   99   2              }
  100   1      }
@@ -1662,7 +1662,7 @@ line level    source
  158   1      }
  159          
  160          ////////////////////////////////////////////////////////////////////////
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 27  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 27  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -1726,7 +1726,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 42
 0014 D3                SETB    C
 0015 22                RET     
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 28  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 28  
 
                                            ; SOURCE LINE # 43
 0016         ?C0003:
@@ -1790,7 +1790,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 74
 0022 750010      R     MOV     MotorRunStatus,#010H
                                            ; SOURCE LINE # 76
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 29  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 29  
 
 0025 7BFF              MOV     R3,#0FFH
 0027 7A00        R     MOV     R2,#HIGH ?SC_102
@@ -1854,7 +1854,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0027 80EC              SJMP    ?C0015
 0029         ?C0016:
                                            ; SOURCE LINE # 98
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 30  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 30  
 
 0029 7BFF              MOV     R3,#0FFH
 002B 7A00        R     MOV     R2,#HIGH ?SC_150
@@ -1918,7 +1918,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 004C         L?0041:
 004C 7BFF              MOV     R3,#0FFH
 004E 120000      E     LCALL   _PrintString1
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 31  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 31  
 
 0051 7BFF              MOV     R3,#0FFH
 0053 7A00        R     MOV     R2,#HIGH ?SC_155
@@ -1982,7 +1982,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0047         ?C0024:
                                            ; SOURCE LINE # 132
 0047 E500        R     MOV     A,num
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 32  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 32  
 
 0049 B40509            CJNE    A,#05H,?C0025
 004C 7BFF              MOV     R3,#0FFH
@@ -2046,7 +2046,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0006 750013      R     MOV     capCount,#013H
 0009 750088      R     MOV     capCount+01H,#088H
 000C         ?C0034:
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 33  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 33  
 
                                            ; SOURCE LINE # 146
                                            ; SOURCE LINE # 148
@@ -2081,7 +2081,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 002F 22                RET     
              ; FUNCTION getACVppVolt (END)
 
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 34  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 34  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -2144,7 +2144,7 @@ MotorRunningCtrl_R . . . . . . . . . .  ABSBIT   -----  BIT      00B7H  1
 ACC. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E0H  1
 setSystemSleepFlag . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 PrintSystemInfoToSerial. . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:41:11 PAGE 35  
+C51 COMPILER V9.52.0.0   MISC                                                              03/11/2018 01:44:46 PAGE 35  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

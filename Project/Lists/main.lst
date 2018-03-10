@@ -1,4 +1,4 @@
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 1   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 1   
 
 
 C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
   11      =2  /* article, please specify in which data and procedures from STC    */
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 2   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 2   
 
   12      =2  /*------------------------------------------------------------------*/
   13      =2  
@@ -126,7 +126,7 @@ line level    source
   32      =2  sfr TL0  = 0x8A;
   33      =2  sfr TL1  = 0x8B;
   34      =2  sfr TH0  = 0x8C;
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 3   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 3   
 
   35      =2  sfr TH1  = 0x8D;
   36      =2  sfr     AUXR = 0x8E;
@@ -190,7 +190,7 @@ line level    source
   94      =2  sfr IAP_DATA  = 0xC2;
   95      =2  sfr IAP_ADDRH = 0xC3;
   96      =2  sfr IAP_ADDRL = 0xC4;
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 4   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 4   
 
   97      =2  sfr IAP_CMD   = 0xC5;
   98      =2  sfr IAP_TRIG  = 0xC6;
@@ -254,7 +254,7 @@ line level    source
  156      =2  sfr CCAP1L = 0xEB;      //PCAÄ£¿é1µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
  157      =2  sfr CCAP2L = 0xEC;      //PCAÄ£¿é2µÄ²¶×½/±È½Ï¼Ä´æÆ÷µÍ8Î»¡£
  158      =2  
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 5   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 5   
 
  159      =2  sfr B      = 0xF0;
  160      =2  sfr PCA_PWM0 = 0xF2;    //PCAÄ£¿é0 PWM¼Ä´æÆ÷¡£
@@ -318,7 +318,7 @@ line level    source
  218      =2  sbit  SPI_MISO  = P1^4;
  219      =2  sbit  SPI_SCLK  = P1^5;
  220      =2  
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 6   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 6   
 
  221      =2  /*  P2  */
  222      =2  sbit  P20 = P2^0;
@@ -382,7 +382,7 @@ line level    source
  280      =2  sbit RB8  = SCON^2;     //½ÓÊÕÊý¾ÝµÚ8Î»
  281      =2  sbit TI   = SCON^1;     //·¢ËÍÖÐ¶Ï±êÖ¾Î»
  282      =2  sbit RI   = SCON^0;     //½ÓÊÕÖÐ¶Ï±êÖ¾Î»
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 7   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 7   
 
  283      =2  
  284      =2  /*  IE   */
@@ -446,7 +446,7 @@ line level    source
  342      =2  sbit PT0        = IP^1; //¶¨Ê±ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
  343      =2  sbit PX0        = IP^0; //Íâ²¿ÖÐ¶Ï0ÓÅÏÈ¼¶Éè¶¨Î»
  344      =2  
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 8   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 8   
 
  345      =2  //                                           7      6      5     4     3     2    1     0        Reset Val
              -ue
@@ -510,7 +510,7 @@ line level    source
  403      =2  #define         S2TB8_CLR()                     S2CON &= ~8
  404      =2  #define         S2_Int_en()                     IE2   |=  1             //´®¿Ú2ÔÊÐíÖÐ¶Ï
  405      =2  #define         S2_USE_P10P11()         P_SW2 &= ~1             //UART2 Ê¹ÓÃP1¿Ú        Ä¬ÈÏ
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 9   
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 9   
 
  406      =2  #define         S2_USE_P46P47()         P_SW2 |=  1             //UART2 Ê¹ÓÃP4¿Ú
  407      =2  
@@ -574,7 +574,7 @@ line level    source
  463      =2  #define         T0_pulseP34_disable()           AUXR2 &= ~1
  464      =2  #define         T1_pulseP35_enable()            AUXR2 |=  2             //ÔÊÐí T1 Òç³öÂö³åÔÚT1(P3.4)½ÅÊä³ö£¬Fck1 = 1/2 T1 Òç³öÂÊ£¬T1¿É
              -ÒÔ1T»ò12T¡£
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 10  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 10  
 
  465      =2  #define         T1_pulseP35_disable()           AUXR2 &= ~2
  466      =2  #define         T2_pulseP30_enable()            AUXR2 |=  4             //ÔÊÐí T2 Òç³öÂö³åÔÚT1(P3.0)½ÅÊä³ö£¬Fck2 = 1/2 T2 Òç³öÂÊ£¬T2¿É
@@ -638,7 +638,7 @@ line level    source
  520      =2  
  521      =2  //sfr ISP_TRIG  = 0xC6;
  522      =2  #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP´¥·¢ÃüÁî
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 11  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 11  
 
  523      =2  
  524      =2  //                                                        7    6    5      4    3    2    1     0    Reset Value
@@ -702,7 +702,7 @@ line level    source
  580      =2  #define SPI_SCLK_NormalL()      SPCTL &= ~(1<<3)                //0: ¿ÕÏÐÊ±SCLKÎªµÍµçÆ½
  581      =2  #define SPI_PhaseH()            SPCTL |=  (1<<2)                //1: 
  582      =2  #define SPI_PhaseL()            SPCTL &= ~(1<<2)                //0: 
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 12  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 12  
 
  583      =2  #define SPI_Speed(n)            SPCTL = (SPCTL & ~3) | (n)      //ÉèÖÃËÙ¶È, 0 -- fosc/4, 1 -- fosc/16, 2 -- fosc/64, 3 --
              - fosc/128
@@ -766,7 +766,7 @@ line level    source
  635      =2  #define PCA_CLK_6T()            CMOD = (CMOD & ~0x0E) + 12      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/6¡£   Fosc/6
  636      =2  #define PCA_CLK_8T()            CMOD = (CMOD & ~0x0E) + 14      //PCA¼ÆÊýÂö³åÑ¡ÔñÍâ²¿¾§Õñ/8¡£   Fosc/8
  637      =2  #define PCA_INT_ENABLE()        CMOD |=  1                                      //PCA¼ÆÊýÆ÷Òç³öÖÐ¶ÏÔÊÐíÎ»£¬1---ÔÊÐíCF£¨CCON.7£©²úÉúÖÐ¶Ï¡£
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 13  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 13  
 
  638      =2  #define PCA_INT_DISABLE()       CMOD &= ~1                                      //PCA¼ÆÊýÆ÷Òç³öÖÐ¶Ï½ûÖ¹¡£
  639      =2  
@@ -830,7 +830,7 @@ line level    source
  693      =2  #define         PCA1_capture_edge()             CCAPM1 = (0x30 + 1)
  694      =2  #define         PCA1_16bit_Timer()              CCAPM1 = (0x48 + 1)
  695      =2  #define         PCA1_High_Pulse()               CCAPM1 = (0x4C + 1)
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 14  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 14  
 
  696      =2  
  697      =2  #define         PCA2_none()                             CCAPM2 = 0
@@ -894,7 +894,7 @@ line level    source
  755      =2  #define NOP37() NOP36(),NOP1()
  756      =2  #define NOP38() NOP37(),NOP1()
  757      =2  #define NOP39() NOP38(),NOP1()
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 15  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 15  
 
  758      =2  #define NOP40() NOP39(),NOP1()
  759      =2  #define NOP(N)  NOP##N()
@@ -958,7 +958,7 @@ line level    source
  815      =2  #define         BUS_SPEED_4T()  BUS_SPEED = 2
  816      =2  #define         BUS_SPEED_8T()  BUS_SPEED = 3
  817      =2  
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 16  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 16  
 
  818      =2  /*   interrupt vector */
  819      =2  #define         INT0_VECTOR             0
@@ -1022,7 +1022,7 @@ line level    source
   35      =1  #define EX_CTRL_SIGNAL_LOSS 1 //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅ¶ªÊ§
   36      =1  #define EX_CTRL_SIGNAL_OK 0   //Íâ²¿¿ØÖÆÐÅºÅÐÅºÅÕý³£
   37      =1  
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 17  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 17  
 
   38      =1  #define SWITCH_STATUS_ON 0x5A
   39      =1  #define SWITCH_STATUS_OFF 0xA5
@@ -1086,7 +1086,7 @@ line level    source
   11      =1  /* article, please specify in which data and procedures from STC    */
   12      =1  /*------------------------------------------------------------------*/
   13      =1  
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 18  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 18  
 
   14      =1  
   15      =1  #ifndef __USART_H
@@ -1150,7 +1150,7 @@ line level    source
            =2 
            =2 #define TIMEOUT_VAL_MAX 1000 //about 10s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_10S 500 //about 2s£¬ 5s max is 250
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 19  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 19  
 
            =2 #define TIMEOUT_VAL_5S 250 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_4S 200 //about 2s£¬ 5s max is 250
@@ -1214,7 +1214,7 @@ line level    source
   50      =1          u8      TX_read;                //·¢ËÍ¶ÁÖ¸Õë
   51      =1          u8      TX_write;               //·¢ËÍÐ´Ö¸Õë
   52      =1          u8      B_TX_busy;              //Ã¦±êÖ¾
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 20  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 20  
 
   53      =1  
   54      =1          u8      RX_Cnt;                 //½ÓÊÕ×Ö½Ú¼ÆÊý
@@ -1278,7 +1278,7 @@ line level    source
    9      =2  /* --- QQ:  800003751 ----------------------------------------------*/
   10      =2  /* If you want to use the program or the program referenced in the  */
   11      =2  /* article, please specify in which data and procedures from STC    */
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 21  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 21  
 
   12      =2  /*------------------------------------------------------------------*/
   13      =2  
@@ -1342,7 +1342,7 @@ line level    source
            =2 sbit  SwitchStatus           = P1^0;      // Íâ²¿¿ØÖÆÐÅºÅ 1: ¿ØÖÆÐÅºÅ¶ªÊ§ 0£ºÓÐ¿ØÖÆÐÅºÅ
            =2 sbit  SystemWorkMode         = P1^1;      // 1£º×Ô¶¯  0£ºÊÖ¶¯
            =2 sbit  VoltStatusLamp         = P1^2;      // µçÑ¹×´Ì¬Ö¸Ê¾µÆ 0£ºÏµÍ³µôµç  1£ºÏµÍ³»½ÐÑ
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 22  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 22  
 
            =2 sbit  VoltStatusPlus         = P3^3;      // Âö³åÐÅºÅÊä³ö
            =2 sbit  VoltCapturePortA       = P1^3;      // µçÑ¹²É¼¯¶Ë¿Ú
@@ -1406,7 +1406,7 @@ line level    source
            =2 #define MAIN_Fosc               24000000L       //¶¨ÒåÖ÷Ê±ÖÓ
            =2 
            =2 /*********************************************************/
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 23  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 23  
 
            =2 #include        "STC15Fxxxx.H"
            =2 
@@ -1470,7 +1470,7 @@ line level    source
   20      =1  #define GPIO_PullUp             0       //ÉÏÀ­×¼Ë«Ïò¿Ú
   21      =1  #define GPIO_HighZ              1       //¸¡¿ÕÊäÈë
   22      =1  #define GPIO_OUT_OD             2       //¿ªÂ©Êä³ö
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 24  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 24  
 
   23      =1  #define GPIO_OUT_PP             3       //ÍÆÍìÊä³ö
   24      =1  
@@ -1534,7 +1534,7 @@ line level    source
   15      =2  #ifndef         __CONFIG_H
            =2 #define         __CONFIG_H
            =2 
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 25  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 25  
 
            =2 
            =2 /*********************************************************/
@@ -1598,7 +1598,7 @@ line level    source
            =2 sbit  VoltCapturePortC       = P1^5;      // µçÑ¹²É¼¯¶Ë¿Ú
            =2 sbit  SwitchOnStatus         = P5^4;      // 0: ºÏÕ¢µ½Î» 1£ººÏÕ¢²»µ½Î»
            =2 sbit  OutOffHookCheck        = P5^5;      // ÍÑ¿ÛÎ»ÖÃ¼ì²â 0: ÍÑ¿Ûµ½Î» 1:Ã»ÓÐÍÑ¿Û
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 26  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 26  
 
            =2 
            =2 sbit  RS485_Recv_Send_Enable = P3^2;      // 0: Recv enable, 1: Send enable
@@ -1662,7 +1662,7 @@ line level    source
    1      =2  
    2      =2  /*------------------------------------------------------------------*/
    3      =2  /* --- STC MCU International Limited -------------------------------*/
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 27  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 27  
 
    4      =2  /* --- STC 1T Series MCU RC Demo -----------------------------------*/
    5      =2  /* --- Mobile: (86)13922805190 -------------------------------------*/
@@ -1726,7 +1726,7 @@ line level    source
            =2 #define TIMEOUT_VAL_1S5 75 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_1S 50 //about 2s£¬ 5s max is 250
            =2 #define TIMEOUT_VAL_HS 10 //about 0.5s£¬ 5s max is 250
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 28  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 28  
 
            =2 #define TIMEOUT_DELAY_VAL 4
            =2 
@@ -1790,7 +1790,7 @@ line level    source
   45      =1  
   46      =1  void    ADC_Inilize(ADC_InitTypeDef *ADCx);
   47      =1  void    ADC_PowerControl(u8 pwr);
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 29  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 29  
 
   48      =1  u16             Get_ADC10bitResult(u8 channel); //channel = 0~7
   49      =1  
@@ -1854,7 +1854,7 @@ line level    source
   63   1              TIM_InitStructure.TIM_Interrupt = ENABLE;                               //ÖÐ¶ÏÊÇ·ñÔÊÐí,   ENABLE»òDISABLE
   64   1              TIM_InitStructure.TIM_ClkSource = TIM_CLOCK_12T;                //Ö¸¶¨Ê±ÖÓÔ´,     TIM_CLOCK_1T,TIM_CLOCK_12T,TIM_CLOCK_
              -Ext
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 30  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 30  
 
   65   1              TIM_InitStructure.TIM_ClkOut    = DISABLE;                              //ÊÇ·ñÊä³ö¸ßËÙÂö³å, ENABLE»òDISABLE
   66   1              TIM_InitStructure.TIM_Value     = 65536 - (MAIN_Fosc / (12 * 50));      //³õÖµ, ½ÚÅÄÎª50HZ(20ms)
@@ -1918,7 +1918,7 @@ line level    source
  114   1          MotorRunningCtrl_L = 1;            //µç»úÍ£×ª
  115   1          RS485_Recv_Send_Enable = 0;                             //RS485Ê¹ÄÜÄ¬ÈÏÎª½ÓÊÕÄ£Ê½
  116   1          VoltStatusLamp = 1;                                     //×´Ì¬Ö¸Ê¾µÆÄ¬ÈÏ²»ÁÁ
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 31  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 31  
 
  117   1          VoltStatusPlus = 1;                                     //Âö³åÐÅºÅÄ¬ÈÏ¸ßµçÆ½
  118   1      }
@@ -1982,7 +1982,7 @@ line level    source
  176          
  177          
  178          /**********************************************/
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 32  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 32  
 
  179          void main(void)
  180          {
@@ -2046,7 +2046,7 @@ line level    source
  238   2              //-------------------------------------------------------------------------------------
  239   2              // µ±Ç°µçÑ¹×´Ì¬   ---   Òì³££¨°üÀ¨£ºÇ·Ñ¹¡¢¹ýÑ¹¡¢Ê§Ñ¹£
  240   2              if(VoltCurrentStatus != NORMAL_VOLTAGE)
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 33  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 33  
 
  241   2              {
  242   3                  //ÉèÖÃÖ¸Ê¾µÆºÍÂö³åÊä³öÐÅºÅ
@@ -2110,7 +2110,7 @@ line level    source
  298   5                              MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);
  299   5                      } else {
  300   5                          if(MotorCurrentStatus != MONTOR_LEFT_RUNNING)//µç»ú·´×ª
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 34  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 34  
 
  301   5                              MotorCurrentStatus = setMontorRunningStatus(MONTOR_LEFT_RUNNING);
  302   5                      }
@@ -2170,7 +2170,7 @@ line level    source
  356   1              //TH0 = TIMER_VALUE / 256 - TH0;
  357   1      }
  358          
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 35  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 35  
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -2234,7 +2234,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0001 F500        R     MOV     TIM_InitStructure,A
                                            ; SOURCE LINE # 62
 0003 750001      R     MOV     TIM_InitStructure+01H,#01H
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 36  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 36  
 
                                            ; SOURCE LINE # 63
 0006 750001      R     MOV     TIM_InitStructure+02H,#01H
@@ -2298,7 +2298,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0031 120000      R     LCALL   L?0072
                                            ; SOURCE LINE # 108
 0034 750008      R     MOV     GPIO_InitStructure+01H,#08H
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 37  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 37  
 
                                            ; SOURCE LINE # 109
 0037 E4                CLR     A
@@ -2362,7 +2362,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 130
 0010 FB                MOV     R3,A
 0011 7A00        R     MOV     R2,#HIGH ADC_InitStructure
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 38  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 38  
 
 0013 7900        R     MOV     R1,#LOW ADC_InitStructure
 0015 120000      E     LCALL   _ADC_Inilize
@@ -2426,7 +2426,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION _wait_switch_on (END)
 
              ; FUNCTION _wait_out_off_hook (BEGIN)
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 39  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 39  
 
                                            ; SOURCE LINE # 160
 ;---- Variable 'time_out' assigned to Register 'R7' ----
@@ -2490,7 +2490,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001B F500        R     MOV     iVbCount,A
                                            ; SOURCE LINE # 206
 001D 120000      E     LCALL   getACVppVolt
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 40  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 40  
 
 0020 8E00        R     MOV     Max_Volt,R6
 0022 8F00        R     MOV     Max_Volt+01H,R7
@@ -2554,7 +2554,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 236
 0069 E4                CLR     A
 006A F500        R     MOV     Max_Volt,A
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 41  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 41  
 
 006C F500        R     MOV     Max_Volt+01H,A
                                            ; SOURCE LINE # 240
@@ -2618,7 +2618,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00BD         ?C0069:
                                            ; SOURCE LINE # 273
                                            ; SOURCE LINE # 274
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 42  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 42  
 
 00BD 800B              SJMP    ?C0070
 00BF         ?C0024:
@@ -2682,7 +2682,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
              ; FUNCTION timer0_int (BEGIN)
 0000 C0E0              PUSH    ACC
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 43  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 43  
 
 0002 C0D0              PUSH    PSW
                                            ; SOURCE LINE # 315
@@ -2746,7 +2746,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0050 602B              JZ      ?C0050
                                            ; SOURCE LINE # 336
                                            ; SOURCE LINE # 337
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 44  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 44  
 
 0052 0500        R     INC     VoltOverLedIndicate
                                            ; SOURCE LINE # 338
@@ -2810,7 +2810,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00A6 8029              SJMP    ?C0064
 00A8         ?C0058:
                                            ; SOURCE LINE # 349
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 45  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 45  
 
 00A8 E500        R     MOV     A,VoltUnderLedIndicate
 00AA C3                CLR     C
@@ -2846,7 +2846,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 00D5 32                RETI    
              ; FUNCTION timer0_int (END)
 
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 46  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 46  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -2909,7 +2909,7 @@ main . . . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
   Max_Volt . . . . . . . . . . . . . .  AUTO     DATA   U_INT    0001H  2
 getACVppVolt . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 u8 . . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
-C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:41:10 PAGE 47  
+C51 COMPILER V9.52.0.0   MAIN                                                              03/11/2018 01:44:45 PAGE 47  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
