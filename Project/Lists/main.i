@@ -1962,25 +1962,32 @@
  
  while (1)
  {
- Max_Volt += getACVppVolt();
- if(iVbCount++ < 10) continue;
- else {
- Max_Volt = Max_Volt / iVbCount;
+ 
+ {
+ 
  iVbCount = 0;
+ 
+ Max_Volt = getACVppVolt();
+ 
+ 
  }
  
-  PrintString1("Max Volt: ");
- debug(Max_Volt / 1000 % 10);
- debug(Max_Volt / 100 % 10);
- debug(Max_Volt / 10 % 10);
- debug(Max_Volt % 10);
-  PrintString1("  ---  ");
+ 
+#line 212 "..\Src\main.c" /1
  
  
- if(Max_Volt >= 956){
+ 
+ 
+ 
+ 
+ 
+#line 219 "..\Src\main.c" /0
+ 
+ 
+ if(Max_Volt >= 768){
  VoltCurrentStatus = 0x10;
   PrintString1("OVER_VOLTAGE\r\n");
- } else if(Max_Volt <= 820) {
+ } else if(Max_Volt <= 492) {
  if(Max_Volt == 0) {
  VoltCurrentStatus = 0x11;
   PrintString1("LOSS_VOLTAGE\r\n");
@@ -1999,9 +2006,9 @@
  if(VoltCurrentStatus != 0x0)
  {
  
- VoltExceptionsPlus = 0;      
- if(VoltCurrentStatus == 0x01)    VoltUnderLedIndicate = 0;
- else if(VoltCurrentStatus == 0x10) VoltOverLedIndicate = 0;
+ if(VoltExceptionsPlus == 0xFF) VoltExceptionsPlus = 0;      
+ if(VoltCurrentStatus == 0x01 && VoltUnderLedIndicate == 0xFF)    VoltUnderLedIndicate = 0;
+ else if(VoltCurrentStatus == 0x10 && VoltOverLedIndicate == 0xFF) VoltOverLedIndicate = 0;
  
  
  
@@ -2020,7 +2027,7 @@
  
  
  
- if(VoltCurrentStatus != 0x11) delay_ms(50);
+ 
  if(MotorCurrentStatus != 0x01)
  MotorCurrentStatus = setMontorRunningStatus(0x01); 
  
@@ -2030,7 +2037,6 @@
  if(MotorCurrentStatus != 0xff)
  MotorCurrentStatus = setMontorRunningStatus(0xff); 
  }
- delay_timer(500);
  }
  else  
  {
@@ -2063,7 +2069,6 @@
  
  
  wait_switch_on(250);
- delay_timer(4);
  if(MotorCurrentStatus != 0xff) 
  MotorCurrentStatus = setMontorRunningStatus(0xff);
  }
@@ -2086,23 +2091,19 @@
  
  if(VoltExceptionsPlus != 0xFF)
  {
- VoltStatusPlus = 0; 
- if(VoltExceptionsPlus++ >= 5 )  
- {
- VoltExceptionsPlus = 0xFF;
- VoltStatusPlus = 1;
- }
+ VoltExceptionsPlus++;
+ if(VoltExceptionsPlus < 5 && VoltExceptionsPlus >= 0 ) VoltStatusPlus = 0; 
+ else if(VoltExceptionsPlus < 10 && VoltExceptionsPlus >= 5 ) VoltStatusPlus = 1;
+ else {VoltExceptionsPlus = 0xFF; VoltStatusPlus = 1;}
  }
  
  
  if(VoltOverLedIndicate != 0xFF)
  {
- VoltStatusLamp = 0; 
- if(VoltOverLedIndicate++ > 25 )  
- {
- VoltOverLedIndicate = 0xFF;
- VoltStatusLamp = 1;
- }
+ VoltOverLedIndicate++;
+ if(VoltOverLedIndicate < 25 && VoltOverLedIndicate >= 0) VoltStatusLamp = 0; 
+ else if(VoltOverLedIndicate < 50 && VoltOverLedIndicate >= 25) VoltStatusLamp = 1;
+ else {VoltStatusLamp = 1; VoltOverLedIndicate = 0xFF;}
  }
  
  
@@ -2113,9 +2114,6 @@
  else if(VoltUnderLedIndicate < 20 && VoltUnderLedIndicate >= 15) VoltStatusLamp = 1;  
  else if(VoltUnderLedIndicate < 35 && VoltUnderLedIndicate >= 20) VoltStatusLamp = 0;  
  else if(VoltUnderLedIndicate < 135 && VoltUnderLedIndicate >= 35) VoltStatusLamp = 1;  
- else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0;  
- else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1;  
- else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0;  
  else {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
  }
  

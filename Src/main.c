@@ -198,20 +198,25 @@ void main(void)
 	//=======================> Start Main Process <==========================//
 	while (1)
 	{
-        Max_Volt += getACVppVolt();
-        if(iVbCount++ < 10) continue;
-        else {
-            Max_Volt = Max_Volt / iVbCount;
+        //if(iVbCount > 9)
+        {
+            //Max_Volt = Max_Volt / iVbCount;
             iVbCount = 0;
+        //} else {
+            Max_Volt = getACVppVolt();
+            //iVbCount++;
+            //continue;
         }
-        
+
+#if DEBUG 
         LOGD("Max Volt: ");
         debug(Max_Volt / 1000 % 10);
         debug(Max_Volt / 100 % 10);
         debug(Max_Volt / 10 % 10);
         debug(Max_Volt % 10);
         LOGD("  ---  ");
- 
+#endif
+
         //检测当前的电压是否出现过压或者欠压
         if(Max_Volt >= OVER_VOLT_DIGIT_VAL){
             VoltCurrentStatus = OVER_VOLTAGE;
@@ -235,9 +240,9 @@ void main(void)
         if(VoltCurrentStatus != NORMAL_VOLTAGE)
         {
             //设置指示灯和脉冲输出信号
-            VoltExceptionsPlus = 0;     //输出电压异常的脉冲信号
-            if(VoltCurrentStatus == UNDER_VOLTAGE)    VoltUnderLedIndicate = 0;
-            else if(VoltCurrentStatus == OVER_VOLTAGE) VoltOverLedIndicate = 0;
+            if(VoltExceptionsPlus == 0xFF) VoltExceptionsPlus = 0;     //输出电压异常的脉冲信号
+            if(VoltCurrentStatus == UNDER_VOLTAGE && VoltUnderLedIndicate == 0xFF)    VoltUnderLedIndicate = 0;
+            else if(VoltCurrentStatus == OVER_VOLTAGE && VoltOverLedIndicate == 0xFF) VoltOverLedIndicate = 0;
 
             //（b） 外部控制信号丢失：
             // 1、检测到脱扣到位信号，
@@ -251,12 +256,12 @@ void main(void)
             else //只要不在脱扣到位状态就延时2秒后正转电机到脱扣到位状态
             {
                 // 2、检测到合闸到位信号，
-                //    自动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
-                //    手动：延时2秒，电机（正转）到（脱扣到位）状态就（停止运转）
+                //    自动：电机（正转）到（脱扣到位）状态就（停止运转）
+                //    手动：电机（正转）到（脱扣到位）状态就（停止运转）
                 // 3、脱扣到位信号和合闸到位信号都未检测到，
-                //    自动：延时50ms秒，电机（正转）到（脱扣到位）状态就（停止运转）
-                //    手动：延时50ms秒，电机（正转）到（脱扣到位）状态就（停止运转）
-                if(VoltCurrentStatus != LOSS_VOLTAGE) delay_ms(50);
+                //    自动：电机（正转）到（脱扣到位）状态就（停止运转）
+                //    手动：电机（正转）到（脱扣到位）状态就（停止运转）
+                //if(VoltCurrentStatus != LOSS_VOLTAGE) delay_ms(50);
                 if(MotorCurrentStatus != MONTOR_RIGHT_RUNNING)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_RIGHT_RUNNING);//正传
 
@@ -266,7 +271,6 @@ void main(void)
                 if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转
             }
-            delay_timer(TIMEOUT_VAL_10S);
         }
         else //当前电压状态   ---   正常
         {
@@ -299,7 +303,6 @@ void main(void)
 
                 //等待电机转动到位，超过5秒就认为是超时
                 wait_switch_on(TIMEOUT_VAL_5S);
-                delay_timer(TIMEOUT_DELAY_VAL);
                 if(MotorCurrentStatus != MONTOR_STOP_RUNNING)//电机停转
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);
             }
@@ -322,23 +325,19 @@ void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
     // Volt exception plus signal
     if(VoltExceptionsPlus != 0xFF)
     {
-        VoltStatusPlus = 0;//输出低电平
-        if(VoltExceptionsPlus++ >= 5 ) //20 x 5 = 100ms
-        {
-            VoltExceptionsPlus = 0xFF;
-            VoltStatusPlus = 1;
-        }
+        VoltExceptionsPlus++;
+        if(VoltExceptionsPlus < 5 && VoltExceptionsPlus >= 0 ) VoltStatusPlus = 0;//20 x 5 = 100ms
+        else if(VoltExceptionsPlus < 10 && VoltExceptionsPlus >= 5 ) VoltStatusPlus = 1;
+        else {VoltExceptionsPlus = 0xFF; VoltStatusPlus = 1;}
     }
     
     //Over Volt indicate
     if(VoltOverLedIndicate != 0xFF)
     {
-        VoltStatusLamp = 0;//输出低电平
-        if(VoltOverLedIndicate++ > 25 ) //20 x 25 = 500ms
-        {
-            VoltOverLedIndicate = 0xFF;
-            VoltStatusLamp = 1;
-        }
+        VoltOverLedIndicate++;
+        if(VoltOverLedIndicate < 25 && VoltOverLedIndicate >= 0) VoltStatusLamp = 0;//20 x 25 = 500ms
+        else if(VoltOverLedIndicate < 50 && VoltOverLedIndicate >= 25) VoltStatusLamp = 1;
+        else {VoltStatusLamp = 1; VoltOverLedIndicate = 0xFF;}
     }
     
     //Under Volt indication
@@ -349,9 +348,6 @@ void timer0_int (void) interrupt TIMER0_VECTOR //20ms@24.000MHz
         else if(VoltUnderLedIndicate < 20 && VoltUnderLedIndicate >= 15) VoltStatusLamp = 1; //100ms
         else if(VoltUnderLedIndicate < 35 && VoltUnderLedIndicate >= 20) VoltStatusLamp = 0; //300ms
         else if(VoltUnderLedIndicate < 135 && VoltUnderLedIndicate >= 35) VoltStatusLamp = 1; //2000ms
-        else if(VoltUnderLedIndicate < 150 && VoltUnderLedIndicate >= 135) VoltStatusLamp = 0; //300ms
-        else if(VoltUnderLedIndicate < 155 && VoltUnderLedIndicate >= 150) VoltStatusLamp = 1; //100ms
-        else if(VoltUnderLedIndicate < 170 && VoltUnderLedIndicate >= 155) VoltStatusLamp = 0; //300ms
         else {VoltStatusLamp = 1; VoltUnderLedIndicate = 0xFF;}
     }
 
