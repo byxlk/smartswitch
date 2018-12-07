@@ -46,8 +46,10 @@
 #define OVER_VOLTAGE 0x10
 #define NORMAL_VOLTAGE 0x0
 
-#define OVER_VOLT_DIGIT_VAL 768      // (((265 * 1.414) / 100) * 1024) / 5 = 768
-#define UNDER_VOLT_DIGIT_VAL 492     // (((170 * 1.414) / 100) * 1024) / 5 = 
+#define OVER_VOLT_DIGIT_VAL 782      // (((270 * 1.414) / 100) * 1024) / 5 = 782
+#define OVER_VOLT_BACKUP_VAL 752      // (((270 * 1.414) / 100) * 1024) / 5 = 782
+#define UNDER_VOLT_DIGIT_VAL 492     // (((170 * 1.414) / 100) * 1024) / 5 = 492
+#define UNDER_VOLT_BACKUP_VAL 521     // (((180 * 1.414) / 100) * 1024) / 5 = 492
 
 #define MONTOR_RIGHT_RUNNING 0x01
 #define MONTOR_LEFT_RUNNING 0x10

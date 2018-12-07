@@ -32,6 +32,7 @@ unsigned char VoltUnderLedIndicate = 0xFF; //电压欠压
 
 unsigned short TimeoutCount = STOP_TIMERCOUNT;
 unsigned char VoltCurrentStatus = LOSS_VOLTAGE;
+unsigned char VoltLastStatus = LOSS_VOLTAGE;
 unsigned char MotorCurrentStatus = MONTOR_STOP_RUNNING;
 /*************	本地函数声明	**************/
 
@@ -199,14 +200,14 @@ void main(void)
 	while (1)
 	{
         //if(iVbCount > 9)
-        {
-            //Max_Volt = Max_Volt / iVbCount;
+        //{
+        //    Max_Volt = Max_Volt / iVbCount;
             iVbCount = 0;
         //} else {
-            Max_Volt = getACVppVolt();
-            //iVbCount++;
-            //continue;
-        }
+            Max_Volt += getACVppVolt();
+        //    iVbCount++;
+        //    continue;
+        //}
 
 #if DEBUG 
         LOGD("Max Volt: ");
@@ -230,6 +231,9 @@ void main(void)
                 LOGD("UNDER_VOLTAGE\r\n");
             }
         } else {
+            if(((Max_Volt < OVER_VOLT_BACKUP_VAL) && (VoltLastStatus == OVER_VOLTAGE))
+                || ((Max_Volt > UNDER_VOLT_BACKUP_VAL) && (VoltLastStatus == UNDER_VOLTAGE))
+                || ((Max_Volt > UNDER_VOLT_BACKUP_VAL) && (VoltLastStatus == LOSS_VOLTAGE)))
             VoltCurrentStatus = NORMAL_VOLTAGE;
             LOGD("NORMAL_VOLTAGE\r\n");
         }
@@ -271,6 +275,7 @@ void main(void)
                 if(MotorCurrentStatus != MONTOR_STOP_RUNNING)
                     MotorCurrentStatus = setMontorRunningStatus(MONTOR_STOP_RUNNING);//电机停转
             }
+            delay_timer(TIMEOUT_VAL_10S);
         }
         else //当前电压状态   ---   正常
         {
